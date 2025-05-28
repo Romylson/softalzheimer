@@ -19,5 +19,5 @@ const db = getFirestore(app);
 
 // Exporta a instância do banco
 export { db };
-
+export { app };
  
