@@ -3,13 +3,22 @@ import { Link, useLocation } from "react-router-dom";
 import "./Dashboard.css";
 import { useTranslation } from "react-i18next";
 import IntroBlock from "../components/IntroBlock"; // bloco institucional, se desejar
+import DiferenciaisInovadores from "../components/DiferenciaisInovadores";
+import BannerDiferenciais from "../components/BannerDiferenciais";
+
+// ...
+
+
 
 export default function Dashboard() {
+  
   const location = useLocation();
   const { t } = useTranslation();
 
   return (
+    
     <div className="dashboard-layout">
+    
       {/* Sidebar */}
       <aside className="dashboard-sidebar">
         <h2 className="sidebar-title">{t("app_name")}</h2>
@@ -36,8 +45,8 @@ export default function Dashboard() {
               </Link>
             </li>
             <li>
-              <Link className={`sidebar-link${location.pathname === "/jogo" ? " active" : ""}`} to="/jogo">
-                {t("memory_game")}
+              <Link className={`sidebar-link${location.pathname === "/jogos" ? " active" : ""}`} to="/jogos">
+                {t("educational_games")}
               </Link>
             </li>
             <li>
@@ -51,6 +60,8 @@ export default function Dashboard() {
 
       {/* Conteúdo principal */}
       <main className="dashboard-main">
+        
+        <BannerDiferenciais />
         <div className="text-center my-4">
           <h1 className="display-4 fw-bold">
             {t("welcome_dashboard")} <span className="text-warning">{t("app_name")}</span>
@@ -63,23 +74,24 @@ export default function Dashboard() {
             <img src="/images/planta.avif" alt={t("plants")} className="dashboard-img" />
             <div className="icon mb-2">🌱</div>
             <h2>{t("plants")}</h2>
-            <span>1</span>
+            
           </div>
           <div className="dashboard-card yellow">
             <img src="/images/farmaco.jpeg" alt={t("drugs")} className="dashboard-img" />
             <div className="icon mb-2">💊</div>
             <h2>{t("drugs")}</h2>
-            <span>0</span>
+            
           </div>
           <div className="dashboard-card blue">
             <img src="/images/fisiopatologia.avif" alt={t("physiopathology")} className="dashboard-img" />
             <div className="icon mb-2">🧠</div>
             <h2>{t("physiopathology")}</h2>
-            <span>0</span>
+            
           </div>
         </div>
         {/* Bloco institucional */}
         <IntroBlock />
+      <DiferenciaisInovadores />
       </main>
     </div>
   );

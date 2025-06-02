@@ -1,6 +1,6 @@
 import React from "react";
-import imgNormal from "../../assets/cerebronormal.jpg";
-import imgAlzheimer from "../../assets/cerebroalzheimer.jpg";
+import imgNormal from "../../assets/cerebro_normal_rx.jpg";
+import imgAlzheimer from "../../assets/cerebro_alzheimer_rx.jpg";
 import { useTranslation } from "react-i18next";
 
 

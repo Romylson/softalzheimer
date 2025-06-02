@@ -1,60 +1,59 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import FarmacoEnsaiosClinicos from "../components/Farmacos/FarmacoEnsaiosClinicos";
 import imgDonepezila from "../assets/donepezila.jpg";
 import imgMemantina from "../assets/memantina.jpg";
 import imgLecanemabe from "../assets/lecanemabe.jpg";
+import { FaBrain, FaBolt, FaShieldAlt, FaCapsules, FaLeaf } from "react-icons/fa";
+import { farmacos } from "../data/farmacos";
+import FarmacoCard from "../components/Farmacos/FarmacoCard";
 
-// Adicione aqui outros fármacos conforme desejar
-const FARMACOS = [
-  {
-    nome: "Donepezila",
-    categoria: "Inibidor de Colinesterase",
-    descricao: "Inibidor da acetilcolinesterase usado em estágios leves a moderados.",
-    imagem: imgDonepezila,
-  },
-  {
-    nome: "Memantina",
-    categoria: "Modulador Glutamatérgico",
-    descricao: "Modulador do receptor NMDA para sintomas moderados a graves.",
-    imagem: imgMemantina,
-  },
-  {
-    nome: "Lecanemabe",
-    categoria: "Anticorpo Monoclonal",
-    descricao: "Anticorpo monoclonal indicado para remoção de placas beta-amiloides.",
-    imagem: imgLecanemabe,
-  },
-];
+export const ALVOS = {
+  "Colinesterase": { nome: "Colinesterase", icone: <FaBolt color="#fbbf24" />, desc: "Inibe a enzima que degrada acetilcolina." },
+  "Glutamatérgico (NMDA)": { nome: "Receptor NMDA", icone: <FaBrain color="#06b6d4" />, desc: "Bloqueia receptores glutamatérgicos NMDA." },
+  "Anticorpo Monoclonal": { nome: "Placa Beta-amiloide", icone: <FaShieldAlt color="#60a5fa" />, desc: "Age sobre placas beta-amiloides." },
+  "Fitoterápico": { nome: "Fitoterápico", icone: <FaLeaf color="#22c55e" />, desc: "Ação antioxidante e neuroprotetora." },
+  "Outro": { nome: "Outro", icone: <FaCapsules color="#64748b" />, desc: "" }
+};
+// Adicione mais imagens e fármacos conforme quiser!
+
+
+  
+  // Adicione aqui outros fármacos conforme sua necessidade!
+
 
 export default function FarmacosPage() {
-  const [selecionado, setSelecionado] = useState(FARMACOS[0].nome);
+  const [selecionado, setSelecionado] = useState(null);
 
   return (
     <div className="container py-4">
       <h1 className="fw-bold mb-4">Fármacos no Tratamento do Alzheimer</h1>
       <div className="row g-4">
-        {FARMACOS.map((f) => (
+        {farmacos.map((f) => (
           <div className="col-md-4" key={f.nome}>
             <div className={`card h-100 shadow ${selecionado === f.nome ? "border-primary" : ""}`}>
-              <img src={f.imagem} alt={f.nome} className="card-img-top" style={{ height: 150, objectFit: "cover" }} />
-              <div className="card-body">
-                <h5 className="card-title">{f.nome}</h5>
-                <p className="card-text">{f.descricao}</p>
-                <span className="badge bg-secondary mb-2">{f.categoria}</span>
-                <button className={`btn btn-sm ${selecionado === f.nome ? "btn-primary" : "btn-outline-primary"} mt-2`}
-                  onClick={() => setSelecionado(f.nome)}>
+              <FarmacoCard farmaco={f}>
+                <button
+                  className={`btn btn-sm ${selecionado === f.nome ? "btn-primary" : "btn-outline-primary"} mt-2`}
+                  onClick={() => setSelecionado(f.nome)}
+                >
                   {selecionado === f.nome ? "Selecionado" : "Ver Ensaios Clínicos"}
                 </button>
-              </div>
+                {/* Só mostra ensaios do selecionado */}
+                {selecionado === f.nome && (
+                  <div className="mt-3">
+                    <FarmacoEnsaiosClinicos nome={f.nome} />
+                  </div>
+                )}
+              </FarmacoCard>
             </div>
-            {/* Exibe os ensaios só do fármaco selecionado */}
-            {selecionado === f.nome && (
-              <div className="card card-body border mt-2">
-                <FarmacoEnsaiosClinicos nome={f.nome} />
-              </div>
-            )}
           </div>
         ))}
+      </div>
+      {/* Limpar seleção */}
+      <div className="text-center mt-4">
+        <button className="btn btn-outline-secondary" onClick={() => setSelecionado(null)}>
+          Limpar seleção
+        </button>
       </div>
     </div>
   );
