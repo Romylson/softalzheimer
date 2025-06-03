@@ -15,6 +15,11 @@ const FarmacoEnsaiosClinicos = ({ nomeFarmaco }) => {
     if (!nomeFarmaco) return;
 
     const buscarEnsaios = async () => {
+<<<<<<< HEAD
+=======
+      
+
+>>>>>>> d5461e0 (atualizando ensaios clinicos)
       setCarregando(true);
       setErro(null);
 
@@ -23,7 +28,12 @@ const FarmacoEnsaiosClinicos = ({ nomeFarmaco }) => {
       const endpoint = `${urlBase}/api/pubmed?q=${encodeURIComponent(nomeFarmaco)}`;
 
       try {
+<<<<<<< HEAD
         const resp = await fetch(endpoint);
+=======
+        const response = await fetch('/api/pubmed?q=alzheimer');
+        const data = await response.json();
+>>>>>>> d5461e0 (atualizando ensaios clinicos)
         if (!resp.ok) {
           throw new Error(`Erro HTTP ${resp.status}`);
         }
