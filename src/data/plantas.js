@@ -1,3 +1,11 @@
+import imgGinkgo from "../assets/ginkgo.jpg";
+import imgBacopa from "../assets/bacopa.jpg";
+import imgCurcuma from "../assets/curcuma.jpg";
+import imgSalvia from "../assets/salvia.jpg"
+import imgMelissa from "../assets/melissa.jpg"
+import imgPanax from "../assets/panax.jpg" 
+import ImgAshwagandha from "../assets/ashwagandha.jpg" 
+
 const plantas = [
   {
     id: 1,
@@ -5,7 +13,7 @@ const plantas = [
     nome_cientifico: "Ginkgo biloba",
     origem: "China, Japão",
     usos: "Memória, antioxidante.",
-    imagem: "/src/assets/ginkgo.jpg",
+    imagem: imgGinkgo,
     coordenadas: [35.8617, 104.1954], // China
     interacoes: [
       {
@@ -26,7 +34,7 @@ const plantas = [
     nome_cientifico: "Bacopa monnieri",
     origem: "Índia",
     usos: "Ajuda para memória e ansiedade.",
-    imagem: "/src/assets/bacopa.jpg",
+    imagem: imgBacopa,
     coordenadas: [20.5937, 78.9629], // Índia
     interacoes: [
       {
@@ -42,7 +50,7 @@ const plantas = [
     nome_cientifico: "Curcuma longa",
     origem: "Índia, Sudeste Asiático",
     usos: "Condimento, medicina tradicional contra inflamação.",
-    imagem: "/src/assets/curcuma.jpg",
+    imagem: imgCurcuma,
     coordenadas: [15.8700, 100.9925], // Tailândia
     interacoes: [
       {
@@ -58,7 +66,7 @@ const plantas = [
     nome_cientifico: "Salvia officinalis",
     origem: "Europa, Mediterrâneo",
     usos: "Tradição europeia para memória e digestão.",
-    imagem: "/src/assets/salvia.jpg",
+    imagem: imgSalvia,
     coordenadas: [41.8719, 12.5674], // Itália
     interacoes: [
       {
@@ -74,7 +82,7 @@ const plantas = [
     nome_cientifico: "Melissa officinalis",
     origem: "Europa, Oriente Médio",
     usos: "Calmante, auxílio para memória.",
-    imagem: "/src/assets/melissa.jpg",
+    imagem: imgMelissa,
     coordenadas: [48.3794, 31.1656], // Ucrânia
     interacoes: [
       {
@@ -90,7 +98,7 @@ const plantas = [
     nome_cientifico: "Panax ginseng",
     origem: "China, Coreia",
     usos: "Tônico cerebral, tradicional na Ásia.",
-    imagem: "/src/assets/panax.jpg",
+    imagem: imgPanax,
     coordenadas: [36.2048, 138.2529], // Japão
     interacoes: [
       {
@@ -111,7 +119,7 @@ const plantas = [
     nome_cientifico: "Withania somnifera",
     origem: "Índia, Oriente Médio",
     usos: "Ajuda para estresse, memória e vitalidade.",
-    imagem: "/src/assets/ashwagandha.jpg",
+    imagem: ImgAshwagandha,
     coordenadas: [28.6139, 77.2090], // Nova Délhi, Índia
     interacoes: [
       {
