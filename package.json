@@ -4,9 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "vite build --output public",
+    "build": "vite build",
     "preview": "vite preview"
-  
   },
   "dependencies": {
     "@jaredreisinger/react-crossword": "^5.2.0",
@@ -22,7 +21,7 @@
     "i18next": "^25.2.0",
     "leaflet": "^1.9.4",
     "lucide-react": "^0.511.0",
-    "node-fetch": "^3.3.2",
+    "node-fetch": "^2.7.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.10",
     "react-chessboard": "^4.7.3",
