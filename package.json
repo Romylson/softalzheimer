@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build --output public",
     "preview": "vite preview"
+  
   },
   "dependencies": {
     "@jaredreisinger/react-crossword": "^5.2.0",
@@ -57,9 +58,4 @@
   },
   "homepage": "https://github.com/Romylson/softalzheimer#readme",
   "description": ""
-
-{
-  "scripts": {
-    "build": "[my-framework] build --output public"
-  }
 }
