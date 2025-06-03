@@ -1,12 +1,10 @@
-import fetch from "node-fetch";
-
 export default async function handler(req, res) {
   const ids = req.query.ids;
-  const NCBI_API_KEY = process.env.NCBI_API_KEY;
+  const apiKey = process.env.NCBI_API_KEY;
 
   if (!ids) return res.status(400).json({ error: "IDs são obrigatórios" });
 
-  const url = `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=${ids}&retmode=json&api_key=${NCBI_API_KEY}`;
+  const url = `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=${ids}&retmode=json&api_key=${apiKey}`;
 
   try {
     const response = await fetch(url);
