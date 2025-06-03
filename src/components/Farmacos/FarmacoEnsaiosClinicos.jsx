@@ -1,96 +1,102 @@
 // src/components/Farmacos/FarmacoEnsaiosClinicos.jsx
-import React, { useState, useEffect } from 'react';
-// Certifique-se de ter instalado o react-bootstrap e de importar o Spinner corretamente:
-import Spinner from 'react-bootstrap/Spinner';
 
-// Caso não use React-Bootstrap, basta trocar <Spinner> por qualquer outro indicador de loading.
+import React, { useState, useEffect } from "react";
+import Spinner from "react-bootstrap/Spinner";
+import Alert from "react-bootstrap/Alert";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
 
 const FarmacoEnsaiosClinicos = ({ nomeFarmaco }) => {
   const [dados, setDados] = useState([]);
-  const [carregando, setCarregando] = useState(true);
+  const [carregando, setCarregando] = useState(false);
   const [erro, setErro] = useState(null);
 
   useEffect(() => {
-    // Sempre que o nomeFarmaco mudar, refaz a busca
+    if (!nomeFarmaco) return;
+
     const buscarEnsaios = async () => {
       setCarregando(true);
       setErro(null);
 
-      // Usamos uma URL relativa: em produção, o Vercel vai procurar /api/pubmed
-      // Em dev, se seu backend estiver rodando em /api/pubmed local, ok.
-      const urlBase = process.env.REACT_APP_API_BASE_URL || ''; 
-      const url = `${urlBase}/api/pubmed?q=${encodeURIComponent(nomeFarmaco)}`;
+      // Chama rota relativa (em produção, /api/pubmed; em dev, use REACT_APP_API_BASE_URL se definido)
+      const urlBase = process.env.REACT_APP_API_BASE_URL || "";
+      const endpoint = `${urlBase}/api/pubmed?q=${encodeURIComponent(nomeFarmaco)}`;
 
       try {
-        const resp = await fetch(url);
-        // Se a resposta não for 2xx, dispara exceção
+        const resp = await fetch(endpoint);
         if (!resp.ok) {
           throw new Error(`Erro HTTP ${resp.status}`);
         }
         const json = await resp.json();
-        setDados(json);
+        setDados(Array.isArray(json) ? json : []);
       } catch (e) {
-        console.error('Erro ao buscar PubMed:', e);
-        // Avise ao usuário que não foi possível carregar
-        setErro('Não foi possível carregar os ensaios clínicos no momento.');
+        console.error("Erro ao buscar Ensaios Clínicos:", e);
+        setErro("Não foi possível carregar os ensaios clínicos no momento.");
       } finally {
         setCarregando(false);
       }
     };
 
-    // Só busca se tiver um nomeFarmaco válido
-    if (nomeFarmaco) {
-      buscarEnsaios();
-    } else {
-      setCarregando(false);
-    }
+    buscarEnsaios();
   }, [nomeFarmaco]);
 
-  // Render enquanto carrega
+  // Se nomeFarmaco for vazio (por segurança)
+  if (!nomeFarmaco) {
+    return (
+      <Alert variant="warning" className="mt-3">
+        Selecione um fármaco para visualizar ensaios clínicos.
+      </Alert>
+    );
+  }
+
+  // Spinner enquanto carrega
   if (carregando) {
     return (
-      <div className="d-flex justify-content-center mt-4">
+      <div className="d-flex justify-content-center my-3">
         <Spinner animation="border" role="status" />
       </div>
     );
   }
 
-  // Renderizamos erro, se existir
+  // Se der erro na requisição
   if (erro) {
     return (
-      <div className="alert alert-danger mt-4">
+      <Alert variant="danger" className="mt-3">
         {erro}
-      </div>
+      </Alert>
     );
   }
 
-  // Se não houver dados (array vazio), informamos ao usuário
+  // Se nenhum dado encontrado
   if (!dados || dados.length === 0) {
     return (
-      <div className="alert alert-warning mt-4">
+      <Alert variant="warning" className="mt-3">
         Nenhum ensaio clínico encontrado para “{nomeFarmaco}”.
-      </div>
+      </Alert>
     );
   }
 
-  // Caso contrário, renderizamos a lista de ensaios
+  // Caso haja resultados, lista-os em cards
   return (
-    <div className="mt-4">
+    <div className="mt-3">
       {dados.map((item, idx) => (
-        <div key={idx} className="card mb-3">
-          <div className="card-body">
-            <h5 className="card-title">{item.title}</h5>
-            {item.abstract && (
-              <p className="card-text">{item.abstract}</p>
-            )}
-            {/* Exemplo: se existir link para PubMed */}
+        <Card key={idx} className="mb-2">
+          <Card.Body>
+            <Card.Title>{item.title || "Título não disponível"}</Card.Title>
+            {item.abstract && <Card.Text>{item.abstract}</Card.Text>}
             {item.link && (
-              <a href={item.link} target="_blank" rel="noopener noreferrer" className="btn btn-sm btn-primary">
+              <Button
+                variant="primary"
+                size="sm"
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Ver no PubMed
-              </a>
+              </Button>
             )}
-          </div>
-        </div>
+          </Card.Body>
+        </Card>
       ))}
     </div>
   );
