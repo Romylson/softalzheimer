@@ -4,9 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "preview": "vite preview",
-    "start": "node server.js",
-    "build": "react-scripts build"
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@jaredreisinger/react-crossword": "^5.2.0",
@@ -34,7 +33,6 @@
     "react-jigsaw-puzzle": "^1.0.5",
     "react-leaflet": "^4.2.1",
     "react-router-dom": "^6.3.0",
-    "react-scripts": "^5.0.1",
     "recharts": "^2.15.3",
     "three": "^0.148.0"
   },

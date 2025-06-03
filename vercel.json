@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "api/*.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/api/pubmed", "dest": "/api/pubmed.js" },
+    { "src": "/api/pubmed_summary", "dest": "/api/pubmed_summary.js" }
+  ]
+}
