@@ -5,7 +5,11 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "react-scripts start",
+    "start": "node server.js",           
+    "build": "react-scripts build"
+
   },
   "dependencies": {
     "@jaredreisinger/react-crossword": "^5.2.0",
