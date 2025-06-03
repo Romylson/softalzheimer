@@ -18,6 +18,8 @@ const FarmacoEnsaiosClinicos = ({ nomeFarmaco }) => {
       setDados([]);
 
       const urlBase = import.meta.env.VITE_API_BASE_URL || "";
+      const endpoint = `${urlBase}/pubmed?q=${encodeURIComponent(nomeFarmaco)}`;
+      const response = await fetch(endpoint);
 
       try {
         // Passo 1: buscar IDs
