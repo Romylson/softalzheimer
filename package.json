@@ -57,4 +57,9 @@
   },
   "homepage": "https://github.com/Romylson/softalzheimer#readme",
   "description": ""
+
+{
+  "scripts": {
+    "build": "[my-framework] build --output public"
+  }
 }
