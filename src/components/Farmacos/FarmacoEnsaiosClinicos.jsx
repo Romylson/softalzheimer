@@ -1,91 +1,99 @@
-import React, { useEffect, useState } from "react";
-import Spinner from "react-bootstrap/Spinner";
+// src/components/Farmacos/FarmacoEnsaiosClinicos.jsx
+import React, { useState, useEffect } from 'react';
+// Certifique-se de ter instalado o react-bootstrap e de importar o Spinner corretamente:
+import Spinner from 'react-bootstrap/Spinner';
 
-const nomesEN = {
-  "Donepezila": "Donepezil",
-  "Memantina": "Memantine",
-  "Lecanemabe": "Lecanemab",
-  "Galantamina": "Galantamine",
-  "Rivastigmina": "Rivastigmine",
-  "Bacopa monnieri": "Bacopa monnieri"
-};
+// Caso não use React-Bootstrap, basta trocar <Spinner> por qualquer outro indicador de loading.
 
-export default function FarmacoEnsaiosClinicos({ nome }) {
-  const [ensaios, setEnsaios] = useState([]);
-  const [erro, setErro] = useState("");
-  const [loading, setLoading] = useState(false);
+const FarmacoEnsaiosClinicos = ({ nomeFarmaco }) => {
+  const [dados, setDados] = useState([]);
+  const [carregando, setCarregando] = useState(true);
+  const [erro, setErro] = useState(null);
 
   useEffect(() => {
-    if (!nome) return;
+    // Sempre que o nomeFarmaco mudar, refaz a busca
+    const buscarEnsaios = async () => {
+      setCarregando(true);
+      setErro(null);
 
-    setLoading(true);
-    setErro("");
-    setEnsaios([]);
+      // Usamos uma URL relativa: em produção, o Vercel vai procurar /api/pubmed
+      // Em dev, se seu backend estiver rodando em /api/pubmed local, ok.
+      const urlBase = process.env.REACT_APP_API_BASE_URL || ''; 
+      const url = `${urlBase}/api/pubmed?q=${encodeURIComponent(nomeFarmaco)}`;
 
-    const termos = [nome, nomesEN[nome]].filter(Boolean);
-
-    (async () => {
-      let found = false;
-      for (const termo of termos) {
-        try {
-          const r1 = await fetch(`http://localhost:3001/api/pubmed?q=${encodeURIComponent(termo)}+alzheimer`);
-          const j1 = await r1.json();
-
-          if (!j1.esearchresult || !j1.esearchresult.idlist.length) continue;
-          const ids = j1.esearchresult.idlist.join(",");
-          const r2 = await fetch(`http://localhost:3001/api/pubmed_summary?ids=${ids}`);
-          const j2 = await r2.json();
-
-          if (j2.result && j2.result.uids) {
-            const lista = [];
-            for (const id of j2.result.uids) {
-              const item = j2.result[id];
-              if (item) {
-                lista.push({
-                  title: item.title || "Sem título disponível",
-                  url: `https://pubmed.ncbi.nlm.nih.gov/${id}/`,
-                  date: item.pubdate || "",
-                });
-              }
-            }
-            if (lista.length) {
-              setEnsaios(lista);
-              found = true;
-              break;
-            }
-          }
-        } catch (e) {
-          setErro("Erro ao buscar ensaios clínicos.");
+      try {
+        const resp = await fetch(url);
+        // Se a resposta não for 2xx, dispara exceção
+        if (!resp.ok) {
+          throw new Error(`Erro HTTP ${resp.status}`);
         }
+        const json = await resp.json();
+        setDados(json);
+      } catch (e) {
+        console.error('Erro ao buscar PubMed:', e);
+        // Avise ao usuário que não foi possível carregar
+        setErro('Não foi possível carregar os ensaios clínicos no momento.');
+      } finally {
+        setCarregando(false);
       }
-      setLoading(false);
-      if (!found) setErro("Nenhum ensaio clínico recente encontrado.");
-    })();
-  }, [nome]);
+    };
 
+    // Só busca se tiver um nomeFarmaco válido
+    if (nomeFarmaco) {
+      buscarEnsaios();
+    } else {
+      setCarregando(false);
+    }
+  }, [nomeFarmaco]);
+
+  // Render enquanto carrega
+  if (carregando) {
+    return (
+      <div className="d-flex justify-content-center mt-4">
+        <Spinner animation="border" role="status" />
+      </div>
+    );
+  }
+
+  // Renderizamos erro, se existir
+  if (erro) {
+    return (
+      <div className="alert alert-danger mt-4">
+        {erro}
+      </div>
+    );
+  }
+
+  // Se não houver dados (array vazio), informamos ao usuário
+  if (!dados || dados.length === 0) {
+    return (
+      <div className="alert alert-warning mt-4">
+        Nenhum ensaio clínico encontrado para “{nomeFarmaco}”.
+      </div>
+    );
+  }
+
+  // Caso contrário, renderizamos a lista de ensaios
   return (
-    <div className="mt-2">
-      {loading && (
-        <div className="small text-secondary">
-          <Spinner size="sm" /> Buscando ensaios clínicos...
+    <div className="mt-4">
+      {dados.map((item, idx) => (
+        <div key={idx} className="card mb-3">
+          <div className="card-body">
+            <h5 className="card-title">{item.title}</h5>
+            {item.abstract && (
+              <p className="card-text">{item.abstract}</p>
+            )}
+            {/* Exemplo: se existir link para PubMed */}
+            {item.link && (
+              <a href={item.link} target="_blank" rel="noopener noreferrer" className="btn btn-sm btn-primary">
+                Ver no PubMed
+              </a>
+            )}
+          </div>
         </div>
-      )}
-      {!loading && erro && (
-        <div className="small text-danger">{erro}</div>
-      )}
-      {!loading && ensaios.length > 0 && (
-        <div>
-          <b>Ensaio(s) clínico(s) recente(s):</b>
-          <ul className="ps-3" style={{ fontSize: 13 }}>
-            {ensaios.map((e, idx) => (
-              <li key={idx}>
-                <a href={e.url} target="_blank" rel="noopener noreferrer">{e.title}</a>
-                <span className="text-muted ms-2">({e.date})</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+      ))}
     </div>
   );
-}
+};
+
+export default FarmacoEnsaiosClinicos;
