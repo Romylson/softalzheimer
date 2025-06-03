@@ -1,0 +1,24 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: sans-serif;
+  background-color: #f9f9f9;
+}
+/* Adicione no seu App.css (ou index.css) */
+.crossword {
+  font-family: Arial, sans-serif;
+}
+.crossword__grid {
+  border: 2px solid #bbb;
+  background: #f9f9f9;
+}
+.crossword__cell--input {
+  background: #fff !important;
+  border: 1px solid #ddd;
+}
+.crossword__cell--highlighted {
+  background: #ffe98a !important;
+}
