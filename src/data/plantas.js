@@ -5,6 +5,7 @@ import imgSalvia from "../assets/salvia.jpg"
 import imgMelissa from "../assets/melissa.jpg"
 import imgPanax from "../assets/panax.jpg" 
 import ImgAshwagandha from "../assets/ashwagandha.jpg" 
+import ImgRhodiola from "../assets/rhodiola.jpg" 
 
 const plantas = [
   {
@@ -140,7 +141,7 @@ const plantas = [
     nome_cientifico: "Rhodiola rosea",
     origem: "Sibéria, Escandinávia",
     usos: "Adaptógeno, usado para fadiga e função cognitiva.",
-    imagem: "/src/assets/rhodiola.jpg",
+    imagem: ImgRhodiola,
     coordenadas: [60.4720, 8.4689], // Noruega
     interacoes: [
     {
