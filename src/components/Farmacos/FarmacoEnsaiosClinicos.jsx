@@ -1,5 +1,3 @@
-// src/components/Farmacos/FarmacoEnsaiosClinicos.jsx
-
 import React, { useState, useEffect } from "react";
 import Spinner from "react-bootstrap/Spinner";
 import Alert from "react-bootstrap/Alert";
@@ -15,26 +13,37 @@ const FarmacoEnsaiosClinicos = ({ nomeFarmaco }) => {
     if (!nomeFarmaco) return;
 
     const buscarEnsaios = async () => {
-      
-
       setCarregando(true);
       setErro(null);
+      setDados([]);
 
-      // Chama rota relativa (em produção, /api/pubmed; em dev, use REACT_APP_API_BASE_URL se definido)
-      const urlBase = process.env.REACT_APP_API_BASE_URL || "";
-      const endpoint = `${urlBase}/api/pubmed?q=${encodeURIComponent(nomeFarmaco)}`;
+      const urlBase = import.meta.env.VITE_API_BASE_URL || "";
 
       try {
-        const response = await fetch('/api/pubmed?q=alzheimer');
-        const data = await response.json();
-        if (!resp.ok) {
-          throw new Error(`Erro HTTP ${resp.status}`);
+        // Passo 1: buscar IDs
+        const r1 = await fetch(`${urlBase}/api/pubmed?q=${encodeURIComponent(nomeFarmaco)}`);
+        const json1 = await r1.json();
+        const ids = json1?.esearchresult?.idlist;
+        if (!ids || ids.length === 0) {
+          setDados([]);
+          return;
         }
-        const json = await resp.json();
-        setDados(Array.isArray(json) ? json : []);
+
+        // Passo 2: buscar resumos
+        const r2 = await fetch(`${urlBase}/api/pubmed-summary?ids=${ids.join(",")}`);
+        const json2 = await r2.json();
+        const resumos = Object.values(json2.result).filter((i) => i.uid);
+
+        const dadosFormatados = resumos.map((item) => ({
+          title: item.title,
+          abstract: item.source, // aqui você pode tentar item.summary ou item.source
+          link: `https://pubmed.ncbi.nlm.nih.gov/${item.uid}`,
+        }));
+
+        setDados(dadosFormatados);
       } catch (e) {
         console.error("Erro ao buscar Ensaios Clínicos:", e);
-        setErro("Não foi possível carregar os ensaios clínicos no momento.");
+        setErro("Erro ao buscar ensaios clínicos.");
       } finally {
         setCarregando(false);
       }
@@ -43,7 +52,6 @@ const FarmacoEnsaiosClinicos = ({ nomeFarmaco }) => {
     buscarEnsaios();
   }, [nomeFarmaco]);
 
-  // Se nomeFarmaco for vazio (por segurança)
   if (!nomeFarmaco) {
     return (
       <Alert variant="warning" className="mt-3">
@@ -52,7 +60,6 @@ const FarmacoEnsaiosClinicos = ({ nomeFarmaco }) => {
     );
   }
 
-  // Spinner enquanto carrega
   if (carregando) {
     return (
       <div className="d-flex justify-content-center my-3">
@@ -61,7 +68,6 @@ const FarmacoEnsaiosClinicos = ({ nomeFarmaco }) => {
     );
   }
 
-  // Se der erro na requisição
   if (erro) {
     return (
       <Alert variant="danger" className="mt-3">
@@ -70,7 +76,6 @@ const FarmacoEnsaiosClinicos = ({ nomeFarmaco }) => {
     );
   }
 
-  // Se nenhum dado encontrado
   if (!dados || dados.length === 0) {
     return (
       <Alert variant="warning" className="mt-3">
@@ -79,7 +84,6 @@ const FarmacoEnsaiosClinicos = ({ nomeFarmaco }) => {
     );
   }
 
-  // Caso haja resultados, lista-os em cards
   return (
     <div className="mt-3">
       {dados.map((item, idx) => (
@@ -87,17 +91,15 @@ const FarmacoEnsaiosClinicos = ({ nomeFarmaco }) => {
           <Card.Body>
             <Card.Title>{item.title || "Título não disponível"}</Card.Title>
             {item.abstract && <Card.Text>{item.abstract}</Card.Text>}
-            {item.link && (
-              <Button
-                variant="primary"
-                size="sm"
-                href={item.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Ver no PubMed
-              </Button>
-            )}
+            <Button
+              variant="primary"
+              size="sm"
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver no PubMed
+            </Button>
           </Card.Body>
         </Card>
       ))}
