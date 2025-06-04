@@ -3,10 +3,4 @@ node_modules
 node_modules
 vercel
 server.js
-<<<<<<< HEAD
 .env
-
-=======
-env
-log
->>>>>>> eaf6c60 (ajustes finais para Vercel)
