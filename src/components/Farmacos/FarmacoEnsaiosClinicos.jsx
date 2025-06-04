@@ -17,32 +17,27 @@ const FarmacoEnsaiosClinicos = ({ nomeFarmaco }) => {
       setErro(null);
       setDados([]);
 
-      
-      const urlBase = import.meta.env.VITE_API_BASE_URL ?? "http://localhost:3001";
-      const endpoint = `${urlBase}/api/pubmed?q=${encodeURIComponent(nomeFarmaco)}`;
-      const response = await fetch(endpoint);
-
+      const urlBase = ""; // Deixe vazio, Vercel resolve internamente
 
       try {
-        // Passo 1: buscar IDs
+        // Passo 1: buscar IDs no PubMed
         const r1 = await fetch(`${urlBase}/api/pubmed?q=${encodeURIComponent(nomeFarmaco)}`);
         const json1 = await r1.json();
         const ids = json1?.esearchresult?.idlist;
+
         if (!ids || ids.length === 0) {
           setDados([]);
           return;
         }
 
-        // Passo 2: buscar resumos
-        const endpointSummary = `${urlBase}/api/pubmed-summary?ids=${ids.join(",")}`;
-        const responseSummary = await fetch(endpointSummary);
-        const json2 = await responseSummary.json();
+        // Passo 2: buscar resumos (summary) desses IDs
+        const r2 = await fetch(`${urlBase}/api/pubmed-summary?ids=${ids.join(",")}`);
+        const json2 = await r2.json();
         const resumos = Object.values(json2.result).filter((i) => i.uid);
-
 
         const dadosFormatados = resumos.map((item) => ({
           title: item.title,
-          abstract: item.source, // aqui você pode tentar item.summary ou item.source
+          abstract: item.source || "Resumo não disponível.",
           link: `https://pubmed.ncbi.nlm.nih.gov/${item.uid}`,
         }));
 
