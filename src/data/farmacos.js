@@ -23,7 +23,7 @@ export const farmacos = [
     alvo: "Receptor Glutamatérgico"
   },
   {
-    nome: "Lecanemabe",
+    nome: "Lecanemab",
     categoria: "Anticorpo Monoclonal",
     descricao: "Anticorpo monoclonal indicado para remoção de placas beta-amiloides.",
     imagem: imgLecanemabe,
