@@ -17,9 +17,11 @@ const FarmacoEnsaiosClinicos = ({ nomeFarmaco }) => {
       setErro(null);
       setDados([]);
 
-      const urlBase = import.meta.env.VITE_API_BASE_URL || "";
-      const endpoint = `${urlBase}/pubmed?q=${encodeURIComponent(nomeFarmaco)}`;
+      
+      const urlBase = import.meta.env.VITE_API_BASE_URL ?? "http://localhost:3001";
+      const endpoint = `${urlBase}/api/pubmed?q=${encodeURIComponent(nomeFarmaco)}`;
       const response = await fetch(endpoint);
+
 
       try {
         // Passo 1: buscar IDs
@@ -32,9 +34,11 @@ const FarmacoEnsaiosClinicos = ({ nomeFarmaco }) => {
         }
 
         // Passo 2: buscar resumos
-        const r2 = await fetch(`${urlBase}/api/pubmed-summary?ids=${ids.join(",")}`);
-        const json2 = await r2.json();
+        const endpointSummary = `${urlBase}/api/pubmed-summary?ids=${ids.join(",")}`;
+        const responseSummary = await fetch(endpointSummary);
+        const json2 = await responseSummary.json();
         const resumos = Object.values(json2.result).filter((i) => i.uid);
+
 
         const dadosFormatados = resumos.map((item) => ({
           title: item.title,
