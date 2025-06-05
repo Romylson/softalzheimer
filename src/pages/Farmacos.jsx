@@ -1,7 +1,7 @@
 // src/pages/FarmacosPage.jsx
 
 import React, { useState } from "react";
-import FarmacoEnsaiosClinicos from "../components/Farmacos/FarmacoEnsaiosClinicos";
+import FarmacoEnsaiosClinicos from "../components/Artigos/ArtigosPubMed";
 import { FaBrain, FaBolt, FaShieldAlt, FaCapsules, FaLeaf } from "react-icons/fa";
 import { farmacos } from "../data/farmacos";
 import FarmacoCard from "../components/Farmacos/FarmacoCard";

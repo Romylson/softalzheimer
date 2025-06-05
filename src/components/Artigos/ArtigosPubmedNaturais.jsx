@@ -1,65 +1,50 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Spinner from "react-bootstrap/Spinner";
 import Alert from "react-bootstrap/Alert";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
-const FarmacoEnsaiosClinicos = ({ nomeFarmaco }) => {
+const ArtigosPubmedNaturais = () => {
   const [dados, setDados] = useState([]);
   const [carregando, setCarregando] = useState(false);
   const [erro, setErro] = useState(null);
 
   useEffect(() => {
-    if (!nomeFarmaco) return;
-
-    const buscarEnsaios = async () => {
+    const buscarArtigos = async () => {
       setCarregando(true);
       setErro(null);
       setDados([]);
-
-      const urlBase = ""; // Deixe vazio, Vercel resolve internamente
-
+      const termoBusca = "Alzheimer AND phytochemicals";
       try {
-        // Passo 1: buscar IDs no PubMed
-        const r1 = await fetch(`${urlBase}/api/pubmed?q=${encodeURIComponent(nomeFarmaco)}`);
+        const r1 = await fetch(`/api/pubmed?q=${encodeURIComponent(termoBusca)}`);
         const json1 = await r1.json();
         const ids = json1?.esearchresult?.idlist;
-
         if (!ids || ids.length === 0) {
           setDados([]);
           return;
         }
 
-        // Passo 2: buscar resumos (summary) desses IDs
-        const r2 = await fetch(`${urlBase}/api/pubmed-summary?ids=${ids.join(",")}`);
+        const r2 = await fetch(`/api/pubmed-summary?ids=${ids.join(",")}`);
         const json2 = await r2.json();
         const resumos = Object.values(json2.result).filter((i) => i.uid);
 
         const dadosFormatados = resumos.map((item) => ({
           title: item.title,
-          abstract: item.source || "Resumo não disponível.",
+          source: item.source,
           link: `https://pubmed.ncbi.nlm.nih.gov/${item.uid}`,
         }));
 
         setDados(dadosFormatados);
       } catch (e) {
-        console.error("Erro ao buscar Ensaios Clínicos:", e);
-        setErro("Erro ao buscar ensaios clínicos.");
+        console.error("Erro ao buscar artigos naturais:", e);
+        setErro("Erro ao buscar artigos naturais.");
       } finally {
         setCarregando(false);
       }
     };
 
-    buscarEnsaios();
-  }, [nomeFarmaco]);
-
-  if (!nomeFarmaco) {
-    return (
-      <Alert variant="warning" className="mt-3">
-        Selecione um fármaco para visualizar ensaios clínicos.
-      </Alert>
-    );
-  }
+    buscarArtigos();
+  }, []);
 
   if (carregando) {
     return (
@@ -70,19 +55,11 @@ const FarmacoEnsaiosClinicos = ({ nomeFarmaco }) => {
   }
 
   if (erro) {
-    return (
-      <Alert variant="danger" className="mt-3">
-        {erro}
-      </Alert>
-    );
+    return <Alert variant="danger">{erro}</Alert>;
   }
 
-  if (!dados || dados.length === 0) {
-    return (
-      <Alert variant="warning" className="mt-3">
-        Nenhum ensaio clínico encontrado para “{nomeFarmaco}”.
-      </Alert>
-    );
+  if (!dados.length) {
+    return <Alert variant="warning">Nenhum artigo encontrado.</Alert>;
   }
 
   return (
@@ -91,14 +68,8 @@ const FarmacoEnsaiosClinicos = ({ nomeFarmaco }) => {
         <Card key={idx} className="mb-2">
           <Card.Body>
             <Card.Title>{item.title || "Título não disponível"}</Card.Title>
-            {item.abstract && <Card.Text>{item.abstract}</Card.Text>}
-            <Button
-              variant="primary"
-              size="sm"
-              href={item.link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            {item.source && <Card.Text>Fonte: {item.source}</Card.Text>}
+            <Button variant="primary" size="sm" href={item.link} target="_blank" rel="noopener noreferrer">
               Ver no PubMed
             </Button>
           </Card.Body>
@@ -108,4 +79,4 @@ const FarmacoEnsaiosClinicos = ({ nomeFarmaco }) => {
   );
 };
 
-export default FarmacoEnsaiosClinicos;
+export default ArtigosPubmedNaturais;

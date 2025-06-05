@@ -16,6 +16,7 @@ const resources = {
       drugs: "Fármacos",
       educational_games: "Jogos Educativos",
       brain3d: "Cérebro 3D",
+      scientific_articles: "Artigos Científicos",
 
       // Dashboard principal
       welcome_dashboard: "Bem-vindo ao",
@@ -270,6 +271,7 @@ const resources = {
       drugs: "Drugs",
       educational_games: "Educational Games",
       brain3d: "Brain 3D",
+      scientific_articles: "Scientific Articles",
 
       welcome_dashboard: "Welcome to",
       dashboard_desc: "Track data on plants, drugs, and physiopathology related to Alzheimer's in real time.",
@@ -502,6 +504,7 @@ const resources = {
       drugs: "Fármacos",
       educational_games: "Juegos Educativos",
       brain3d: "Cerebro 3D",
+      scientific_articles: "Artículos científicos",
 
       welcome_dashboard: "Bienvenido a",
       dashboard_desc: "Siga los datos de plantas, fármacos y fisiopatología relacionados con el Alzheimer en tiempo real.",

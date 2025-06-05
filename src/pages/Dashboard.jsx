@@ -54,6 +54,11 @@ export default function Dashboard() {
                 {t("brain3d")}
               </Link>
             </li>
+            <li>
+              <Link className={`sidebar-link${location.pathname === "/artigos-cientificos" ? " active" : ""}`} to="/artigos-cientificos">
+                {t("scientific_articles")}
+              </Link>
+            </li>
           </ul>
         </nav>
       </aside>

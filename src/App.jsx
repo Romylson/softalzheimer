@@ -21,6 +21,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { Outlet } from "react-router-dom";
 import AppHeader from "./components/AppHeader";
+import ArtigosCientificosTabs from "./components/Artigos/ArtigosCientificosTabs";
 
 
 function App() {
@@ -48,6 +49,8 @@ function App() {
           <Route path="/jogos/xadrez" element={<Xadrez />} />
           <Route path="/jogos/quebra-cabeca" element={<QuebraCabeca />} />
           <Route path="/" element={<Dashboard />} />
+          <Route path="/artigos-cientificos" element={<ArtigosCientificosTabs />} />
+
 
 
         </Routes>
