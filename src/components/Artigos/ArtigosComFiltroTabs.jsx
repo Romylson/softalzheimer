@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Tabs, Tab } from "react-bootstrap";
-import ArtigosPubmed from "./ArtigosPubmed"; // Certifique-se do caminho correto
+import ArtigosPubmed from "./ArtigosPubMed"; // Certifique-se do caminho correto
 
 const ArtigosComFiltroTabs = () => {
   const [filtro, setFiltro] = useState("todos");
