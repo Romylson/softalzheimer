@@ -1,37 +1,107 @@
 // src/pages/Jogos.jsx
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import AssociacaoConceitos from "../components/Jogos/AssociacaoConceitos";
-// Os demais jogos virão aqui futuramente
+import associacaoImg from "../assets/associacao.jpg";
+import quizImg from "../assets/quiz.avif";
+import memoriaImg from "../assets/memoria.jpg";
+import labImg from "../assets/lab.jpg";
+import palavrasImg from "../assets/camomila.jpg";
+import cacaImg from "../assets/caca-palavras.jpg";
+import xadrezImg from "../assets/xadrez.jpg";
+import quebraImg from "../assets/quebra-cabeca.jpg";
 
-const Jogos = () => {
+export default function Jogos() {
   return (
-    <Container className="mt-4">
-      <h2 className="mb-4 text-center">Jogos Educativos</h2>
-      <Row>
-        <Col md={12}>
-          <AssociacaoConceitos />
-        </Col>
-      </Row>
-      <Row className="mt-4 text-center">
-        <Col>
-          <p>Mais jogos em breve:</p>
-          <ul style={{ listStyle: "none", padding: 0 }}>
-            <li>
-              <Link to="#">Quiz Científico (em desenvolvimento)</Link>
-            </li>
-            <li>
-              <Link to="#">Memória com Plantas (em desenvolvimento)</Link>
-            </li>
-            <li>
-              <Link to="#">Arrastar e Soltar (Classificação) (em desenvolvimento)</Link>
-            </li>
-          </ul>
-        </Col>
-      </Row>
-    </Container>
-  );
-};
+    <div className="container py-4">
+      <h1 className="fw-bold mb-4">Jogos Educativos: Produtos Naturais 🌱 & Alzheimer</h1>
+      <p className="text-muted mb-4">Escolha um jogo para aprender se divertindo!</p>
 
-export default Jogos;
+      <div className="row g-4">
+        <div className="col-md-4">
+          <div className="card h-100 shadow">
+            <img src={associacaoImg} alt="Associação de Conceitos" className="card-img-top" style={{ height: 160, objectFit: "cover" }} />
+            <div className="card-body">
+              <h5 className="card-title">Associação de Conceitos</h5>
+              <p className="card-text">Associe sintomas, tratamentos e mecanismos relacionados ao Alzheimer.</p>
+              <Link to="/jogos/associacao" className="btn btn-primary">Jogar</Link>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-md-4">
+          <div className="card h-100 shadow">
+            <img src={quizImg} alt="Quiz Científico" className="card-img-top" style={{ height: 160, objectFit: "cover" }} />
+            <div className="card-body">
+              <h5 className="card-title">Quiz Científico</h5>
+              <p className="card-text">Desafie seus conhecimentos sobre Alzheimer e farmacognosia.</p>
+              <Link to="/jogos/quiz" className="btn btn-success">Jogar</Link>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-md-4">
+          <div className="card h-100 shadow">
+            <img src={memoriaImg} alt="Memória com Plantas" className="card-img-top" style={{ height: 160, objectFit: "cover" }} />
+            <div className="card-body">
+              <h5 className="card-title">Memória com Plantas</h5>
+              <p className="card-text">Encontre pares de plantas e descubra seus compostos bioativos.</p>
+              <Link to="/jogos/memoria" className="btn btn-warning">Jogar</Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="row g-4 mt-3">
+        <div className="col-md-6 col-lg-4">
+          <Link to="/jogos/lab" className="card shadow text-decoration-none h-100">
+            <img src={labImg} alt="Laboratório" className="card-img-top" style={{ height: 160, objectFit: "cover" }} />
+            <div className="card-body">
+              <h5 className="card-title">Desafio do Laboratório</h5>
+              <p className="card-text">Classifique extratos, compostos e efeitos terapêuticos em um jogo de lógica.</p>
+            </div>
+          </Link>
+        </div>
+
+        <div className="col-md-6 col-lg-4">
+          <Link to="/jogos/palavras-cruzadas" className="card shadow text-decoration-none h-100">
+            <img src={palavrasImg} alt="Palavras Cruzadas" className="card-img-top" style={{ height: 160, objectFit: "cover" }} />
+            <div className="card-body">
+              <h5 className="card-title">Palavras Cruzadas</h5>
+              <p className="card-text">Complete o grid com nomes de plantas e conceitos sobre Alzheimer.</p>
+            </div>
+          </Link>
+        </div>
+
+        <div className="col-md-6 col-lg-4">
+          <Link to="/jogos/caca-palavras" className="card shadow text-decoration-none h-100">
+            <img src={cacaImg} alt="Caça-palavras" className="card-img-top" style={{ height: 160, objectFit: "cover" }} />
+            <div className="card-body">
+              <h5 className="card-title">Caça-palavras</h5>
+              <p className="card-text">Encontre nomes de compostos e espécies vegetais em uma grade interativa.</p>
+            </div>
+          </Link>
+        </div>
+
+        <div className="col-md-6 col-lg-4">
+          <Link to="/jogos/xadrez" className="card shadow text-decoration-none h-100">
+            <img src={xadrezImg} alt="Xadrez" className="card-img-top" style={{ height: 160, objectFit: "cover" }} />
+            <div className="card-body">
+              <h5 className="card-title">Xadrez</h5>
+              <p className="card-text">Treine seu raciocínio lógico e memória com o clássico jogo de xadrez.</p>
+            </div>
+          </Link>
+        </div>
+
+        <div className="col-md-6 col-lg-4">
+          <Link to="/jogos/quebra-cabeca" className="card shadow text-decoration-none h-100">
+            <img src={quebraImg} alt="Quebra-cabeça" className="card-img-top" style={{ height: 160, objectFit: "cover" }} />
+            <div className="card-body">
+              <h5 className="card-title">Quebra-cabeça</h5>
+              <p className="card-text">Monte imagens relacionadas à farmacobotânica e tratamentos naturais.</p>
+            </div>
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
