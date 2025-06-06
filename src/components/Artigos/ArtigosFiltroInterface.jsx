@@ -1,6 +1,6 @@
 // src/components/Artigos/ArtigosFiltroInterface.jsx
 import React, { useState } from "react";
-import ArtigosPubmed from "./ArtigosPubMed";
+import ArtigosPubmed from "./ArtigosPubmed";
 import { ButtonGroup, Button } from "react-bootstrap";
 
 const filtros = [

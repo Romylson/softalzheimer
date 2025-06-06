@@ -1,7 +1,7 @@
 // ArtigosCientificosTabs.jsx (com filtro por tipo de estudo)
 import React, { useState } from "react";
 import { Tabs, Tab, ButtonGroup, ToggleButton } from "react-bootstrap";
-import ArtigosPubmed from "./ArtigosPubMed";
+import ArtigosPubmed from "./ArtigosPubmed";
 
 
 const tiposEstudo = [
