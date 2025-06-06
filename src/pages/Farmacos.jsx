@@ -1,7 +1,7 @@
 // src/pages/FarmacosPage.jsx
 
 import React, { useState } from "react";
-import FarmacoEnsaiosClinicos from "../components/Artigos/ArtigosPubMed";
+import ArtigosPubmed from "../components/Artigos/ArtigosPubmed";
 import { FaBrain, FaBolt, FaShieldAlt, FaCapsules, FaLeaf } from "react-icons/fa";
 import { farmacos } from "../data/farmacos";
 import FarmacoCard from "../components/Farmacos/FarmacoCard";
@@ -66,7 +66,7 @@ export default function FarmacosPage() {
                 {selecionado === f.nome && (
                   <div className="mt-3">
                     {/* ⚠️ Atenção: troquei `nome={f.nome}` para `nomeFarmaco={f.nome}` */}
-                    <FarmacoEnsaiosClinicos nomeFarmaco={f.nome} />
+                    <ArtigosPubmed nomeFarmaco={f.nome} />
                   </div>
                 )}
               </FarmacoCard>
