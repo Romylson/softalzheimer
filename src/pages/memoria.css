@@ -1,0 +1,11 @@
+.status-panel span {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+@media (max-width: 600px) {
+  .memory-card {
+    width: 90px;
+    height: 90px;
+  }
+}

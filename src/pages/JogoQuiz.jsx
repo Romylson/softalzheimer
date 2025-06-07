@@ -1,84 +1,162 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import imgBacopa from "../assets/bacopa.jpg";
-import imgGinkgo from "../assets/ginkgo.jpg";
-// Adicione imagens para as perguntas se quiser!
+// src/components/Jogos/QuizCientifico.jsx
+import React, { useState, useEffect } from "react";
+import { Card, Button, ProgressBar, Alert } from "react-bootstrap";
 
 const perguntas = [
   {
-    pergunta: "Qual planta é chamada de 'brahmi' e estudada para memória?",
-    imagem: imgBacopa,
-    opcoes: ["Ginkgo biloba", "Bacopa monnieri", "Panax ginseng", "Rhodiola rosea"],
-    resposta: 1,
-    dica: "É uma planta da medicina ayurvédica.",
-    explicacao: "Bacopa monnieri é conhecida como 'brahmi', utilizada para suporte cognitivo na Ayurveda."
+    categoria: "Fisiopatologia",
+    enunciado: "Qual substância se acumula em placas senis na Doença de Alzheimer?",
+    alternativas: ["Dopamina", "Tau", "Beta-amiloide", "Serotonina"],
+    resposta: "Beta-amiloide"
   },
   {
-    pergunta: "Ginkgo biloba é famoso por...",
-    imagem: imgGinkgo,
-    opcoes: ["Aumentar fluxo sanguíneo cerebral", "Reduzir febre", "Ação anti-inflamatória forte", "Adoçar bebidas"],
-    resposta: 0,
-    dica: "É usada para memória e circulação.",
-    explicacao: "Ginkgo biloba é tradicionalmente usada para aumentar o fluxo sanguíneo cerebral e apoiar a memória."
+    categoria: "Tratamento",
+    enunciado: "Qual fármaco é um inibidor de colinesterase?",
+    alternativas: ["Memantina", "Donepezila", "Lecanemabe", "Fluoxetina"],
+    resposta: "Donepezila"
   },
-  // Adicione mais perguntas com imagens, dicas e explicações!
+  {
+    categoria: "Plantas Medicinais",
+    enunciado: "Qual planta é estudada por seus efeitos neuroprotetores em Alzheimer?",
+    alternativas: ["Camomila", "Ginkgo biloba", "Lavanda", "Alecrim"],
+    resposta: "Ginkgo biloba"
+  },
+  // Adicione mais perguntas aqui (mínimo de 10)
+  {
+    categoria: "Fisiopatologia",
+    enunciado: "Qual proteína está associada a emaranhados neurofibrilares?",
+    alternativas: ["Beta-amiloide", "Insulina", "Tau", "Actina"],
+    resposta: "Tau"
+  },
+  {
+    categoria: "Produtos Naturais",
+    enunciado: "Withania somnifera é conhecida popularmente como:",
+    alternativas: ["Ashwagandha", "Guaraná", "Ginseng", "Bacopa"],
+    resposta: "Ashwagandha"
+  },
+  {
+    categoria: "Farmacologia",
+    enunciado: "Memantina atua como:",
+    alternativas: [
+      "Inibidor de acetilcolinesterase",
+      "Agonista colinérgico",
+      "Antagonista NMDA",
+      "Inibidor da monoaminoxidase"
+    ],
+    resposta: "Antagonista NMDA"
+  },
+  {
+    categoria: "Plantas Medicinais",
+    enunciado: "Bacopa monnieri é tradicionalmente usada para:",
+    alternativas: ["Alívio de dores", "Estímulo de apetite", "Melhora da memória", "Sedação intensa"],
+    resposta: "Melhora da memória"
+  },
+  {
+    categoria: "Estudos",
+    enunciado: "Estudos 'in vitro' são realizados:",
+    alternativas: ["Em animais vivos", "Em culturas celulares", "Em humanos", "Em pacientes hospitalizados"],
+    resposta: "Em culturas celulares"
+  },
+  {
+    categoria: "Estudos",
+    enunciado: "Estudos 'in vivo' são realizados:",
+    alternativas: ["Em humanos", "Em animais vivos", "Em laboratórios computacionais", "Com simulações"],
+    resposta: "Em animais vivos"
+  },
+  {
+    categoria: "Tratamento",
+    enunciado: "Lecanemabe é um exemplo de:",
+    alternativas: ["Fármaco tradicional", "Monoclonal experimental", "Vitamina", "Fitoterápico"],
+    resposta: "Monoclonal experimental"
+  }
 ];
 
-export default function JogoQuiz() {
-  const [idx, setIdx] = useState(0);
-  const [pontos, setPontos] = useState(0);
-  const [finalizado, setFinalizado] = useState(false);
+const QuizCientifico = () => {
+  const [indice, setIndice] = useState(0);
+  const [pontuacao, setPontuacao] = useState(0);
   const [resposta, setResposta] = useState(null);
-  const [feedback, setFeedback] = useState("");
-  const navigate = useNavigate();
+  const [timer, setTimer] = useState(15);
+  const [finalizado, setFinalizado] = useState(false);
 
-  function handleResposta(i) {
-    setResposta(i);
-    if (i === perguntas[idx].resposta) {
-      setPontos(p => p + 15);
-      setFeedback(<span className="text-success">Correto! {perguntas[idx].explicacao}</span>);
-    } else {
-      setFeedback(
-        <span className="text-danger">Incorreto! Dica: {perguntas[idx].dica}<br/>{perguntas[idx].explicacao}</span>
-      );
-    }
-    setTimeout(() => {
-      setFeedback("");
+  const perguntaAtual = perguntas[indice];
+
+  useEffect(() => {
+    if (finalizado) return;
+    const interval = setInterval(() => {
+      setTimer((t) => {
+        if (t <= 1) {
+          clearInterval(interval);
+          setResposta("tempo");
+          return 0;
+        }
+        return t - 1;
+      });
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [indice, finalizado]);
+
+  const escolher = (alt) => {
+    if (resposta) return;
+    setResposta(alt);
+    if (alt === perguntaAtual.resposta) setPontuacao(pontuacao + 1);
+  };
+
+  const proxima = () => {
+    if (indice + 1 < perguntas.length) {
+      setIndice(indice + 1);
       setResposta(null);
-      if (idx < perguntas.length - 1) setIdx(idx + 1);
-      else setFinalizado(true);
-    }, 2200);
+      setTimer(15);
+    } else {
+      setFinalizado(true);
+    }
+  };
+
+  if (finalizado) {
+    return (
+      <Alert variant="success" className="mt-4">
+        <h4>Quiz finalizado!</h4>
+        <p>Pontuação: {pontuacao} de {perguntas.length}</p>
+        <p>Parabéns por testar seus conhecimentos.</p>
+      </Alert>
+    );
   }
 
   return (
-    <div className="container py-4">
-      <button className="btn btn-outline-secondary mb-3" onClick={() => navigate("/jogos")}>⬅️ Voltar para Jogos</button>
-      <h2>Quiz Científico sobre Produtos Naturais</h2>
-      <div>Pontuação: <b>{pontos}</b></div>
-      {!finalizado ? (
-        <div>
-          <div className="mb-2"><b>{perguntas[idx].pergunta}</b></div>
-          {perguntas[idx].imagem && <img src={perguntas[idx].imagem} alt="" style={{ width: 100, marginBottom: 8 }} />}
-          <div>
-            {perguntas[idx].opcoes.map((op, i) => (
-              <button
-                key={i}
-                className={`btn me-2 mb-2 ${resposta === i ? (i === perguntas[idx].resposta ? "btn-success" : "btn-danger") : "btn-outline-secondary"}`}
-                onClick={() => handleResposta(i)}
-                disabled={resposta !== null}
-              >
-                {op}
-              </button>
-            ))}
+    <Card className="mt-4">
+      <Card.Header>
+        <strong>Categoria:</strong> {perguntaAtual.categoria}
+        <span className="float-end">Tempo: {timer}s</span>
+      </Card.Header>
+      <Card.Body>
+        <Card.Title>{perguntaAtual.enunciado}</Card.Title>
+        {perguntaAtual.alternativas.map((alt, i) => (
+          <Button
+            key={i}
+            className="d-block my-2"
+            variant={
+              resposta
+                ? alt === perguntaAtual.resposta
+                  ? "success"
+                  : alt === resposta
+                  ? "danger"
+                  : "outline-secondary"
+                : "outline-primary"
+            }
+            onClick={() => escolher(alt)}
+            disabled={!!resposta}
+          >
+            {alt}
+          </Button>
+        ))}
+        {resposta && (
+          <div className="mt-3 text-end">
+            <Button onClick={proxima}>Próxima</Button>
           </div>
-          <div style={{ minHeight: 40 }}>{feedback}</div>
-        </div>
-      ) : (
-        <div className="alert alert-info">
-          Quiz finalizado! Pontuação: <b>{pontos}</b><br/>
-          {pontos === perguntas.length * 15 ? "Você desbloqueou um conteúdo extra sobre plantas neuroprotetoras!" : "Tente novamente para aumentar a pontuação e desbloquear mais dicas."}
-        </div>
-      )}
-    </div>
+        )}
+        <ProgressBar className="mt-3" now={((indice + 1) / perguntas.length) * 100} label={`${indice + 1}/${perguntas.length}`} />
+      </Card.Body>
+    </Card>
   );
-}
+};
+
+export default QuizCientifico;

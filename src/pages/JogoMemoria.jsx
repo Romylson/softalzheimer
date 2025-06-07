@@ -1,100 +1,135 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+// src/components/Jogos/MemoriaJogo.jsx
+import React, { useEffect, useState } from "react";
+import { Card, Button } from "react-bootstrap";
 import imgBacopa from "../assets/bacopa.jpg";
-import imgWithania from "../assets/withania.jpg";
-import imgBacopaside from "../assets/bacopa.jpg"; // Exemplo, baixe/adicione as imagens!
-import imgWithanolide from "../assets/withania.jpg";
+import imgGinkgo from "../assets/ginkgo.jpg";
+import imgCamomila from "../assets/camomila.jpg"; // Exemplo, baixe/adicione as imagens!
+import imgLavanda from "../assets/lavanda.jpg";
+import imgAlecrim from "../assets/alecrim.jpg";
+import imgErvadoce from "../assets/erva-doce.jpg";
 
-const baralhoOriginal = [
-  { id: 1, tipo: "composto", texto: "Bacopasídeo", imagem: imgBacopaside, feedback: "Bacopasídeos: compostos bioativos da Bacopa monnieri, estudados para memória." },
-  { id: 2, tipo: "planta", texto: "Bacopa monnieri", imagem: imgBacopa, feedback: "Bacopa é uma planta ayurvédica para melhora cognitiva." },
-  { id: 3, tipo: "composto", texto: "Withanólido", imagem: imgWithanolide, feedback: "Withanólidos: presentes na Ashwagandha, potencial neuroprotetor." },
-  { id: 4, tipo: "planta", texto: "Withania somnifera", imagem: imgWithania, feedback: "Ashwagandha (Withania): tradicional da Índia, ação adaptógena." },
+import "./memoria.css"; // crie este arquivo para estilo personalizado
+
+const plantas = [
+  {
+    nome: "Camomila",
+    descricao: "Calmante natural, utilizada contra ansiedade e insônia.",
+    imagem: imgCamomila
+  },
+  {
+    nome: "Ginkgo biloba",
+    descricao: "Melhora a circulação cerebral e a memória.",
+    imagem: imgGinkgo
+  },
+  {
+    nome: "Bacopa monnieri",
+    descricao: "Estimulante cognitivo, usada em Ayurveda.",
+    imagem: imgBacopa
+  },
+  {
+    nome: "Lavanda",
+    descricao: "Propriedades ansiolíticas e relaxantes.",
+    imagem: imgLavanda
+  },
+  {
+    nome: "Alecrim",
+    descricao: "Estimulante da memória e antioxidante.",
+    imagem: imgAlecrim
+  },
+  {
+    nome: "Erva-doce",
+    descricao: "Calmante leve, usada em distúrbios digestivos e estresse.",
+    imagem: imgErvadoce
+  },
 ];
 
-function embaralhar(arr) {
-  return arr.map(a => [Math.random(), a]).sort().map(([, a]) => a);
-}
+const gerarCartas = () => {
+  const duplicadas = [...plantas, ...plantas];
+  return duplicadas
+    .map((planta) => ({ ...planta, id: Math.random(), virada: false, encontrada: false }))
+    .sort(() => 0.5 - Math.random());
+};
 
-export default function JogoMemoria() {
-  const [baralho, setBaralho] = useState(embaralhar(baralhoOriginal));
+const MemoriaJogo = () => {
+  const [cartas, setCartas] = useState([]);
   const [selecionadas, setSelecionadas] = useState([]);
-  const [acertos, setAcertos] = useState([]);
-  const [pontuacao, setPontuacao] = useState(0);
-  const [mensagem, setMensagem] = useState("");
-  const navigate = useNavigate();
+  const [jogadas, setJogadas] = useState(0);
+  const [acertos, setAcertos] = useState(0);
+  const [timer, setTimer] = useState(120);
 
-  function checaPar(i1, i2) {
-    const c1 = baralho[i1], c2 = baralho[i2];
-    return (
-      (c1.tipo === "composto" && c2.tipo === "planta" && c1.texto.includes("Bacopa") && c2.texto.includes("Bacopa")) ||
-      (c2.tipo === "composto" && c1.tipo === "planta" && c2.texto.includes("Bacopa") && c1.texto.includes("Bacopa")) ||
-      (c1.tipo === "composto" && c2.tipo === "planta" && c1.texto.includes("Withan") && c2.texto.includes("Withan")) ||
-      (c2.tipo === "composto" && c1.tipo === "planta" && c2.texto.includes("Withan") && c1.texto.includes("Withan"))
-    );
-  }
+  useEffect(() => {
+    setCartas(gerarCartas());
+  }, []);
 
-  function handleClick(idx) {
-    if (selecionadas.length === 2 || acertos.includes(idx)) return;
-    setSelecionadas([...selecionadas, idx]);
-  }
+  useEffect(() => {
+    const intervalo = setInterval(() => setTimer((t) => (t > 0 ? t - 1 : 0)), 1000);
+    return () => clearInterval(intervalo);
+  }, []);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (selecionadas.length === 2) {
-      const [i1, i2] = selecionadas;
-      if (checaPar(i1, i2)) {
-        setTimeout(() => {
-          setMensagem(
-            <>
-              <b>Acertou!</b> {baralho[i1].feedback}
-              <br />
-              {baralho[i2].feedback}
-            </>
+      setTimeout(() => {
+        const [c1, c2] = selecionadas;
+        if (c1.nome === c2.nome) {
+          setCartas((prev) =>
+            prev.map((c) => (c.nome === c1.nome ? { ...c, encontrada: true } : c))
           );
-          setAcertos([...acertos, i1, i2]);
-          setPontuacao(p => p + 20);
-          setSelecionadas([]);
-        }, 900);
-      } else {
-        setTimeout(() => {
-          setMensagem(<span className="text-danger"><b>Ops!</b> Tente associar o composto à planta correta.</span>);
-          setSelecionadas([]);
-        }, 1000);
-      }
+          setAcertos((a) => a + 1);
+        }
+        setCartas((prev) =>
+          prev.map((c) => (c.id === c1.id || c.id === c2.id ? { ...c, virada: false } : c))
+        );
+        setSelecionadas([]);
+        setJogadas((j) => j + 1);
+      }, 1000);
     }
-  }, [selecionadas, baralho, acertos]);
+  }, [selecionadas]);
+
+  const virarCarta = (id) => {
+    const carta = cartas.find((c) => c.id === id);
+    if (carta.virada || carta.encontrada || selecionadas.length === 2) return;
+    const novasCartas = cartas.map((c) => (c.id === id ? { ...c, virada: true } : c));
+    setCartas(novasCartas);
+    setSelecionadas([...selecionadas, { ...carta }]);
+  };
+
+  const reiniciar = () => {
+    setCartas(gerarCartas());
+    setSelecionadas([]);
+    setJogadas(0);
+    setAcertos(0);
+    setTimer(120);
+  };
 
   return (
-    <div className="container py-4">
-      <button className="btn btn-outline-secondary mb-3" onClick={() => navigate("/jogos")}>⬅️ Voltar para Jogos</button>
-      <h2>Jogo da Memória: Compostos & Plantas</h2>
-      <div>Pontuação: <b>{pontuacao}</b></div>
-      <div className="row row-cols-4 mb-3">
-        {baralho.map((card, idx) => (
-          <div key={idx} className="col mb-2">
-            <button
-              style={{ width: 120, height: 100, fontSize: 12, padding: 3 }}
-              className={`btn ${acertos.includes(idx) ? "btn-success" : "btn-outline-primary"}`}
-              disabled={acertos.includes(idx)}
-              onClick={() => handleClick(idx)}
-            >
-              {(selecionadas.includes(idx) || acertos.includes(idx)) ?
+    <div className="container text-center py-4">
+      <h2 className="mb-3">Jogo da Memória com Plantas Medicinais</h2>
+      <p>
+        Tempo restante: <strong>{timer}s</strong> | Jogadas: <strong>{jogadas}</strong> | Acertos: <strong>{acertos}</strong>
+      </p>
+      <div className="grid-memoria">
+        {cartas.map((carta) => (
+          <Card
+            key={carta.id}
+            className={`memoria-carta ${carta.virada || carta.encontrada ? "virada" : ""}`}
+            onClick={() => virarCarta(carta.id)}
+          >
+            <Card.Body>
+              {carta.virada || carta.encontrada ? (
                 <>
-                  <img src={card.imagem} alt={card.texto} style={{ width: 45, height: 45, objectFit: "cover" }} /><br />
-                  {card.texto}
+                  <img src={carta.imagem} alt={carta.nome} className="img-fluid" />
+                  <p className="mt-2"><strong>{carta.nome}</strong><br /><small>{carta.descricao}</small></p>
                 </>
-                : "?"}
-            </button>
-          </div>
+              ) : (
+                <div className="back">?</div>
+              )}
+            </Card.Body>
+          </Card>
         ))}
       </div>
-      <div style={{ minHeight: 50 }} className="mb-3">{mensagem}</div>
-      {acertos.length === baralho.length && (
-        <div className="alert alert-success mt-3">
-          <b>Parabéns!</b> Você desbloqueou uma curiosidade: <br />
-          <i>Plantas como Bacopa e Ashwagandha são estudadas em ensaios clínicos para Alzheimer devido aos seus efeitos neuroprotetores.</i>
-        </div>
-      )}
+      <Button variant="dark" className="mt-4" onClick={reiniciar}>Reiniciar</Button>
     </div>
   );
-}
+};
+
+export default MemoriaJogo;
