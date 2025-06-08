@@ -23,6 +23,8 @@ import { Outlet } from "react-router-dom";
 import AppHeader from "./components/AppHeader";
 import ArtigosCientificosTabs from "./components/Artigos/ArtigosCientificosTabs";
 import AssociacaoConceitos from "./pages/AssociacaoConceitos";
+import JogoClassificacao from "./pages/JogoClassificacao";
+
 
 
 function App() {
@@ -52,6 +54,8 @@ function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/artigos-cientificos" element={<ArtigosCientificosTabs />} />
           <Route path="/jogos/associacao" element={<AssociacaoConceitos />} />
+          <Route path="/jogos/classificacao" element={<JogoClassificacao />} />
+
 
 
 

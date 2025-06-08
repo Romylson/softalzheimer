@@ -1,0 +1,44 @@
+/* src/pages/cacaPalavras.css */
+.caca-palavras-container {
+  padding: 2rem;
+  text-align: center;
+}
+
+.grid {
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.linha {
+  display: flex;
+}
+
+.celula {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #ccc;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  margin: 1px;
+  background-color: white;
+}
+
+.celula.selecionado {
+  background-color: #007bff;
+  color: white;
+}
+
+.celula.encontrado {
+  background-color: #28a745;
+  color: white;
+}
+
+.palavras-lista {
+  margin-top: 2rem;
+}

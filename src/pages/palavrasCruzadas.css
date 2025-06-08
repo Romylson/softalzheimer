@@ -1,0 +1,65 @@
+/* palavrasCruzadas.css */
+
+.crossword-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.crossword-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(2rem, 2rem));
+  gap: 2px;
+  margin-bottom: 1rem;
+}
+
+.crossword-cell {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1rem;
+  background-color: #fff;
+  text-transform: uppercase;
+}
+
+.crossword-cell.filled {
+  background-color: #f0f0f0;
+}
+
+.clues-section {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin-top: 1rem;
+}
+
+.clues-section h4 {
+  margin-bottom: 0.5rem;
+  color: #007bff;
+}
+
+.clues-list {
+  list-style: none;
+  padding-left: 0;
+  font-size: 0.9rem;
+}
+
+.clues-list li {
+  margin-bottom: 0.3rem;
+  padding-left: 0.5rem;
+  position: relative;
+}
+
+.clues-list li::before {
+  content: "\2022";
+  color: #007bff;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}

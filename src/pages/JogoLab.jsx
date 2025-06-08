@@ -1,60 +1,131 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import imgBacopa from "../assets/bacopa.jpg";
-import imgWithania from "../assets/withania.jpg";
+import React, { useState, useEffect } from "react";
+import "./laboratorio.css";
+import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
+import acertoSom from "../assets/sounds/acerto.mp3";
+import erroSom from "../assets/sounds/erro.mp3";
 
-const amostras = [
-  { nome: "Bacopa monnieri", correto: true, imagem: imgBacopa, explicacao: "Extrato testado positivo para atividade colinérgica, relacionado à melhora cognitiva." },
-  { nome: "Solanum lycopersicum", correto: false, imagem: "", explicacao: "Tomateiro - não possui compostos neuroativos conhecidos." },
-  { nome: "Withania somnifera", correto: true, imagem: imgWithania, explicacao: "Ashwagandha apresentou ação adaptógena e neuroprotetora." },
-  { nome: "Capsicum annuum", correto: false, imagem: "", explicacao: "Pimenta comum, não testada para ação contra Alzheimer." }
+const compostos = [
+  {
+    nome: "Bacopasídeo",
+    planta: "Bacopa monnieri",
+    funcao: "Melhoria da memória"
+  },
+  {
+    nome: "Ginkgólido",
+    planta: "Ginkgo biloba",
+    funcao: "Aumento da cognição"
+  },
+  {
+    nome: "Apigenina",
+    planta: "Camomila",
+    funcao: "Efeito calmante e antioxidante"
+  },
+  {
+    nome: "Rosmarínico",
+    planta: "Alecrim",
+    funcao: "Neuroproteção"
+  },
+  {
+    nome: "Curcumina",
+    planta: "Cúrcuma longa",
+    funcao: "Anti-inflamatório cerebral"
+  }
 ];
 
-export default function JogoLab() {
-  const [escolhas, setEscolhas] = useState([]);
-  const [pontos, setPontos] = useState(0);
-  const [mensagem, setMensagem] = useState("");
-  const navigate = useNavigate();
+const DesafioLaboratorio = () => {
+  const [indiceAtual, setIndiceAtual] = useState(0);
+  const [resposta, setResposta] = useState("");
+  const [correto, setCorreto] = useState(null);
+  const [finalizado, setFinalizado] = useState(false);
+  const [tempoTotal, setTempoTotal] = useState(0);
 
-  function testarExtrato(i) {
-    setEscolhas([...escolhas, i]);
-    if (amostras[i].correto) {
-      setPontos(p => p + 20);
-      setMensagem(
-        <span className="text-success">✔️ Teste positivo! {amostras[i].explicacao}</span>
-      );
-    } else {
-      setMensagem(
-        <span className="text-danger">❌ Sem efeito neuroprotetor detectado. {amostras[i].explicacao}</span>
-      );
-    }
-    setTimeout(() => setMensagem(""), 2500);
+  const audioAcerto = new Audio(acertoSom);
+  const audioErro = new Audio(erroSom);
+
+  useEffect(() => {
+    const timer = setInterval(() => setTempoTotal((t) => t + 1), 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const verificarResposta = () => {
+    const comp = compostos[indiceAtual];
+    const certo = resposta.toLowerCase().includes(comp.planta.toLowerCase());
+    setCorreto(certo);
+    if (certo) audioAcerto.play();
+    else audioErro.play();
+
+    setTimeout(() => {
+      if (indiceAtual + 1 < compostos.length) {
+        setIndiceAtual(indiceAtual + 1);
+        setResposta("");
+        setCorreto(null);
+      } else {
+        setFinalizado(true);
+      }
+    }, 2000);
+  };
+
+  const reiniciar = () => {
+    setIndiceAtual(0);
+    setResposta("");
+    setCorreto(null);
+    setFinalizado(false);
+    setTempoTotal(0);
+  };
+
+  if (finalizado) {
+    return (
+      <div className="laboratorio container text-center mt-4">
+        <h2 className="text-success mb-3">Parabéns! Você completou o desafio.</h2>
+        <p className="fs-5">Tempo total: {tempoTotal} segundos</p>
+        <button className="btn btn-primary mt-3" onClick={reiniciar}>
+          Jogar novamente
+        </button>
+      </div>
+    );
   }
 
+  const compostoAtual = compostos[indiceAtual];
+
   return (
-    <div className="container py-4">
-      <button className="btn btn-outline-secondary mb-3" onClick={() => navigate("/jogos")}>⬅️ Voltar para Jogos</button>
-      <h2>Desafio do Laboratório: Triagem de Extratos</h2>
-      <div className="mb-2">Pontuação: <b>{pontos}</b></div>
-      <div className="row">
-        {amostras.map((amostra, i) => (
-          <div className="col-md-6 mb-2" key={i}>
-            <button
-              className={`btn w-100 mb-1 ${escolhas.includes(i) ? (amostra.correto ? "btn-success" : "btn-danger") : "btn-outline-primary"}`}
-              onClick={() => testarExtrato(i)}
-              disabled={escolhas.includes(i)}
-            >
-              Testar {amostra.nome} {amostra.imagem && <img src={amostra.imagem} alt="" style={{ width: 40, marginLeft: 10 }} />}
-            </button>
+    <div className="laboratorio container mt-4 animate-fade-in">
+      <h2 className="mb-4">🔬 Desafio do Laboratório</h2>
+      <div className="card p-4 shadow-lg">
+        <h4>{compostoAtual.nome}</h4>
+        <p><em>{compostoAtual.funcao}</em></p>
+
+        <input
+          type="text"
+          placeholder="Digite a planta de origem..."
+          className="form-control mt-3"
+          value={resposta}
+          onChange={(e) => setResposta(e.target.value)}
+        />
+
+        <button
+          className="btn btn-success mt-3"
+          onClick={verificarResposta}
+          disabled={resposta.trim() === ""}
+        >
+          Verificar
+        </button>
+
+        {correto !== null && (
+          <div className="mt-3">
+            {correto ? (
+              <p className="text-success fw-bold">
+                <FaCheckCircle /> Correto!
+              </p>
+            ) : (
+              <p className="text-danger fw-bold">
+                <FaTimesCircle /> Incorreto! Era {compostoAtual.planta}
+              </p>
+            )}
           </div>
-        ))}
+        )}
       </div>
-      <div style={{ minHeight: 40 }}>{mensagem}</div>
-      {escolhas.length >= amostras.length && (
-        <div className="alert alert-info mt-2">
-          {pontos > 0 ? "Parabéns! Você encontrou extratos ativos." : "Nenhum composto ativo encontrado!"}
-        </div>
-      )}
     </div>
   );
-}
+};
+
+export default DesafioLaboratorio;

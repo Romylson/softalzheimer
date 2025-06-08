@@ -1,0 +1,65 @@
+/* quebraCabeca.css */
+
+.quebra-cabeca {
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+}
+
+.tabuleiro {
+  display: grid;
+  gap: 2px;
+  border: 2px solid #ddd;
+  background-color: #ccc;
+  margin-top: 1rem;
+}
+
+.peca {
+  width: 100%;
+  padding-top: 100%; /* quadrado */
+  position: relative;
+  cursor: pointer;
+  border: 1px solid #999;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.peca.vazia {
+  background: #eee;
+  cursor: default;
+  border: none;
+}
+
+.peca::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.peca:not(.vazia)::before {
+  background-image: var(--bg-url);
+  background-position: var(--bg-x) var(--bg-y);
+  background-size: var(--bg-size);
+}
+
+select, button {
+  margin: 0 0.5rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .tabuleiro {
+    max-width: 100%;
+  }
+}
+
+.text-success {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}

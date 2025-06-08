@@ -1,53 +1,49 @@
-import React from "react";
-import { Crossword } from "@jaredreisinger/react-crossword";
-//import "@jaredreisinger/react-crossword/dist/styles.css";
-import eucaliptoImg from "../assets/eucalipto.jpg"; // use seu caminho real
+import React, { useState } from "react";
+import "./palavrasCruzadas.css";
 
-const data = {
-  across: {
-    1: {
-      clue: "Flor amarela calmante, usada como chá.",
-      answer: "CAMOMILA",
-      row: 0,
-      col: 0,
-    },
-    3: {
-      clue: "Planta roxa usada em sachês e aromaterapia.",
-      answer: "LAVANDA",
-      row: 2,
-      col: 0,
-    },
-  },
-  down: {
-    2: {
-      clue: "Árvore de folhas aromáticas, usada em inalação.",
-      answer: "EUCALIPTO",
-      row: 0,
-      col: 2,
-    },
-  },
-};
+const palavras = [
+  { dica: "Planta calmante com flores amarelas.", resposta: "CAMOMILA" },
+  { dica: "Usada como antioxidante natural.", resposta: "GINKGO" },
+  { dica: "Ajuda na memória, nome científico é Bacopa monnieri.", resposta: "BACOPA" },
+];
 
-export default function PalavrasCruzadasGrid() {
+const gerarLetras = (palavra) => palavra.split("").map((l, i) => ({ id: i, letra: l, selecionada: false }));
+
+export default function JogoPalavrasCruzadas() {
+  const [respostas, setRespostas] = useState(Array(palavras.length).fill(""));
+  const [verificadas, setVerificadas] = useState(Array(palavras.length).fill(false));
+
+  const handleChange = (idx, valor) => {
+    const nova = [...respostas];
+    nova[idx] = valor.toUpperCase();
+    setRespostas(nova);
+  };
+
+  const verificar = () => {
+    const resultado = respostas.map((resp, idx) => resp === palavras[idx].resposta);
+    setVerificadas(resultado);
+  };
+
   return (
-    <div style={{ display: "flex", alignItems: "flex-start", gap: 48, padding: 32 }}>
-      <div style={{ minWidth: 350 }}>
-        <Crossword data={data} />
-        <div style={{ marginTop: 24 }}>
-          <b>Dica:</b> Clique no número da grade para ver a dica, escreva as respostas e tente acertar todas!
-        </div>
+    <div className="palavras-cruzadas container">
+      <h2 className="titulo">Palavras Cruzadas: Plantas Medicinais</h2>
+      <p className="instrucoes">Preencha as palavras com base nas dicas abaixo. Clique em "Verificar" para conferir suas respostas.</p>
+      <div className="grade">
+        {palavras.map((p, idx) => (
+          <div key={idx} className="bloco">
+            <p className="dica"><strong>Dica:</strong> {p.dica}</p>
+            <input
+              type="text"
+              className={`campo ${verificadas[idx] ? "correto" : ""}`}
+              maxLength={p.resposta.length}
+              value={respostas[idx]}
+              onChange={(e) => handleChange(idx, e.target.value)}
+            />
+            {verificadas[idx] && <p className="feedback">✔️ Correto!</p>}
+          </div>
+        ))}
       </div>
-      <div style={{ minWidth: 200, textAlign: "center" }}>
-        <img
-          src={eucaliptoImg}
-          alt="Eucalipto"
-          style={{ width: 180, borderRadius: 10, marginBottom: 8, boxShadow: "0 4px 12px #aaa" }}
-        />
-        <div style={{ fontWeight: "bold", fontSize: 18, marginBottom: 8 }}>Eucalipto</div>
-        <div style={{ fontSize: 14, color: "#666" }}>
-          Planta famosa por seu aroma e uso em inalações para respiração.
-        </div>
-      </div>
+      <button className="botao-verificar" onClick={verificar}>Verificar</button>
     </div>
   );
 }

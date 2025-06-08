@@ -1,0 +1,66 @@
+/* src/styles/classificacao.css */
+.classificacao-container {
+  padding: 2rem;
+  background-color: #f0f4f8;
+  min-height: 100vh;
+}
+
+.classificacao-flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.itens, .categorias {
+  flex: 1;
+  min-width: 300px;
+}
+
+.item-arrastavel {
+  background-color: #fff;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: grab;
+  transition: background 0.3s;
+}
+
+.item-arrastavel:hover {
+  background-color: #e9f5ff;
+}
+
+.dropzone {
+  background-color: #fff;
+  border: 2px dashed #ccc;
+  padding: 1rem;
+  min-height: 150px;
+  border-radius: 10px;
+}
+
+.dropzone h5 {
+  margin-bottom: 0.5rem;
+}
+
+.dropzone ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropzone li {
+  padding: 0.5rem;
+  margin-bottom: 0.3rem;
+  border-radius: 4px;
+}
+
+.certo {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.errado {
+  background-color: #f8d7da;
+  color: #721c24;
+}

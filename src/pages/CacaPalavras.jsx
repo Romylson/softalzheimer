@@ -1,44 +1,91 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+// src/pages/JogoCacaPalavras.jsx
+import React, { useState, useEffect } from "react";
+import "./cacaPalavras.css";
 
-const PALAVRAS = ["LAVANDA", "BOLDO", "ALECRIM", "EUCALIPTO", "CAMOMILA"];
-const GRADE = [
-  ["L", "B", "O", "L", "D", "O", "M"],
-  ["A", "V", "A", "N", "D", "A", "A"],
-  ["C", "A", "M", "O", "M", "I", "L"],
-  ["E", "U", "C", "A", "L", "I", "P"],
-  ["A", "L", "E", "C", "R", "I", "M"],
-  ["P", "T", "O", "B", "O", "L", "D"],
-  ["O", "L", "A", "V", "A", "N", "D"]
-];
+const palavras = ["CAMOMILA", "BACOPA", "LAVANDA", "GINKGO", "SALVIA", "ASHWAGANDHA", "MELISSA", "CURCUMA"];
+const gridSize = 12;
 
-export default function CacaPalavras() {
-  const [encontradas, setEncontradas] = useState([]);
-  const [entrada, setEntrada] = useState("");
-  const navigate = useNavigate();
-
-  function checarPalavra() {
-    const palavra = entrada.toUpperCase().trim();
-    if (PALAVRAS.includes(palavra) && !encontradas.includes(palavra)) {
-      setEncontradas([...encontradas, palavra]);
+const gerarGrade = () => {
+  const grid = Array.from({ length: gridSize }, () => Array(gridSize).fill(""));
+  palavras.forEach((palavra, index) => {
+    const row = index;
+    for (let i = 0; i < palavra.length; i++) {
+      grid[row][i] = palavra[i];
     }
-    setEntrada("");
+  });
+  // Preencher os vazios com letras aleatórias
+  for (let i = 0; i < gridSize; i++) {
+    for (let j = 0; j < gridSize; j++) {
+      if (!grid[i][j]) {
+        grid[i][j] = String.fromCharCode(65 + Math.floor(Math.random() * 26));
+      }
+    }
   }
+  return grid;
+};
+
+export default function JogoCacaPalavras() {
+  const [grade, setGrade] = useState([]);
+  const [selecionado, setSelecionado] = useState([]);
+  const [encontradas, setEncontradas] = useState([]);
+
+  useEffect(() => {
+    setGrade(gerarGrade());
+  }, []);
+
+  const toggleLetra = (i, j) => {
+    const existe = selecionado.some((pos) => pos[0] === i && pos[1] === j);
+    const nova = existe
+      ? selecionado.filter((pos) => !(pos[0] === i && pos[1] === j))
+      : [...selecionado, [i, j]];
+
+    setSelecionado(nova);
+
+    const palavraAtual = nova.map(([x, y]) => grade[x][y]).join("").toUpperCase();
+    if (palavras.includes(palavraAtual) && !encontradas.includes(palavraAtual)) {
+      setEncontradas([...encontradas, palavraAtual]);
+      setSelecionado([]);
+    }
+  };
 
   return (
-    <div className="container py-4">
-      <button className="btn btn-outline-secondary mb-3" onClick={() => navigate("/jogos")}>⬅️ Voltar para Jogos</button>
-      <h2>Caça-palavras: Plantas Medicinais</h2>
-      <div style={{ fontFamily: "monospace", fontSize: 26 }}>
-        {GRADE.map((linha, i) => (
-          <div key={i}>{linha.join(" ")}</div>
+    <div className="caca-palavras-container">
+      <h2>Caça-palavras: Plantas Medicinais 🌿</h2>
+      <p>Clique nas letras para formar palavras. Palavras encontradas ficarão destacadas.</p>
+
+      <div className="grid">
+        {grade.map((linha, i) => (
+          <div key={i} className="linha">
+            {linha.map((letra, j) => {
+              const isSelecionado = selecionado.some((pos) => pos[0] === i && pos[1] === j);
+              const isEncontrado = encontradas.some((palavra) =>
+                palavra.includes(letra) &&
+                palavras.includes(palavra)
+              );
+              return (
+                <div
+                  key={j}
+                  className={`celula ${isSelecionado ? "selecionado" : ""} ${isEncontrado ? "encontrado" : ""}`}
+                  onClick={() => toggleLetra(i, j)}
+                >
+                  {letra}
+                </div>
+              );
+            })}
+          </div>
         ))}
       </div>
-      <input className="form-control mt-3" style={{ width: 200, display: "inline-block" }}
-        value={entrada} onChange={e => setEntrada(e.target.value)} placeholder="Digite uma planta..." />
-      <button className="btn btn-primary ms-2" onClick={checarPalavra}>Buscar</button>
-      <div className="mt-2">Encontradas: {encontradas.map(p => <span className="badge bg-success me-1" key={p}>{p}</span>)}</div>
-      {encontradas.length === PALAVRAS.length && <div className="alert alert-success mt-3">Parabéns! Você achou todas!</div>}
+
+      <div className="palavras-lista mt-4">
+        <h5>Palavras a encontrar:</h5>
+        <ul>
+          {palavras.map((p, idx) => (
+            <li key={idx} style={{ textDecoration: encontradas.includes(p) ? "line-through" : "none" }}>
+              {p}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }

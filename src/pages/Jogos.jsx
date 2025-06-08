@@ -9,6 +9,7 @@ import palavrasImg from "../assets/camomila.jpg";
 import cacaImg from "../assets/caca-palavras.jpg";
 import xadrezImg from "../assets/xadrez.jpg";
 import quebraImg from "../assets/quebra-cabeca.jpg";
+import imgClassificacao  from "../assets/classificacao.jpg";
 
 export default function Jogos() {
   return (
@@ -58,6 +59,7 @@ export default function Jogos() {
             <div className="card-body">
               <h5 className="card-title">Desafio do Laboratório</h5>
               <p className="card-text">Classifique extratos, compostos e efeitos terapêuticos em um jogo de lógica.</p>
+              <Link to="/jogos/lab" className="btn btn-primary">Jogar</Link>
             </div>
           </Link>
         </div>
@@ -68,6 +70,7 @@ export default function Jogos() {
             <div className="card-body">
               <h5 className="card-title">Palavras Cruzadas</h5>
               <p className="card-text">Complete o grid com nomes de plantas e conceitos sobre Alzheimer.</p>
+              <Link to="/jogos/palavras-cruzadas" className="btn btn-warning">Jogar</Link>
             </div>
           </Link>
         </div>
@@ -78,6 +81,7 @@ export default function Jogos() {
             <div className="card-body">
               <h5 className="card-title">Caça-palavras</h5>
               <p className="card-text">Encontre nomes de compostos e espécies vegetais em uma grade interativa.</p>
+              <Link to="/jogos/caca-palavras" className="btn btn-warning">Jogar</Link>
             </div>
           </Link>
         </div>
@@ -88,6 +92,7 @@ export default function Jogos() {
             <div className="card-body">
               <h5 className="card-title">Xadrez</h5>
               <p className="card-text">Treine seu raciocínio lógico e memória com o clássico jogo de xadrez.</p>
+              <Link to="/jogos/xadrez" className="btn btn-primary">Jogar</Link>
             </div>
           </Link>
         </div>
@@ -98,6 +103,17 @@ export default function Jogos() {
             <div className="card-body">
               <h5 className="card-title">Quebra-cabeça</h5>
               <p className="card-text">Monte imagens relacionadas à farmacobotânica e tratamentos naturais.</p>
+              <Link to="/jogos/quebra-cabeca" className="btn btn-warning">Jogar</Link>
+            </div>
+          </Link>
+        </div>
+        <div className="col-md-6 col-lg-4">
+          <Link to="/jogos/classificacao" className="card shadow text-decoration-none h-100">
+            <img src={imgClassificacao} alt="Classificação" className="card-img-top" style={{ height: 160, objectFit: "cover" }} />
+            <div className="card-body">
+              <h5 className="card-title">Classificação</h5>
+              <p className="card-text">Arraste conceitos e substâncias para suas categorias corretas.</p>
+              <Link to="/jogos/classificacao" className="btn btn-warning">Jogar</Link>
             </div>
           </Link>
         </div>
