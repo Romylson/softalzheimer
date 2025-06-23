@@ -7,7 +7,7 @@ export default async function handler(req, res) {
   }
 
   const { q = "alzheimer" } = req.query;
-  const url = `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=${encodeURIComponent(q)}&retmax=3&sort=pub+date&retmode=json&api_key=${NCBI_API_KEY}`;
+  const url = `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=${encodeURIComponent(q)}&retmax=50&sort=pub+date&retmode=json&api_key=${NCBI_API_KEY}`;
 
   try {
     const response = await fetch(url);
