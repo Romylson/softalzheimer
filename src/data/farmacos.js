@@ -1,29 +1,29 @@
 // src/data/farmacos.js
-import imgDonepezila from "../assets/donepezila.jpg";
-import imgMemantina from "../assets/memantina.jpg";
-import imgLecanemabe from "../assets/lecanemabe.jpg";
-import imgRivastigmina from "../assets/rivastigmina.jpg"
-import imgGalantamina from "../assets/galantamina.jpg"
-import imgBacopa from "../assets/bacopa.jpg"
+import imgDonepezila from "../assets/comfect.jpg";
+import imgMemantina from "../assets/zider.png";
+import imgLecanemabe from "../assets/leqembi.jpg";
+import imgRivastigmina from "../assets/exelon.jpg"
+import imgGalantamina from "../assets/reminyl.jpg"
+import imgTacrina from "../assets/tacrina.png"
 // ...adicione mais se quiser
 
 export const farmacos = [
 {
-    nome: "Donepezila",
+    nome: "Donepezila(Comfect)",
     categoria: "Inibidor de Colinesterase",
     descricao: "Inibidor da acetilcolinesterase usado em estágios leves a moderados.",
     imagem: imgDonepezila,
     alvo: "Colinesterase"
   },
   {
-    nome: "Memantina",
+    nome: "Memantina (Zider)",
     categoria: "Modulador Glutamatérgico",
     descricao: "Modulador do receptor NMDA para sintomas moderados a graves.",
     imagem: imgMemantina,
     alvo: "Receptor Glutamatérgico"
   },
   {
-    nome: "Lecanemab",
+    nome: "Lecanemab (Leqembi)",
     categoria: "Anticorpo Monoclonal",
     descricao: "Anticorpo monoclonal indicado para remoção de placas beta-amiloides.",
     imagem: imgLecanemabe,
@@ -31,27 +31,29 @@ export const farmacos = [
   },
   
   {
-    nome: "Rivastigmina",
+    nome: "Rivastigmina (Exelon)",
     categoria: "Inibidor de Colinesterase",
     descricao: "Opção para quadros leves/moderados, oral ou adesivo.",
     imagem: imgRivastigmina,
     alvo: "Colinesterase"
   },
   {
-    nome: "Galantamina",
+    nome: "Galantamina (Reminyl/Razadyne) ",
     categoria: "Inibidor de Colinesterase",
     descricao: "Outro inibidor, com possível ação nicotínica.",
     imagem: imgGalantamina,
     alvo: "Colinesterase"
   },
+  // Novo fármaco
   {
-    nome: "Bacopa monnieri",
-    categoria: "Fitoterápico",
-    descricao: "Planta usada por possível efeito cognitivo.",
-    imagem: imgBacopa,
-    alvo: "Fitoterápico"
-  },
-]
+    nome: "Tacrina (Cognex)",
+    categoria: "Inibidor de Colinesterase",
+    principioAtivo: "Tacrina",
+    imagem: imgTacrina ,
+    alvo: "Colinesterase",
+    descricao: "Foi o primeiro inibidor da colinesterase usado para Alzheimer, com limitações devido à hepatotoxicidade."
+  }
+  ]
   export const ALVOS = {
   Colinesterase: {
     nome: "Colinesterase",

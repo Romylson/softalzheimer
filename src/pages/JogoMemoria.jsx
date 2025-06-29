@@ -1,14 +1,14 @@
-// src/components/Jogos/MemoriaJogo.jsx
 import React, { useEffect, useState } from "react";
 import { Card, Button } from "react-bootstrap";
+
 import imgBacopa from "../assets/bacopa.jpg";
 import imgGinkgo from "../assets/ginkgo.jpg";
-import imgCamomila from "../assets/camomila.jpg"; // Exemplo, baixe/adicione as imagens!
+import imgCamomila from "../assets/camomila.jpg";
 import imgLavanda from "../assets/lavanda.jpg";
 import imgAlecrim from "../assets/alecrim.jpg";
 import imgErvadoce from "../assets/erva-doce.jpg";
 
-import "./memoria.css"; // crie este arquivo para estilo personalizado
+import "./memoria.css";
 
 const plantas = [
   {
@@ -40,13 +40,18 @@ const plantas = [
     nome: "Erva-doce",
     descricao: "Calmante leve, usada em distúrbios digestivos e estresse.",
     imagem: imgErvadoce
-  },
+  }
 ];
 
 const gerarCartas = () => {
   const duplicadas = [...plantas, ...plantas];
   return duplicadas
-    .map((planta) => ({ ...planta, id: Math.random(), virada: false, encontrada: false }))
+    .map((planta) => ({
+      ...planta,
+      id: Math.random(),
+      virada: false,
+      encontrada: false
+    }))
     .sort(() => 0.5 - Math.random());
 };
 
@@ -62,7 +67,9 @@ const MemoriaJogo = () => {
   }, []);
 
   useEffect(() => {
-    const intervalo = setInterval(() => setTimer((t) => (t > 0 ? t - 1 : 0)), 1000);
+    const intervalo = setInterval(() => {
+      setTimer((t) => (t > 0 ? t - 1 : 0));
+    }, 1000);
     return () => clearInterval(intervalo);
   }, []);
 
@@ -72,12 +79,16 @@ const MemoriaJogo = () => {
         const [c1, c2] = selecionadas;
         if (c1.nome === c2.nome) {
           setCartas((prev) =>
-            prev.map((c) => (c.nome === c1.nome ? { ...c, encontrada: true } : c))
+            prev.map((c) =>
+              c.nome === c1.nome ? { ...c, encontrada: true } : c
+            )
           );
           setAcertos((a) => a + 1);
         }
         setCartas((prev) =>
-          prev.map((c) => (c.id === c1.id || c.id === c2.id ? { ...c, virada: false } : c))
+          prev.map((c) =>
+            c.id === c1.id || c.id === c2.id ? { ...c, virada: false } : c
+          )
         );
         setSelecionadas([]);
         setJogadas((j) => j + 1);
@@ -88,7 +99,9 @@ const MemoriaJogo = () => {
   const virarCarta = (id) => {
     const carta = cartas.find((c) => c.id === id);
     if (carta.virada || carta.encontrada || selecionadas.length === 2) return;
-    const novasCartas = cartas.map((c) => (c.id === id ? { ...c, virada: true } : c));
+    const novasCartas = cartas.map((c) =>
+      c.id === id ? { ...c, virada: true } : c
+    );
     setCartas(novasCartas);
     setSelecionadas([...selecionadas, { ...carta }]);
   };
@@ -105,8 +118,10 @@ const MemoriaJogo = () => {
     <div className="container text-center py-4">
       <h2 className="mb-3">Jogo da Memória com Plantas Medicinais</h2>
       <p>
-        Tempo restante: <strong>{timer}s</strong> | Jogadas: <strong>{jogadas}</strong> | Acertos: <strong>{acertos}</strong>
+        Tempo restante: <strong>{timer}s</strong> | Jogadas:{" "}
+        <strong>{jogadas}</strong> | Acertos: <strong>{acertos}</strong>
       </p>
+
       <div className="grid-memoria">
         {cartas.map((carta) => (
           <Card
@@ -117,17 +132,22 @@ const MemoriaJogo = () => {
             <Card.Body>
               {carta.virada || carta.encontrada ? (
                 <>
-                  <img src={carta.imagem} alt={carta.nome} className="img-fluid" />
-                  <p className="mt-2"><strong>{carta.nome}</strong><br /><small>{carta.descricao}</small></p>
+                  <img src={carta.imagem} alt={carta.nome} className="img-carta" />
+                  <p className="nome-carta"><strong>{carta.nome}</strong></p>
+                  <p className="descricao-carta">{carta.descricao}</p>
                 </>
               ) : (
-                <div className="back">?</div>
+                <div className="verso-carta">?</div>
               )}
             </Card.Body>
           </Card>
+
         ))}
       </div>
-      <Button variant="dark" className="mt-4" onClick={reiniciar}>Reiniciar</Button>
+
+      <Button variant="dark" className="mt-4" onClick={reiniciar}>
+        Reiniciar
+      </Button>
     </div>
   );
 };

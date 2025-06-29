@@ -5,7 +5,7 @@ import "./classificacao.css";
 const categorias = {
   "Plantas Medicinais": ["Camomila", "Ginkgo biloba", "Bacopa monnieri"],
   "Fármacos": ["Donepezila", "Memantina"],
-  "Conceitos": ["Beta-amiloide", "Colinesterase"]
+  "Fisiopatologia": ["Beta-amiloide", "Colinesterase"]
 };
 
 const itens = Object.values(categorias).flat().sort(() => Math.random() - 0.5);

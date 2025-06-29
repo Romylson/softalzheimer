@@ -1,0 +1,80 @@
+
+.labirinto-container {
+  max-width: 800px;
+  margin: 20px auto;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.labirinto-grade {
+  display: grid;
+  grid-template-columns: repeat(8, 40px);
+  gap: 2px;
+  justify-content: center;
+  margin: 20px auto;
+  background-color: #e6f2ff;
+  padding: 10px;
+  border: 2px solid #007bff;
+}
+
+.celula {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.parede {
+  background-color: #007bff;
+}
+
+.final {
+  background-color: #28a745;
+}
+
+.cerebro {
+  width: 30px;
+  height: 30px;
+}
+
+.controles {
+  margin: 15px auto;
+}
+
+.controles button {
+  margin: 5px;
+  padding: 10px 15px;
+  font-size: 18px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-proximo,
+.btn-reiniciar {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.ranking {
+  text-align: left;
+  margin-top: 20px;
+  padding: 10px;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}

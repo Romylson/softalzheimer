@@ -11,7 +11,7 @@ export default function PlantasMedicinais() {
 
   // Filtro de busca
   const plantasFiltradas = plantas.filter(planta => {
-    const texto = `${planta.nome} ${planta.nome_cientifico} ${planta.origem} ${planta.usos}`.toLowerCase();
+    const texto = `${planta.nome} ${planta.nome_cientifico} ${planta.origem} ${planta.usos} ${planta.efeitosColaterais} ${planta.contraindicacoes}`.toLowerCase();
     return texto.includes(busca.toLowerCase());
   });
 

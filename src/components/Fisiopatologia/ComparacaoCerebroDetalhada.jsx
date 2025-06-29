@@ -20,17 +20,17 @@ export default function ComparacaoCerebroDetalhada() {
           <div className="fw-semibold mt-2">{t("alzheimer_brain")}</div>
         </div>
       </div>
-      <div className="my-3" style={{maxWidth: 800, margin: "0 auto", textAlign: "left"}}>
+     {/* <div className="my-3" style={{maxWidth: 800, margin: "0 auto", textAlign: "left"}}>
         <ul style={{fontSize: "1.1rem"}}>
           <li><b>{t("brain_volume")}</b> {t("brain_volume_desc")}</li>
           <li><b>{t("hippocampus")}</b> {t("hippocampus_desc")}</li>
           <li><b>{t("cortex")}</b> {t("cortex_desc")}</li>
           <li><b>{t("sulci_gyri")}</b> {t("sulci_gyri_desc")}</li>
         </ul>
-        <div className="mt-3 text-secondary" style={{fontSize: "1rem"}}>
+        <div className="mt-3 text-secondary" style={{fontSize: "1rem"}}> 
           <b>{t("hint")}:</b> {t("early_changes_hint")}
         </div>
-      </div>
+      </div>*/}
     </div>
   );
 }

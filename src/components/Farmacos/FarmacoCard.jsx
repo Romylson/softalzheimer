@@ -3,7 +3,12 @@ import React from "react";
 export default function FarmacoCard({ farmaco, children, selecionado }) {
   return (
     <>
-      <img src={farmaco.imagem} alt={farmaco.nome} className="card-img-top" style={{height: 150, objectFit: "cover"}} />
+      <img src={farmaco.imagem} alt={farmaco.nome} className="card-img-top" style={{
+        width: "100%",
+        height: "400px",        // Aumente aqui
+        objectFit: "cover",
+        objectPosition: "center"
+      }} />
       <div className="card-body">
         <h5 className="card-title">{farmaco.nome}</h5>
         <p className="card-text">{farmaco.descricao}</p>

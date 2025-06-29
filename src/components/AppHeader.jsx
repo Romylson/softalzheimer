@@ -57,12 +57,12 @@ export default function AppHeader() {
           marginLeft: 32,
           fontWeight: "bold",
           fontSize: 22,
-          color: "#2962ff",
+          color: "#000000",
           letterSpacing: 0.5,
           fontFamily: "inherit",
           textShadow: "0 1px 2px #0002"
         }}>
-          SoftAlzheimer
+          Plantamente
         </div>
       </div>
     </header>

@@ -10,6 +10,7 @@ import cacaImg from "../assets/caca-palavras.jpg";
 import xadrezImg from "../assets/xadrez.jpg";
 import quebraImg from "../assets/quebra-cabeca.jpg";
 import imgClassificacao  from "../assets/classificacao.jpg";
+import imgCaminhoNeuronal from "../assets/caminhoneuronal.jpg"
 
 export default function Jogos() {
   return (
@@ -114,6 +115,16 @@ export default function Jogos() {
               <h5 className="card-title">Classificação</h5>
               <p className="card-text">Arraste conceitos e substâncias para suas categorias corretas.</p>
               <Link to="/jogos/classificacao" className="btn btn-warning">Jogar</Link>
+            </div>
+          </Link>
+        </div>
+        <div className="col-md-6 col-lg-4">
+          <Link to="/jogos/caminhoneuronal" className="card shadow text-decoration-none h-100">
+            <img src={imgCaminhoNeuronal} alt="Caminho Neuronal" className="card-img-top" style={{ height: 160, objectFit: "cover" }} />
+            <div className="card-body">
+              <h5 className="card-title">Caminho Neuronal</h5>
+              <p className="card-text">Treine suas habilidadees com o labirinto.</p>
+              <Link to="/jogos/caminhoneuronal" className="btn btn-warning">Jogar</Link>
             </div>
           </Link>
         </div>

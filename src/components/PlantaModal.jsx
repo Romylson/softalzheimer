@@ -1,6 +1,7 @@
 import React from "react";
 import MapaOrigem from "./MapaOrigem";
 import { useTranslation } from "react-i18next";
+import "/src/pages/Dashboard.css";
 
 export default function PlantaModal({ planta, onClose }) {
   const { t } = useTranslation();
@@ -24,8 +25,8 @@ export default function PlantaModal({ planta, onClose }) {
               <MapaOrigem planta={planta} />
             </div>
             <div className="col-md-7">
-              <div>
-                <b>{t("nome_cientifico") || "Nome científico"}:</b> {planta.nome_cientifico}
+              <div className="nome_cientifico">
+                <b >{t("nome_cientifico") || "Nome científico"}:</b> {planta.nome_cientifico}
               </div>
               <div>
                 <b>{t("origem") || "Origem"}:</b> {planta.origem}
@@ -34,7 +35,16 @@ export default function PlantaModal({ planta, onClose }) {
                 <b>{t("mecanismos") || "Mecanismos"}:</b> {planta.mecanismos}
               </div>
               <div>
+                <b>{t("Modos de Uso") || "Modos de Uso"}:</b> {planta.modosUso}
+              </div>
+              <div>
                 <b>{t("usos_tradicionais") || "Usos tradicionais"}:</b> {planta.usos}
+              </div>
+              <div>
+                <b>{t("Efeitos Colaterais") || "Efeitos colaterais"}:</b> {planta.efeitosColaterais}
+              </div>
+              <div>
+                <b>{t("Contraindicações") || "Contraindicações"}:</b> {planta.contraindicacoes}
               </div>
 
               {/* ALERTAS DE INTERAÇÕES */}

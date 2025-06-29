@@ -8,26 +8,31 @@ const compostos = [
   {
     nome: "Bacopasídeo",
     planta: "Bacopa monnieri",
+    sinonimos: ["bacopa"] ,
     funcao: "Melhoria da memória"
   },
   {
     nome: "Ginkgólido",
     planta: "Ginkgo biloba",
+    sinonimos: ["ginkgo", "ginko"],
     funcao: "Aumento da cognição"
   },
   {
     nome: "Apigenina",
     planta: "Camomila",
+    sinonimos: ["camomila"],
     funcao: "Efeito calmante e antioxidante"
   },
   {
     nome: "Rosmarínico",
     planta: "Alecrim",
+    sinonimos: ["alecrim", "rosmarino"],
     funcao: "Neuroproteção"
   },
   {
     nome: "Curcumina",
     planta: "Cúrcuma longa",
+    sinonimos: ["curcuma", "cúrcuma"],
     funcao: "Anti-inflamatório cerebral"
   }
 ];
@@ -49,7 +54,11 @@ const DesafioLaboratorio = () => {
 
   const verificarResposta = () => {
     const comp = compostos[indiceAtual];
-    const certo = resposta.toLowerCase().includes(comp.planta.toLowerCase());
+    const respostaNormalizada = resposta.trim().toLowerCase();
+    const plantaNormalizada = comp.planta.toLowerCase();
+    const sinonimos = comp.sinonimos || [];
+    const certo = respostaNormalizada.includes(plantaNormalizada) || sinonimos.some(s => respostaNormalizada.includes(s));
+
     setCorreto(certo);
     if (certo) audioAcerto.play();
     else audioErro.play();

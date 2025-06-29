@@ -4,6 +4,9 @@ import ComparacaoCerebroDetalhada from "../components/Fisiopatologia/ComparacaoC
 import PlacasETauAnimacao from "../components/Fisiopatologia/PlacasETauAnimacao";
 import TimelineProgressao from "../components/Fisiopatologia/TimelineProgressao";
 import ComparacaoCerebro from "../components/Fisiopatologia/ComparacaoCerebro";
+import RegioesAfetadas from "../components/Fisiopatologia/RegioesAfetadas";
+
+
 
 export default function FisiopatologiaPage() {
   const { t } = useTranslation();
@@ -13,6 +16,7 @@ export default function FisiopatologiaPage() {
        <ComparacaoCerebro />
       {/* Use aqui a comparação detalhada */}
       <ComparacaoCerebroDetalhada />
+      <RegioesAfetadas />
       
       <hr className="my-5" />
       <PlacasETauAnimacao />

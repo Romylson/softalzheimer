@@ -2,26 +2,24 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Dashboard.css";
 import { useTranslation } from "react-i18next";
-import IntroBlock from "../components/IntroBlock"; // bloco institucional, se desejar
+import IntroBlock from "../components/IntroBlock";
 import DiferenciaisInovadores from "../components/DiferenciaisInovadores";
 import BannerDiferenciais from "../components/BannerDiferenciais";
-
-// ...
-
-
-
+import NoticiasAvancosAlzheimer from "../components/NoticiasAvancosAlzheimer";
 export default function Dashboard() {
-  
   const location = useLocation();
   const { t } = useTranslation();
 
   return (
-    
-    <div className="dashboard-layout">
-    
+    <div className="dashboard-layout" style={{ overflowX: "auto", backgroundColor: "#d4edda" }}>
       {/* Sidebar */}
-      <aside className="dashboard-sidebar">
-        <h2 className="sidebar-title">{t("app_name")}</h2>
+      <aside className="dashboard-sidebar" style={{ backgroundColor: "#000" }}>
+        <img
+          src="/src/assets/images/Plantamente.jpg"
+          alt="PlantaMente Logo"
+          style={{ width: "100%", maxWidth: "120px", margin: "0 auto", display: "block" }}
+        />
+        <h2 className="sidebar-title" style={{ fontStyle: "italic", color: "white" }}>PlantaMente</h2>
         <nav>
           <ul className="sidebar-list">
             <li>
@@ -56,7 +54,7 @@ export default function Dashboard() {
             </li>
             <li>
               <Link className={`sidebar-link${location.pathname === "/artigos-cientificos" ? " active" : ""}`} to="/artigos-cientificos">
-                {t("scientific_articles")}
+                <em>{t("scientific_articles")}</em>
               </Link>
             </li>
           </ul>
@@ -65,38 +63,39 @@ export default function Dashboard() {
 
       {/* Conteúdo principal */}
       <main className="dashboard-main">
-        
         <BannerDiferenciais />
         <div className="text-center my-4">
           <h1 className="display-4 fw-bold">
-            {t("welcome_dashboard")} <span className="text-warning">{t("app_name")}</span>
+            {t("welcome_dashboard")} <span className="text-warning">PlantaMente</span>
           </h1>
+          
           <p className="lead mt-2">{t("dashboard_desc")}</p>
         </div>
+
         {/* Cards */}
         <div className="dashboard-cards">
           <div className="dashboard-card green">
             <img src="/images/planta.avif" alt={t("plants")} className="dashboard-img" />
             <div className="icon mb-2">🌱</div>
-            <h2>{t("plants")}</h2>
-            
+            <h2><em>{t("plants")}</em></h2>
           </div>
           <div className="dashboard-card yellow">
             <img src="/images/farmaco.jpeg" alt={t("drugs")} className="dashboard-img" />
             <div className="icon mb-2">💊</div>
-            <h2>{t("drugs")}</h2>
-            
+            <h2><em>{t("drugs")}</em></h2>
           </div>
           <div className="dashboard-card blue">
             <img src="/images/fisiopatologia.avif" alt={t("physiopathology")} className="dashboard-img" />
             <div className="icon mb-2">🧠</div>
-            <h2>{t("physiopathology")}</h2>
-            
+            <h2><em>{t("physiopathology")}</em></h2>
           </div>
+          
         </div>
-        {/* Bloco institucional */}
+
         <IntroBlock />
-      <DiferenciaisInovadores />
+        <NoticiasAvancosAlzheimer />
+        <DiferenciaisInovadores />
+        
       </main>
     </div>
   );

@@ -20,6 +20,11 @@ export default function PlantaCard({ planta, onClick }) {
         <p style={{ fontSize: 13, margin: "6px 0" }}>
           <b>Origem:</b> {planta.origem}
         </p>
+         <p><strong>Modos de uso:</strong> {planta.modosUso}</p>
+        <p><strong>Mecanismo de ação:</strong> {planta.mecanismos}</p>
+        <p><strong>Efeitos Colaterais:</strong> {planta.efeitosColaterais}</p>
+        <p><strong>Contraindicações:</strong> {planta.contraindicacoes}</p>
+
         <div style={{ fontSize: 13 }}>{planta.usos}</div>
       </div>
     </div>

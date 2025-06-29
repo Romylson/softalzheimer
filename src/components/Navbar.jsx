@@ -14,10 +14,11 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary px-4 shadow-sm" style={{ height: 60 }}>
+    <nav className="navbar navbar-expand-lg navbar-dark bg-black px-4 shadow-sm"
+      style={{ height: 60, backgroundColor: "#90ee90", color: "#000" }}>
       <div className="container-fluid">
         <Link to="/" className="navbar-brand fw-bold fs-4" style={{ letterSpacing: "0.5px" }}>
-          SoftAlzheimer
+          Plantamente
         </Link>
         <div className="d-flex align-items-center ms-auto gap-3">
           {/* Dropdown de idiomas */}
