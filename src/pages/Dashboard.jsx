@@ -14,10 +14,8 @@ export default function Dashboard() {
     <div className="dashboard-layout" style={{ overflowX: "auto", backgroundColor: "#d4edda" }}>
       {/* Sidebar */}
       <aside className="dashboard-sidebar" style={{ backgroundColor: "#000" }}>
-        <img
-          src="/src/assets/images/Plantamente.jpg"
-          alt="PlantaMente Logo"
-          style={{ width: "100%", maxWidth: "120px", margin: "0 auto", display: "block" }}
+        <img src="/images/plantamente.jpg" alt="PlantaMente Logo" 
+        style={{ width: "100%", maxWidth: "120px", margin: "0 auto", display: "block" }}
         />
         <h2 className="sidebar-title" style={{ fontStyle: "italic", color: "white" }}>PlantaMente</h2>
         <nav>
