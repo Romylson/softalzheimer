@@ -5,7 +5,7 @@ const resources = {
   pt: {
     translation: {
       // Gerais
-      app_name: "SoftAlzheimer",
+      app_name: "Plantamente",
       login: "Entrar",
       change_language: "Alterar idioma",
 
@@ -261,7 +261,7 @@ const resources = {
   },
   en: {
     translation: {
-      app_name: "SoftAlzheimer",
+      app_name: "Plantamente",
       login: "Login",
       change_language: "Change language",
 
@@ -494,7 +494,7 @@ const resources = {
   },
   es: {
     translation: {
-      app_name: "SoftAlzheimer",
+      app_name: "Plantamente",
       login: "Entrar",
       change_language: "Cambiar idioma",
 
