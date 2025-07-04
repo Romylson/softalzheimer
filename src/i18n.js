@@ -155,7 +155,7 @@ const resources = {
       top10_ranking: "Top 10 Ranking",
       enter_name_for_ranking: "Digite seu nome para o ranking:",
       error_saving_ranking: "Erro ao salvar ranking.",
-      memory_game_desc: "Treine sua memória com o jogo educativo do SoftAlzheimer.",
+      memory_game_desc: "Treine sua memória com o jogo educativo do Plantamente.",
 
       // Cérebro 3D
       brain3d_desc: "Explore o cérebro humano em 3D, veja as áreas afetadas pelo Alzheimer.",
@@ -218,7 +218,7 @@ const resources = {
       // Bloco Inteiro
       introblock: {
         titulo: "Explore e Aprenda sobre Alzheimer",
-        p1: "O SoftAlzheimer é uma plataforma educativa que visa apoiar profissionais da saúde, estudantes e interessados na compreensão da Doença de Alzheimer.",
+        p1: "O Plantamente é uma plataforma educativa que visa apoiar profissionais da saúde, estudantes e interessados na compreensão da Doença de Alzheimer.",
         p2: "Reunimos recursos científicos e visuais, desde fisiopatologia, tratamentos convencionais, alternativas naturais até jogos educativos.",
         p3: "Aproveite os módulos interativos para aprimorar seu conhecimento e facilitar a prática clínica.",
         prof_saude_titulo: "Profissionais de Saúde",
@@ -392,7 +392,7 @@ const resources = {
       top10_ranking: "Top 10 Ranking",
       enter_name_for_ranking: "Enter your name for the ranking:",
       error_saving_ranking: "Error saving ranking.",
-      memory_game_desc: "Train your memory with the SoftAlzheimer educational game.",
+      memory_game_desc: "Train your memory with the Plantamente educational game.",
       //Cerebro-3D
       brain3d_desc: "Explore the human brain in 3D, see the areas affected by Alzheimer's.",
       cortex: "Cortex",
@@ -454,7 +454,7 @@ const resources = {
 
       introblock: {
         titulo: "Explore and Learn about Alzheimer's",
-        p1: "SoftAlzheimer is an educational platform that aims to support health professionals, students, and those interested in understanding Alzheimer's Disease.",
+        p1: "Plantamente is an educational platform that aims to support health professionals, students, and those interested in understanding Alzheimer's Disease.",
         p2: "We bring together scientific and visual resources, from physiopathology, conventional treatments, natural alternatives, to educational games.",
         p3: "Take advantage of the interactive modules to enhance your knowledge and facilitate clinical practice.",
         prof_saude_titulo: "Healthcare Professionals",
@@ -628,7 +628,7 @@ const resources = {
       top10_ranking: "Top 10 Ranking",
       enter_name_for_ranking: "Introduce tu nombre para el ranking:",
       error_saving_ranking: "Error al guardar el ranking.",
-      memory_game_desc: "Entrena tu memoria con el juego educativo de SoftAlzheimer.",
+      memory_game_desc: "Entrena tu memoria con el juego educativo de Plantamente.",
       //Cerebro-3D
       brain3d_desc: "Explora el cerebro humano en 3D y observa las áreas afectadas por el Alzheimer.",
       cortex: "Corteza",
@@ -694,7 +694,7 @@ const resources = {
 
       introblock: {
         titulo: "Explora y aprende sobre el Alzheimer",
-        p1: "SoftAlzheimer es una plataforma educativa que apoya a profesionales de la salud, estudiantes e interesados en comprender la enfermedad de Alzheimer.",
+        p1: "Plantamente es una plataforma educativa que apoya a profesionales de la salud, estudiantes e interesados en comprender la enfermedad de Alzheimer.",
         p2: "Reunimos recursos científicos y visuales, desde fisiopatología, tratamientos convencionales, alternativas naturales y juegos educativos.",
         p3: "Aprovecha los módulos interactivos para mejorar tu conocimiento y facilitar la práctica clínica.",
         prof_saude_titulo: "Profesionales de la Salud",
