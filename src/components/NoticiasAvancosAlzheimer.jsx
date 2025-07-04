@@ -144,6 +144,12 @@ const eventos = [
     data: "06 a 07 de outubro de 2025",
     local:"Las Vegas, Estados Unidos",
     link: "https://braindisorders.neuroconferences.com/"
+  },
+  {
+    nome: "Congresso Internacional de Neurociência Translacional",
+    data: "06 a 08 de novembro de 2025",
+    local:"Evento Online",
+    link: "https://doity.com.br/congressocinets"
   }
 ];
 
