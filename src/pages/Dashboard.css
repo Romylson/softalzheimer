@@ -98,10 +98,13 @@ header,
 
 .dashboard-img {
   width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 10px;
+  height: auto; /* Permite mostrar toda a imagem */
+  object-fit: contain; /* Mostra a imagem inteira dentro do espaço */
+  max-height: 250px; /* opcional: controla a altura máxima */
+  display: block;
+  margin: 0 auto;
 }
+
 
 .dashboard-card h2 {
   margin-top: 15px;

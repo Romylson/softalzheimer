@@ -73,7 +73,7 @@ export default function Dashboard() {
         {/* Cards */}
         <div className="dashboard-cards">
           <div className="dashboard-card green">
-            <img src="/images/planta.avif" alt={t("plants")} className="dashboard-img" />
+            <img src="/images/planta.jpg" alt={t("plants")} className="dashboard-img" />
             <div className="icon mb-2">🌱</div>
             <h2><em>{t("plants")}</em></h2>
           </div>
@@ -83,7 +83,7 @@ export default function Dashboard() {
             <h2><em>{t("drugs")}</em></h2>
           </div>
           <div className="dashboard-card blue">
-            <img src="/images/fisiopatologia.avif" alt={t("physiopathology")} className="dashboard-img" />
+            <img src="/images/fisiopatologia.png" alt={t("physiopathology")} className="dashboard-img" />
             <div className="icon mb-2">🧠</div>
             <h2><em>{t("physiopathology")}</em></h2>
           </div>
