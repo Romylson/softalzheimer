@@ -14,7 +14,7 @@ export default function PlacasETauAnimacao() {
         {/* Bloco βeta-Amiloide */}
         <div className="text-center">
           <img
-            src="/src/assets/beta-amiloide.png"
+            src="/images/beta-amiloide.png"
             alt="βeta-Amiloide"
             style={{ width: 400, height: 400, objectFit: "contain" }}
           />
@@ -25,7 +25,7 @@ export default function PlacasETauAnimacao() {
         {/* Bloco Tau */}
         <div className="text-center">
           <img
-            src="/src/assets/tau.png"
+            src="/images/tau.png"
             alt="Tau"
             style={{ width: 400, height: 400, objectFit: "contain" }}
           />

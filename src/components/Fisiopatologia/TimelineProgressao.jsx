@@ -14,7 +14,7 @@ export default function TimelineProgresso() {
         {/* Leve */}
         <div className="text-center">
           <img
-            src="/src/assets/leve.png"
+            src="/images/leve.png"
             alt="Estágio Leve"
             style={{ width: 400, height: 400, objectFit: "contain" }}
           />
@@ -25,7 +25,7 @@ export default function TimelineProgresso() {
         {/* Moderada */}
         <div className="text-center">
           <img
-            src="/src/assets/moderada.png"
+            src="/images/moderada.png"
             alt="Estágio Moderado"
             style={{ width: 400, height: 400, objectFit: "contain" }}
           />
@@ -36,7 +36,7 @@ export default function TimelineProgresso() {
         {/* Grave */}
         <div className="text-center">
           <img
-            src="/src/assets/grave.png"
+            src="/images/grave.png"
             alt="Estágio Grave"
             style={{ width: 400, height: 400, objectFit: "contain" }}
           />
