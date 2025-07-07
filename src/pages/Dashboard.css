@@ -243,123 +243,49 @@ body::-webkit-scrollbar {
   margin: 0.5rem 0;
 }
 
-/* ===================================================
-   Força o topo verde a ficar igual no desktop & mobile
-   =================================================== */
-
-/* Se o seu wrapper for .header-banner, adapte aqui: */
-.header-banner {
-  display: flex !important;
-  flex-direction: row !important;       /* força em linha */
-  align-items: center !important;       /* alinha verticalmente */
-  justify-content: space-between !important; /* espaço entre grupos */
-  background-color: #6be06b !important; /* seu verde */
-  padding: 0.5rem 1rem !important;      /* reduz um pouco o padding */
-  width: 100% !important;
-  box-sizing: border-box !important;
-}
-
-/* Grupo de logos: flex e gap */
-.header-banner .header-logos {
-  display: flex !important;
-  align-items: center !important;
-  gap: 0.5rem !important;
-}
-
-/* Reduz as logos para caber no mobile */
-.header-banner .header-logos img {
-  max-height: 40px !important;
-  width: auto !important;
-}
-
-/* Mantém o título no centro (ou próximo) */
-.header-banner .site-title {
-  flex: 1 1 auto !important;
-  text-align: center !important;
-  font-size: 1.25rem !important;  /* um pouco menor no mobile */
-  margin: 0 !important;
-  color: #000 !important;
-}
-
-/* Controles (idioma + entrar) alinhados à direita */
-.header-banner .header-controls {
-  display: flex !important;
-  align-items: center !important;
-  gap: 0.5rem !important;
-}
-
-/* Ajustes gerais que só valem em telas até 575px */
+/* ───────────── Mobile (<576px) ───────────── */
 @media (max-width: 575.98px) {
-  .header-banner {
-    padding: 0.4rem 0.5rem !important;
-  }
-  .header-banner .site-title {
-    font-size: 1.1rem !important;
-  }
-  .header-banner .header-logos img {
-    max-height: 32px !important;
-  }
-  .header-banner .header-controls button,
-  .header-banner .header-controls .dropdown-toggle {
-    padding: 0.25rem 0.5rem !important;
-    font-size: 0.9rem !important;
-  }
-}
-/* ================================================
-   Ajustes FINAIS só para Mobile (<576px)
-   ================================================ */
-@media (max-width: 575.98px) {
-  /* 1) Esconde completamente a sidebar preta */
+  /* Remove sidebar e faz layout fluir vertical */
   .dashboard-sidebar {
     display: none !important;
   }
-
-  /* 2) Mostra o nav móvel no lugar da sidebar (se ainda não estiver visível) */
-  .dashboard-mobile-nav {
-    display: flex !important;
-    justify-content: center;
-    background-color: #000 !important;
-    padding: 0.5rem 0 !important;
-  }
-
-  /* 3) Faz o layout principal fluir em bloco, sem margem ou padding lateral */
   .dashboard-layout {
     display: block !important;
   }
   .dashboard-main {
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 1rem !important;
+    padding: 16px !important;
   }
 
-  /* 4) Ajusta o banner verde do topo para caber em uma linha só */
+  /* Topo verde permanece em linha, só reduz os espaçamentos */
   .header-banner {
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    padding: 0.4rem 0.5rem !important;
+    padding: 8px 16px !important;
+  }
+  .header-logos {
+    gap: 8px !important;
+  }
+  .header-logos .divider {
+    display: none !important;
   }
   .header-logos img {
-    max-height: 32px !important;
-    margin: 0 0.25rem !important;
+    max-height: 40px !important;
   }
   .site-title {
-    font-size: 1.1rem !important;
+    font-size: 1.2rem !important;
+  }
+  .header-controls {
+    gap: 8px !important;
   }
   .header-controls button,
   .header-controls .dropdown-toggle {
-    padding: 0.25rem 0.5rem !important;
     font-size: 0.9rem !important;
+    padding: 4px 8px !important;
   }
 
-  /* 5) Empilha o restante do conteúdo conforme a wrapper que você já criou */
-  .dashboard-mobile-only-content {
-    background-color: #d4edda !important;
-    padding: 1rem 0 !important;
-  }
+  /* Empilha os cards verticalmente */
   .dashboard-cards {
     display: flex !important;
     flex-direction: column !important;
-    gap: 1rem !important;
+    gap: 16px !important;
+    margin-bottom: 24px !important;
   }
 }
