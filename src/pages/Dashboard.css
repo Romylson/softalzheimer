@@ -305,3 +305,61 @@ body::-webkit-scrollbar {
     font-size: 0.9rem !important;
   }
 }
+/* ================================================
+   Ajustes FINAIS só para Mobile (<576px)
+   ================================================ */
+@media (max-width: 575.98px) {
+  /* 1) Esconde completamente a sidebar preta */
+  .dashboard-sidebar {
+    display: none !important;
+  }
+
+  /* 2) Mostra o nav móvel no lugar da sidebar (se ainda não estiver visível) */
+  .dashboard-mobile-nav {
+    display: flex !important;
+    justify-content: center;
+    background-color: #000 !important;
+    padding: 0.5rem 0 !important;
+  }
+
+  /* 3) Faz o layout principal fluir em bloco, sem margem ou padding lateral */
+  .dashboard-layout {
+    display: block !important;
+  }
+  .dashboard-main {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 1rem !important;
+  }
+
+  /* 4) Ajusta o banner verde do topo para caber em uma linha só */
+  .header-banner {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0.4rem 0.5rem !important;
+  }
+  .header-logos img {
+    max-height: 32px !important;
+    margin: 0 0.25rem !important;
+  }
+  .site-title {
+    font-size: 1.1rem !important;
+  }
+  .header-controls button,
+  .header-controls .dropdown-toggle {
+    padding: 0.25rem 0.5rem !important;
+    font-size: 0.9rem !important;
+  }
+
+  /* 5) Empilha o restante do conteúdo conforme a wrapper que você já criou */
+  .dashboard-mobile-only-content {
+    background-color: #d4edda !important;
+    padding: 1rem 0 !important;
+  }
+  .dashboard-cards {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+}
