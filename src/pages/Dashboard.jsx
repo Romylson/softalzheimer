@@ -14,7 +14,7 @@ export default function Dashboard() {
 
   return (
     <div className="dashboard-layout">
-      {/* Sidebar (desktop) */}
+      {/* sidebar desktop */}
       <aside className="dashboard-sidebar">
         <img
           src="/images/plantamente.jpg"
@@ -86,7 +86,7 @@ export default function Dashboard() {
         </nav>
       </aside>
 
-      {/* Mobile-only nav (<576px) */}
+      {/* nav para celular (<576px) */}
       <nav className="dashboard-mobile-nav">
         <Link to="/dashboard">{t("dashboard")}</Link>
         <Link to="/fisiopatologia">{t("physiopathology")}</Link>
@@ -97,7 +97,7 @@ export default function Dashboard() {
         <Link to="/artigos-cientificos">{t("scientific_articles")}</Link>
       </nav>
 
-      {/* Conteúdo principal */}
+      {/* conteúdo principal */}
       <main className="dashboard-main">
         <BannerDiferenciais />
 
@@ -109,7 +109,7 @@ export default function Dashboard() {
           <p>{t("dashboard_desc")}</p>
         </div>
 
-        {/* Cards */}
+        {/* cards empilhados no mobile */}
         <div className="dashboard-cards">
           <div className="dashboard-card green">
             <img

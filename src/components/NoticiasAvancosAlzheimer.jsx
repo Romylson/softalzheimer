@@ -148,7 +148,8 @@ export default function NoticiasAvancosAlzheimer() {
           <div className="col-md-4" key={i}>
             <Card className="p-3 shadow-sm h-100">
               <h5 className="text-primary fw-bold">{t(n.titulo)}</h5>
-              <small className="text-muted">{n.data}</small>
+              <small className="text-muted">{t(n.data)}</small>
+
               <p className="mt-2 small">{t(n.descricao)}</p>
             </Card>
           </div>

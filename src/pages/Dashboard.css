@@ -238,41 +238,45 @@ body::-webkit-scrollbar {
 /* --------------------------------------------------------
    só abaixo de 576px (mobile) — desktop fica intacto
    -------------------------------------------------------- */
+/* ===== só em mobile (<576px) ===== */
 @media (max-width: 575.98px) {
-  /* Layout vira coluna */
+  /* deixa tudo flow vertical */
   .dashboard-layout {
     display: block;
   }
 
-  /* Esconde sidebar e mostra nav mobile */
+  /* esconde sidebar desktop */
   .dashboard-sidebar {
     display: none;
   }
+
+  /* mostra nav móvel */
   .dashboard-mobile-nav {
     display: flex;
     flex-wrap: wrap;
     background: #000;
-    padding: 0.5rem;
+    padding: 0.5rem 0;
   }
   .dashboard-mobile-nav a {
     flex: 1 1 50%;
+    text-align: center;
     color: #fff;
     text-decoration: none;
-    text-align: center;
     padding: 0.5rem 0;
     border-bottom: 1px solid #444;
   }
-  .dashboard-mobile-nav a:nth-child(odd) {
-    border-right: 1px solid #444;
+  /* remove borda direita no último da linha */
+  .dashboard-mobile-nav a:nth-child(2n) {
+    border-right: none;
   }
 
-  /* Ajusta main-content para mobile */
+  /* ajusta conteúdo principal */
   .dashboard-main {
     padding: 1rem;
     margin-top: 0.5rem;
   }
 
-  /* Cards em coluna única no mobile */
+  /* empilha os cards em coluna única */
   .dashboard-cards {
     display: flex;
     flex-direction: column;
