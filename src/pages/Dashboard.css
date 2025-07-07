@@ -60,10 +60,18 @@ header,
 .navbar,
 .topbar,
 .topnav {
-  background-color: #6cd67a !important; /* altera header para preto */
-  color: rgb(119, 230, 125);
+  background-color: #83e289 !important; /* altera header para preto */
+  color: rgb(113, 201, 113);
+}
+.navbar {
+  background-color: #000 !important;
 }
 
+/* se seus links de navegação estiverem com cor clara,
+   deixe-os escuros para contrastar no verde */
+.navbar .nav-link {
+  color: #64ca6c !important;
+}
 /* MAIN */
 .dashboard-main {
   flex-grow: 1;
@@ -235,48 +243,65 @@ body::-webkit-scrollbar {
   margin: 0.5rem 0;
 }
 
-/* ====== Só abaixo de 576px (mobile) ====== */
+/* ===================================================
+   Força o topo verde a ficar igual no desktop & mobile
+   =================================================== */
+
+/* Se o seu wrapper for .header-banner, adapte aqui: */
+.header-banner {
+  display: flex !important;
+  flex-direction: row !important;       /* força em linha */
+  align-items: center !important;       /* alinha verticalmente */
+  justify-content: space-between !important; /* espaço entre grupos */
+  background-color: #6be06b !important; /* seu verde */
+  padding: 0.5rem 1rem !important;      /* reduz um pouco o padding */
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Grupo de logos: flex e gap */
+.header-banner .header-logos {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+}
+
+/* Reduz as logos para caber no mobile */
+.header-banner .header-logos img {
+  max-height: 40px !important;
+  width: auto !important;
+}
+
+/* Mantém o título no centro (ou próximo) */
+.header-banner .site-title {
+  flex: 1 1 auto !important;
+  text-align: center !important;
+  font-size: 1.25rem !important;  /* um pouco menor no mobile */
+  margin: 0 !important;
+  color: #000 !important;
+}
+
+/* Controles (idioma + entrar) alinhados à direita */
+.header-banner .header-controls {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+}
+
+/* Ajustes gerais que só valem em telas até 575px */
 @media (max-width: 575.98px) {
-  /* força layout vertical */
-  .dashboard-layout {
-    display: block !important;
+  .header-banner {
+    padding: 0.4rem 0.5rem !important;
   }
-
-  /* esconde a sidebar desktop */
-  .dashboard-sidebar {
-    display: none !important;
+  .header-banner .site-title {
+    font-size: 1.1rem !important;
   }
-
-  /* mostra menu móvel */
-  .dashboard-mobile-nav {
-    display: flex !important;
-    flex-wrap: wrap;
-    background: #000;
-    padding: 0.5rem 0;
+  .header-banner .header-logos img {
+    max-height: 32px !important;
   }
-  .dashboard-mobile-nav a {
-    flex: 1 1 50%;
-    text-align: center;
-    color: #fff;
-    text-decoration: none;
-    padding: 0.5rem 0;
-    border-bottom: 1px solid #444;
-  }
-  .dashboard-mobile-nav a:nth-child(2n) {
-    border-right: none;
-  }
-
-  /* ajusta o main */
-  .dashboard-main {
-    padding: 1rem !important;
-    margin-top: 0.5rem !important;
-  }
-
-  /* empilha cards verticalmente */
-  .dashboard-cards {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 1rem !important;
-    margin-bottom: 1.5rem !important;
+  .header-banner .header-controls button,
+  .header-banner .header-controls .dropdown-toggle {
+    padding: 0.25rem 0.5rem !important;
+    font-size: 0.9rem !important;
   }
 }

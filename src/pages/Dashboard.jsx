@@ -100,6 +100,8 @@ export default function Dashboard() {
 
       {/* conteúdo principal */}
       <main className="dashboard-main">
+         {/* === MOVA O VERDE PARA DENTRO DESSA DIV === */}
+       <div className="dashboard-content">
         <BannerDiferenciais />
 
         <div className="intro text-center">
@@ -139,7 +141,9 @@ export default function Dashboard() {
             <div className="icon">🧠</div>
             <h2>{t("physiopathology")}</h2>
           </div>
+         </div>
         </div>
+        
 
         <IntroBlock />
         <NoticiasAvancosAlzheimer />
