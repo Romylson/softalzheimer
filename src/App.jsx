@@ -25,6 +25,7 @@ import ArtigosCientificosTabs from "./components/Artigos/ArtigosCientificosTabs"
 import AssociacaoConceitos from "./pages/AssociacaoConceitos";
 import JogoClassificacao from "./pages/JogoClassificacao";
 import CaminhoNeuronal from './pages/CaminhoNeuronal.jsx';
+import Layout from "./components/Layout.jsx";
 
 
 
@@ -65,6 +66,7 @@ function App() {
 
         </Routes>
       </div>
+      
     </Router>
     </main>
       <Footer />
