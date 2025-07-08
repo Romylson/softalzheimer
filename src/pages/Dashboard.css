@@ -7,6 +7,7 @@ body {
   background-color: #f3f5f3;
   overflow-y: auto;
   overflow-x: hidden;
+  min-width: 1024px; 
 }
 
 .dashboard-layout {
@@ -145,10 +146,10 @@ header {
 }
 
 /* MEDIA QUERY: MOBILE */
-@media (max-width: 575.98px) {
+/*@media (max-width: 575.98px) {
   .dashboard-layout {
     display: block;
-  }
+  }*/
 
   .dashboard-sidebar {
     display: none;
