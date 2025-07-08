@@ -1,40 +1,46 @@
-/* ----------------- GERAL ----------------- */
-body, html {
+/* Dashboard CSS atualizado */
+
+/* GERAL */
+body {
   margin: 0;
-  padding: 0;
   font-family: Arial, sans-serif;
+  background-color: #f3f5f3;
+  overflow-y: auto;
   overflow-x: hidden;
-  background-color: #87e287;
 }
 
 .dashboard-layout {
   display: flex;
-  flex-direction: row;
   min-height: 100vh;
+  background-color: #87e287;
+  overflow: hidden;
 }
 
-/* ----------------- SIDEBAR SEMPRE VISÍVEL ----------------- */
+/* SIDEBAR */
 .dashboard-sidebar {
-  width: 220px;
   background-color: #000;
-  color: #74da74;
-  padding: 20px 10px;
+  color: #fff;
+  width: 240px;
+  padding: 1rem;
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex-shrink: 0;
+  gap: 20px;
 }
 
 .dashboard-sidebar .logo {
-  width: 120px;
-  margin-bottom: 15px;
+  display: block;
+  margin: 0 auto 1rem;
+  max-width: 120px;
 }
 
 .sidebar-title {
   font-style: italic;
-  color: #6cd863;
-  font-size: 20px;
-  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: #87e287;
 }
 
 .dashboard-sidebar nav ul {
@@ -44,184 +50,176 @@ body, html {
 }
 
 .dashboard-sidebar nav li + li {
-  margin-top: 8px;
+  margin-top: 0.5rem;
 }
 
 .dashboard-sidebar nav a {
-  color: #6cd863;
+  color: #87e287;
   text-decoration: none;
   display: block;
-  padding: 8px;
-  border-radius: 4px;
-  font-size: 15px;
+  padding: 10px;
 }
 
 .dashboard-sidebar nav a.active,
 .dashboard-sidebar nav a:hover {
-  background-color: #6cd863;
-  color: #000;
+  color: #fff;
 }
 
-/* ----------------- MAIN CONTENT ----------------- */
+/* MAIN */
 .dashboard-main {
   flex: 1;
-  padding: 24px;
-  overflow-y: auto;
+  padding: 2rem;
   background-color: #87e287;
 }
 
-.intro {
-  text-align: center;
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
   margin-bottom: 2rem;
 }
 
+.dashboard-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-card.green {
+  border-top: 4px solid #22c55e;
+}
+
+.dashboard-card.yellow {
+  border-top: 4px solid #fbbf24;
+}
+
+.dashboard-card.blue {
+  border-top: 4px solid #06b6d4;
+}
+
+.dashboard-card .dashboard-img {
+  width: 100%;
+  max-height: 330px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.dashboard-card .icon {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+}
+
+/* TOPO VERDE */
+header {
+  background-color: #6be06b !important;
+  border-bottom: 1px solid #ececec;
+  box-shadow: 0 2px 8px #0001;
+  padding: 10px 0;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* INTRO */
 .intro h1 {
   font-size: 2rem;
   margin-bottom: 0.5rem;
 }
 
 .highlight {
-  color: #ffa500;
-  font-weight: bold;
+  color: #ff9800;
 }
 
-.dashboard-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
-  margin-top: 30px;
+.intro p {
+  margin-bottom: 2rem;
 }
 
-
-.dashboard-card {
-  background: #f0f7f0;
-  padding: 16px;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+/* MOBILE NAV */
+.dashboard-mobile-nav {
+  display: none;
 }
 
-.dashboard-card .dashboard-img {
-  width: 100%;
-  max-height: 220px;
-  object-fit: contain;
-  margin-bottom: 12px;
-}
-
-.dashboard-card .icon {
-  font-size: 24px;
-  margin: 10px 0;
-}
-
-.dashboard-card h2 {
-  font-size: 18px;
-  margin-top: 10px;
-}
-
-/* VARIAÇÃO DE COR POR CARD */
-.dashboard-card.green { border-top: 5px solid #22c55e; }
-.dashboard-card.yellow { border-top: 5px solid #fbbf24; }
-.dashboard-card.blue { border-top: 5px solid #06b6d4; }
-
-/* ----------------- RODAPÉ ----------------- */
-footer {
-  text-align: center;
-  padding: 12px;
-  background-color: #6cd863;
-  color: #7ccf87;
-}
-
-/* ----------------- REMOVER SCROLLBAR ----------------- */
-body::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-}
-
-body {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-/* Responsividade completa para mobile */
+/* MEDIA QUERY: MOBILE */
 @media (max-width: 575.98px) {
   .dashboard-layout {
-    display: block !important;
+    display: block;
   }
 
   .dashboard-sidebar {
-    display: none !important;
+    display: none;
   }
 
   .dashboard-main {
-    padding: 1rem;
+    padding: 16px;
   }
 
   .dashboard-cards {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
   }
 
   .dashboard-card {
-    width: 100% !important;
-  }
-
-  .intro h1 {
-    font-size: 1.5rem;
-    text-align: center;
-  }
-
-  .intro p {
-    font-size: 1rem;
-    text-align: center;
-  }
-
-  .dashboard-img {
-    max-height: 180px;
-    object-fit: contain;
-  }
-
-  .dashboard-card .icon {
-    font-size: 1.8rem;
-  }
-
-  .header-banner {
-    flex-direction: column !important;
-    gap: 8px !important;
-  }
-
-  .header-logos img {
-    max-height: 50px !important;
+    max-width: 100%;
+    width: 100%;
   }
 
   .dashboard-mobile-nav {
-    display: flex !important;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-    background-color: #6cd863;
-    padding: 10px;
-    position: sticky;
-    top: 0;
-    z-index: 99;
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5rem;
+    background: #000;
   }
 
   .dashboard-mobile-nav a {
-    color: #000;
+    color: #87e287;
+    font-weight: bold;
     text-decoration: none;
-    padding: 6px 12px;
-    border-radius: 8px;
-    background-color: #bfffc3;
-    font-size: 0.9rem;
   }
 
-  /* Corrige quebra de texto do Diferenciais Inovadores */
-  .diferenciais-box,
-  .intro,
-  .banner-diferenciais {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+  .header-banner,
+  .site-title,
+  .header-controls,
+  .header-logos {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header-logos {
+    gap: 8px;
+  }
+
+  .header-logos img {
+    max-height: 40px;
+  }
+
+  .site-title {
+    font-size: 1.2rem;
   }
 }
 
+/* RODAPÉ */
+footer {
+  background-color: #74d374;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: auto;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+}
