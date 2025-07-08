@@ -2,7 +2,6 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Dashboard.css";
 import { useTranslation } from "react-i18next";
-
 import IntroBlock from "../components/IntroBlock";
 import DiferenciaisInovadores from "../components/DiferenciaisInovadores";
 import BannerDiferenciais from "../components/BannerDiferenciais";
@@ -14,8 +13,7 @@ export default function Dashboard() {
 
   return (
     <div className="dashboard-layout">
-      
-      {/* sidebar desktop */}
+      {/* sidebar sempre visível inclusive no mobile */}
       <aside className="dashboard-sidebar">
         <img
           src="/images/plantamente.jpg"
@@ -87,31 +85,17 @@ export default function Dashboard() {
         </nav>
       </aside>
 
-      {/* nav para celular (<576px) */}
-      <nav className="dashboard-mobile-nav">
-        <Link to="/dashboard">{t("dashboard")}</Link>
-        <Link to="/fisiopatologia">{t("physiopathology")}</Link>
-        <Link to="/plantas">{t("plants")}</Link>
-        <Link to="/farmacos">{t("drugs")}</Link>
-        <Link to="/jogos">{t("educational_games")}</Link>
-        <Link to="/cerebro3d">{t("brain3d")}</Link>
-        <Link to="/artigos-cientificos">{t("scientific_articles")}</Link>
-      </nav>
-
       {/* conteúdo principal */}
       <main className="dashboard-main">
-       
         <BannerDiferenciais />
 
         <div className="intro text-center">
           <h1>
-            {t("welcome_dashboard")}{" "}
-            <span className="highlight">PlantaMente</span>
+            {t("welcome_dashboard")} <span className="highlight">PlantaMente</span>
           </h1>
           <p>{t("dashboard_desc")}</p>
         </div>
 
-        {/* cards empilhados no mobile */}
         <div className="dashboard-cards">
           <div className="dashboard-card green">
             <img
@@ -140,9 +124,7 @@ export default function Dashboard() {
             <div className="icon">🧠</div>
             <h2>{t("physiopathology")}</h2>
           </div>
-         </div>
-        
-        
+        </div>
 
         <IntroBlock />
         <NoticiasAvancosAlzheimer />

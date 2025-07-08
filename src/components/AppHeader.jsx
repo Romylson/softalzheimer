@@ -7,7 +7,7 @@ export default function AppHeader() {
   return (
     <header
       style={{
-        background: "#fff",
+        background: "#87e287",
         borderBottom: "1px solid #ececec",
         boxShadow: "0 2px 8px #0001",
         padding: "10px 0",
