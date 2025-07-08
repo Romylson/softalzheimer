@@ -12,7 +12,7 @@ export default function Dashboard() {
   const { t } = useTranslation();
 
   return (
-    <div className="dashboard-layout">
+    <div className="min-w-[1024px]">
       {/* sidebar sempre visível inclusive no mobile */}
       <aside className="dashboard-sidebar">
         <img
