@@ -142,3 +142,86 @@ body {
   scrollbar-width: none;
 }
 
+/* Responsividade completa para mobile */
+@media (max-width: 575.98px) {
+  .dashboard-layout {
+    display: block !important;
+  }
+
+  .dashboard-sidebar {
+    display: none !important;
+  }
+
+  .dashboard-main {
+    padding: 1rem;
+  }
+
+  .dashboard-cards {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .dashboard-card {
+    width: 100% !important;
+  }
+
+  .intro h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .intro p {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .dashboard-img {
+    max-height: 180px;
+    object-fit: contain;
+  }
+
+  .dashboard-card .icon {
+    font-size: 1.8rem;
+  }
+
+  .header-banner {
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+
+  .header-logos img {
+    max-height: 50px !important;
+  }
+
+  .dashboard-mobile-nav {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    background-color: #6cd863;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+  }
+
+  .dashboard-mobile-nav a {
+    color: #000;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 8px;
+    background-color: #bfffc3;
+    font-size: 0.9rem;
+  }
+
+  /* Corrige quebra de texto do Diferenciais Inovadores */
+  .diferenciais-box,
+  .intro,
+  .banner-diferenciais {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
