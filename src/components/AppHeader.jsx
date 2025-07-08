@@ -25,6 +25,7 @@ export default function AppHeader() {
           alignItems: "center",
           justifyContent: "center",
           gap: 32,
+          flexWrap: "wrap"
         }}
       >
         <img
