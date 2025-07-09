@@ -1,20 +1,20 @@
 // src/components/AppHeader.jsx
 import React from "react";
 import logoNppmPpgf from "../assets/logo-nppm-ppgf.jpeg";
-import logoLafac from "../assets/logo-lafac-ufpi.jpeg";     // Use o caminho correto da imagem
+import logoLafac from "../assets/logo-lafac-ufpi.jpeg";
 
 export default function AppHeader() {
   return (
     <header
       style={{
-        background: "#87e287",
+        background: "#87e287", // verde claro
         borderBottom: "1px solid #ececec",
         boxShadow: "0 2px 8px #0001",
         padding: "10px 0",
         width: "100%",
         position: "sticky",
         top: 0,
-        zIndex: 100
+        zIndex: 100,
       }}
     >
       <div
@@ -25,7 +25,6 @@ export default function AppHeader() {
           alignItems: "center",
           justifyContent: "center",
           gap: 32,
-          flexWrap: "wrap"
         }}
       >
         <img
@@ -40,7 +39,7 @@ export default function AppHeader() {
             objectFit: "contain",
           }}
         />
-        <div style={{height: 40, borderLeft: "1px solid #e3e3e3"}} />
+        <div style={{ height: 40, borderLeft: "1px solid #e3e3e3" }} />
         <img
           src={logoLafac}
           alt="LAFAC-UFPI"
@@ -53,16 +52,17 @@ export default function AppHeader() {
             objectFit: "contain",
           }}
         />
-        {/* Título pequeno opcional */}
-        <div style={{
-          marginLeft: 32,
-          fontWeight: "bold",
-          fontSize: 22,
-          color: "#000000",
-          letterSpacing: 0.5,
-          fontFamily: "inherit",
-          textShadow: "0 1px 2px #0002"
-        }}>
+        <div
+          style={{
+            marginLeft: 32,
+            fontWeight: "bold",
+            fontSize: 22,
+            color: "#000000",
+            letterSpacing: 0.5,
+            fontFamily: "inherit",
+            textShadow: "0 1px 2px #0002",
+          }}
+        >
           Plantamente
         </div>
       </div>
