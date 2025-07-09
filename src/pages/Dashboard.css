@@ -176,3 +176,75 @@ body::-webkit-scrollbar {
     text-align: center;
   }
 }
+
+
+/* Ajustes para header logos no mobile */
+@media (max-width: 768px) {
+  header > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px !important;
+  }
+
+  header img {
+    max-height: 50px;
+    height: auto;
+    width: auto;
+  }
+
+  .site-title {
+    font-size: 1.3rem;
+    text-align: center;
+    margin-top: 4px;
+  }
+
+  .divider-line {
+    display: none;
+  }
+}
+
+
+.app-header {
+  background-color: #6be06b;
+  border-bottom: 1px solid #ececec;
+  box-shadow: 0 2px 8px #0001;
+  padding: 10px 0;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-logos {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.header-logos img {
+  height: 80px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 1px 6px #0001;
+  object-fit: contain;
+}
+
+.divider-line {
+  height: 40px;
+  border-left: 1px solid #e3e3e3;
+}
+
+.site-title {
+  margin-left: 32px;
+  font-weight: bold;
+  font-size: 22px;
+  color: #000;
+  letter-spacing: 0.5px;
+  font-family: inherit;
+  text-shadow: 0 1px 2px #0002;
+}
