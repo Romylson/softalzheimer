@@ -248,3 +248,25 @@ body::-webkit-scrollbar {
   font-family: inherit;
   text-shadow: 0 1px 2px #0002;
 }
+
+@media (max-width: 768px) {
+  header div {
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+  }
+
+  header img {
+    height: 60px !important;
+    max-width: 100px !important;
+    object-fit: contain;
+  }
+
+  .site-title {
+    font-size: 1.1rem !important;
+    margin-top: 8px;
+    text-align: center;
+  }
+}
