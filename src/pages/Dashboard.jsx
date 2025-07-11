@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Dashboard.css";
 import { useTranslation } from "react-i18next";
@@ -10,11 +10,21 @@ import NoticiasAvancosAlzheimer from "../components/NoticiasAvancosAlzheimer";
 export default function Dashboard() {
   const location = useLocation();
   const { t } = useTranslation();
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
 
   return (
     <div className="dashboard-layout">
-      {/* sidebar sempre visível inclusive no mobile */}
-      <aside className="dashboard-sidebar">
+      {/* botão hambúrguer */}
+      <button className="hamburger-button" onClick={toggleMenu}>
+        ☰
+      </button>
+
+      {/* sidebar */}
+      <aside className={`dashboard-sidebar ${menuOpen ? "open" : ""}`}>
         <img
           src="/images/plantamente.jpg"
           alt="PlantaMente Logo"
@@ -73,9 +83,7 @@ export default function Dashboard() {
             </li>
             <li>
               <Link
-                className={
-                  location.pathname === "/artigos-cientificos" ? "active" : ""
-                }
+                className={location.pathname === "/artigos-cientificos" ? "active" : ""}
                 to="/artigos-cientificos"
               >
                 {t("scientific_articles")}
