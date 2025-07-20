@@ -100,9 +100,7 @@ export default function Dashboard() {
       {/* conteúdo principal */}
       <main className="dashboard-main">
         <BannerDiferenciais />
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8229585402609662"
-          crossorigin="anonymous"></script>
-        <AdSenseBanner adSlot="8229585402609662" />
+        <AdSenseBanner adSlot="4166046455" />
         <div className="intro text-center">
           <h1>
             {t("welcome_dashboard")} <span className="highlight">PlantaMente</span>
@@ -143,7 +141,7 @@ export default function Dashboard() {
         <IntroBlock />
         <NoticiasAvancosAlzheimer />
         <DiferenciaisInovadores />
-        <AdSenseBanner adSlot="8229585402609662" />
+        <AdSenseBanner adSlot="4166046455" />
       </main>
     </div>
   );
