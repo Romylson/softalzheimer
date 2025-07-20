@@ -525,4 +525,15 @@ body {
     font-size: 20px;
   }
 }
+/* AdSenseBanner.css */
+.adsbygoogle {
+  margin: 16px auto;
+}
+
+@media (max-width: 600px) {
+  .adsbygoogle {
+    max-width: 320px;
+    min-height: 50px;
+  }
+}
 

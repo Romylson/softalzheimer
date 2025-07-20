@@ -6,6 +6,10 @@ import IntroBlock from "../components/IntroBlock";
 import DiferenciaisInovadores from "../components/DiferenciaisInovadores";
 import BannerDiferenciais from "../components/BannerDiferenciais";
 import NoticiasAvancosAlzheimer from "../components/NoticiasAvancosAlzheimer";
+import AdSenseBanner from "../components/AdSenseBanner";
+
+
+
 
 export default function Dashboard() {
   const location = useLocation();
@@ -98,7 +102,7 @@ export default function Dashboard() {
         <BannerDiferenciais />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8229585402609662"
           crossorigin="anonymous"></script>
-
+        <AdSenseBanner adSlot="8229585402609662" />
         <div className="intro text-center">
           <h1>
             {t("welcome_dashboard")} <span className="highlight">PlantaMente</span>
@@ -139,6 +143,7 @@ export default function Dashboard() {
         <IntroBlock />
         <NoticiasAvancosAlzheimer />
         <DiferenciaisInovadores />
+        <AdSenseBanner adSlot="8229585402609662" />
       </main>
     </div>
   );
