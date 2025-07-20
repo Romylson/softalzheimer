@@ -96,6 +96,8 @@ export default function Dashboard() {
       {/* conteúdo principal */}
       <main className="dashboard-main">
         <BannerDiferenciais />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8229585402609662"
+          crossorigin="anonymous"></script>
 
         <div className="intro text-center">
           <h1>
@@ -137,8 +139,6 @@ export default function Dashboard() {
         <IntroBlock />
         <NoticiasAvancosAlzheimer />
         <DiferenciaisInovadores />
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8229585402609662"
-     crossorigin="anonymous"></script>
       </main>
     </div>
   );
