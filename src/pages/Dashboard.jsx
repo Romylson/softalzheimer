@@ -137,6 +137,8 @@ export default function Dashboard() {
         <IntroBlock />
         <NoticiasAvancosAlzheimer />
         <DiferenciaisInovadores />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8229585402609662"
+     crossorigin="anonymous"></script>
       </main>
     </div>
   );

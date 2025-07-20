@@ -145,7 +145,7 @@ export default function NoticiasAvancosAlzheimer() {
       <h2 className="fw-bold mb-4 text-center">📅 {t("noticias_titulo")}</h2>
       <div className="row g-4 mb-5">
         {noticias.map((n, i) => (
-          <div className="col-md-4" key={i}>
+          <div className="col-12 col-md-6 col-lg-4" key={i}>
             <Card className="p-3 shadow-sm h-100">
               <h5 className="text-primary fw-bold">{t(n.titulo)}</h5>
               <small className="text-muted">{t(n.data)}</small>
@@ -159,7 +159,7 @@ export default function NoticiasAvancosAlzheimer() {
       <h3 className="fw-bold mb-3 text-center">🧠 {t("eventos_titulo")}</h3>
       <div className="row g-4 mb-4">
         {eventos.map((e, i) => (
-          <div className="col-md-4" key={i}>
+          <div className="col-12 col-md-6 col-lg-4" key={i}>
             <Card className="p-3 shadow-sm h-100">
               <h6 className="text-dark fw-bold">{t(e.nome)}</h6>
               <p className="mb-1"><strong>{t("local")}:</strong> {t(e.local)}</p>
