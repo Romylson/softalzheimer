@@ -39,7 +39,9 @@ export default function LogoInstitucional({
         />
       </div>
       {showAddress && (
-      <div className="text-xs text-center mt-2">
+      <div className="text-xs text-center mt-2 font-bold"
+          style={{ color: "#000" }}
+        >
         UFPI – Campus Universitário Ministro Petrônio Portella, Ininga, Teresina‑PI, 64049‑550
       </div>
        )}
