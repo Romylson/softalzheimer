@@ -13,7 +13,7 @@ body {
 }
 .crossword__grid {
   border: 2px solid #bbb;
-  background: #f9f9f9;
+  background: #f1eaea;
 }
 .crossword__cell--input {
   background: #fff !important;

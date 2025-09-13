@@ -26,6 +26,7 @@ import AssociacaoConceitos from "./pages/AssociacaoConceitos";
 import JogoClassificacao from "./pages/JogoClassificacao";
 import CaminhoNeuronal from './pages/CaminhoNeuronal.jsx';
 import Layout from "./components/Layout.jsx";
+import BackHomeButton from "./components/BackHomeButton.jsx";
 
 
 
@@ -39,6 +40,7 @@ function App() {
     <Router>
       <Navbar />
       <div className="p-4">
+        <BackHomeButton />
         <Routes>
           <Route path="/fisiopatologia" element={<Fisiopatologia />} />
           <Route path="/plantas" element={<PlantasMedicinais />} />
