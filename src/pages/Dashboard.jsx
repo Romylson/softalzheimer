@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Dashboard.css";
+import "../components/PlantasAnimacao.css";
 import { useTranslation } from "react-i18next";
 import IntroBlock from "../components/IntroBlock";
 import DiferenciaisInovadores from "../components/DiferenciaisInovadores";
@@ -32,7 +33,7 @@ export default function Dashboard() {
         <img
           src="/images/plantamente.jpg"
           alt="PlantaMente Logo"
-          className="logo"
+          className="logo plant-move"
         />
         <h2 className="sidebar-title">PlantaMente</h2>
         <nav>

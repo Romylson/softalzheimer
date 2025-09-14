@@ -1,7 +1,7 @@
 import React from "react";
 import MapaOrigem from "./MapaOrigem";
 import { useTranslation } from "react-i18next";
-import "/src/pages/Dashboard.css";
+import "./PlantasAnimacao.css";
 
 export default function PlantaModal({ planta, onClose }) {
   const { t } = useTranslation();
@@ -19,7 +19,7 @@ export default function PlantaModal({ planta, onClose }) {
               <img
                 src={planta.imagem}
                 alt={planta.nome}
-                className="img-fluid rounded mb-3"
+                className="img-fluid rounded mb-3 plant-move"
                 style={{ maxHeight: 200, objectFit: "cover" }}
               />
               <MapaOrigem planta={planta} />

@@ -1,12 +1,12 @@
 .molecule-move {
-  animation: molecule-spin 20s linear infinite;
+  animation: molecule-float 6s ease-in-out infinite;
 }
 
-@keyframes molecule-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes molecule-float {
+  0%, 100% {
+    transform: translateY(0);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: translateY(-15px);
   }
 }
