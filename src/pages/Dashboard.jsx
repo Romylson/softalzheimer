@@ -12,6 +12,7 @@ import AdSenseBanner from "../components/AdSenseBanner";
 
 
 
+
 export default function Dashboard() {
   const location = useLocation();
   const { t } = useTranslation();
@@ -123,7 +124,7 @@ export default function Dashboard() {
             <img
               src="/images/farmaco.jpeg"
               alt={t("drugs")}
-              className="dashboard-img"
+              className="dashboard-img plant-move"
             />
             <div className="icon">💊</div>
             <h2>{t("drugs")}</h2>
@@ -132,7 +133,7 @@ export default function Dashboard() {
             <img
               src="/images/fisiopatologia.png"
               alt={t("physiopathology")}
-              className="dashboard-img"
+              className="dashboard-img plant-move"
             />
             <div className="icon">🧠</div>
             <h2>{t("physiopathology")}</h2>

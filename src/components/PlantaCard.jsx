@@ -1,4 +1,5 @@
 import React from "react";
+import "./PlantasAnimacao.css";
 export default function PlantaCard({ planta, onClick }) {
   return (
     <div
@@ -10,7 +11,7 @@ export default function PlantaCard({ planta, onClick }) {
         <img
           src={planta.imagem}
           alt={planta.nome}
-          className="card-img-top"
+          className="card-img-top plant-move"
           style={{ objectFit: "cover", height: 120 }}
         />
       )}

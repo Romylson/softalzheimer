@@ -3,6 +3,8 @@ import { useTranslation } from "react-i18next";
 import plantas from "../data/plantas";
 import PlantaCard from "../components/PlantaCard";
 import PlantaModal from "../components/PlantaModal";
+import "../components/PlantasAnimacao.css";
+import "../components/Fisiopatologia/PlacasETauAnimacao.css";
 
 export default function PlantasMedicinais() {
   const { t } = useTranslation();
