@@ -27,6 +27,8 @@ import JogoClassificacao from "./pages/JogoClassificacao";
 import CaminhoNeuronal from './pages/CaminhoNeuronal.jsx';
 import Layout from "./components/Layout.jsx";
 import BackHomeButton from "./components/BackHomeButton.jsx";
+import Historico from "./pages/Historico.jsx";
+import Apresentacao from "./pages/Apresentacao.jsx";
 
 
 
@@ -55,6 +57,8 @@ function App() {
           <Route path="/jogos/caca-palavras" element={<CacaPalavras />} />
           <Route path="/jogos/xadrez" element={<Xadrez />} />
           <Route path="/jogos/quebra-cabeca" element={<QuebraCabeca />} />
+          <Route path="/historico" element={<Historico />} />
+          <Route path="/apresentacao" element={<Apresentacao />} />
           <Route path="/" element={<Dashboard />} />
           <Route path="/artigos-cientificos" element={<ArtigosCientificosTabs />} />
           <Route path="/jogos/associacao" element={<AssociacaoConceitos />} />

@@ -17,6 +17,10 @@ const resources = {
       educational_games: "Jogos Educativos",
       brain3d: "Cérebro 3D",
       scientific_articles: "Artigos Científicos",
+      history: "Histórico do Site",
+      about_site: "Apresentação do Site",
+      history_content: "O PlantaMente surgiu em 2024 como uma ferramenta educacional dedicada ao estudo da Doença de Alzheimer, evoluindo com novas tecnologias e conteúdos ao longo do tempo.",
+      about_content: "O site reúne informações científicas, interatividade e recursos multimídia para apoiar o aprendizado sobre o Alzheimer.",
 
       // Dashboard principal
       welcome_dashboard: "Bem-vindo ao",
@@ -338,6 +342,11 @@ const resources = {
       educational_games: "Educational Games",
       brain3d: "Brain 3D",
       scientific_articles: "Scientific Articles",
+      history: "Site History",
+      about_site: "About the Site",
+      history_content: "PlantaMente began in 2024 as an educational tool focused on Alzheimer's disease and has grown with new technologies and content.",
+      about_content: "The site combines scientific information, interactivity, and multimedia resources to support learning about Alzheimer's.",
+
 
       welcome_dashboard: "Welcome to",
       dashboard_desc: "Track data on plants, drugs, and physiopathology related to Alzheimer's in real time.",
@@ -649,6 +658,10 @@ const resources = {
       educational_games: "Juegos Educativos",
       brain3d: "Cerebro 3D",
       scientific_articles: "Artículos científicos",
+      history: "Historia del Sitio",
+      about_site: "Presentación del Sitio",
+      history_content: "PlantaMente comenzó en 2024 como una herramienta educativa enfocada en la enfermedad de Alzheimer y ha crecido con nuevas tecnologías y contenido.",
+      about_content: "El sitio reúne información científica, interactividad y recursos multimedia para apoyar el aprendizaje sobre el Alzheimer.",
 
       welcome_dashboard: "Bienvenido a",
       dashboard_desc: "Siga los datos de plantas, fármacos y fisiopatología relacionados con el Alzheimer en tiempo real.",
