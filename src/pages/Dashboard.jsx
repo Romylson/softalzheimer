@@ -113,7 +113,7 @@ export default function Dashboard() {
             <img
               src="/images/planta.jpg"
               alt={t("plants")}
-              className="dashboard-img"
+              className="dashboard-img plant-move"
             />
             <div className="icon">🌱</div>
             <h2>{t("plants")}</h2>

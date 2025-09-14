@@ -90,7 +90,18 @@ body {
   max-height: 415px;
   object-fit: cover;
 }
+.plant-move {
+  animation: plant-sway 4s ease-in-out infinite;
+}
 
+@keyframes plant-sway {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
 /* HEADER */
 .app-header {
   background-color: #6be06b;

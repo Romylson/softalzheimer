@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import "./PlacasETauAnimacao.css";
 
 export default function PlacasETauAnimacao() {
   const { t } = useTranslation();
@@ -16,6 +17,7 @@ export default function PlacasETauAnimacao() {
           <img
             src="/images/beta-amiloide.png"
             alt="βeta-Amiloide"
+            className="molecule-move"
             style={{ width: 400, height: 400, objectFit: "contain" }}
           />
           <div className="fw-bold mt-2">{t("fisiopatologia.beta_amiloide")}</div>
@@ -27,6 +29,7 @@ export default function PlacasETauAnimacao() {
           <img
             src="/images/tau.png"
             alt="Tau"
+            className="molecule-move"
             style={{ width: 400, height: 400, objectFit: "contain" }}
           />
           <div className="fw-bold mt-2">{t("fisiopatologia.tau")}</div>
