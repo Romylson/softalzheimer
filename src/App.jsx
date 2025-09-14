@@ -20,7 +20,6 @@ import QuebraCabeca from "./pages/QuebraCabeca.jsx";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { Outlet } from "react-router-dom";
-import AppHeader from "./components/AppHeader";
 import ArtigosCientificosTabs from "./components/Artigos/ArtigosCientificosTabs";
 import AssociacaoConceitos from "./pages/AssociacaoConceitos";
 import JogoClassificacao from "./pages/JogoClassificacao";
@@ -35,7 +34,7 @@ import Apresentacao from "./pages/Apresentacao.jsx";
 function App() {
   return (
     <div className="min-h-screen flex flex-col">
-      <AppHeader />
+      <Header />
       
       <main className="flex-1">
           <Outlet />

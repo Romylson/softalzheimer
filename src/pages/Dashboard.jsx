@@ -8,7 +8,7 @@ import DiferenciaisInovadores from "../components/DiferenciaisInovadores";
 import BannerDiferenciais from "../components/BannerDiferenciais";
 import NoticiasAvancosAlzheimer from "../components/NoticiasAvancosAlzheimer";
 import AdSenseBanner from "../components/AdSenseBanner";
-
+import ImageCarousel from "../components/ImageCarousel";
 
 
 
@@ -102,6 +102,7 @@ export default function Dashboard() {
       {/* conteúdo principal */}
       <main className="dashboard-main">
         <BannerDiferenciais />
+        <ImageCarousel />
         <AdSenseBanner adSlot="4166046455" />
         <div className="intro text-center">
           <h1>
