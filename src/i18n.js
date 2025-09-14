@@ -19,8 +19,10 @@ const resources = {
       scientific_articles: "Artigos Científicos",
       history: "Histórico do Site",
       about_site: "Apresentação do Site",
-      history_content: "O PlantaMente surgiu em 2024 como uma ferramenta educacional dedicada ao estudo da Doença de Alzheimer, evoluindo com novas tecnologias e conteúdos ao longo do tempo.",
-      about_content: "O site reúne informações científicas, interatividade e recursos multimídia para apoiar o aprendizado sobre o Alzheimer.",
+      history: "Histórico do Site",
+      about_site: "Apresentação do Site",
+      history_content: "O projeto teve início em 2024, quando um grupo de estudantes e pesquisadores se uniu com o propósito de divulgar conhecimento confiável sobre o Alzheimer. A primeira versão era simples, mas já oferecia artigos revisados e um pequeno acervo de atividades educativas.\n\nCom o tempo, novas funcionalidades foram incorporadas, como o cérebro 3D interativo, o catálogo de plantas medicinais e a seção de notícias. Hoje, o PlantaMente continua crescendo com a contribuição da comunidade e o compromisso de levar informação clara e atualizada a todos.",
+      about_content: "O PlantaMente é uma plataforma colaborativa criada para reunir conteúdos educativos sobre a Doença de Alzheimer. Aqui você encontra materiais científicos, visualizações interativas e jogos que ajudam a compreender a fisiopatologia, os tratamentos disponíveis e formas de prevenção.\n\nNossa equipe multidisciplinar mantém o site atualizado com pesquisas recentes, guias práticos e recursos acessíveis tanto para profissionais da saúde quanto para familiares e cuidadores. O objetivo é facilitar o acesso à informação de qualidade e incentivar o aprendizado contínuo.",
 
       // Dashboard principal
       welcome_dashboard: "Bem-vindo ao",
@@ -344,8 +346,10 @@ const resources = {
       scientific_articles: "Scientific Articles",
       history: "Site History",
       about_site: "About the Site",
-      history_content: "PlantaMente began in 2024 as an educational tool focused on Alzheimer's disease and has grown with new technologies and content.",
-      about_content: "The site combines scientific information, interactivity, and multimedia resources to support learning about Alzheimer's.",
+      history: "Site History",
+      about_site: "About the Site",
+      history_content: "The project started in 2024 when a group of students and researchers joined forces to share reliable knowledge about Alzheimer's. The first version was simple but already provided peer-reviewed articles and a small collection of educational activities.\n\nOver time, new features were added, such as the interactive 3D brain, the medicinal plants catalog, and the news section. Today, PlantaMente continues to grow with community contributions and a commitment to delivering clear and up-to-date information to everyone.",
+      about_content: "PlantaMente is a collaborative platform created to gather educational resources about Alzheimer's disease. Here you will find scientific material, interactive visualizations, and games that help explain the pathophysiology, available treatments, and prevention strategies.\n\nOur multidisciplinary team keeps the site up to date with recent research, practical guides, and accessible resources for health professionals, family members, and caregivers alike. The goal is to make quality information available and encourage continuous learning.",
 
 
       welcome_dashboard: "Welcome to",
@@ -660,9 +664,8 @@ const resources = {
       scientific_articles: "Artículos científicos",
       history: "Historia del Sitio",
       about_site: "Presentación del Sitio",
-      history_content: "PlantaMente comenzó en 2024 como una herramienta educativa enfocada en la enfermedad de Alzheimer y ha crecido con nuevas tecnologías y contenido.",
-      about_content: "El sitio reúne información científica, interactividad y recursos multimedia para apoyar el aprendizaje sobre el Alzheimer.",
-
+      history_content: "El proyecto comenzó en 2024, cuando un grupo de estudiantes e investigadores se unió para difundir conocimientos confiables sobre el Alzheimer. La primera versión era sencilla, pero ya ofrecía artículos revisados y una pequeña colección de actividades educativas.\n\nCon el tiempo se incorporaron nuevas funcionalidades, como el cerebro 3D interactivo, el catálogo de plantas medicinales y la sección de noticias. Hoy, PlantaMente sigue creciendo gracias a la contribución de la comunidad y al compromiso de brindar información clara y actualizada para todos.",
+      about_content: "PlantaMente es una plataforma colaborativa creada para reunir recursos educativos sobre la enfermedad de Alzheimer. Aquí encontrarás material científico, visualizaciones interactivas y juegos que ayudan a comprender la fisiopatología, los tratamientos disponibles y las estrategias de prevención.\n\nNuestro equipo multidisciplinario mantiene el sitio actualizado con investigaciones recientes, guías prácticas y recursos accesibles tanto para profesionales de la salud como para familiares y cuidadores. El objetivo es facilitar el acceso a información de calidad y promover el aprendizaje continuo.",
       welcome_dashboard: "Bienvenido a",
       dashboard_desc: "Siga los datos de plantas, fármacos y fisiopatología relacionados con el Alzheimer en tiempo real.",
       innovative_features_title: "Características Innovadoras",
