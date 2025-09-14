@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import { Tabs, Tab, ButtonGroup, ToggleButton, Form } from "react-bootstrap";
 import ArtigosPubmed from "./ArtigosPubmed";
-import ArtigosPubmedBusca from "./ArtigosPubmedBusca";
 
 
 const tiposEstudo = [
