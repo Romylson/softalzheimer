@@ -27,6 +27,9 @@ export default function PlantaCard({ planta, onClick }) {
         <p><strong>Contraindicações:</strong> {planta.contraindicacoes}</p>
 
         <div style={{ fontSize: 13 }}>{planta.usos}</div>
+         <p className="text-muted small mt-2">
+          Imagem: {planta.nome} - Autor: {planta.autorImagem}
+        </p>
       </div>
     </div>
   );

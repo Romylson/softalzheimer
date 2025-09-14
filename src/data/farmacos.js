@@ -13,6 +13,7 @@ export const farmacos = [
     categoria: "Inibidor de Colinesterase",
     descricao: "Inibidor da acetilcolinesterase usado em estágios leves a moderados.",
     imagem: imgDonepezila,
+    autorImagem: "As imagens de fármacos são de uso ilustrativo, pertencentes às respectivas indústrias farmacêuticas. Utilizadas apenas para fins educacionais no contexto do projeto Plantamente.",
     alvo: "Colinesterase"
   },
   {
@@ -20,6 +21,7 @@ export const farmacos = [
     categoria: "Modulador Glutamatérgico",
     descricao: "Modulador do receptor NMDA para sintomas moderados a graves.",
     imagem: imgMemantina,
+    autorImagem: "As imagens de fármacos são de uso ilustrativo, pertencentes às respectivas indústrias farmacêuticas. Utilizadas apenas para fins educacionais no contexto do projeto Plantamente.",
     alvo: "Receptor Glutamatérgico"
   },
   {
@@ -27,6 +29,7 @@ export const farmacos = [
     categoria: "Anticorpo Monoclonal",
     descricao: "Anticorpo monoclonal indicado para remoção de placas beta-amiloides.",
     imagem: imgLecanemabe,
+    autorImagem: "As imagens de fármacos são de uso ilustrativo, pertencentes às respectivas indústrias farmacêuticas. Utilizadas apenas para fins educacionais no contexto do projeto Plantamente.",
     alvo: "Anticorpo Monoclonal"
   },
   
@@ -35,6 +38,7 @@ export const farmacos = [
     categoria: "Inibidor de Colinesterase",
     descricao: "Opção para quadros leves/moderados, oral ou adesivo.",
     imagem: imgRivastigmina,
+    autorImagem: "As imagens de fármacos são de uso ilustrativo, pertencentes às respectivas indústrias farmacêuticas. Utilizadas apenas para fins educacionais no contexto do projeto Plantamente.",
     alvo: "Colinesterase"
   },
   {
@@ -42,6 +46,7 @@ export const farmacos = [
     categoria: "Inibidor de Colinesterase",
     descricao: "Outro inibidor, com possível ação nicotínica.",
     imagem: imgGalantamina,
+    autorImagem: "As imagens de fármacos são de uso ilustrativo, pertencentes às respectivas indústrias farmacêuticas. Utilizadas apenas para fins educacionais no contexto do projeto Plantamente.",
     alvo: "Colinesterase"
   },
   // Novo fármaco
@@ -49,7 +54,8 @@ export const farmacos = [
     nome: "Tacrina (Cognex, Tacrine, Tacrest, Zynaps, Anticex, Lecar)",
     categoria: "Inibidor de Colinesterase",
     principioAtivo: "Tacrina",
-    imagem: imgTacrina ,
+    imagem: imgTacrina,
+    autorImagem: "As imagens de fármacos são de uso ilustrativo, pertencentes às respectivas indústrias farmacêuticas. Utilizadas apenas para fins educacionais no contexto do projeto Plantamente.",
     alvo: "Colinesterase",
     descricao: "Foi o primeiro inibidor da colinesterase usado para Alzheimer, com limitações devido à hepatotoxicidade."
   }

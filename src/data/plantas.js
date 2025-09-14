@@ -11,7 +11,7 @@ import ImgGotu from "../assets/gotu.jpg"
 const plantas = [
   {
     id: 1,
-     nome: "Ginkgo (Ginkgo biloba, árvore-da-avenca, noz-do-japão, árvore dos quarenta escudos, ginkgô, maidenhair tree)",
+    nome: "Ginkgo (Ginkgo biloba, árvore-da-avenca, noz-do-japão, árvore dos quarenta escudos, ginkgô, maidenhair tree)",
     nome_cientifico: "Ginkgo biloba L.",
     origem: "China, Japão",
     mecanismos: "Melhora a circulação cerebral e atua como antioxidante",
@@ -24,6 +24,7 @@ const plantas = [
       "Uso concomitante com anticoagulantes (ex: varfarina, AAS),Pré-operatório (pelo risco de sangramentos),Gestantes e lactantes (uso não recomendado)."
     ],
     imagem: imgGinkgo,
+    autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
     coordenadas: [35.8617, 104.1954], // China
     interacoes: [
       {
@@ -53,6 +54,7 @@ const plantas = [
       "Hipotireoidismo (pode interferir nos hormônios tireoidianos),Gravidez e lactação (falta de dados de segurança),Pessoas com úlceras gástricas (efeito colateral gastrointestinal)."
     ],
     imagem: imgBacopa,
+    autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
     coordenadas: [20.5937, 78.9629], // Índia
     interacoes: [
       {
@@ -77,6 +79,7 @@ const plantas = [
       "Gravidez e lactação sem orientação médica; Pacientes com obstrução biliar ou cálculos biliares."
     ],
     imagem: imgCurcuma,
+    autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
     coordenadas: [15.8700, 100.9925], // Tailândia
     interacoes: [
       {
@@ -101,6 +104,7 @@ const plantas = [
       "Gravidez e lactação; Pessoas com epilepsia ou histórico de convulsões."
     ],
     imagem: imgSalvia,
+    autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
     coordenadas: [41.8719, 12.5674], // Itália
     interacoes: [
       {
@@ -125,6 +129,7 @@ const plantas = [
       "Uso com sedativos ou antidepressivos, Gravidez sem supervisão médica."
     ],
     imagem: imgMelissa,
+    autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
     coordenadas: [48.3794, 31.1656], // Ucrânia
     interacoes: [
       {
@@ -149,6 +154,7 @@ const plantas = [
       "Hipertensão não controlada, Gravidez e lactação."
     ],
     imagem: imgPanax,
+    autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
     coordenadas: [36.2048, 138.2529], // Japão
     interacoes: [
       {
@@ -178,6 +184,7 @@ const plantas = [
       "Gravidez, Doenças autoimunes sem orientação médica."
     ],
     imagem: ImgAshwagandha,
+    autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
     coordenadas: [28.6139, 77.2090], // Nova Délhi, Índia
     interacoes: [
       {
@@ -207,6 +214,7 @@ const plantas = [
       "Transtorno bipolar, Uso concomitante com antidepressivos sem acompanhamento."
     ],
     imagem: ImgRhodiola,
+    autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
     coordenadas: [60.4720, 8.4689], // Noruega
     interacoes: [
     {
@@ -236,6 +244,7 @@ const plantas = [
       "Doença hepática, Gravidez sem acompanhamento médico."
     ],
     imagem: ImgGotu,
+    autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
     coordenadas: [7.8731, 80.7718], 
     interacoes: [
     {

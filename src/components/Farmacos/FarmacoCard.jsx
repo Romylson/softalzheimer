@@ -17,6 +17,9 @@ export default function FarmacoCard({ farmaco, children, selecionado }) {
           <b>Alvo molecular:</b> {farmaco.alvo || <span className="text-muted">-</span>}
         </div>
         {children}
+        <p className="text-muted small mt-2">
+          Imagem: {farmaco.nome} - Autor: {farmaco.autorImagem}
+        </p>
       </div>
     </>
   );

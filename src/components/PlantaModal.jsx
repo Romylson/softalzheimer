@@ -22,6 +22,9 @@ export default function PlantaModal({ planta, onClose }) {
                 className="img-fluid rounded mb-3 plant-move"
                 style={{ maxHeight: 200, objectFit: "cover" }}
               />
+              <p className="text-muted small">
+                Imagem: {planta.nome} - Autor: {planta.autorImagem}
+              </p>
               <MapaOrigem planta={planta} />
             </div>
             <div className="col-md-7">
