@@ -3,52 +3,29 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import i18n from "../i18n";
 import LoginModal from "./LoginModal";
-import ColorPaletteSidebar from "./ColorPaletteSidebar";
 
 export default function Navbar() {
   const { t } = useTranslation();
   const [showLogin, setShowLogin] = useState(false);
   const [user, setUser] = useState(null);
-  const [showPalette, setShowPalette] = useState(false);
 
   function changeLanguage(lng) {
     i18n.changeLanguage(lng);
   }
 
   return (
-    <>
-      <nav
-        className="navbar navbar-expand-lg px-4 shadow-sm"
-        style={{
-          height: 60,
-          backgroundColor: "var(--primary)",
-          color: "var(--surface)",
-        }}
-      >
-        <div className="container-fluid">
-          <Link
-            to="/"
-            className="navbar-brand fw-bold fs-4"
-            style={{ letterSpacing: "0.5px", color: "var(--surface)" }}
-          >
-            Plantamente
-          </Link>
-          <div className="d-flex align-items-center ms-auto gap-3">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-black px-4 shadow-sm"
+      style={{ height: 60, backgroundColor: "#90ee90", color: "#000" }}>
+      <div className="container-fluid">
+        <Link to="/" className="navbar-brand fw-bold fs-4" style={{ letterSpacing: "0.5px" }}>
+          Plantamente
+        </Link>
+        <div className="d-flex align-items-center ms-auto gap-3">
+          {/* Dropdown de idiomas */}
+          <div className="dropdown">
             <button
-
-              className="btn btn-light px-3"
+              className="btn btn-light dropdown-toggle px-3"
               type="button"
-               onClick={() => setShowPalette(true)}
-              aria-label={t("select_color") || "Selecionar cor"}
-            >
-              🎨
-            </button>
-            </div>
-            {/* Dropdown de idiomas */}
-            <div className="dropdown">
-              <button
-                className="btn btn-light dropdown-toggle px-3"
-                type="button"
               id="langDropdown"
               data-bs-toggle="dropdown"
               aria-expanded="false"
@@ -101,12 +78,7 @@ export default function Navbar() {
             setUser={setUser}
           />
         </div>
-         </div>
-      </nav>
-      <ColorPaletteSidebar
-        open={showPalette}
-        onClose={() => setShowPalette(false)}
-      />
-    </>  
+      </div>
+    </nav>
   );
 }
