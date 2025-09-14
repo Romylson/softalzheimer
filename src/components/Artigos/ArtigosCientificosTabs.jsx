@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { Tabs, Tab, ButtonGroup, ToggleButton } from "react-bootstrap";
 import ArtigosPubmed from "./ArtigosPubmed";
+import ArtigosPubmedBusca from "./ArtigosPubmedBusca";
 
 
 const tiposEstudo = [
@@ -44,6 +45,9 @@ const ArtigosCientificosTabs = () => {
         </Tab>
         <Tab eventKey="plantas" title="Plantas Medicinais">
           <ArtigosPubmed termo="Alzheimer AND medicinal plants" filtro={tipoFiltro} />
+        </Tab>
+        <Tab eventKey="pesquisar" title="Pesquisar">
+          <ArtigosPubmedBusca filtro={tipoFiltro} />
         </Tab>
       </Tabs>
     </div>
