@@ -9,21 +9,21 @@ import imgTacrina from "../assets/tacrina.png"
 
 export const farmacos = [
 {
-    nome: "Donepezila(Comfect)",
+    nome: "Donepezila (Aricept, Comfect, Adlarity, Donecept, Eranz, Apo-Donepezil)",
     categoria: "Inibidor de Colinesterase",
     descricao: "Inibidor da acetilcolinesterase usado em estágios leves a moderados.",
     imagem: imgDonepezila,
     alvo: "Colinesterase"
   },
   {
-    nome: "Memantina (Zider)",
+    nome: "Memantina (Ebixa, Namenda, Zider, Axura, Akatinol, Memox)",
     categoria: "Modulador Glutamatérgico",
     descricao: "Modulador do receptor NMDA para sintomas moderados a graves.",
     imagem: imgMemantina,
     alvo: "Receptor Glutamatérgico"
   },
   {
-    nome: "Lecanemab (Leqembi)",
+    nome: "Lecanemab (Leqembi, BAN2401, Lecanemab-irmb, mAb2401, anticorpo anti-β-amilóide, antiamiloide)",
     categoria: "Anticorpo Monoclonal",
     descricao: "Anticorpo monoclonal indicado para remoção de placas beta-amiloides.",
     imagem: imgLecanemabe,
@@ -31,14 +31,14 @@ export const farmacos = [
   },
   
   {
-    nome: "Rivastigmina (Exelon)",
+    nome: "Rivastigmina (Exelon, Prometax, Exelon Patch, Rivamer, Rivastime, Alzid)",
     categoria: "Inibidor de Colinesterase",
     descricao: "Opção para quadros leves/moderados, oral ou adesivo.",
     imagem: imgRivastigmina,
     alvo: "Colinesterase"
   },
   {
-    nome: "Galantamina (Reminyl/Razadyne) ",
+    nome: "Galantamina (Reminyl, Razadyne, Nivalin, Galamer, Remigalin, Memeron)",
     categoria: "Inibidor de Colinesterase",
     descricao: "Outro inibidor, com possível ação nicotínica.",
     imagem: imgGalantamina,
@@ -46,7 +46,7 @@ export const farmacos = [
   },
   // Novo fármaco
   {
-    nome: "Tacrina (Cognex)",
+    nome: "Tacrina (Cognex, Tacrine, Tacrest, Zynaps, Anticex, Lecar)",
     categoria: "Inibidor de Colinesterase",
     principioAtivo: "Tacrina",
     imagem: imgTacrina ,

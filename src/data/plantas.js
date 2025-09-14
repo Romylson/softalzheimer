@@ -11,7 +11,7 @@ import ImgGotu from "../assets/gotu.jpg"
 const plantas = [
   {
     id: 1,
-    nome: "Ginkgo (Ginkgo biloba)",
+     nome: "Ginkgo (Ginkgo biloba, árvore-da-avenca, noz-do-japão, árvore dos quarenta escudos, ginkgô, maidenhair tree)",
     nome_cientifico: "Ginkgo biloba L.",
     origem: "China, Japão",
     mecanismos: "Melhora a circulação cerebral e atua como antioxidante",
@@ -40,7 +40,7 @@ const plantas = [
   },
   {
     id: 2,
-    nome: "Bacopa (Bacopa monnieri)",
+    nome: "Bacopa (Bacopa monnieri, brahmi, bacopá, hissopo-d'água, erva-da-memória, gratiola indiana)",
     nome_cientifico: "Bacopa monnieri (L.) Wettst.",
     origem: "Índia",
     mecanismos: "Modula neurotransmissores e tem ação neuroprotetora",
@@ -64,7 +64,7 @@ const plantas = [
   },
   {
     id: 3,
-    nome: "Curcuma longa (Cúrcuma)",
+    nome: "Curcuma longa (cúrcuma, açafrão-da-terra, turmérico, gengibre-amarelo, açafroa, raiz-do-sol)",
     nome_cientifico: "Curcuma longa L.",
     origem: "Índia, Sudeste Asiático",
     mecanismos: "Atividade anti-inflamatória e antioxidante via inibição de citocinas e modulação de NF-κB e COX-2. Pode melhorar a função cognitiva por reduzir neuroinflamação.",
@@ -88,7 +88,7 @@ const plantas = [
   },
   {
     id: 4,
-    nome: "Salvia officinalis (Sálvia)",
+    nome: "Salvia officinalis (sálvia, salva, sage, sálvia-comum, sálvia-dos-jardins, sálvia-medicinal)",
     nome_cientifico: "Salvia L.",
     origem: "Europa, Mediterrâneo",
     mecanismos: "Inibição da acetilcolinesterase (semelhante a fármacos usados no Alzheimer), ação antioxidante e neuroprotetora.",
@@ -112,7 +112,7 @@ const plantas = [
   },
   {
     id: 5,
-    nome: "Melissa officinalis (Erva-cidreira)",
+    nome: "Melissa officinalis (erva-cidreira, melissa, toronjil, cidreira-verdadeira, melissa-do-limão, balm)",
     nome_cientifico: " Melissa officinalis L.",
     origem: "Europa, Oriente Médio",
     mecanismos: " Modulação do GABA com efeito ansiolítico e calmante; ação colinérgica leve e antioxidante.",
@@ -136,7 +136,7 @@ const plantas = [
   },
   {
     id: 6,
-    nome: "Panax (gênero do “ginseng”)",
+    nome: "Panax (ginseng, ginseng-coreano, ginseng-asiático, ginseng-vermelho, panax, ginseng-verdadeiro)",
     nome_cientifico: "Panax ginseng C.A.Mey.",
     origem: "China, Coreia",
     mecanismos: "Aumenta liberação de acetilcolina, atividade neuroprotetora, modulador do eixo HPA e melhora da memória por ação sobre BDNF e neurotransmissores.",
@@ -165,7 +165,7 @@ const plantas = [
   },
   {
     id: 7,
-    nome: "Withania somnifera (Ashwagandha)",
+    nome: "Withania somnifera (ashwagandha, ginseng-indiano, withania, cereja-de-inverno, sonífera, winter cherry)",
     nome_cientifico: "Withania somnifera (L.) Dunal",
     origem: "Índia, Oriente Médio",
     mecanismos: "Adaptógeno, reduz o estresse e a neuroinflamação; ação GABAérgica e regenerativa em neurônios.",
@@ -194,7 +194,7 @@ const plantas = [
   },
   {
     id: 8,
-    nome: " Rhodiola (Raiz Dourada)",
+    nome: "Rhodiola (raiz dourada, rodíola, raiz-de-ouro, coroa-do-rei, golden root, rose root)",
     nome_cientifico: "Rhodiola rosea L.",
     origem: "Sibéria, Escandinávia",
     mecanismos: "Modulação do cortisol e dopamina, aumenta resistência ao estresse, melhora memória e cognição por mecanismos mitocondriais e antioxidantes.",
@@ -223,7 +223,7 @@ const plantas = [
   },
   {
     id: 9,
-    nome: "Centella asiatica (Gotu Kola)",
+    nome: "Centella asiatica (gotu kola, centelha-asiática, erva-do-tigre, pegaga, pennywort asiático, brahmi)",
     nome_cientifico: "Centella asiatica (L.) Urb.",
     origem: "Índia, Sri Lanka, China, Madagascar e regiões tropicais da África e América do Sul.",
     mecanismos: "Melhora da função cognitiva por neurogênese e sinaptogênese,estímulo da circulação cerebral e atividade antioxidante e redução do estresse oxidativo e neuroinflamação",
