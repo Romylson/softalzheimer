@@ -43,6 +43,7 @@ export default function Navbar() {
             >
               🎨
             </button>
+            </div>
             {/* Dropdown de idiomas */}
             <div className="dropdown">
               <button
