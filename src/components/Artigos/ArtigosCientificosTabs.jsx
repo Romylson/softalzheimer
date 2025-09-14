@@ -74,9 +74,6 @@ const ArtigosCientificosTabs = () => {
             filtro={tipoFiltro}
           />
         </Tab>
-        <Tab eventKey="pesquisar" title="Pesquisar">
-          <ArtigosPubmedBusca filtro={tipoFiltro} />
-        </Tab>
       </Tabs>
     </div>
   );
