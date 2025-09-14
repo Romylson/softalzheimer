@@ -7,7 +7,7 @@ export default function ImageCarousel() {
       <Carousel.Item>
         <img
           className="d-block w-75 mx-auto rounded"
-          style={{ maxHeight: "300px", objectFit: "cover" }}
+          style={{ maxHeight: "400px", objectFit: "cover" }}
           src="/images/alzheimer.png"
           alt="Alzheimer"
         />
@@ -15,7 +15,7 @@ export default function ImageCarousel() {
       <Carousel.Item>
         <img
           className="d-block w-75 mx-auto rounded"
-          style={{ maxHeight: "300px", objectFit: "cover" }}
+          style={{ maxHeight: "400px", objectFit: "cover" }}
           src="/images/plantas.jpg"
           alt="Plantas medicinais"
         />
@@ -23,7 +23,7 @@ export default function ImageCarousel() {
       <Carousel.Item>
         <img
           className="d-block w-75 mx-auto rounded"
-          style={{ maxHeight: "300px", objectFit: "cover" }}
+          style={{ maxHeight: "400px", objectFit: "cover" }}
           src="/images/farmaco.jpeg"
           alt="Fármacos"
         />
