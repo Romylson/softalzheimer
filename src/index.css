@@ -4,8 +4,9 @@
 @tailwind utilities;
 
 :root {
-  --background-color: #f9f9f9;
+  --background-color: #6be06b;
 }
+
 
 html, body, #root {
   background-color: var(--background-color);

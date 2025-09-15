@@ -3,7 +3,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #f3f5f3;
+  background-color: var(--background-color);
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -12,7 +12,7 @@ body {
   display: flex;
   flex-direction: row;
   min-height: 100vh;
-  background-color: #87e287;
+  background-color: var(--background-color);
 }
 
 .dashboard-sidebar {
@@ -62,7 +62,8 @@ body {
 .dashboard-main {
   flex: 1;
   padding: 2rem;
-  background-color: #87e287;
+  background-color: var(--background-color);
+
 }
 
 .dashboard-cards {
@@ -93,7 +94,7 @@ body {
 
 /* HEADER */
 .app-header {
-  background-color: #6be06b;
+  background-color: var(--background-color);
   border-bottom: 1px solid #ececec;
   box-shadow: 0 2px 8px #0001;
   padding: 10px 0;
@@ -138,8 +139,8 @@ body {
 }
 
 footer {
-  background-color: #74d374;
-  color: #fff;
+  background-color: var(--background-color);
+  color: #000;
   text-align: center;
   padding: 15px 0;
   margin-top: auto;
@@ -355,7 +356,7 @@ body {
 
 /* HEADER */
 .app-header {
-  background: #6be06b;
+  background: var(--background-color);
   padding: 10px;
   width: 100%;
   position: sticky;

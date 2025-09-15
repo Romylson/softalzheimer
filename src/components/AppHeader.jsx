@@ -1,9 +1,13 @@
 // src/components/AppHeader.jsx
 import React from "react";
 import LogoInstitucional from "./LogoInstitucional";
+
 export default function AppHeader() {
   return (
-    <header className="app-header">
+     <header
+      className="app-header"
+      style={{ backgroundColor: "var(--background-color)", color: "#000" }}
+    >
       <div className="app-header-inner">
 
         <LogoInstitucional direction="row" />
