@@ -13,8 +13,7 @@ const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
   const [colors, setColors] = useState(defaultColors);
-  const [open, setOpen] = useState(false);
-
+  
   useEffect(() => {
     const stored = localStorage.getItem("theme-colors");
     if (stored) {
@@ -57,7 +56,7 @@ export function ThemeProvider({ children }) {
   }
 
   return (
-    <ThemeContext.Provider value={{ colors, setColor, resetColors, open, setOpen }}>
+    <ThemeContext.Provider value={{ colors, setColor, resetColors }}>
       {children}
     </ThemeContext.Provider>
   );

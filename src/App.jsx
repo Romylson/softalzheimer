@@ -22,7 +22,6 @@ import AssociacaoConceitos from "./pages/AssociacaoConceitos.jsx";
 import JogoClassificacao from "./pages/JogoClassificacao.jsx";
 import CaminhoNeuronal from "./pages/CaminhoNeuronal.jsx";
 import { ThemeProvider } from "./context/ThemeContext.jsx";
-import ColorPaletteSidebar from "./components/ColorPaletteSidebar.jsx";
 import BackHomeButton from "./components/BackHomeButton.jsx";
 import Historico from "./pages/Historico.jsx";
 import Apresentacao from "./pages/Apresentacao.jsx";
@@ -59,11 +58,11 @@ function App() {
               <Route path="/jogos/associacao" element={<AssociacaoConceitos />} />
               <Route path="/jogos/classificacao" element={<JogoClassificacao />} />
               <Route path="/jogos/caminhoneuronal" element={<CaminhoNeuronal />} />
+              <Route path="/cores" element={<ThemeSettings />} />
             </Routes>
           </main>
           <Footer />
         </div>
-        <ColorPaletteSidebar />
       </Router>
     </ThemeProvider>
   );
