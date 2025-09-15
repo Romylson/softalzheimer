@@ -3,11 +3,25 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --background-color: #f9f9f9;
+}
 
+html, body, #root {
+  background-color: var(--background-color);
+}
 
 body {
   font-family: sans-serif;
-  background-color: var(--background-color, #f9f9f9);
+  }
+
+.navbar,
+footer,
+main,
+.bg-secondary,
+.bg-light,
+.bg-white {
+  background-color: var(--background-color) !important;
 }
 /* Adicione no seu App.css (ou index.css) */
 .crossword {

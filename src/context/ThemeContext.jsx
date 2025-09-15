@@ -3,7 +3,10 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
-  const [color, setColor] = useState(() => localStorage.getItem('themeColor') || '#ffffff');
+  const [color, setColor] = useState(() => {
+    const stored = localStorage.getItem('themeColor');
+    return /^#[0-9A-Fa-f]{6}$/.test(stored) ? stored : '#ffffff';
+  });
 
   useEffect(() => {
     document.documentElement.style.setProperty('--background-color', color);
