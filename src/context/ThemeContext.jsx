@@ -18,11 +18,20 @@ export function ThemeProvider({ children }) {
   useEffect(() => {
     const stored = localStorage.getItem("theme-colors");
     if (stored) {
-      const parsed = JSON.parse(stored);
-      setColors((prev) => ({ ...prev, ...parsed }));
-      Object.entries({ ...defaultColors, ...parsed }).forEach(([key, value]) => {
-        document.documentElement.style.setProperty(`--${key}`, value);
-      });
+      try {
+        const parsed = JSON.parse(stored);
+        setColors((prev) => ({ ...prev, ...parsed }));
+        Object.entries({ ...defaultColors, ...parsed }).forEach(([key, value]) => {
+          document.documentElement.style.setProperty(`--${key}`, value);
+        });
+      } catch (err) {
+        console.error("Invalid theme-colors in localStorage", err);
+        localStorage.removeItem("theme-colors");
+        Object.entries(defaultColors).forEach(([key, value]) => {
+          document.documentElement.style.setProperty(`--${key}`, value);
+        });
+        setColors(defaultColors);
+      }
     } else {
       Object.entries(defaultColors).forEach(([key, value]) => {
         document.documentElement.style.setProperty(`--${key}`, value);
