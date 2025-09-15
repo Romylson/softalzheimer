@@ -29,6 +29,7 @@ import Layout from "./components/Layout.jsx";
 import BackHomeButton from "./components/BackHomeButton.jsx";
 import Historico from "./pages/Historico.jsx";
 import Apresentacao from "./pages/Apresentacao.jsx";
+import ColorTest from "./pages/ColorTest.jsx";
 
 
 
@@ -64,7 +65,7 @@ function App() {
           <Route path="/jogos/associacao" element={<AssociacaoConceitos />} />
           <Route path="/jogos/classificacao" element={<JogoClassificacao />} />
           <Route path="/jogos/caminhoneuronal" element={<CaminhoNeuronal />} />
-         
+          <Route path="/teste-cores" element={<ColorTest />} />
 
 
 

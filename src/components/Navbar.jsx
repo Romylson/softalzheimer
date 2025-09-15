@@ -21,11 +21,14 @@ export default function Navbar() {
           Plantamente
         </Link>
         <div className="d-flex align-items-center ms-auto gap-3">
-         <Link to="/historico" className="nav-link text-light">
+          <Link to="/historico" className="nav-link text-light">
             {t("history")}
           </Link>
           <Link to="/apresentacao" className="nav-link text-light">
             {t("about_site")}
+          </Link>
+          <Link to="/teste-cores" className="nav-link text-light">
+            {t("color_test")}
           </Link> 
           {/* Dropdown de idiomas */}
           <div className="dropdown">
