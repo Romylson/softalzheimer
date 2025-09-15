@@ -21,10 +21,8 @@ import ArtigosCientificosTabs from "./components/Artigos/ArtigosCientificosTabs"
 import AssociacaoConceitos from "./pages/AssociacaoConceitos";
 import JogoClassificacao from "./pages/JogoClassificacao";
 import CaminhoNeuronal from "./pages/CaminhoNeuronal.jsx";
-import { ThemeProvider } from "./context/ThemeContext";
-import ColorPaletteSidebar from "./components/ColorPaletteSidebar";
-import { ThemeProvider } from "./context/ThemeContext";
-import ColorPaletteSidebar from "./components/ColorPaletteSidebar";
+import { ThemeProvider } from "./context/ThemeContext.jsx";
+import ColorPaletteSidebar from "./components/ColorPaletteSidebar.jsx";
 import BackHomeButton from "./components/BackHomeButton.jsx";
 import Historico from "./pages/Historico.jsx";
 import Apresentacao from "./pages/Apresentacao.jsx";
