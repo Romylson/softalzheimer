@@ -37,6 +37,7 @@ function App() {
           <AppHeader />
           <Navbar />
           <main className="flex-1 p-4">
+            <BackHomeButton />
             <Routes>
               <Route path="/fisiopatologia" element={<Fisiopatologia />} />
               <Route path="/plantas" element={<PlantasMedicinais />} />
@@ -52,6 +53,8 @@ function App() {
               <Route path="/jogos/xadrez" element={<Xadrez />} />
               <Route path="/jogos/quebra-cabeca" element={<QuebraCabeca />} />
               <Route path="/" element={<Dashboard />} />
+              <Route path="/historico" element={<Historico />} />
+              <Route path="/apresentacao" element={<Apresentacao />} />
               <Route path="/artigos-cientificos" element={<ArtigosCientificosTabs />} />
               <Route path="/jogos/associacao" element={<AssociacaoConceitos />} />
               <Route path="/jogos/classificacao" element={<JogoClassificacao />} />

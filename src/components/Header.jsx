@@ -1,5 +1,5 @@
-import LogoInstitucional from "../components/LogoInstitucional";
-import { useTheme } from "../context/ThemeContext";
+import LogoInstitucional from "../components/LogoInstitucional.jsx";
+import { useTheme } from "../context/ThemeContext.jsx";
 
 export default function Header() {
     const { setOpen } = useTheme();
