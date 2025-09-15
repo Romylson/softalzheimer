@@ -1,4 +1,3 @@
-import { useState } from "react";
 import LogoInstitucional from "../components/LogoInstitucional";
 import { useTheme } from "../context/ThemeContext";
 
