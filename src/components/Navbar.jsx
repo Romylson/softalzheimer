@@ -16,7 +16,7 @@ export default function Navbar() {
   return (
     <nav
       className="navbar navbar-expand-lg navbar-dark px-4 shadow-sm"
-      style={{ height: 60, backgroundColor: "var(--background-color)", color: "#000" }}
+      style={{ height: 60, backgroundColor: "var(--background-color)", color: "#000000" }}
     >
       <div className="container-fluid">
         <Link to="/" className="navbar-brand fw-bold fs-4" style={{ letterSpacing: "0.5px" }}>
