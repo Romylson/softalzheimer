@@ -4,9 +4,9 @@ import LogoInstitucional from "./LogoInstitucional";
 
 export default function AppHeader() {
   return (
-     <header
+    <header
       className="app-header"
-      style={{ backgroundColor: "var(--background-color)", color: "#000" }}
+      style={{ backgroundColor: "var(--background-color)", color: "var(--text-color)" }}
     >
       <div className="app-header-inner">
 

@@ -5,6 +5,7 @@
 
 :root {
   --background-color: #6be06b;
+  --text-color: #000;
 }
 
 
@@ -23,6 +24,7 @@ main,
 .bg-light,
 .bg-white {
   background-color: var(--background-color) !important;
+  color: var(--text-color);
 }
 /* Adicione no seu App.css (ou index.css) */
 .crossword {

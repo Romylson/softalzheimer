@@ -15,23 +15,27 @@ export default function Navbar() {
 
   return (
     <nav
-      className="navbar navbar-expand-lg navbar-dark px-4 shadow-sm"
-      style={{ height: 60, backgroundColor: "var(--background-color)", color: "#000" }}
+      className="navbar navbar-expand-lg px-4 shadow-sm"
+      style={{
+        height: 60,
+        backgroundColor: "var(--background-color)",
+        color: "var(--text-color)",
+      }}
     >
       <div className="container-fluid">
         <Link to="/" className="navbar-brand fw-bold fs-4" style={{ letterSpacing: "0.5px" }}>
           Plantamente
         </Link>
         <div className="d-flex align-items-center ms-auto gap-3">
-          <Link to="/historico" className="nav-link text-light">
+          <Link to="/historico" className="nav-link" style={{ color: "var(--text-color)" }}>
             {t("history")}
           </Link>
-          <Link to="/apresentacao" className="nav-link text-light">
+          <Link to="/apresentacao" className="nav-link" style={{ color: "var(--text-color)" }}>
             {t("about_site")}
           </Link>
-          <Link to="/teste-cores" className="nav-link text-light">
+          <Link to="/teste-cores" className="nav-link" style={{ color: "var(--text-color)" }}>
             {t("color_test")}
-          </Link> 
+          </Link>
           {/* Dropdown de idiomas */}
           <div className="dropdown">
             <button
@@ -66,12 +70,32 @@ export default function Navbar() {
             </ul>
           </div>
           {/* Botão de Login/Cadastro */}
-          <button className="btn btn-outline-light px-3" type="button" onClick={() => setShowLogin(true)}>
+          <button
+            className="btn px-3"
+            type="button"
+            onClick={() => setShowLogin(true)}
+            style={{ color: "var(--text-color)", borderColor: "var(--text-color)" }}
+          >
             {user ? (
               <span>
                 {user.photoURL
-                  ? <img src={user.photoURL} alt="avatar" style={{ width: 28, height: 28, borderRadius: "50%", objectFit: "cover", marginRight: 6, verticalAlign: "middle" }} />
-                  : <i className="bi bi-person-circle me-2 fs-5"></i>
+                  ? (
+                      <img
+                        src={user.photoURL}
+                        alt="avatar"
+                        style={{
+                          width: 28,
+                          height: 28,
+                          borderRadius: "50%",
+                          objectFit: "cover",
+                          marginRight: 6,
+                          verticalAlign: "middle",
+                        }}
+                      />
+                    )
+                  : (
+                      <i className="bi bi-person-circle me-2 fs-5"></i>
+                    )
                 }
                 {user.displayName || user.email}
               </span>
