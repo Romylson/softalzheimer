@@ -3,20 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --primary: #2563eb;
-  --secondary: #10b981;
-  --accent: #f59e0b;
-  --background: #f9f9f9;
-  --surface: #ffffff;
-  --text: #1f2937;
-}
 
 
 body {
   font-family: sans-serif;
-  background-color: var(--background);
-  color: var(--text);
+  background-color: #f9f9f9;
 }
 /* Adicione no seu App.css (ou index.css) */
 .crossword {
