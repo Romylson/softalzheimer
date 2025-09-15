@@ -7,5 +7,10 @@ export default defineConfig({
     proxy: {
       '/api': 'http://localhost:3001'
     }
+    },
+  build: {
+    // Increase chunk size warning limit to avoid noisy build output
+    // Largest asset currently ~6MB; set threshold higher to suppress warnings
+    chunkSizeWarningLimit: 8000
   }
 });
