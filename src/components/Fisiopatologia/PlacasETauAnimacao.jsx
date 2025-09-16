@@ -1,6 +1,10 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import "./PlacasETauAnimacao.css";
+import { autoresFisiopatologia } from "../../data/fisiopatologia";
+
+const autorBetaAmiloide = autoresFisiopatologia.placasETauAnimacao.betaAmiloide;
+const autorTau = autoresFisiopatologia.placasETauAnimacao.tau;
 
 export default function PlacasETauAnimacao() {
   const { t } = useTranslation();
@@ -22,6 +26,7 @@ export default function PlacasETauAnimacao() {
           />
           <div className="fw-bold mt-2">{t("fisiopatologia.beta_amiloide")}</div>
           <div className="text-muted small">{t("fisiopatologia.beta_amiloide_desc")}</div>
+          <p className="text-muted small mt-2">Imagem: βeta-Amiloide - Autor: {autorBetaAmiloide}</p>
         </div>
 
         {/* Bloco Tau */}
@@ -34,6 +39,7 @@ export default function PlacasETauAnimacao() {
           />
           <div className="fw-bold mt-2">{t("fisiopatologia.tau")}</div>
           <div className="text-muted small">{t("fisiopatologia.tau_desc")}</div>
+          <p className="text-muted small mt-2">Imagem: Tau - Autor: {autorTau}</p>
         </div>
       </div>
     </section>

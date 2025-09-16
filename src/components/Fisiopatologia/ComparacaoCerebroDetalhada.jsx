@@ -3,6 +3,10 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import normalImg from "../../assets/cerebro_normal.jpg";      // troque pelo caminho correto da sua imagem
 import alzheimerImg from "../../assets/cerebro_alzheimer.jpg"; // troque pelo caminho correto da sua imagem
+import { autoresFisiopatologia } from "../../data/fisiopatologia";
+
+const autorImgNormal = autoresFisiopatologia.comparacaoCerebroDetalhada.normal;
+const autorImgAlzheimer = autoresFisiopatologia.comparacaoCerebroDetalhada.alzheimer;
 
 export default function ComparacaoCerebroDetalhada() {
   const { t } = useTranslation();
@@ -14,10 +18,12 @@ export default function ComparacaoCerebroDetalhada() {
         <div>
           <img src={normalImg} alt={t("normal_brain")} style={{width: 170, borderRadius: 12, border: "4px solid #111"}} />
           <div className="fw-semibold mt-2">{t("normal_brain")}</div>
+          <p className="text-muted small">Imagem: {t("normal_brain")} - Autor: {autorImgNormal}</p>
         </div>
         <div>
           <img src={alzheimerImg} alt={t("alzheimer_brain")} style={{width: 170, borderRadius: 12, border: "4px solid #800080"}} />
           <div className="fw-semibold mt-2">{t("alzheimer_brain")}</div>
+           <p className="text-muted small">Imagem: {t("alzheimer_brain")} - Autor: {autorImgAlzheimer}</p>
         </div>
       </div>
      {/* <div className="my-3" style={{maxWidth: 800, margin: "0 auto", textAlign: "left"}}>

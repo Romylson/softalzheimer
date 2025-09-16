@@ -1,5 +1,10 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { autoresFisiopatologia } from "../../data/fisiopatologia";
+
+const autorLeve = autoresFisiopatologia.timelineProgressao.leve;
+const autorModerada = autoresFisiopatologia.timelineProgressao.moderada;
+const autorGrave = autoresFisiopatologia.timelineProgressao.grave;
 
 export default function TimelineProgresso() {
   const { t } = useTranslation();
@@ -20,6 +25,7 @@ export default function TimelineProgresso() {
           />
           <div className="fw-bold mt-2">{t("fisiopatologia.leve")}</div>
           <div className="text-muted small">{t("fisiopatologia.leve_desc")}</div>
+          <p className="text-muted small mt-2">Imagem: Estágio Leve - Autor: {autorLeve}</p>
         </div>
 
         {/* Moderada */}
@@ -31,6 +37,7 @@ export default function TimelineProgresso() {
           />
           <div className="fw-bold mt-2">{t("fisiopatologia.moderada")}</div>
           <div className="text-muted small">{t("fisiopatologia.moderada_desc")}</div>
+          <p className="text-muted small mt-2">Imagem: Estágio Moderado - Autor: {autorModerada}</p>
         </div>
 
         {/* Grave */}
@@ -42,6 +49,7 @@ export default function TimelineProgresso() {
           />
           <div className="fw-bold mt-2">{t("fisiopatologia.grave")}</div>
           <div className="text-muted small">{t("fisiopatologia.grave_desc")}</div>
+          <p className="text-muted small mt-2">Imagem: Estágio Grave - Autor: {autorGrave}</p>
         </div>
       </div>
       <section className="my-5 px-4">
