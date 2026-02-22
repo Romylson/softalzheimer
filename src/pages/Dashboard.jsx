@@ -7,7 +7,6 @@ import IntroBlock from "../components/IntroBlock";
 import DiferenciaisInovadores from "../components/DiferenciaisInovadores";
 import BannerDiferenciais from "../components/BannerDiferenciais";
 import NoticiasAvancosAlzheimer from "../components/NoticiasAvancosAlzheimer";
-import AdSenseBanner from "../components/AdSenseBanner";
 import ImageCarousel from "../components/ImageCarousel";
 
 
@@ -103,7 +102,6 @@ export default function Dashboard() {
       <main className="dashboard-main">
         <BannerDiferenciais />
         <ImageCarousel />
-        <AdSenseBanner adSlot="4166046455" />
         <div className="intro text-center">
           <h1>
             {t("welcome_dashboard")} <span className="highlight">PlantaMente</span>
@@ -144,7 +142,7 @@ export default function Dashboard() {
         <IntroBlock />
         <NoticiasAvancosAlzheimer />
         <DiferenciaisInovadores />
-        <AdSenseBanner adSlot="4166046455" />
+        
       </main>
     </div>
   );
