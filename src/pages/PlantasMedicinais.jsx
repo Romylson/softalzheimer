@@ -53,8 +53,14 @@ export default function PlantasMedicinais() {
             value={busca}
             onChange={(e) => setBusca(e.target.value)}
           />
-          <button type="button">Pesquisar</button>
-          <button type="button" onClick={limparFiltros}>Limpar filtro</button>
+          <button type="button" className="filtro-acao-btn">
+            <span aria-hidden="true" className="btn-icon">🔎</span>
+            <span>Pesquisar</span>
+          </button>
+          <button type="button" onClick={limparFiltros} className="filtro-acao-btn">
+            <span aria-hidden="true" className="btn-icon">🧹</span>
+            <span>Limpar filtro</span>
+          </button>
         </div>
 
         <div className="plantas-alfabeto">

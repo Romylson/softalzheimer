@@ -38,7 +38,19 @@
 
 .plantas-filtros-topo button {
   color: #6a8948;
-  font-size: 45px;
+  font-size: 18px;
+  line-height: 1.2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  min-height: 68px;
+}
+
+.plantas-filtros-topo .btn-icon {
+  font-size: 20px;
   line-height: 1;
 }
 
@@ -114,7 +126,7 @@
 @media (max-width: 1200px) {
   .plantas-page-container h1 { font-size: 40px; }
   .plantas-page-container > p { font-size: 17px; }
-  .plantas-filtros-topo button { font-size: 30px; }
+  .plantas-filtros-topo button { font-size: 17px; }
   .plantas-alfabeto button { font-size: 30px; }
   .planta-item-card h3 { font-size: 30px; }
   .planta-item-card p, .planta-item-card button { font-size: 14px; }
