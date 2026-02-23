@@ -59,9 +59,6 @@ const linksLegados = [
   { titulo: "Jogos", rota: "/jogos" },
   { titulo: "Cérebro 3D", rota: "/cerebro3d" },
   { titulo: "Artigos Científicos", rota: "/artigos-cientificos" },
-  { titulo: "Histórico", rota: "/historico" },
-  { titulo: "Apresentação", rota: "/apresentacao" },
-  { titulo: "Teste de Cores", rota: "/teste-cores" },
 ];
 
 export default function Dashboard() {
