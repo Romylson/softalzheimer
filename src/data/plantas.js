@@ -270,74 +270,6 @@ const plantas = [
   },
 
   {
-    id: 10,
-    nome: "Rosmarinus officinalis (alecrim, rosemary, rosmarino, erva-da-recordação)",
-    nome_cientifico: "Salvia rosmarinus Spenn.",
-    origem: "Mediterrâneo",
-    mecanismos: "Ação antioxidante, modulação colinérgica e potencial inibição de acetilcolinesterase.",
-    modosUso: "Infusão das folhas, extrato seco padronizado e óleo essencial (uso orientado).",
-    usos: "Suporte cognitivo e bem-estar mental.",
-    efeitosColaterais: ["Irritação gástrica em sensíveis.", "Risco de interação com anticoagulantes."],
-    contraindicacoes: ["Gestação sem orientação.", "Uso de óleo essencial por via oral sem supervisão."],
-    imagem: imgSalvia,
-    autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
-    coordenadas: [43.7696, 11.2558],
-    interacoes: [
-      { medicamento: "Anticoagulantes", risco: "Pode alterar risco de sangramento.", evidencia: "Monitorar uso concomitante." }
-    ]
-  },
-  {
-    id: 11,
-    nome: "Camellia sinensis (chá-verde, green tea, té verde)",
-    nome_cientifico: "Camellia sinensis (L.) Kuntze",
-    origem: "China, Japão",
-    mecanismos: "Catequinas (EGCG) com atividade antioxidante e anti-inflamatória, potencial neuroprotetor.",
-    modosUso: "Infusão de folhas e extratos padronizados.",
-    usos: "Suporte metabólico e antioxidante cerebral.",
-    efeitosColaterais: ["Insônia por cafeína.", "Desconforto gastrointestinal em excesso."],
-    contraindicacoes: ["Sensibilidade à cafeína.", "Cautela com hipertensão não controlada."],
-    imagem: imgGinkgo,
-    autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
-    coordenadas: [35.8617, 104.1954],
-    interacoes: [
-      { medicamento: "Estimulantes", risco: "Pode aumentar agitação/insônia.", evidencia: "Interação relacionada à cafeína." }
-    ]
-  },
-  {
-    id: 12,
-    nome: "Crocus sativus (açafrão, saffron)",
-    nome_cientifico: "Crocus sativus L.",
-    origem: "Mediterrâneo, Irã",
-    mecanismos: "Crocinas com potencial antioxidante, anti-inflamatório e modulação neurotransmissora.",
-    modosUso: "Extrato padronizado e uso culinário tradicional.",
-    usos: "Suporte de memória e humor em protocolos estudados.",
-    efeitosColaterais: ["Náusea em doses elevadas.", "Cefaleia eventual."],
-    contraindicacoes: ["Gestação sem orientação médica.", "Cautela em uso de anticoagulantes."],
-    imagem: imgCurcuma,
-    autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
-    coordenadas: [32.4279, 53.6880],
-    interacoes: [
-      { medicamento: "Anticoagulantes", risco: "Potencializa risco hemorrágico em teoria.", evidencia: "Necessita avaliação clínica." }
-    ]
-  },
-  {
-    id: 13,
-    nome: "Lavandula angustifolia (lavanda, lavender)",
-    nome_cientifico: "Lavandula angustifolia Mill.",
-    origem: "Região Mediterrânea",
-    mecanismos: "Ação ansiolítica e antioxidante, auxiliando regulação de sono e estresse.",
-    modosUso: "Infusão, aromaterapia e extratos padronizados.",
-    usos: "Qualidade do sono e redução de estresse.",
-    efeitosColaterais: ["Sonolência.", "Dermatite de contato em sensíveis."],
-    contraindicacoes: ["Uso interno de óleo essencial sem orientação.", "Cautela com sedativos."],
-    imagem: imgMelissa,
-    autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
-    coordenadas: [43.9352, 5.7826],
-    interacoes: [
-      { medicamento: "Sedativos", risco: "Pode potencializar sedação.", evidencia: "Ajustar dose com orientação profissional." }
-    ]
-  },
-  {
     id: 14,
     nome: "Zingiber officinale (gengibre, ginger)",
     nome_cientifico: "Zingiber officinale Roscoe",
@@ -440,23 +372,7 @@ const plantas = [
       { medicamento: "Anticoagulantes", risco: "Pode aumentar risco de sangramento em altas doses.", evidencia: "Monitorar clinicamente." }
     ]
   },
-  {
-    id: 20,
-    nome: "Bacopa monnieri (brahmi)",
-    nome_cientifico: "Bacopa monnieri (L.) Wettst.",
-    origem: "Índia",
-    mecanismos: "Bacosídeos com potencial neuroprotetor, modulação sináptica e melhora de memória.",
-    modosUso: "Extrato padronizado em cápsulas, infusão tradicional.",
-    usos: "Memória e desempenho cognitivo.",
-    efeitosColaterais: ["Náusea leve.", "Sonolência em alguns usuários."],
-    contraindicacoes: ["Gestantes/lactantes sem orientação.", "Cautela com sedativos."],
-    imagem: imgBacopa,
-    autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
-    coordenadas: [20.5937, 78.9629],
-    interacoes: [
-      { medicamento: "Depressores do SNC", risco: "Pode potencializar sedação.", evidencia: "Acompanhamento profissional recomendado." }
-    ]
-  },
+
 
   {
     id: 21,
@@ -468,7 +384,7 @@ const plantas = [
     usos: "Suporte ao estresse, clareza mental e saúde metabólica.",
     efeitosColaterais: ["Desconforto gastrointestinal leve em doses altas."],
     contraindicacoes: ["Gestação sem orientação médica.", "Cautela com antidiabéticos."],
-    imagem: imgErvaDoce,
+    imagem: "https://upload.wikimedia.org/wikipedia/commons/4/43/Ocimum_tenuiflorum2.jpg",
     autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
     coordenadas: [22.9734, 78.6569],
     interacoes: [
@@ -485,7 +401,7 @@ const plantas = [
     usos: "Suplementação nutricional e suporte antioxidante.",
     efeitosColaterais: ["Desconforto intestinal em uso excessivo."],
     contraindicacoes: ["Gestação sem orientação profissional."],
-    imagem: imgPlantasMedicinais,
+    imagem: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Moringa_oleifera_leaves.jpg",
     autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
     coordenadas: [9.082, 8.6753],
     interacoes: [
@@ -502,7 +418,7 @@ const plantas = [
     usos: "Suporte imunológico e manejo de fadiga.",
     efeitosColaterais: ["Boca seca, desconforto gástrico em alguns casos."],
     contraindicacoes: ["Cautela com anticoagulantes e imunossupressores."],
-    imagem: imgPlanta,
+    imagem: "https://upload.wikimedia.org/wikipedia/commons/7/70/Ganoderma_lucidum_02.jpg",
     autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
     coordenadas: [35.8617, 104.1954],
     interacoes: [
@@ -519,7 +435,7 @@ const plantas = [
     usos: "Suporte inflamatório e imunológico.",
     efeitosColaterais: ["Náuseas e desconforto gastrointestinal em doses elevadas."],
     contraindicacoes: ["Gestação e lactação.", "Doenças autoimunes sem orientação médica."],
-    imagem: imgPlantasMedicinais,
+    imagem: "https://upload.wikimedia.org/wikipedia/commons/0/08/Uncaria_tomentosa.jpg",
     autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
     coordenadas: [-3.4653, -62.2159],
     interacoes: [
@@ -553,7 +469,7 @@ const plantas = [
     usos: "Ansiedade leve e qualidade de sono.",
     efeitosColaterais: ["Sonolência."],
     contraindicacoes: ["Cautela com sedativos e álcool."],
-    imagem: imgMelissa,
+    imagem: "https://upload.wikimedia.org/wikipedia/commons/2/29/Passiflora_incarnata_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-236.jpg",
     autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
     coordenadas: [-14.235, -51.9253],
     interacoes: [
@@ -571,7 +487,7 @@ const plantas = [
     usos: "Suporte antioxidante e cognitivo.",
     efeitosColaterais: ["Insônia em sensíveis à cafeína."],
     contraindicacoes: ["Cautela em pacientes com ansiedade e sensibilidade à cafeína."],
-    imagem: imgErvaDoce,
+    imagem: "https://upload.wikimedia.org/wikipedia/commons/7/71/Camellia_sinensis_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-026.jpg",
     autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
     coordenadas: [35.8617, 104.1954],
     interacoes: [
@@ -588,7 +504,7 @@ const plantas = [
     usos: "Suporte de memória e humor.",
     efeitosColaterais: ["Náusea leve em doses elevadas."],
     contraindicacoes: ["Gestação sem orientação médica."],
-    imagem: imgCurcuma,
+    imagem: "https://upload.wikimedia.org/wikipedia/commons/e/e4/Saffron_Crocus_sativus_flowers.jpg",
     autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
     coordenadas: [32.4279, 53.6880],
     interacoes: [
@@ -605,7 +521,7 @@ const plantas = [
     usos: "Qualidade do sono e ansiedade leve.",
     efeitosColaterais: ["Sonolência.", "Hipotensão em suscetíveis."],
     contraindicacoes: ["Uso com sedativos sem orientação profissional."],
-    imagem: imgMelissa,
+    imagem: "https://upload.wikimedia.org/wikipedia/commons/e/e5/Lippia_alba.jpg",
     autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
     coordenadas: [-15.7939, -47.8828],
     interacoes: [
@@ -622,7 +538,7 @@ const plantas = [
     usos: "Humor e bem-estar emocional.",
     efeitosColaterais: ["Fotossensibilidade.", "Desconforto gastrointestinal."],
     contraindicacoes: ["Uso concomitante com diversos fármacos sem avaliação médica."],
-    imagem: imgPlanta,
+    imagem: "https://upload.wikimedia.org/wikipedia/commons/0/02/Hypericum_perforatum_002.JPG",
     autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
     coordenadas: [51.1657, 10.4515],
     interacoes: [
@@ -639,7 +555,7 @@ const plantas = [
     usos: "Suporte anti-inflamatório.",
     efeitosColaterais: ["Retenção hídrica e aumento de pressão em uso prolongado."],
     contraindicacoes: ["Hipertensão não controlada.", "Insuficiência renal."],
-    imagem: imgPanax,
+    imagem: "https://upload.wikimedia.org/wikipedia/commons/7/75/Illustration_Glycyrrhiza_glabra0.jpg",
     autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
     coordenadas: [34.8021, 38.9968],
     interacoes: [
@@ -656,7 +572,7 @@ const plantas = [
     usos: "Fadiga, estresse e desempenho mental.",
     efeitosColaterais: ["Insônia leve e irritabilidade em alguns casos."],
     contraindicacoes: ["Hipertensão sem controle e uso de estimulantes sem orientação."],
-    imagem: imgGinseng,
+    imagem: "https://upload.wikimedia.org/wikipedia/commons/6/6e/Eleutherococcus_senticosus.jpg",
     autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
     coordenadas: [61.5240, 105.3188],
     interacoes: [
