@@ -30,6 +30,12 @@ import BackHomeButton from "./components/BackHomeButton.jsx";
 import Historico from "./pages/Historico.jsx";
 import Apresentacao from "./pages/Apresentacao.jsx";
 import ColorTest from "./pages/ColorTest.jsx";
+import AlzheimerDadosPage from "./pages/AlzheimerDadosPage.jsx";
+import SecaoCientificaPage from "./pages/SecaoCientificaPage.jsx";
+import QualidadeVidaPage from "./pages/QualidadeVidaPage.jsx";
+import EducacionalPage from "./pages/EducacionalPage.jsx";
+import BlogCientificoPage from "./pages/BlogCientificoPage.jsx";
+import DiferenciaisInovadoresPage from "./pages/DiferenciaisInovadoresPage.jsx";
 
 
 
@@ -66,10 +72,13 @@ function App() {
           <Route path="/jogos/classificacao" element={<JogoClassificacao />} />
           <Route path="/jogos/caminhoneuronal" element={<CaminhoNeuronal />} />
           <Route path="/teste-cores" element={<ColorTest />} />
-
-
-
-
+          <Route path="/alzheimer-dados" element={<AlzheimerDadosPage />} />
+          <Route path="/plantas-evidencia" element={<PlantasMedicinais />} />
+          <Route path="/secao-cientifica" element={<SecaoCientificaPage />} />
+          <Route path="/qualidade-de-vida" element={<QualidadeVidaPage />} />
+          <Route path="/educacional" element={<EducacionalPage />} />
+          <Route path="/blog-cientifico" element={<BlogCientificoPage />} />
+          <Route path="/diferenciais-inovadores" element={<DiferenciaisInovadoresPage />} />
 
         </Routes>
       </div>

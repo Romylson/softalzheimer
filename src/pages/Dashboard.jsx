@@ -1,148 +1,113 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Dashboard.css";
-import "../components/PlantasAnimacao.css";
-import { useTranslation } from "react-i18next";
-import IntroBlock from "../components/IntroBlock";
-import DiferenciaisInovadores from "../components/DiferenciaisInovadores";
-import BannerDiferenciais from "../components/BannerDiferenciais";
-import NoticiasAvancosAlzheimer from "../components/NoticiasAvancosAlzheimer";
 import ImageCarousel from "../components/ImageCarousel";
+import NoticiasAvancosAlzheimer from "../components/NoticiasAvancosAlzheimer";
+import BannerDiferenciais from "../components/BannerDiferenciais";
+import DiferenciaisInovadores from "../components/DiferenciaisInovadores";
+import IntroBlock from "../components/IntroBlock";
 
-
-
+const secoesHome = [
+  {
+    titulo: "Alzheimer em Dados",
+    descricao: "Entenda definição, prevalência, mecanismos e progressão da doença.",
+    rota: "/alzheimer-dados",
+    emoji: "🧠",
+  },
+  {
+    titulo: "Plantas em Evidência",
+    descricao: "Acesse plantas com mecanismos de ação e nível de evidência.",
+    rota: "/plantas",
+    emoji: "🌿",
+  },
+  {
+    titulo: "Seção Científica",
+    descricao: "Biblioteca organizada e banco de estudos pesquisável.",
+    rota: "/secao-cientifica",
+    emoji: "🔬",
+  },
+  {
+    titulo: "Qualidade de Vida e Prevenção",
+    descricao: "Leve ciência para a prática com recomendações e autoavaliação.",
+    rota: "/qualidade-de-vida",
+    emoji: "💚",
+  },
+  {
+    titulo: "Seção Educacional",
+    descricao: "Materiais didáticos, mapas mentais, PDFs e quizzes por nível.",
+    rota: "/educacional",
+    emoji: "🎓",
+  },
+  {
+    titulo: "Blog Científico",
+    descricao: "Publicações quinzenais com evidência, aplicabilidade e limitações.",
+    rota: "/blog-cientifico",
+    emoji: "📝",
+  },
+  {
+    titulo: "Diferenciais Inovadores",
+    descricao: "Planta da semana, simulador de mecanismos e área para pesquisadores.",
+    rota: "/diferenciais-inovadores",
+    emoji: "🚀",
+  },
+];
 
 export default function Dashboard() {
   const location = useLocation();
-  const { t } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
 
   return (
     <div className="dashboard-layout">
-      {/* botão hambúrguer */}
-      <button className="hamburger-button" onClick={toggleMenu}>
+      <button className="hamburger-button" onClick={() => setMenuOpen((prev) => !prev)} aria-label="Abrir menu">
         ☰
       </button>
 
-      {/* sidebar */}
       <aside className={`dashboard-sidebar ${menuOpen ? "open" : ""}`}>
-        <img
-          src="/images/plantamente.jpg"
-          alt="PlantaMente Logo"
-          className="logo plant-move"
-        />
+        <img src="/images/plantamente.jpg" alt="PlantaMente" className="logo" />
         <h2 className="sidebar-title">PlantaMente</h2>
         <nav>
           <ul>
-            <li>
-              <Link
-                className={location.pathname === "/dashboard" ? "active" : ""}
-                to="/dashboard"
-              >
-                {t("dashboard")}
-              </Link>
-            </li>
-            <li>
-              <Link
-                className={location.pathname === "/fisiopatologia" ? "active" : ""}
-                to="/fisiopatologia"
-              >
-                {t("physiopathology")}
-              </Link>
-            </li>
-            <li>
-              <Link
-                className={location.pathname === "/plantas" ? "active" : ""}
-                to="/plantas"
-              >
-                {t("plants")}
-              </Link>
-            </li>
-            <li>
-              <Link
-                className={location.pathname === "/farmacos" ? "active" : ""}
-                to="/farmacos"
-              >
-                {t("drugs")}
-              </Link>
-            </li>
-            <li>
-              <Link
-                className={location.pathname === "/jogos" ? "active" : ""}
-                to="/jogos"
-              >
-                {t("educational_games")}
-              </Link>
-            </li>
-            <li>
-              <Link
-                className={location.pathname === "/cerebro3d" ? "active" : ""}
-                to="/cerebro3d"
-              >
-                {t("brain3d")}
-              </Link>
-            </li>
-            <li>
-              <Link
-                className={location.pathname === "/artigos-cientificos" ? "active" : ""}
-                to="/artigos-cientificos"
-              >
-                {t("scientific_articles")}
-              </Link>
-            </li>
+            <li><Link className={location.pathname === "/" || location.pathname === "/dashboard" ? "active" : ""} to="/">Início</Link></li>
+            {secoesHome.map((secao) => (
+              <li key={secao.rota}>
+                <Link className={location.pathname === secao.rota ? "active" : ""} to={secao.rota}>{secao.titulo}</Link>
+              </li>
+            ))}
           </ul>
         </nav>
       </aside>
 
-      {/* conteúdo principal */}
       <main className="dashboard-main">
+        <section className="hero-banner">
+          <p className="hero-tag">Conectando Ciência, Natureza e Saúde Cerebral</p>
+          <h1>Agora cada seção possui sua própria página dedicada</h1>
+          <p>Escolha abaixo a área que você deseja explorar.</p>
+          <div className="hero-actions">
+            <Link to="/secao-cientifica" className="hero-btn primary">Explorar Evidências Científicas</Link>
+            <Link to="/plantas" className="hero-btn">Conhecer as Plantas</Link>
+            <Link to="/qualidade-de-vida" className="hero-btn">Melhorar Minha Saúde Cerebral</Link>
+          </div>
+        </section>
+
+        <section className="section-block">
+          <h2>Páginas do portal</h2>
+          <div className="cards-grid">
+            {secoesHome.map((secao) => (
+              <article key={secao.rota} className="info-card interactive">
+                <div className="emoji">{secao.emoji}</div>
+                <h3>{secao.titulo}</h3>
+                <p>{secao.descricao}</p>
+                <Link className="inline-link" to={secao.rota}>Abrir página</Link>
+              </article>
+            ))}
+          </div>
+        </section>
+
         <BannerDiferenciais />
         <ImageCarousel />
-        <div className="intro text-center">
-          <h1>
-            {t("welcome_dashboard")} <span className="highlight">PlantaMente</span>
-          </h1>
-          <p>{t("dashboard_desc")}</p>
-        </div>
-
-        <div className="dashboard-cards">
-          <div className="dashboard-card green">
-            <img
-              src="/images/planta.jpg"
-              alt={t("plants")}
-              className="dashboard-img plant-move"
-            />
-            <div className="icon">🌱</div>
-            <h2>{t("plants")}</h2>
-          </div>
-          <div className="dashboard-card yellow">
-            <img
-              src="/images/farmaco.jpeg"
-              alt={t("drugs")}
-              className="dashboard-img plant-move"
-            />
-            <div className="icon">💊</div>
-            <h2>{t("drugs")}</h2>
-          </div>
-          <div className="dashboard-card blue">
-            <img
-              src="/images/fisiopatologia.png"
-              alt={t("physiopathology")}
-              className="dashboard-img plant-move"
-            />
-            <div className="icon">🧠</div>
-            <h2>{t("physiopathology")}</h2>
-          </div>
-        </div>
-
         <IntroBlock />
         <NoticiasAvancosAlzheimer />
         <DiferenciaisInovadores />
-        
       </main>
     </div>
   );
