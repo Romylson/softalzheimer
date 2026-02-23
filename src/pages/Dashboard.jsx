@@ -52,6 +52,18 @@ const secoesHome = [
   },
 ];
 
+const linksLegados = [
+  { titulo: "Fisiopatologia", rota: "/fisiopatologia" },
+  { titulo: "Plantas", rota: "/plantas" },
+  { titulo: "Fármacos", rota: "/farmacos" },
+  { titulo: "Jogos", rota: "/jogos" },
+  { titulo: "Cérebro 3D", rota: "/cerebro3d" },
+  { titulo: "Artigos Científicos", rota: "/artigos-cientificos" },
+  { titulo: "Histórico", rota: "/historico" },
+  { titulo: "Apresentação", rota: "/apresentacao" },
+  { titulo: "Teste de Cores", rota: "/teste-cores" },
+];
+
 export default function Dashboard() {
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -68,7 +80,12 @@ export default function Dashboard() {
         <nav>
           <ul>
             <li><Link className={location.pathname === "/" || location.pathname === "/dashboard" ? "active" : ""} to="/">Início</Link></li>
-            {secoesHome.map((secao) => (
+            {linksLegados.map((link) => (
+              <li key={link.rota}>
+                <Link className={location.pathname === link.rota ? "active" : ""} to={link.rota}>{link.titulo}</Link>
+              </li>
+            ))}
+            {secoesHome.filter((secao) => !linksLegados.some((link) => link.rota === secao.rota)).map((secao) => (
               <li key={secao.rota}>
                 <Link className={location.pathname === secao.rota ? "active" : ""} to={secao.rota}>{secao.titulo}</Link>
               </li>
