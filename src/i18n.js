@@ -44,7 +44,7 @@ const resources = {
       noticias_titulo: "Notícias Recentes sobre Alzheimer",
       noticia_1_titulo: "Painel de biomarcadores plasmáticos melhora triagem precoce em 2026",
       noticia_1_desc: "Consórcio multicêntrico reportou maior precisão na triagem de risco com combinação de p-tau e neurofilamento de cadeia leve em atenção primária.",
-      noticia_2_titulo: "Rede brasileira inicia coorte digital para monitorar declínio cognitivo",
+      noticia_2_titulo: "Rede brasileira inicia corte digital para monitorar declínio cognitivo",
       noticia_2_desc: "Nova iniciativa nacional integra dados de memória, sono e atividade física para acompanhamento longitudinal de idosos em 2026.",
       noticia_3_titulo: "Meta-análise atualiza impacto de atividade física sobre cognição",
       noticia_3_desc: "Revisão publicada em 2026 reforça benefício de exercícios aeróbicos e de força na manutenção cognitiva em grupos de risco.",

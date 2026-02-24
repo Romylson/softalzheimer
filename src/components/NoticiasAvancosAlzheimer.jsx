@@ -129,15 +129,15 @@ const eventos = [
   },
   {
     nome: "Brazilian Meeting on Cognitive Aging 2026",
-    local: "Belo Horizonte, Brasil",
-    data: "13 a 15 de março de 2026",
+    local: "São Paulo, Brasil",
+    data: "24 a 26 de abril de 2026",
     link: "https://congressogerousp.com.br/"
   },
   {
-    nome: "Ibero-American Forum on Neuroprotection 2026",
-    local: "Lisboa, Portugal",
-    data: "15 a 18 de maio de 2026",
-    link: "https://www.dementiaworldconference.com/"
+    nome: "World Alzheimer Month 2026 (ADI)",
+    local: "Global / Online",
+    data: "Setembro de 2026 (agenda oficial no link)",
+    link: "https://www.alzint.org/"
   }
 ];
 
