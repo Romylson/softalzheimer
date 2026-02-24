@@ -136,7 +136,8 @@ export default function QualidadeVidaPage() {
         {topicos.map((tema) => (
           <article key={tema.id} className="section-card qualidade-card">
             <h3>
-              <span className="qualidade-icone" aria-hidden="true">{tema.icone}</span> {tema.titulo}
+              <span className="qualidade-icone" aria-hidden="true">{tema.icone}</span>
+              <span className="qualidade-titulo">{tema.titulo}</span>
             </h3>
 
             <h4>Base científica</h4>

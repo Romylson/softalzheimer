@@ -164,6 +164,16 @@
   overflow-wrap: anywhere;
 }
 
+.qualidade-card {
+  overflow: hidden;
+}
+
+.qualidade-titulo {
+  display: block;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
 .qualidade-icone {
   display: inline-flex;
   width: 28px;
