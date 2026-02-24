@@ -248,3 +248,49 @@
     font-size: 1.05rem;
   }
 }
+
+.educacional-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.educacional-icone {
+  display: inline-flex;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  align-items: center;
+  justify-content: center;
+  background: #e8f8ea;
+  border: 1px solid #cae8ce;
+  flex-shrink: 0;
+}
+
+.educacional-card ul {
+  margin: 0.45rem 0 0;
+  padding-left: 1.15rem;
+}
+
+.quiz-level-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.8rem;
+}
+
+.quiz-level-card {
+  border: 1px solid #d9e5da;
+  border-radius: 10px;
+  background: #fcfffc;
+  padding: 0.85rem;
+}
+
+.quiz-level-card h4 {
+  margin: 0 0 0.35rem;
+  color: #2f5738;
+}
+
+.quiz-level-card p {
+  margin: 0.3rem 0;
+}
