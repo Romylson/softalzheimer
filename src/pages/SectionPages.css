@@ -417,6 +417,12 @@
   padding: 0.9rem;
 }
 
+.planta-semana-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.8rem;
+}
+
 .planta-semana-card h4 {
   margin: 0 0 0.55rem;
   color: #2f5738;
@@ -479,6 +485,12 @@
   margin: 0;
 }
 
+.simulador-meta {
+  margin-top: 0.4rem !important;
+  font-size: 0.92rem;
+  color: #315138;
+}
+
 .pesquisadores-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -495,6 +507,16 @@
 .pesquisadores-card h4 {
   margin: 0 0 0.35rem;
   color: #2f5738;
+}
+
+.pesquisadores-card ul {
+  margin: 0.35rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.pesquisa-pratica {
+  margin-top: 0.55rem;
+  color: #315138;
 }
 
 .expansao-lista li {

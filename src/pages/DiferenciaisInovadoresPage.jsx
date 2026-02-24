@@ -1,43 +1,108 @@
 import React from "react";
 import "./SectionPages.css";
 
-const plantaSemana = {
-  nome: "Rosmarinus officinalis (Alecrim)",
-  historia:
-    "Usado tradicionalmente em práticas culinárias e medicinais no Mediterrâneo, o alecrim foi incorporado em estudos de neuroproteção por seu perfil antioxidante.",
-  mecanismo:
-    "Compostos como ácido rosmarínico e carnosol são associados à modulação do estresse oxidativo, redução de mediadores inflamatórios e possível ação sobre AChE.",
-  potencial:
-    "Promissor como suporte adjuvante em estratégias de prevenção e envelhecimento saudável, principalmente em protocolos combinados com estilo de vida neuroprotetor.",
-  evidencia:
-    "Predominantemente pré-clínica (in vitro/in vivo), com necessidade de mais ensaios clínicos padronizados para desfechos cognitivos de longo prazo.",
-  seguranca:
-    "Em uso alimentar, costuma ser bem tolerado. Extratos concentrados exigem cautela em pessoas com comorbidades e em uso de múltiplos fármacos.",
-};
+const plantasDestaque = [
+  {
+    nome: "Rosmarinus officinalis (Alecrim)",
+    historia:
+      "Uso tradicional mediterrâneo em culinária e práticas de cuidado; ganhou atenção em estudos de neuroproteção.",
+    mecanismo:
+      "Ácido rosmarínico/carnosol associados à modulação de estresse oxidativo, neuroinflamação e possível ação sobre AChE.",
+    potencial:
+      "Candidato adjuvante em estratégias de prevenção integradas com exercício, dieta e estimulação cognitiva.",
+    evidencia: "Evidência pré-clínica moderada; ensaios clínicos ainda limitados para desfechos cognitivos de longo prazo.",
+    seguranca: "Geralmente seguro em uso alimentar; extratos concentrados exigem cautela clínica e avaliação de interações.",
+  },
+  {
+    nome: "Curcuma longa (Cúrcuma)",
+    historia:
+      "Amplamente utilizada na medicina tradicional asiática e em alimentação funcional.",
+    mecanismo:
+      "Curcuminóides com ação anti-inflamatória (NF-κB), antioxidante e potencial modulação de agregação proteica.",
+    potencial:
+      "Interessante para protocolos de neuroinflamação e suporte metabólico em envelhecimento cerebral.",
+    evidencia: "Boa base pré-clínica e estudos clínicos heterogêneos; necessidade de padronização de formulação/biodisponibilidade.",
+    seguranca: "Bem tolerada em doses usuais; atenção para uso com anticoagulantes e doenças biliares.",
+  },
+  {
+    nome: "Ginkgo biloba",
+    historia:
+      "Emprego tradicional e farmacêutico consolidado em diferentes países para circulação e cognição.",
+    mecanismo:
+      "Efeito sobre microcirculação, defesa antioxidante e modulação de mediadores inflamatórios.",
+    potencial:
+      "Pode contribuir para sintomas cognitivos leves quando inserido em abordagem multiprofissional.",
+    evidencia: "Há ensaios clínicos e metanálises, com resultados dependentes de extrato padronizado e perfil do paciente.",
+    seguranca: "Precisa de triagem de risco hemorrágico e revisão de interação medicamentosa.",
+  },
+  {
+    nome: "Bacopa monnieri",
+    historia:
+      "Planta da tradição ayurvédica, historicamente ligada a memória e aprendizado.",
+    mecanismo:
+      "Bacosídeos associados a modulação colinérgica, sinalização sináptica e redução de dano oxidativo.",
+    potencial:
+      "Aplicável em protocolos de performance cognitiva e atenção, com monitoramento individual.",
+    evidencia: "Evidência clínica inicial para cognição em alguns contextos; ainda insuficiente para recomendações universais.",
+    seguranca: "Possíveis efeitos gastrointestinais leves; monitorar sedação e interações em polifarmácia.",
+  },
+];
 
 const simuladorMecanismos = [
-  { etapa: "Formação de placa amiloide", detalhe: "Agregação progressiva de peptídeos β-amiloide e impacto sináptico.", icone: "🧩" },
-  { etapa: "Atuação antioxidante", detalhe: "Neutralização de radicais livres e menor dano celular oxidativo.", icone: "🛡️" },
-  { etapa: "Inibição da AChE", detalhe: "Maior disponibilidade de acetilcolina na fenda sináptica.", icone: "⚙️" },
-  { etapa: "Redução de citocinas", detalhe: "Modulação de vias pró-inflamatórias e menor neuroinflamação.", icone: "🌿" },
+  {
+    etapa: "Formação de placa amiloide",
+    detalhe: "Agregação progressiva de peptídeos β-amiloide, disfunção sináptica e sinalização pró-inflamatória.",
+    icone: "🧩",
+    alvo: "Aβ42, clivagem APP",
+    impacto: "Risco de perda de plasticidade",
+  },
+  {
+    etapa: "Atuação antioxidante",
+    detalhe: "Neutralização de radicais livres e suporte a vias endógenas de defesa redox.",
+    icone: "🛡️",
+    alvo: "Nrf2 / GSH",
+    impacto: "Menor dano oxidativo neuronal",
+  },
+  {
+    etapa: "Inibição da AChE",
+    detalhe: "Aumento relativo de acetilcolina na fenda sináptica e suporte à neurotransmissão colinérgica.",
+    icone: "⚙️",
+    alvo: "AChE",
+    impacto: "Melhor sinalização cognitiva",
+  },
+  {
+    etapa: "Redução de citocinas",
+    detalhe: "Modulação de citocinas pró-inflamatórias e redução de neuroinflamação persistente.",
+    icone: "🌿",
+    alvo: "IL-1β, TNF-α",
+    impacto: "Ambiente neuroimune mais estável",
+  },
 ];
 
 const areaPesquisadores = [
   {
     titulo: "Submissão de artigos",
-    descricao: "Canal para submissão de revisões, relatos de pesquisa e materiais de apoio didático com curadoria editorial.",
+    descricao: "Fluxo editorial para revisão, relatos experimentais e materiais educacionais com avaliação técnica.",
+    campos: ["Título", "Resumo estruturado", "Palavras-chave", "DOI/Preprint", "Conflito de interesse"],
+    pratica: "Triagem inicial em até 7 dias e parecer técnico em até 21 dias.",
   },
   {
     titulo: "Divulgação de projetos",
-    descricao: "Espaço para laboratórios e grupos compartilharem protocolos, resultados preliminares e oportunidades acadêmicas.",
+    descricao: "Vitrine para grupos divulgarem projetos em andamento, recrutamento e resultados preliminares.",
+    campos: ["Instituição", "Linha de pesquisa", "Status", "Equipe", "Contato"],
+    pratica: "Publicação em formato de ficha padrão para facilitar colaboração entre laboratórios.",
   },
   {
     titulo: "Chamadas para colaboração",
-    descricao: "Mural para coautorias, parcerias multi-institucionais e integração entre graduação, pós e pesquisadores independentes.",
+    descricao: "Mural de coautoria e colaboração interinstitucional para projetos translacionais e revisões sistemáticas.",
+    campos: ["Tema", "Perfil procurado", "Entregáveis", "Prazo", "Modalidade (remoto/presencial)"],
+    pratica: "Chamadas com prazo e requisitos claros para acelerar matching entre pesquisadores.",
   },
   {
     titulo: "Banco de ideias de TCC/mestrado/doutorado",
-    descricao: "Repositório temático com perguntas de pesquisa, lacunas científicas e sugestões de desenho metodológico.",
+    descricao: "Repositório de temas com lacunas científicas, hipótese central e proposta metodológica inicial.",
+    campos: ["Problema", "Hipótese", "Método sugerido", "Nível (TCC/MSc/PhD)", "Referências-chave"],
+    pratica: "Cada ideia inclui escopo mínimo viável para facilitar início rápido do projeto.",
   },
 ];
 
@@ -56,20 +121,25 @@ export default function DiferenciaisInovadoresPage() {
       <p className="section-lead">Módulos práticos para conectar ciência, educação e colaboração acadêmica no PlantaMente.</p>
 
       <section className="section-card">
-        <h3>6.1 Planta da Semana</h3>
-        <article className="planta-semana-card">
-          <h4>{plantaSemana.nome}</h4>
-          <p><strong>História:</strong> {plantaSemana.historia}</p>
-          <p><strong>Mecanismo molecular:</strong> {plantaSemana.mecanismo}</p>
-          <p><strong>Potencial terapêutico:</strong> {plantaSemana.potencial}</p>
-          <p><strong>Grau de evidência:</strong> {plantaSemana.evidencia}</p>
-          <p><strong>Segurança:</strong> {plantaSemana.seguranca}</p>
-        </article>
+        <h3>Planta da Semana</h3>
+        <p className="simulador-lead">Curadoria rotativa com mais opções de plantas e ficha técnica resumida.</p>
+        <div className="planta-semana-grid">
+          {plantasDestaque.map((planta) => (
+            <article key={planta.nome} className="planta-semana-card">
+              <h4>{planta.nome}</h4>
+              <p><strong>História:</strong> {planta.historia}</p>
+              <p><strong>Mecanismo molecular:</strong> {planta.mecanismo}</p>
+              <p><strong>Potencial terapêutico:</strong> {planta.potencial}</p>
+              <p><strong>Grau de evidência:</strong> {planta.evidencia}</p>
+              <p><strong>Segurança:</strong> {planta.seguranca}</p>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="section-card" style={{ marginTop: "1rem" }}>
-        <h3>6.2 Simulador de Mecanismos</h3>
-        <p className="simulador-lead">Animação simples do percurso neurobiológico e dos pontos de intervenção.</p>
+        <h3>Simulador de Mecanismos</h3>
+        <p className="simulador-lead">Animação em etapas com alvos biológicos e impacto esperado em neuroproteção.</p>
         <div className="simulador-animado" aria-label="Simulador visual de mecanismos">
           <div className="simulador-trilho" />
           {simuladorMecanismos.map((item, idx) => (
@@ -77,18 +147,27 @@ export default function DiferenciaisInovadoresPage() {
               <span className="simulador-icone" aria-hidden="true">{item.icone}</span>
               <h4>{item.etapa}</h4>
               <p>{item.detalhe}</p>
+              <p className="simulador-meta"><strong>Alvo:</strong> {item.alvo}</p>
+              <p className="simulador-meta"><strong>Impacto:</strong> {item.impacto}</p>
             </article>
           ))}
         </div>
       </section>
 
       <section className="section-card" style={{ marginTop: "1rem" }}>
-        <h3>6.3 Área para Pesquisadores</h3>
+        <h3>Área para Pesquisadores</h3>
         <div className="pesquisadores-grid">
           {areaPesquisadores.map((item) => (
             <article key={item.titulo} className="pesquisadores-card">
               <h4>{item.titulo}</h4>
               <p>{item.descricao}</p>
+              <p className="pesquisa-pratica"><strong>Como funciona na prática:</strong> {item.pratica}</p>
+              <p><strong>Campos recomendados:</strong></p>
+              <ul>
+                {item.campos.map((campo) => (
+                  <li key={campo}>{campo}</li>
+                ))}
+              </ul>
             </article>
           ))}
         </div>
