@@ -15,9 +15,9 @@ export default function Navbar() {
 
   return (
     <nav
-      className="navbar navbar-expand-lg px-4 shadow-sm"
+      className="navbar navbar-expand-lg px-4 py-2 shadow-sm"
       style={{
-        height: 60,
+        minHeight: 60,
         backgroundColor: "var(--background-color)",
         color: "var(--text-color)",
       }}
@@ -26,14 +26,14 @@ export default function Navbar() {
         <Link to="/" className="navbar-brand fw-bold fs-4" style={{ letterSpacing: "0.5px" }}>
           Plantamente
         </Link>
-        <div className="d-flex align-items-center ms-auto gap-3">
-          <Link to="/historico" className="nav-link" style={{ color: "var(--text-color)" }}>
+        <div className="d-flex align-items-center ms-auto gap-2 gap-md-3 flex-wrap justify-content-end">
+          <Link to="/historico" className="nav-link" style={{ color: "var(--text-color)", whiteSpace: "nowrap" }}>
             {t("history")}
           </Link>
-          <Link to="/apresentacao" className="nav-link" style={{ color: "var(--text-color)" }}>
+          <Link to="/apresentacao" className="nav-link" style={{ color: "var(--text-color)", whiteSpace: "nowrap" }}>
             {t("about_site")}
           </Link>
-          <Link to="/teste-cores" className="nav-link" style={{ color: "var(--text-color)" }}>
+          <Link to="/teste-cores" className="nav-link" style={{ color: "var(--text-color)", whiteSpace: "nowrap" }}>
             {t("color_test")}
           </Link>
           {/* Dropdown de idiomas */}
