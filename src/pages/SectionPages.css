@@ -294,3 +294,63 @@
 .quiz-level-card p {
   margin: 0.3rem 0;
 }
+
+.resource-grid,
+.flow-grid,
+.timeline-model-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.8rem;
+}
+
+.resource-card,
+.flow-card,
+.timeline-model-card {
+  border: 1px solid #d9e5da;
+  border-radius: 10px;
+  background: #fcfffc;
+  padding: 0.85rem;
+}
+
+.resource-card h4,
+.flow-card h4,
+.timeline-model-card h4 {
+  margin: 0 0 0.35rem;
+  color: #2f5738;
+}
+
+.resource-card p,
+.timeline-model-card p {
+  margin-bottom: 0.5rem;
+}
+
+.resource-card a {
+  font-weight: 600;
+  color: #2d6f43;
+}
+
+.flow-card ol {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.timeline-model-card {
+  position: relative;
+  padding-top: 1.7rem;
+}
+
+.timeline-model-step {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.55rem;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #5fa374;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}

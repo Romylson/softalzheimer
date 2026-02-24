@@ -1,51 +1,81 @@
 import React from "react";
 import "./SectionPages.css";
 
-const materiais = [
+const mapasMentais = [
   {
-    titulo: "Mapas mentais",
-    icone: "🧩",
-    descricao:
-      "Síntese visual dos eixos centrais da doença de Alzheimer para revisão rápida antes de provas e apresentações.",
-    itens: [
-      "Fisiopatologia: amiloide, tau, neuroinflamação e estresse oxidativo.",
-      "Diagnóstico: sinais clínicos, avaliação cognitiva e biomarcadores.",
-      "Intervenções: farmacológicas, não farmacológicas e prevenção.",
+    titulo: "Mapa mental: Fisiopatologia do Alzheimer",
+    descricao: "Visão em nós: amiloide, tau, neuroinflamação, estresse oxidativo e disfunção colinérgica.",
+    link: "https://app.diagrams.net/",
+  },
+  {
+    titulo: "Mapa mental: Diagnóstico e progressão",
+    descricao: "Conecta sinais clínicos, triagem cognitiva, estágios da doença e condutas de acompanhamento.",
+    link: "https://www.mindmeister.com/pt",
+  },
+  {
+    titulo: "Mapa mental: Prevenção e qualidade de vida",
+    descricao: "Relaciona exercício, dieta, sono e estímulo cognitivo com marcadores de risco.",
+    link: "https://xmind.app/",
+  },
+];
+
+const resumosPdf = [
+  {
+    titulo: "OMS — Global action plan on the public health response to dementia",
+    descricao: "Documento-base internacional com políticas e prioridades para demência.",
+    link: "https://iris.who.int/bitstream/handle/10665/259615/9789241513487-eng.pdf",
+  },
+  {
+    titulo: "OMS — Risk reduction of cognitive decline and dementia",
+    descricao: "Diretriz com recomendações para redução de risco e prevenção.",
+    link: "https://apps.who.int/iris/bitstream/handle/10665/312180/9789241550543-eng.pdf",
+  },
+  {
+    titulo: "Alzheimer’s Association — Facts and Figures",
+    descricao: "Panorama epidemiológico e clínico anual para estudo e discussão.",
+    link: "https://alz-journals.onlinelibrary.wiley.com/doi/pdf/10.1002/alz.13809",
+  },
+];
+
+const fluxogramas = [
+  {
+    titulo: "Fluxograma 1 — Triagem cognitiva inicial",
+    passos: [
+      "Queixa de memória/atenção",
+      "Avaliação clínica + anamnese",
+      "Teste cognitivo breve",
+      "Risco baixo: acompanhamento",
+      "Risco moderado/alto: investigação ampliada",
     ],
   },
   {
-    titulo: "Resumos em PDF",
-    icone: "📄",
-    descricao:
-      "Materiais objetivos em linguagem acadêmica para estudo progressivo (básico → avançado), com tópicos-chave.",
-    itens: [
-      "Resumo técnico de fisiopatologia e vias moleculares.",
-      "Resumo aplicado de qualidade de vida e prevenção.",
-      "Resumo de fitoterápicos e compostos naturais em evidência.",
+    titulo: "Fluxograma 2 — Interpretação de artigo científico",
+    passos: [
+      "Pergunta de pesquisa",
+      "Modelo experimental (in vitro/in vivo/clínico)",
+      "Desfechos principais",
+      "Mecanismo proposto",
+      "Limitações e aplicabilidade",
     ],
   },
   {
-    titulo: "Fluxogramas",
-    icone: "🔀",
-    descricao:
-      "Modelos visuais para entender sequências de eventos biológicos e raciocínio clínico.",
-    itens: [
-      "Progressão da doença: pré-clínico → CCL → demência.",
-      "Tomada de decisão em triagem e acompanhamento cognitivo.",
-      "Fluxo de estudo de artigos (pergunta, método, resultado, limitação).",
+    titulo: "Fluxograma 3 — Plano neuroprotetor semanal",
+    passos: [
+      "Autoavaliação de hábitos",
+      "Definição de meta prioritária",
+      "Ação prática (sono/dieta/exercício/cognitivo)",
+      "Monitoramento por 4 semanas",
+      "Revisão e ajuste do plano",
     ],
   },
-  {
-    titulo: "Linha do tempo da doença",
-    icone: "🕰️",
-    descricao:
-      "Visão cronológica da progressão clínica e dos marcos de pesquisa para apoiar revisão histórica e científica.",
-    itens: [
-      "Fase silenciosa com alterações biológicas iniciais.",
-      "Comprometimento cognitivo leve com autonomia parcial.",
-      "Fases de maior dependência funcional e suporte multiprofissional.",
-    ],
-  },
+];
+
+const linhaTempoModelo = [
+  { fase: "Pré-clínico", foco: "Mudanças biológicas iniciais sem sintomas evidentes" },
+  { fase: "CCL", foco: "Queixas cognitivas leves com autonomia ainda preservada" },
+  { fase: "Demência leve", foco: "Déficit funcional em atividades instrumentais" },
+  { fase: "Demência moderada", foco: "Maior dependência e necessidade de suporte familiar" },
+  { fase: "Demência avançada", foco: "Comprometimento funcional amplo e cuidado contínuo" },
 ];
 
 const quizNiveis = [
@@ -53,19 +83,16 @@ const quizNiveis = [
     nivel: "Básico",
     objetivo: "Consolidar conceitos essenciais.",
     foco: "Definição, prevalência, sinais iniciais e fatores de risco.",
-    exemplo: "Ex.: Qual mecanismo está mais associado à formação de placas?",
   },
   {
     nivel: "Intermediário",
     objetivo: "Conectar mecanismos, clínica e prevenção.",
     foco: "Relação entre vias moleculares, sintomas e hábitos neuroprotetores.",
-    exemplo: "Ex.: Como sono inadequado pode impactar memória e progressão cognitiva?",
   },
   {
     nivel: "Avançado",
     objetivo: "Treinar leitura crítica e raciocínio científico.",
-    foco: "Interpretação de evidências, limitações metodológicas e aplicabilidade clínica.",
-    exemplo: "Ex.: Qual o principal viés em estudos pré-clínicos de neuroproteção?",
+    foco: "Interpretação de evidências, limitações metodológicas e aplicabilidade.",
   },
 ];
 
@@ -73,50 +100,73 @@ export default function EducacionalPage() {
   return (
     <main className="section-page educacional-page">
       <h1>Seção Educacional (Para estudantes)</h1>
-      <p className="section-lead">
-        Trilhas didáticas para aprender Alzheimer de forma estruturada, do essencial ao nível avançado.
-      </p>
+      <p className="section-lead">Materiais didáticos com links de estudo, exemplos visuais e trilha progressiva de aprendizagem.</p>
 
-      <section className="section-grid">
-        {materiais.map((material) => (
-          <article key={material.titulo} className="section-card educacional-card">
-            <h3>
-              <span aria-hidden="true" className="educacional-icone">{material.icone}</span>
-              <span>{material.titulo}</span>
-            </h3>
-            <p>{material.descricao}</p>
-            <ul>
-              {material.itens.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </article>
-        ))}
+      <section className="section-card">
+        <h3>Mapas mentais (com links)</h3>
+        <div className="resource-grid">
+          {mapasMentais.map((item) => (
+            <article key={item.titulo} className="resource-card">
+              <h4>{item.titulo}</h4>
+              <p>{item.descricao}</p>
+              <a href={item.link} target="_blank" rel="noreferrer">Abrir recurso</a>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section-card" style={{ marginTop: "1rem" }}>
+        <h3>Resumos em PDF (com links)</h3>
+        <div className="resource-grid">
+          {resumosPdf.map((item) => (
+            <article key={item.titulo} className="resource-card">
+              <h4>{item.titulo}</h4>
+              <p>{item.descricao}</p>
+              <a href={item.link} target="_blank" rel="noreferrer">Ler PDF</a>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section-card" style={{ marginTop: "1rem" }}>
+        <h3>Exemplos de fluxogramas</h3>
+        <div className="flow-grid">
+          {fluxogramas.map((fluxo) => (
+            <article key={fluxo.titulo} className="flow-card">
+              <h4>{fluxo.titulo}</h4>
+              <ol>
+                {fluxo.passos.map((passo) => (
+                  <li key={passo}>{passo}</li>
+                ))}
+              </ol>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section-card" style={{ marginTop: "1rem" }}>
+        <h3>Modelo de linha do tempo da doença</h3>
+        <div className="timeline-model-grid">
+          {linhaTempoModelo.map((item, idx) => (
+            <article key={item.fase} className="timeline-model-card">
+              <span className="timeline-model-step">{idx + 1}</span>
+              <h4>{item.fase}</h4>
+              <p>{item.foco}</p>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="section-card" style={{ marginTop: "1rem" }}>
         <h3>Quiz por nível</h3>
-        <p className="section-lead">Percurso recomendado: Básico → Intermediário → Avançado.</p>
-
         <div className="quiz-level-grid">
           {quizNiveis.map((quiz) => (
             <article key={quiz.nivel} className="quiz-level-card">
               <h4>{quiz.nivel}</h4>
               <p><strong>Objetivo:</strong> {quiz.objetivo}</p>
               <p><strong>Foco:</strong> {quiz.foco}</p>
-              <p><strong>Exemplo:</strong> {quiz.exemplo}</p>
             </article>
           ))}
-        </div>
-
-        <div className="pills" style={{ marginTop: "0.8rem" }}>
-          <span>Mapas mentais</span>
-          <span>Resumos em PDF</span>
-          <span>Fluxogramas</span>
-          <span>Linha do tempo da doença</span>
-          <span>Quiz básico</span>
-          <span>Quiz intermediário</span>
-          <span>Quiz avançado</span>
         </div>
       </section>
     </main>
