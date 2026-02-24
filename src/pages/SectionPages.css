@@ -150,3 +150,73 @@
   50% { transform: scale(1.08); }
   100% { transform: scale(1); }
 }
+
+.qualidade-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.qualidade-icone {
+  display: inline-flex;
+  width: 28px;
+  height: 28px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: #e8f8ea;
+  border: 1px solid #cae8ce;
+}
+
+.qualidade-card h4 {
+  margin: 0.9rem 0 0.35rem;
+  font-size: 0.97rem;
+  color: #315138;
+}
+
+.qualidade-card ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.qualidade-pills span {
+  font-size: 0.88rem;
+}
+
+.questionario-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.8rem;
+}
+
+.questionario-item {
+  border: 1px solid #d9e5da;
+  border-radius: 10px;
+  padding: 0.8rem;
+  background: #fcfffc;
+}
+
+.questionario-item p {
+  margin-bottom: 0.55rem;
+}
+
+.questionario-opcoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.8rem;
+}
+
+.questionario-opcoes label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+}
+
+.resultado-box {
+  margin-top: 1rem;
+  border: 1px solid #cde4d2;
+  border-radius: 10px;
+  background: #f4fbf5;
+  padding: 0.9rem;
+}
