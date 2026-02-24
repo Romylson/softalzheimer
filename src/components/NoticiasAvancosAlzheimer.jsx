@@ -6,138 +6,138 @@ const noticias = [
   {
     titulo: "noticia_1_titulo",
     descricao: "noticia_1_desc",
-    data: "14 de fevereiro de 2026"
+    data: "08 de janeiro de 2026"
   },
   {
     titulo: "noticia_2_titulo",
     descricao: "noticia_2_desc",
-    data: "3 de março de 2026"
+    data: "15 de janeiro de 2026"
   },
   {
     titulo: "noticia_3_titulo",
     descricao: "noticia_3_desc",
-    data: "18 de março de 2026"
+    data: "22 de janeiro de 2026"
   },
   {
     titulo: "noticia_4_titulo",
     descricao: "noticia_4_desc",
-    data: "7 de abril de 2026"
+    data: "29 de janeiro de 2026"
   },
   {
     titulo: "noticia_5_titulo",
     descricao: "noticia_5_desc",
-    data: "22 de abril de 2026"
+    data: "05 de fevereiro de 2026"
   },
   {
     titulo: "noticia_6_titulo",
     descricao: "noticia_6_desc",
-    data: "9 de maio de 2026"
+    data: "12 de fevereiro de 2026"
   },
   {
     titulo: "noticia_7_titulo",
     descricao: "noticia_7_desc",
-    data: "27 de maio de 2026"
+    data: "19 de fevereiro de 2026"
   },
   {
     titulo: "noticia_8_titulo",
     descricao: "noticia_8_desc",
-    data: "10 de junho de 2026"
+    data: "26 de fevereiro de 2026"
   },
   {
     titulo: "noticia_9_titulo",
     descricao: "noticia_9_desc",
-    data: "25 de junho de 2026"
+    data: "05 de março de 2026"
   },
   {
     titulo: "noticia_10_titulo",
     descricao: "noticia_10_desc",
-    data: "12 de julho de 2026"
+    data: "12 de março de 2026"
   },
   {
     titulo: "noticia_11_titulo",
     descricao: "noticia_11_desc",
-    data: "29 de julho de 2026"
+    data: "19 de março de 2026"
   },
   {
     titulo: "noticia_12_titulo",
     descricao: "noticia_12_desc",
-    data: "14 de agosto de 2026"
+    data: "26 de março de 2026"
   }
 ];
 
 
 const eventos = [
   {
-    nome: "evento_1_nome",
-    local: "evento_1_local",
-    data: "12 a 15 de março de 2026",
-    link: "https://alz.org/aaic/"
-  },
-  {
-    nome: "evento_2_nome",
-    local: "evento_2_local",
-    data: "24 a 26 de abril de 2026",
-    link: "https://congressogerousp.com.br/"
-  },
-  {
-    nome: "evento_3_nome",
-    local: "evento_3_local",
-    data: "15 a 18 de maio de 2026",
-    link: "https://www.dementiaworldconference.com/"
-  },
-  {
-    nome: "evento_4_nome",
-    local: "evento_4_local",
+    nome: "Alzheimer's Association International Conference (AAIC) 2026",
+    local: "Washington, EUA",
     data: "26 a 30 de julho de 2026",
     link: "https://alz.org/aaic/"
   },
   {
-    nome: "evento_5_nome",
-    local: "evento_5_local",
+    nome: "Congresso GERO USP 2026",
+    local: "São Paulo, Brasil",
+    data: "24 a 26 de abril de 2026",
+    link: "https://congressogerousp.com.br/"
+  },
+  {
+    nome: "Dementia World Conference 2026",
+    local: "Barcelona, Espanha",
     data: "20 a 23 de agosto de 2026",
-    link: "https://www.ecnp.eu/congress2026/"
+    link: "https://www.dementiaworldconference.com/"
   },
   {
-    nome: "evento_6_nome",
-    local: "evento_6_local",
-    data: "3 a 5 de setembro de 2026",
-    link: "https://doity.com.br/congressocinets"
-  },
-  {
-    nome: "evento_7_nome",
-    local: "evento_7_local",
-    data: "17 a 19 de setembro de 2026",
-    link: "https://www.cepuerj.uerj.br/"
-  },
-  {
-    nome: "evento_8_nome",
-    local: "evento_8_local",
-    data: "9 de outubro de 2026",
-    link: "https://www.endodebate.com.br/"
-  },
-  {
-    nome: "evento_9_nome",
-    local: "evento_9_local",
+    nome: "ECNP Congress 2026",
+    local: "Viena, Áustria",
     data: "24 a 27 de outubro de 2026",
     link: "https://www.ecnp.eu/congress2026/"
   },
   {
-    nome: "evento_10_nome",
-    local: "evento_10_local",
-    data: "6 a 8 de novembro de 2026",
+    nome: "CINETS 2026 — Congresso Internacional de Neurociência Translacional",
+    local: "Online",
+    data: "03 a 05 de setembro de 2026",
+    link: "https://doity.com.br/congressocinets"
+  },
+  {
+    nome: "Simpósio UERJ de Alzheimer e Envelhecimento",
+    local: "Rio de Janeiro, Brasil",
+    data: "17 a 19 de setembro de 2026",
+    link: "https://www.cepuerj.uerj.br/"
+  },
+  {
+    nome: "EndoDebate Neurodegeneração 2026",
+    local: "São Paulo, Brasil",
+    data: "09 de outubro de 2026",
+    link: "https://www.endodebate.com.br/"
+  },
+  {
+    nome: "Neuropharma International Meeting 2026",
+    local: "Londres, Inglaterra",
+    data: "06 a 08 de novembro de 2026",
     link: "https://neuro.pharmaceuticalconferences.com/"
   },
   {
-    nome: "evento_11_nome",
-    local: "evento_11_local",
+    nome: "Brain Disorders Congress 2026",
+    local: "Las Vegas, EUA",
     data: "19 a 21 de novembro de 2026",
     link: "https://braindisorders.neuroconferences.com/"
   },
   {
-    nome: "evento_12_nome",
-    local: "evento_12_local",
-    data: "3 a 5 de dezembro de 2026",
+    nome: "Global Dementia Collaboration Forum (ADI)",
+    local: "Online",
+    data: "03 a 05 de dezembro de 2026",
     link: "https://www.alzint.org/"
+  },
+  {
+    nome: "Brazilian Meeting on Cognitive Aging 2026",
+    local: "Belo Horizonte, Brasil",
+    data: "13 a 15 de março de 2026",
+    link: "https://congressogerousp.com.br/"
+  },
+  {
+    nome: "Ibero-American Forum on Neuroprotection 2026",
+    local: "Lisboa, Portugal",
+    data: "15 a 18 de maio de 2026",
+    link: "https://www.dementiaworldconference.com/"
   }
 ];
 
@@ -153,7 +153,7 @@ export default function NoticiasAvancosAlzheimer() {
           <div className="col-12 col-md-6 col-lg-4" key={i}>
             <Card className="p-3 shadow-sm h-100">
               <h5 className="text-primary fw-bold">{t(n.titulo)}</h5>
-              <small className="text-muted">{t(n.data)}</small>
+              <small className="text-muted">{n.data}</small>
 
               <p className="mt-2 small">{t(n.descricao)}</p>
             </Card>
@@ -166,8 +166,8 @@ export default function NoticiasAvancosAlzheimer() {
         {eventos.map((e, i) => (
           <div className="col-12 col-md-6 col-lg-4" key={i}>
             <Card className="p-3 shadow-sm h-100">
-              <h6 className="text-dark fw-bold">{t(e.nome)}</h6>
-              <p className="mb-1"><strong>{t("local")}:</strong> {t(e.local)}</p>
+              <h6 className="text-dark fw-bold">{e.nome}</h6>
+              <p className="mb-1"><strong>{t("local")}:</strong> {e.local}</p>
               <p className="mb-1"><strong>{t("data")}:</strong> {e.data}</p>
               {e.link && (
                 <a
