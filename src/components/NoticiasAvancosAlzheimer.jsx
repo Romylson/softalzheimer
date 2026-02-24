@@ -68,33 +68,33 @@ const noticias = [
 
 const eventos = [
   {
-    nome: "Alzheimer's Association International Conference (AAIC) 2026",
+    nome: "Alzheimer's Association International Conference®",
     local: "Washington, EUA",
-    data: "26 a 30 de julho de 2026",
+    data: "12 a 15 de julho de 2026",
     link: "https://alz.org/aaic/"
   },
   {
     nome: "Congresso GERO USP 2026",
     local: "São Paulo, Brasil",
-    data: "24 a 26 de abril de 2026",
+    data: "15 a 17 de outubro de 2026",
     link: "https://congressogerousp.com.br/"
   },
   {
     nome: "Dementia World Conference 2026",
     local: "Barcelona, Espanha",
-    data: "20 a 23 de agosto de 2026",
+    data: "21 a 23 de agosto de 2026",
     link: "https://www.dementiaworldconference.com/"
   },
   {
     nome: "ECNP Congress 2026",
     local: "Viena, Áustria",
-    data: "24 a 27 de outubro de 2026",
+    data: "10 a 13 de outubro de 2026",
     link: "https://www.ecnp.eu/congress2026/"
   },
   {
     nome: "CINETS 2026 — Congresso Internacional de Neurociência Translacional",
     local: "Online",
-    data: "03 a 05 de setembro de 2026",
+    data: "06 a 08 de novembro de 2026",
     link: "https://doity.com.br/congressocinets"
   },
   {
@@ -106,19 +106,19 @@ const eventos = [
   {
     nome: "EndoDebate Neurodegeneração 2026",
     local: "São Paulo, Brasil",
-    data: "09 de outubro de 2026",
+    data: "24 a 25 de julho de 2026",
     link: "https://www.endodebate.com.br/"
   },
   {
     nome: "Neuropharma International Meeting 2026",
-    local: "Londres, Inglaterra",
-    data: "06 a 08 de novembro de 2026",
+    local: "Paris, France",
+    data: "17 a 18 de setembro de 2026",
     link: "https://neuro.pharmaceuticalconferences.com/"
   },
   {
     nome: "Brain Disorders Congress 2026",
-    local: "Las Vegas, EUA",
-    data: "19 a 21 de novembro de 2026",
+    local: "Londres, Inglaterra",
+    data: "24 a 25 de agosto de 2026",
     link: "https://braindisorders.neuroconferences.com/"
   },
   {
@@ -134,10 +134,10 @@ const eventos = [
     link: "https://congressogerousp.com.br/"
   },
   {
-    nome: "World Alzheimer Month 2026 (ADI)",
-    local: "Global / Online",
-    data: "Setembro de 2026 (agenda oficial no link)",
-    link: "https://www.alzint.org/"
+    nome: "Ibero-American Forum on Neuroprotection 2026",
+    local: "Dubai, UAE",
+    data: "21 a 23 de agosto de 2026",
+    link: "https://www.dementiaworldconference.com/"
   }
 ];
 
