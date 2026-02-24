@@ -378,6 +378,8 @@
   border-radius: 10px;
   background: #fcfffc;
   padding: 0.9rem;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .blog-periodo {
@@ -400,4 +402,10 @@
 .blog-post-card ul {
   margin: 0.4rem 0 0;
   padding-left: 1.1rem;
+}
+
+.blog-post-card li,
+.blog-post-card a {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
