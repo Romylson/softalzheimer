@@ -329,6 +329,16 @@
   color: #2d6f43;
 }
 
+.resource-preview {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #d9e5da;
+  margin-bottom: 0.6rem;
+  background: #f6fbf7;
+}
+
 .flow-card ol {
   margin: 0;
   padding-left: 1.1rem;

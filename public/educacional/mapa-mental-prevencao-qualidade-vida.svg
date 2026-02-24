@@ -1,0 +1,22 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='960' height='560' viewBox='0 0 960 560'>
+  <rect width='960' height='560' fill='#f2faf4'/>
+  <style>
+    .core{fill:#fff;stroke:#5f9f73;stroke-width:2}
+    .text{font:600 16px Arial,sans-serif;fill:#2f5939}
+    .sub{font:500 14px Arial,sans-serif;fill:#365f43}
+    .line{stroke:#5f9f73;stroke-width:2}
+  </style>
+  <circle class='core' cx='480' cy='280' r='95'/>
+  <text class='text' x='480' y='275' text-anchor='middle'>Prevenção</text>
+  <text class='sub' x='480' y='300' text-anchor='middle'>Saúde Cerebral</text>
+
+  <circle class='core' cx='250' cy='150' r='72'/><text class='sub' x='250' y='155' text-anchor='middle'>Exercício</text>
+  <circle class='core' cx='710' cy='150' r='72'/><text class='sub' x='710' y='155' text-anchor='middle'>Dieta MIND</text>
+  <circle class='core' cx='250' cy='420' r='72'/><text class='sub' x='250' y='425' text-anchor='middle'>Sono</text>
+  <circle class='core' cx='710' cy='420' r='72'/><text class='sub' x='710' y='425' text-anchor='middle'>Cognição</text>
+
+  <line class='line' x1='408' y1='230' x2='305' y2='175'/>
+  <line class='line' x1='552' y1='230' x2='655' y2='175'/>
+  <line class='line' x1='408' y1='330' x2='305' y2='395'/>
+  <line class='line' x1='552' y1='330' x2='655' y2='395'/>
+</svg>

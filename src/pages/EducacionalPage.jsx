@@ -5,17 +5,20 @@ const mapasMentais = [
   {
     titulo: "Mapa mental: Fisiopatologia do Alzheimer",
     descricao: "Visão em nós: amiloide, tau, neuroinflamação, estresse oxidativo e disfunção colinérgica.",
-    link: "https://app.diagrams.net/",
+    link: "/educacional/mapa-mental-fisiopatologia.svg",
+    preview: "/educacional/mapa-mental-fisiopatologia.svg",
   },
   {
     titulo: "Mapa mental: Diagnóstico e progressão",
     descricao: "Conecta sinais clínicos, triagem cognitiva, estágios da doença e condutas de acompanhamento.",
-    link: "https://www.mindmeister.com/pt",
+    link: "/educacional/mapa-mental-diagnostico-progressao.svg",
+    preview: "/educacional/mapa-mental-diagnostico-progressao.svg",
   },
   {
     titulo: "Mapa mental: Prevenção e qualidade de vida",
     descricao: "Relaciona exercício, dieta, sono e estímulo cognitivo com marcadores de risco.",
-    link: "https://xmind.app/",
+    link: "/educacional/mapa-mental-prevencao-qualidade-vida.svg",
+    preview: "/educacional/mapa-mental-prevencao-qualidade-vida.svg",
   },
 ];
 
@@ -103,13 +106,19 @@ export default function EducacionalPage() {
       <p className="section-lead">Materiais didáticos com links de estudo, exemplos visuais e trilha progressiva de aprendizagem.</p>
 
       <section className="section-card">
-        <h3>Mapas mentais (com links)</h3>
+        <h3>Mapas mentais (com links e exemplos visuais)</h3>
         <div className="resource-grid">
           {mapasMentais.map((item) => (
             <article key={item.titulo} className="resource-card">
+              <img
+                className="resource-preview"
+                src={item.preview}
+                alt={`Exemplo visual - ${item.titulo}`}
+                loading="lazy"
+              />
               <h4>{item.titulo}</h4>
               <p>{item.descricao}</p>
-              <a href={item.link} target="_blank" rel="noreferrer">Abrir recurso</a>
+              <a href={item.link} target="_blank" rel="noreferrer">Abrir exemplo</a>
             </article>
           ))}
         </div>
