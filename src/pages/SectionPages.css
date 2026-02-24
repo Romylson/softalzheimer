@@ -152,15 +152,23 @@
 }
 
 .qualidade-card h3 {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  align-items: start;
   gap: 0.45rem;
+  line-height: 1.2;
+  margin-bottom: 0.35rem;
+}
+
+.qualidade-card h3 > :last-child {
+  overflow-wrap: anywhere;
 }
 
 .qualidade-icone {
   display: inline-flex;
   width: 28px;
   height: 28px;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
   border-radius: 999px;
@@ -219,4 +227,14 @@
   border-radius: 10px;
   background: #f4fbf5;
   padding: 0.9rem;
+}
+
+@media (max-width: 640px) {
+  .qualidade-card {
+    padding: 0.85rem;
+  }
+
+  .qualidade-card h3 {
+    font-size: 1.05rem;
+  }
 }
