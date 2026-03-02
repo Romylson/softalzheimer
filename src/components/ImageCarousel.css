@@ -1,43 +1,51 @@
 .seduc-like-carousel .carousel-slide-wrap {
   position: relative;
   width: 100%;
-  min-height: 430px;
-  border-radius: 8px;
+  min-height: 500px;
+  border-radius: 0;
   overflow: hidden;
   background: linear-gradient(120deg, #0a4b99, #1a7bd6);
 }
 
 .seduc-like-carousel .carousel-banner-img {
   width: 100%;
-  height: 430px;
+  height: 500px;
   object-fit: cover;
-  filter: saturate(1.05) contrast(1.03);
+  filter: saturate(1.06) contrast(1.04);
 }
 
 .seduc-like-carousel .carousel-overlay {
   position: absolute;
-  left: 4%;
+  left: 5%;
   top: 50%;
   transform: translateY(-50%);
-  max-width: 560px;
+  max-width: 700px;
   color: #fff;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
 }
 
-.seduc-like-carousel .carousel-badge {
-  display: inline-block;
-  background: #0e8f2b;
-  color: #fff;
-  border-radius: 999px;
-  padding: 0.35rem 0.8rem;
+.seduc-like-carousel .carousel-subtitle {
+  margin: 0;
+  font-size: clamp(1.2rem, 2.2vw, 2rem);
   font-weight: 700;
-  margin-bottom: 0.6rem;
 }
 
 .seduc-like-carousel .carousel-overlay h3 {
-  font-size: clamp(1.4rem, 2.7vw, 2.5rem);
+  font-size: clamp(2.2rem, 6vw, 5.4rem);
   font-weight: 800;
-  margin: 0;
+  color: #ffcd1f;
+  margin: 0.2rem 0 1.2rem;
+  line-height: 1;
+}
+
+.seduc-like-carousel .carousel-cta {
+  display: inline-block;
+  background: #ffcd1f;
+  color: #0b3d8f;
+  border-radius: 999px;
+  padding: 0.45rem 1.15rem;
+  font-weight: 800;
+  font-size: clamp(1rem, 1.9vw, 2rem);
 }
 
 .seduc-like-carousel .carousel-control-prev,
@@ -58,8 +66,8 @@
 @media (max-width: 900px) {
   .seduc-like-carousel .carousel-slide-wrap,
   .seduc-like-carousel .carousel-banner-img {
-    min-height: 260px;
-    height: 260px;
+    min-height: 280px;
+    height: 280px;
   }
 
   .seduc-like-carousel .carousel-overlay {

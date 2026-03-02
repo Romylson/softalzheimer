@@ -1,5 +1,6 @@
 import React from "react";
 import { Card } from "../components/ui/card";
+import "./NoticiasAvancosAlzheimer.css";
 
 const ultimasNoticias = [
   {
@@ -54,27 +55,32 @@ const ultimasNoticias = [
 
 export default function NoticiasAvancosAlzheimer() {
   return (
-    <section className="container py-4">
-      <h2 className="fw-bold mb-4 text-center">📰 Últimas notícias sobre Alzheimer</h2>
-      <p className="text-center text-muted mb-4">
+    <section className="noticias-wrap">
+      <div className="noticias-inner container">
+      <h2 className="noticias-title mb-2">Últimas notícias</h2>
+      <p className="text-muted mb-4 fs-4">
         Seleção de atualizações recentes com foco em diagnóstico, prevenção, tecnologia e neuroproteção.
       </p>
       <div className="row g-4">
-        {ultimasNoticias.map((item) => (
-          <div className="col-12 col-md-6 col-lg-4" key={item.titulo}>
-            <Card className="shadow-sm h-100 overflow-hidden">
-              <img src={item.imagem} alt={item.titulo} style={{ width: "100%", height: 180, objectFit: "cover" }} />
+        {ultimasNoticias.slice(0, 4).map((item) => (
+          <div className="col-12 col-md-6 col-lg-3" key={item.titulo}>
+            <Card className="noticia-card h-100 overflow-hidden">
+              <img src={item.imagem} alt={item.titulo} />
               <div className="p-3 d-flex flex-column h-100">
-                <h6 className="fw-bold mb-2">{item.titulo}</h6>
-                <small className="text-muted">{item.data}</small>
-                <p className="mt-2 mb-3 small">{item.descricao}</p>
-                <a href={item.link} target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary btn-sm mt-auto">
+                <h6 className="noticia-titulo mb-2">{item.titulo}</h6>
+                <small className="noticia-meta">{item.data}</small>
+                <p className="mt-2 mb-3 fs-5">{item.descricao}</p>
+                <a href={item.link} target="_blank" rel="noopener noreferrer" className="btn btn-leia-mais mt-auto align-self-start">
                   Ler notícia
                 </a>
               </div>
             </Card>
           </div>
         ))}
+      </div>
+      <div className="text-center">
+        <a className="mais-noticias" href="https://www.alz.org/news" target="_blank" rel="noopener noreferrer">Mais notícias</a>
+      </div>
       </div>
     </section>
   );

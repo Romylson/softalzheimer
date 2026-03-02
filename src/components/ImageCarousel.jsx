@@ -6,17 +6,23 @@ const slides = [
   {
     src: "/images/alzheimer.png",
     alt: "Alzheimer",
-    titulo: "Informação científica com linguagem acessível",
+    subtitulo: "A primeira edição da",
+    titulo: "Revista PlantaMente",
+    destaque: "Clique aqui",
   },
   {
     src: "/images/fisiopatologia.png",
     alt: "Fisiopatologia",
-    titulo: "Compreenda mecanismos da doença em visual didático",
+    subtitulo: "Conheça a",
+    titulo: "Fisiopatologia do Alzheimer",
+    destaque: "Saiba mais",
   },
   {
     src: "/images/plantas.jpg",
     alt: "Plantas medicinais",
-    titulo: "Evidências sobre plantas e compostos naturais",
+    subtitulo: "Acesse nossas",
+    titulo: "Plantas em evidência",
+    destaque: "Explorar",
   },
 ];
 
@@ -28,8 +34,9 @@ export default function ImageCarousel() {
           <div className="carousel-slide-wrap">
             <img className="carousel-banner-img" src={slide.src} alt={slide.alt} />
             <div className="carousel-overlay">
-              <span className="carousel-badge">PlantaMente</span>
+              <p className="carousel-subtitle">{slide.subtitulo}</p>
               <h3>{slide.titulo}</h3>
+              <span className="carousel-cta">{slide.destaque}</span>
             </div>
           </div>
         </Carousel.Item>
