@@ -9,12 +9,24 @@
   align-items: start;
 }
 
+.fisio-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  align-items: stretch;
+}
+
 .fisio-card {
   background: #f4fff2;
   border: 1px solid #cfeccc;
   border-radius: 12px;
   padding: 0.8rem;
   text-align: center;
+}
+
+.fisio-card h3,
+.fisio-card h4 {
+  margin-top: 0.7rem;
 }
 
 .fisio-image {
@@ -33,6 +45,30 @@
   background: transparent;
   border: none;
   box-shadow: none;
+}
+
+.fisio-image-large {
+  width: 100%;
+  max-width: 320px;
+  max-height: 320px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.fisio-teorias {
+  margin-top: 1.1rem;
+}
+
+.fisio-teorias .fisio-card {
+  text-align: left;
+}
+
+.fisio-teorias p {
+  margin-bottom: 0;
+  line-height: 1.6;
 }
 
 .regioes-afetadas {
