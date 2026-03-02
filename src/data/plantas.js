@@ -27,7 +27,7 @@ import imgAcafrao from "../assets/acafrao.jpg";
 import imgErvaCidreira from "../assets/erva-cidreira.jpg"
 import imgErvadeSaoJoao from "../assets/erva-de-sao-joao.jpg";
 import imgAlcacuz from "../assets/alcacuz.jpg";
-import imgGinseng from "../assets/ginseng-siberiano.jpg";
+import imgGinsengsiberiano from "../assets/ginseng-siberiano.jpg";
 const plantas = [
   {
     id: 1,
@@ -584,7 +584,7 @@ const plantas = [
     usos: "Fadiga, estresse e desempenho mental.",
     efeitosColaterais: ["Insônia leve e irritabilidade em alguns casos."],
     contraindicacoes: ["Hipertensão sem controle e uso de estimulantes sem orientação."],
-    imagem: imgGinseng,
+    imagem: imgGinsengsiberiano,
     autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
     coordenadas: [61.5240, 105.3188],
     interacoes: [
