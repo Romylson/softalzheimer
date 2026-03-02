@@ -1,241 +1,81 @@
 import React from "react";
 import { Card } from "../components/ui/card";
-import { useTranslation } from "react-i18next";
 
-const noticias = [
+const ultimasNoticias = [
   {
-    titulo: "noticia_1_titulo",
-    descricao: "noticia_1_desc",
-    data: "08 de janeiro de 2026"
-  },
-  {
-    titulo: "noticia_2_titulo",
-    descricao: "noticia_2_desc",
-    data: "15 de janeiro de 2026"
-  },
-  {
-    titulo: "noticia_3_titulo",
-    descricao: "noticia_3_desc",
-    data: "22 de janeiro de 2026"
-  },
-  {
-    titulo: "noticia_4_titulo",
-    descricao: "noticia_4_desc",
-    data: "29 de janeiro de 2026"
-  },
-  {
-    titulo: "noticia_5_titulo",
-    descricao: "noticia_5_desc",
-    data: "05 de fevereiro de 2026"
-  },
-  {
-    titulo: "noticia_6_titulo",
-    descricao: "noticia_6_desc",
-    data: "12 de fevereiro de 2026"
-  },
-  {
-    titulo: "noticia_7_titulo",
-    descricao: "noticia_7_desc",
-    data: "19 de fevereiro de 2026"
-  },
-  {
-    titulo: "noticia_8_titulo",
-    descricao: "noticia_8_desc",
-    data: "26 de fevereiro de 2026"
-  },
-  {
-    titulo: "noticia_9_titulo",
-    descricao: "noticia_9_desc",
-    data: "05 de março de 2026"
-  },
-  {
-    titulo: "noticia_10_titulo",
-    descricao: "noticia_10_desc",
-    data: "12 de março de 2026"
-  },
-  {
-    titulo: "noticia_11_titulo",
-    descricao: "noticia_11_desc",
-    data: "19 de março de 2026"
-  },
-  {
-    titulo: "noticia_12_titulo",
-    descricao: "noticia_12_desc",
-    data: "26 de março de 2026"
-  }
-];
-
-
-const eventos = [
-  {
-    nome: "Alzheimer's Association International Conference®",
-    local: "Washington, EUA",
-    data: "12 a 15 de julho de 2026",
-    link: "https://alz.org/aaic/"
-  },
-  {
-    nome: "Congresso GERO USP 2026",
-    local: "São Paulo, Brasil",
-    data: "15 a 17 de outubro de 2026",
-    link: "https://congressogerousp.com.br/"
-  },
-  {
-    nome: "Dementia World Conference 2026",
-    local: "Barcelona, Espanha",
-    data: "21 a 23 de agosto de 2026",
-    link: "https://www.dementiaworldconference.com/"
-  },
-  {
-    nome: "ECNP Congress 2026",
-    local: "Viena, Áustria",
-    data: "10 a 13 de outubro de 2026",
-    link: "https://www.ecnp.eu/congress2026/"
-  },
-  {
-    nome: "CINETS 2026 — Congresso Internacional de Neurociência Translacional",
-    local: "Online",
-    data: "06 a 08 de novembro de 2026",
-    link: "https://doity.com.br/congressocinets"
-  },
-  {
-    nome: "Simpósio UERJ de Alzheimer e Envelhecimento",
-    local: "Rio de Janeiro, Brasil",
-    data: "17 a 19 de setembro de 2026",
-    link: "https://www.cepuerj.uerj.br/"
-  },
-  {
-    nome: "EndoDebate Neurodegeneração 2026",
-    local: "São Paulo, Brasil",
-    data: "24 a 25 de julho de 2026",
-    link: "https://www.endodebate.com.br/"
-  },
-  {
-    nome: "Neuropharma International Meeting 2026",
-    local: "Paris, France",
-    data: "17 a 18 de setembro de 2026",
-    link: "https://neuro.pharmaceuticalconferences.com/"
-  },
-  {
-    nome: "Brain Disorders Congress 2026",
-    local: "Londres, Inglaterra",
-    data: "24 a 25 de agosto de 2026",
-    link: "https://braindisorders.neuroconferences.com/"
-  },
-  {
-    nome: "Global Dementia Collaboration Forum (ADI)",
-    local: "Online",
-    data: "03 a 05 de dezembro de 2026",
-    link: "https://www.alzint.org/"
-  },
-  {
-    nome: "Brazilian Meeting on Cognitive Aging 2026",
-    local: "São Paulo, Brasil",
-    data: "24 a 26 de abril de 2026",
-    link: "https://congressogerousp.com.br/"
-  },
-  {
-    nome: "Ibero-American Forum on Neuroprotection 2026",
-    local: "Dubai, UAE",
-    data: "21 a 23 de agosto de 2026",
-    link: "https://www.dementiaworldconference.com/"
-  }
-];
-
-const ultimasNoticiasImagem = [
-  {
-    titulo: "Avanços em diagnóstico precoce com biomarcadores sanguíneos",
-    descricao: "Pesquisas recentes reforçam o uso combinado de p-tau e NfL para triagem em fase inicial.",
-    data: "2026",
+    titulo: "Biomarcadores sanguíneos avançam na triagem precoce",
+    descricao:
+      "Novos estudos reforçam o uso combinado de p-tau e NfL para identificar risco de declínio cognitivo em fases iniciais.",
+    data: "10 de janeiro de 2026",
     imagem: "/images/alzheimer.png",
+    link: "https://alz-journals.onlinelibrary.wiley.com/",
   },
   {
-    titulo: "Sono e risco cognitivo: novos dados observacionais",
-    descricao: "Estudos apontam associação entre pior qualidade do sono e progressão mais rápida do comprometimento cognitivo.",
-    data: "2026",
+    titulo: "Sono de má qualidade é associado à pior progressão cognitiva",
+    descricao:
+      "Revisões recentes destacam o impacto do sono fragmentado na consolidação de memória e em indicadores de risco para demência.",
+    data: "24 de janeiro de 2026",
     imagem: "/images/moderada.png",
+    link: "https://www.thelancet.com/journals/laneur/home",
   },
   {
-    titulo: "Estratégias multidomínio ganham força na prevenção",
-    descricao: "Intervenções com dieta, atividade física e estímulo cognitivo mostraram resultados mais consistentes em conjunto.",
-    data: "2026",
+    titulo: "Intervenções multidomínio mostram melhores resultados",
+    descricao:
+      "Programas que combinam dieta, atividade física e treino cognitivo apresentaram ganhos superiores aos protocolos isolados.",
+    data: "07 de fevereiro de 2026",
     imagem: "/images/leve.png",
+    link: "https://www.alzheimersanddementia.com/",
+  },
+  {
+    titulo: "IA em neuroimagem reduz tempo de apoio diagnóstico",
+    descricao:
+      "Ferramentas assistivas estão reduzindo tempo de análise e apoiando equipes clínicas na avaliação de padrões de neurodegeneração.",
+    data: "21 de fevereiro de 2026",
+    imagem: "/images/fisiopatologia.png",
+    link: "https://www.nature.com/subjects/alzheimers-disease",
+  },
+  {
+    titulo: "Neuroinflamação ganha destaque como alvo terapêutico",
+    descricao:
+      "Publicações recentes mostram avanço na compreensão das vias inflamatórias e de potenciais terapias adjuvantes.",
+    data: "05 de março de 2026",
+    imagem: "/images/tau.png",
+    link: "https://pubmed.ncbi.nlm.nih.gov/?term=alzheimer+neuroinflammation+2026",
+  },
+  {
+    titulo: "Tecnologias digitais ampliam monitoramento remoto",
+    descricao:
+      "Wearables e apps de rotina cognitiva mostram utilidade para detectar mudanças sutis e acompanhar pacientes à distância.",
+    data: "18 de março de 2026",
+    imagem: "/images/beta-amiloide.png",
+    link: "https://www.who.int/news-room/fact-sheets/detail/dementia",
   },
 ];
-
 
 export default function NoticiasAvancosAlzheimer() {
-  const { t } = useTranslation();
-
   return (
-    <div className="container py-4">
-      <h2 className="fw-bold mb-4 text-center">📅 {t("noticias_titulo")}</h2>
-      <div className="row g-4 mb-5">
-        {noticias.map((n, i) => (
-          <div className="col-12 col-md-6 col-lg-4" key={i}>
-            <Card className="p-3 shadow-sm h-100">
-              <h5 className="text-primary fw-bold">{t(n.titulo)}</h5>
-              <small className="text-muted">{n.data}</small>
-
-              <p className="mt-2 small">{t(n.descricao)}</p>
-            </Card>
-          </div>
-        ))}
-      </div>
-
-      <h3 className="fw-bold mb-3 text-center">🧠 {t("eventos_titulo")}</h3>
-      <div className="row g-4 mb-4">
-        {eventos.map((e, i) => (
-          <div className="col-12 col-md-6 col-lg-4" key={i}>
-            <Card className="p-3 shadow-sm h-100">
-              <h6 className="text-dark fw-bold">{e.nome}</h6>
-              <p className="mb-1"><strong>{t("local")}:</strong> {e.local}</p>
-              <p className="mb-1"><strong>{t("data")}:</strong> {e.data}</p>
-              {e.link && (
-                <a
-                  href={e.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-outline-primary btn-sm"
-                >
-                  {t("acessar_evento")}
+    <section className="container py-4">
+      <h2 className="fw-bold mb-4 text-center">📰 Últimas notícias sobre Alzheimer</h2>
+      <p className="text-center text-muted mb-4">
+        Seleção de atualizações recentes com foco em diagnóstico, prevenção, tecnologia e neuroproteção.
+      </p>
+      <div className="row g-4">
+        {ultimasNoticias.map((item) => (
+          <div className="col-12 col-md-6 col-lg-4" key={item.titulo}>
+            <Card className="shadow-sm h-100 overflow-hidden">
+              <img src={item.imagem} alt={item.titulo} style={{ width: "100%", height: 180, objectFit: "cover" }} />
+              <div className="p-3 d-flex flex-column h-100">
+                <h6 className="fw-bold mb-2">{item.titulo}</h6>
+                <small className="text-muted">{item.data}</small>
+                <p className="mt-2 mb-3 small">{item.descricao}</p>
+                <a href={item.link} target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary btn-sm mt-auto">
+                  Ler notícia
                 </a>
-              )}
+              </div>
             </Card>
           </div>
         ))}
       </div>
-
-      <div className="text-center">
-        <iframe
-          src="https://calendar.google.com/calendar/embed?src=pt.brazilian%23holiday%40group.v.calendar.google.com&ctz=America%2FSao_Paulo"
-          style={{ border: 0, width: "100%", height: "500px" }}
-          frameBorder="0"
-          scrolling="no"
-          title="Calendário de Eventos"
-        ></iframe>
-      </div>
-
-      <section className="mt-5">
-        <h3 className="fw-bold mb-3 text-center">📰 Últimas notícias com imagem</h3>
-        <div className="row g-4">
-          {ultimasNoticiasImagem.map((item) => (
-            <div className="col-12 col-md-6 col-lg-4" key={item.titulo}>
-              <Card className="shadow-sm h-100 overflow-hidden">
-                <img
-                  src={item.imagem}
-                  alt={item.titulo}
-                  style={{ width: "100%", height: 180, objectFit: "cover" }}
-                />
-                <div className="p-3">
-                  <h6 className="fw-bold mb-2">{item.titulo}</h6>
-                  <small className="text-muted">{item.data}</small>
-                  <p className="mt-2 mb-0 small">{item.descricao}</p>
-                </div>
-              </Card>
-            </div>
-          ))}
-        </div>
-      </section>
-    </div>
+    </section>
   );
 }
