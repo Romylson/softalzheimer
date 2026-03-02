@@ -94,7 +94,6 @@ export default function Dashboard() {
       <main className="dashboard-main">
         <section className="hero-banner">
           <p className="hero-tag">Conectando Ciência, Natureza e Saúde Cerebral</p>
-          <h1>Agora cada seção possui sua própria página dedicada</h1>
           <p>Escolha abaixo a área que você deseja explorar.</p>
           <div className="hero-actions">
             <Link to="/secao-cientifica" className="hero-btn primary">Explorar Evidências Científicas</Link>
@@ -118,7 +117,9 @@ export default function Dashboard() {
         </section>
 
         <BannerDiferenciais />
-        <ImageCarousel />
+        <div className="full-bleed-carousel">
+          <ImageCarousel />
+        </div>
         <IntroBlock />
         <NoticiasAvancosAlzheimer />
         <DiferenciaisInovadores />

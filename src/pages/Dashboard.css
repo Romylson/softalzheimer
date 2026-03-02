@@ -61,6 +61,11 @@ body {
 .hero-btn.primary { background: #99f5a5; }
 
 .section-block { margin: 1.5rem 0; }
+.full-bleed-carousel {
+  width: calc(100% + 3rem);
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+}
 .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.9rem; }
 .info-card {
   background: #fff;
@@ -95,4 +100,8 @@ body {
   .dashboard-sidebar { display: none; position: fixed; z-index: 998; }
   .dashboard-sidebar.open { display: block; }
   .dashboard-main { padding-top: 3rem; }
+  .full-bleed-carousel {
+    width: 100%;
+    margin: 0;
+  }
 }
