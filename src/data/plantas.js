@@ -24,10 +24,10 @@ import imgUnhadegato from "../assets/unha-de-gato.jpg";
 import imgMaracuja from "../assets/maracuja.jpg";
 import imgChaverde from "../assets/chaverde.jpg";
 import imgAcafrao from "../assets/acafrao.jpg";
-import imgErvacidreira from "../assets/erva-cidreira.jpg"
-import imgErvadesaojoao from "../assets/erva-de-sao-joao.jpg";
+import imgErvaCidreira from "../assets/erva-cidreira.jpg"
+import imgErvadeSaoJoao from "../assets/erva-de-sao-joao.jpg";
 import imgAlcacuz from "../assets/alcacuz.jpg";
-import imgGinseng from "../assets/ginseng-siberiano.jpg" 
+import imgGinseng from "../assets/ginseng-siberiano.jpg";
 const plantas = [
   {
     id: 1,
