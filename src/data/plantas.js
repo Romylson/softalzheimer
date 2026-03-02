@@ -15,6 +15,7 @@ import imgLavanda from "../assets/lavanda.jpg";
 import imgEucalipto from "../assets/eucalipto.jpg";
 import imgCamomila from "../assets/camomila.jpg";
 import imgAlecrim from "../assets/alecrim.jpg";
+import imgGengibre from "../assets/gengibre.jpg";
 
 const plantas = [
   {
