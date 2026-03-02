@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import normalImg from "../../assets/cerebro_normal.jpg";      // troque pelo caminho correto da sua imagem
 import alzheimerImg from "../../assets/cerebro_alzheimer.jpg"; // troque pelo caminho correto da sua imagem
 import { autoresFisiopatologia } from "../../data/fisiopatologia";
+import "./fisiopatologia.css";
 
 const autorImgNormal = autoresFisiopatologia.comparacaoCerebroDetalhada.normal;
 const autorImgAlzheimer = autoresFisiopatologia.comparacaoCerebroDetalhada.alzheimer;
@@ -12,16 +13,15 @@ export default function ComparacaoCerebroDetalhada() {
   const { t } = useTranslation();
 
   return (
-    <div className="text-center my-5">
-      
-      <div className="d-flex justify-content-center align-items-end gap-5 mb-2">
-        <div>
-          <img src={normalImg} alt={t("normal_brain")} style={{width: 170, borderRadius: 12, border: "4px solid #111"}} />
+    <div className="text-center fisio-section">
+      <div className="fisio-grid-2 mb-2">
+        <div className="fisio-card">
+          <img src={normalImg} alt={t("normal_brain")} className="fisio-image-small" />
           <div className="fw-semibold mt-2">{t("normal_brain")}</div>
           <p className="text-muted small">Imagem: {t("normal_brain")} - Autor: {autorImgNormal}</p>
         </div>
-        <div>
-          <img src={alzheimerImg} alt={t("alzheimer_brain")} style={{width: 170, borderRadius: 12, border: "4px solid #800080"}} />
+        <div className="fisio-card">
+          <img src={alzheimerImg} alt={t("alzheimer_brain")} className="fisio-image-small" />
           <div className="fw-semibold mt-2">{t("alzheimer_brain")}</div>
            <p className="text-muted small">Imagem: {t("alzheimer_brain")} - Autor: {autorImgAlzheimer}</p>
         </div>

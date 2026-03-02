@@ -17,7 +17,6 @@ body {
   font-family: sans-serif;
   }
 
-.navbar,
 footer,
 main,
 .bg-secondary,
@@ -25,6 +24,35 @@ main,
 .bg-white {
   background-color: var(--background-color) !important;
   color: var(--text-color);
+}
+
+.app-header {
+  background: var(--background-color);
+  border-bottom: 2px solid #d9f5d9;
+  padding: 0.65rem 1rem;
+}
+
+.app-header-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.site-title {
+  font-weight: 800;
+  font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+  color: #134b1f;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
+}
+
+.site-navbar {
+  background: #fff !important;
+  border-top: 4px solid var(--background-color);
+  border-bottom: 4px solid var(--background-color);
 }
 /* Adicione no seu App.css (ou index.css) */
 .crossword {

@@ -7,7 +7,27 @@ import imgPanax from "../assets/panax.jpg"
 import ImgAshwagandha from "../assets/ashwagandha.jpg" 
 import ImgRhodiola from "../assets/rhodiola.jpg" 
 import ImgGotu from "../assets/gotu.jpg"
-
+import imgPlantasMedicinais from "../assets/plantas-medicinais.avif";
+import imgPlanta from "../assets/planta.avif";
+import imgGinseng from "../assets/ginseng.jpg";
+import imgErvaDoce from "../assets/erva-doce.jpg";
+import imgLavanda from "../assets/lavanda.jpg";
+import imgEucalipto from "../assets/eucalipto.jpg";
+import imgCamomila from "../assets/camomila.jpg";
+import imgAlecrim from "../assets/alecrim.jpg";
+import imgGengibre from "../assets/gengibre.jpg";
+import imgCanela from "../assets/canela.jpg";
+import imgUva from "../assets/uva.jpg";
+import imgManjericao from "../assets/manjericao-sagrado.jpg";
+import imgReishi from "../assets/reishi.jpg";
+import imgUnhadegato from "../assets/unha-de-gato.jpg";
+import imgMaracuja from "../assets/maracuja.jpg";
+import imgChaverde from "../assets/chaverde.jpg";
+import imgAcafrao from "../assets/acafrao.jpg";
+import imgErvaCidreira from "../assets/erva-cidreira.jpg"
+import imgErvadeSaoJoao from "../assets/erva-de-sao-joao.jpg";
+import imgAlcacuz from "../assets/alcacuz.jpg";
+import imgGinsengsiberiano from "../assets/ginseng-siberiano.jpg";
 const plantas = [
   {
     id: 1,
@@ -259,6 +279,317 @@ const plantas = [
     }
    ]
 
+  },
+
+  {
+    id: 14,
+    nome: "Zingiber officinale (gengibre, ginger)",
+    nome_cientifico: "Zingiber officinale Roscoe",
+    origem: "Ásia tropical",
+    mecanismos: "Gingeróis com ação anti-inflamatória, antioxidante e possível proteção neuronal indireta.",
+    modosUso: "Infusão, cápsulas e uso culinário.",
+    usos: "Saúde metabólica e apoio anti-inflamatório.",
+    efeitosColaterais: ["Azia.", "Desconforto gastrointestinal em doses altas."],
+    contraindicacoes: ["Cautela em uso de anticoagulantes.", "Doenças biliares sem avaliação médica."],
+    imagem: imgGengibre,
+    autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
+    coordenadas: [23.6978, 120.9605],
+    interacoes: [
+      { medicamento: "Anticoagulantes", risco: "Pode aumentar risco de sangramento.", evidencia: "Monitorar clinicamente." }
+    ]
+  },
+
+  {
+    id: 15,
+    nome: "Eucalyptus globulus (eucalipto, blue gum)",
+    nome_cientifico: "Eucalyptus globulus Labill.",
+    origem: "Austrália",
+    mecanismos: "Rico em monoterpenos (ex.: 1,8-cineol), com potencial antioxidante e modulação neuroinflamatória.",
+    modosUso: "Inalação aromática, infusão (uso tradicional) e extratos padronizados.",
+    usos: "Suporte respiratório e potencial adjuvante em saúde cerebral por ação anti-inflamatória.",
+    efeitosColaterais: ["Irritação gástrica em excesso.", "Sensibilidade a óleos essenciais em indivíduos suscetíveis."],
+    contraindicacoes: ["Uso interno de óleo essencial sem orientação.", "Crianças pequenas e gestantes sem supervisão."],
+    imagem: imgEucalipto,
+    autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
+    coordenadas: [-25.2744, 133.7751],
+    interacoes: [
+      { medicamento: "Sedativos", risco: "Pode alterar resposta individual em associação aromática.", evidencia: "Usar com cautela e orientação." }
+    ]
+  },
+  {
+    id: 16,
+    nome: "Matricaria chamomilla (camomila, chamomile)",
+    nome_cientifico: "Matricaria chamomilla L.",
+    origem: "Europa e Ásia",
+    mecanismos: "Flavonoides e terpenos com ação antioxidante, ansiolítica e potencial neuroprotetora indireta.",
+    modosUso: "Infusão floral, extratos e formulações fitoterápicas.",
+    usos: "Qualidade do sono, ansiedade e suporte ao equilíbrio neurocomportamental.",
+    efeitosColaterais: ["Reações alérgicas em sensíveis à família Asteraceae.", "Sonolência leve."],
+    contraindicacoes: ["Alergia conhecida à camomila.", "Cautela com sedativos."],
+    imagem: imgCamomila,
+    autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
+    coordenadas: [51.1657, 10.4515],
+    interacoes: [
+      { medicamento: "Ansiolíticos", risco: "Pode potencializar efeito sedativo.", evidencia: "Monitorar resposta clínica." }
+    ]
+  },
+  {
+    id: 17,
+    nome: "Lavandula spp. (lavanda, alfazema)",
+    nome_cientifico: "Lavandula angustifolia Mill.",
+    origem: "Mediterrâneo",
+    mecanismos: "Linalol e acetato de linalila com ação ansiolítica e potencial modulação de neuroinflamação.",
+    modosUso: "Aromaterapia, infusão e extratos padronizados.",
+    usos: "Sono, manejo de estresse e suporte da saúde cerebral.",
+    efeitosColaterais: ["Sonolência.", "Dermatite de contato em pele sensível."],
+    contraindicacoes: ["Uso interno de óleo essencial sem orientação profissional."],
+    imagem: imgLavanda,
+    autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
+    coordenadas: [43.2965, 5.3698],
+    interacoes: [
+      { medicamento: "Sedativos", risco: "Aumento do efeito sedativo.", evidencia: "Ajustar uso conforme orientação." }
+    ]
+  },
+  {
+    id: 18,
+    nome: "Cinnamomum verum (canela, cinnamon)",
+    nome_cientifico: "Cinnamomum verum J.Presl",
+    origem: "Sri Lanka e Índia",
+    mecanismos: "Compostos fenólicos e terpenoides com potencial antioxidante e anti-inflamatório.",
+    modosUso: "Uso culinário, infusão e extrato padronizado.",
+    usos: "Suporte metabólico e adjuvante anti-inflamatório.",
+    efeitosColaterais: ["Irritação gastrointestinal em excesso."],
+    contraindicacoes: ["Cautela em doenças hepáticas e uso concentrado sem orientação."],
+    imagem: imgCanela,
+    autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
+    coordenadas: [7.8731, 80.7718],
+    interacoes: [
+      { medicamento: "Antidiabéticos", risco: "Pode potencializar efeito hipoglicemiante.", evidencia: "Monitorar glicemia." }
+    ]
+  },
+  {
+    id: 19,
+    nome: "Vitis vinifera (uva, grape seed)",
+    nome_cientifico: "Vitis vinifera L.",
+    origem: "Europa e Ásia Ocidental",
+    mecanismos: "Polifenóis (resveratrol/proantocianidinas) com ação antioxidante e anti-inflamatória.",
+    modosUso: "Extrato de semente de uva, dieta rica em uvas e derivados.",
+    usos: "Suporte vascular e proteção contra estresse oxidativo.",
+    efeitosColaterais: ["Desconforto gastrointestinal leve."],
+    contraindicacoes: ["Cautela com anticoagulantes em uso de extratos concentrados."],
+    imagem: imgUva,
+    autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
+    coordenadas: [41.9028, 12.4964],
+    interacoes: [
+      { medicamento: "Anticoagulantes", risco: "Pode aumentar risco de sangramento em altas doses.", evidencia: "Monitorar clinicamente." }
+    ]
+  },
+
+
+  {
+    id: 21,
+    nome: "Ocimum tenuiflorum (tulsi, manjericão-sagrado)",
+    nome_cientifico: "Ocimum tenuiflorum L.",
+    origem: "Índia e Sudeste Asiático",
+    mecanismos: "Ação antioxidante e anti-inflamatória com potencial modulação de estresse neuroendócrino.",
+    modosUso: "Infusão das folhas, extrato seco e cápsulas padronizadas.",
+    usos: "Suporte ao estresse, clareza mental e saúde metabólica.",
+    efeitosColaterais: ["Desconforto gastrointestinal leve em doses altas."],
+    contraindicacoes: ["Gestação sem orientação médica.", "Cautela com antidiabéticos."],
+    imagem: imgManjericao,
+    autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
+    coordenadas: [22.9734, 78.6569],
+    interacoes: [
+      { medicamento: "Antidiabéticos", risco: "Pode potencializar redução de glicemia.", evidencia: "Monitorar glicemia regularmente." }
+    ]
+  },
+  {
+    id: 22,
+    nome: "Moringa oleifera (moringa)",
+    nome_cientifico: "Moringa oleifera Lam.",
+    origem: "Índia, África e regiões tropicais",
+    mecanismos: "Polifenóis e isotiocianatos com potencial antioxidante e anti-inflamatório em vias neuroprotetoras.",
+    modosUso: "Folhas em pó, infusão e extratos padronizados.",
+    usos: "Suplementação nutricional e suporte antioxidante.",
+    efeitosColaterais: ["Desconforto intestinal em uso excessivo."],
+    contraindicacoes: ["Gestação sem orientação profissional."],
+    imagem: imgMoringa,
+    autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
+    coordenadas: [9.082, 8.6753],
+    interacoes: [
+      { medicamento: "Anti-hipertensivos", risco: "Pode potencializar efeito hipotensor.", evidencia: "Ajustar acompanhamento clínico." }
+    ]
+  },
+  {
+    id: 23,
+    nome: "Ganoderma lucidum (reishi)",
+    nome_cientifico: "Ganoderma lucidum (Curtis) P.Karst.",
+    origem: "Ásia",
+    mecanismos: "Polissacarídeos e triterpenos com potencial ação imunomoduladora e anti-inflamatória.",
+    modosUso: "Extratos padronizados e cápsulas.",
+    usos: "Suporte imunológico e manejo de fadiga.",
+    efeitosColaterais: ["Boca seca, desconforto gástrico em alguns casos."],
+    contraindicacoes: ["Cautela com anticoagulantes e imunossupressores."],
+    imagem: imgReishi,
+    autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
+    coordenadas: [35.8617, 104.1954],
+    interacoes: [
+      { medicamento: "Anticoagulantes", risco: "Pode aumentar risco de sangramento.", evidencia: "Revisão de uso com profissional de saúde." }
+    ]
+  },
+  {
+    id: 24,
+    nome: "Uncaria tomentosa (unha-de-gato)",
+    nome_cientifico: "Uncaria tomentosa (Willd. ex Schult.) DC.",
+    origem: "Amazônia",
+    mecanismos: "Alcaloides e polifenóis com potencial anti-inflamatório e antioxidante.",
+    modosUso: "Chá da casca e extratos fitoterápicos padronizados.",
+    usos: "Suporte inflamatório e imunológico.",
+    efeitosColaterais: ["Náuseas e desconforto gastrointestinal em doses elevadas."],
+    contraindicacoes: ["Gestação e lactação.", "Doenças autoimunes sem orientação médica."],
+    imagem: imgUnhadegato,
+    autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
+    coordenadas: [-3.4653, -62.2159],
+    interacoes: [
+      { medicamento: "Imunossupressores", risco: "Pode interferir no efeito terapêutico.", evidencia: "Acompanhamento médico obrigatório." }
+    ]
+  },
+  {
+    id: 25,
+    nome: "Rosmarinus officinalis (alecrim)",
+    nome_cientifico: "Salvia rosmarinus Spenn.",
+    origem: "Mediterrâneo",
+    mecanismos: "Ácido rosmarínico/carnósico com efeito antioxidante e possível inibição de AChE.",
+    modosUso: "Infusão, extratos e uso culinário.",
+    usos: "Apoio de memória e atenção.",
+    efeitosColaterais: ["Irritação gástrica em indivíduos sensíveis."],
+    contraindicacoes: ["Uso concentrado de óleo essencial sem orientação."],
+    imagem: imgAlecrim,
+    autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
+    coordenadas: [41.9028, 12.4964],
+    interacoes: [
+      { medicamento: "Anticoagulantes", risco: "Pode alterar perfil de coagulação em doses altas.", evidencia: "Monitorar uso concomitante." }
+    ]
+  },
+  {
+    id: 26,
+    nome: "Passiflora incarnata (maracujá, passiflora)",
+    nome_cientifico: "Passiflora incarnata L.",
+    origem: "Américas",
+    mecanismos: "Flavonoides com ação ansiolítica e potencial proteção indireta por melhora do sono.",
+    modosUso: "Infusão, extrato seco e cápsulas.",
+    usos: "Ansiedade leve e qualidade de sono.",
+    efeitosColaterais: ["Sonolência."],
+    contraindicacoes: ["Cautela com sedativos e álcool."],
+    imagem: imgMaracuja,
+    autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
+    coordenadas: [-14.235, -51.9253],
+    interacoes: [
+      { medicamento: "Sedativos", risco: "Pode potencializar sedação.", evidencia: "Evitar associação sem orientação." }
+    ]
+  },
+
+  {
+    id: 27,
+    nome: "Camellia sinensis (chá-verde)",
+    nome_cientifico: "Camellia sinensis (L.) Kuntze",
+    origem: "China e Japão",
+    mecanismos: "Catequinas (EGCG) com ação antioxidante e modulação de vias inflamatórias/neuroprotetoras.",
+    modosUso: "Infusão das folhas, extrato seco padronizado.",
+    usos: "Suporte antioxidante e cognitivo.",
+    efeitosColaterais: ["Insônia em sensíveis à cafeína."],
+    contraindicacoes: ["Cautela em pacientes com ansiedade e sensibilidade à cafeína."],
+    imagem: imgChaverde,
+    autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
+    coordenadas: [35.8617, 104.1954],
+    interacoes: [
+      { medicamento: "Estimulantes", risco: "Pode potencializar efeitos estimulantes.", evidencia: "Monitorar resposta clínica." }
+    ]
+  },
+  {
+    id: 28,
+    nome: "Crocus sativus (açafrão)",
+    nome_cientifico: "Crocus sativus L.",
+    origem: "Mediterrâneo e Irã",
+    mecanismos: "Crocinas com potencial antioxidante, anti-inflamatório e modulação de neurotransmissores.",
+    modosUso: "Extrato padronizado e uso culinário.",
+    usos: "Suporte de memória e humor.",
+    efeitosColaterais: ["Náusea leve em doses elevadas."],
+    contraindicacoes: ["Gestação sem orientação médica."],
+    imagem: imgAcafrao,
+    autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
+    coordenadas: [32.4279, 53.6880],
+    interacoes: [
+      { medicamento: "Anticoagulantes", risco: "Pode aumentar risco hemorrágico em altas doses.", evidencia: "Avaliar uso individualmente." }
+    ]
+  },
+  {
+    id: 29,
+    nome: "Lippia alba (erva-cidreira-brasileira)",
+    nome_cientifico: "Lippia alba (Mill.) N.E.Br. ex Britton & P.Wilson",
+    origem: "América Latina",
+    mecanismos: "Óleos essenciais e flavonoides com ação ansiolítica e possível modulação de estresse oxidativo.",
+    modosUso: "Infusão e extratos fitoterápicos.",
+    usos: "Qualidade do sono e ansiedade leve.",
+    efeitosColaterais: ["Sonolência.", "Hipotensão em suscetíveis."],
+    contraindicacoes: ["Uso com sedativos sem orientação profissional."],
+    imagem: imgErvaCidreira,
+    autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
+    coordenadas: [-15.7939, -47.8828],
+    interacoes: [
+      { medicamento: "Sedativos", risco: "Pode potencializar efeito sedativo.", evidencia: "Acompanhar sonolência diurna." }
+    ]
+  },
+  {
+    id: 30,
+    nome: "Hypericum perforatum (erva-de-são-joão)",
+    nome_cientifico: "Hypericum perforatum L.",
+    origem: "Europa",
+    mecanismos: "Ação em neurotransmissores e potencial antioxidante com relevância em sintomas afetivos associados.",
+    modosUso: "Extrato seco padronizado.",
+    usos: "Humor e bem-estar emocional.",
+    efeitosColaterais: ["Fotossensibilidade.", "Desconforto gastrointestinal."],
+    contraindicacoes: ["Uso concomitante com diversos fármacos sem avaliação médica."],
+    imagem: imgErvadeSaoJoao,
+    autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
+    coordenadas: [51.1657, 10.4515],
+    interacoes: [
+      { medicamento: "Antidepressivos", risco: "Risco de síndrome serotoninérgica.", evidencia: "Evitar associação sem supervisão." }
+    ]
+  },
+  {
+    id: 31,
+    nome: "Glycyrrhiza glabra (alcaçuz)",
+    nome_cientifico: "Glycyrrhiza glabra L.",
+    origem: "Europa e Ásia",
+    mecanismos: "Saponinas e flavonoides com atividade anti-inflamatória e antioxidante.",
+    modosUso: "Infusão e extrato seco padronizado.",
+    usos: "Suporte anti-inflamatório.",
+    efeitosColaterais: ["Retenção hídrica e aumento de pressão em uso prolongado."],
+    contraindicacoes: ["Hipertensão não controlada.", "Insuficiência renal."],
+    imagem: imgAlcacuz,
+    autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
+    coordenadas: [34.8021, 38.9968],
+    interacoes: [
+      { medicamento: "Anti-hipertensivos", risco: "Pode reduzir eficácia anti-hipertensiva.", evidencia: "Monitorar pressão arterial." }
+    ]
+  },
+  {
+    id: 32,
+    nome: "Eleutherococcus senticosus (ginseng-siberiano)",
+    nome_cientifico: "Eleutherococcus senticosus (Rupr. & Maxim.) Maxim.",
+    origem: "Sibéria e Ásia Oriental",
+    mecanismos: "Adaptógeno com potencial melhora de resistência ao estresse e suporte cognitivo indireto.",
+    modosUso: "Extrato padronizado em cápsulas.",
+    usos: "Fadiga, estresse e desempenho mental.",
+    efeitosColaterais: ["Insônia leve e irritabilidade em alguns casos."],
+    contraindicacoes: ["Hipertensão sem controle e uso de estimulantes sem orientação."],
+    imagem: imgGinsengsiberiano,
+    autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
+    coordenadas: [61.5240, 105.3188],
+    interacoes: [
+      { medicamento: "Estimulantes", risco: "Pode somar efeitos estimulantes.", evidencia: "Ajustar dose e horário de uso." }
+    ]
   },
 
 ];

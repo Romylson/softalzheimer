@@ -1,193 +1,210 @@
 import React from "react";
 import { Card } from "../components/ui/card";
-import { useTranslation } from "react-i18next";
+import "./NoticiasAvancosAlzheimer.css";
 
-const noticias = [
+const ultimasNoticias = [
   {
-    titulo: "noticia_1_titulo",
-    descricao: "noticia_1_desc",
-    data: "10 de junho de 2025"
+    titulo: "Biomarcadores sanguíneos avançam na triagem precoce",
+    descricao:
+      "Novos estudos reforçam o uso combinado de p-tau e NfL para identificar risco de declínio cognitivo em fases iniciais.",
+    data: "10 de janeiro de 2026",
+    imagem: "/images/alzheimer.png",
+    link: "https://alz-journals.onlinelibrary.wiley.com/",
   },
   {
-    titulo: "noticia_2_titulo",
-    descricao: "noticia_2_desc",
-    data: "2 de junho de 2025"
+    titulo: "Sono de má qualidade é associado à pior progressão cognitiva",
+    descricao:
+      "Revisões recentes destacam o impacto do sono fragmentado na consolidação de memória e em indicadores de risco para demência.",
+    data: "24 de janeiro de 2026",
+    imagem: "/images/fisiopatologia.png",
+    link: "https://www.thelancet.com/journals/laneur/home",
   },
   {
-    titulo: "noticia_3_titulo",
-    descricao: "noticia_3_desc",
-    data: "28 de maio de 2025"
+    titulo: "Intervenções multidomínio mostram melhores resultados",
+    descricao:
+      "Programas que combinam dieta, atividade física e treino cognitivo apresentaram ganhos superiores aos protocolos isolados.",
+    data: "07 de fevereiro de 2026",
+    imagem: "/images/leve.png",
+    link: "https://www.alzheimersanddementia.com/",
   },
   {
-    titulo: "noticia_4_titulo",
-    descricao: "noticia_4_desc",
-    data: "12 de junho de 2025"
+    titulo: "IA em neuroimagem reduz tempo de apoio diagnóstico",
+    descricao:
+      "Ferramentas assistivas estão reduzindo tempo de análise e apoiando equipes clínicas na avaliação de padrões de neurodegeneração.",
+    data: "21 de fevereiro de 2026",
+    imagem: "/images/beta-amiloide.png",
+    link: "https://www.nature.com/subjects/alzheimers-disease",
+  },
+];
+
+const maisNoticias = [
+  {
+    titulo: "Prevenção com atividade física ganha novas evidências",
+    descricao:
+      "Meta-análises recentes reforçam que exercícios aeróbicos regulares podem reduzir risco de declínio cognitivo em idosos.",
+    data: "04 de março de 2026",
+    imagem: "/images/plantas.jpg",
+    link: "https://www.who.int/news-room/fact-sheets/detail/dementia",
   },
   {
-    titulo: "noticia_5_titulo",
-    descricao: "noticia_5_desc",
-    data: "8 de junho de 2025"
+    titulo: "Avanços em terapias antiamiloide seguem em avaliação",
+    descricao:
+      "Novos resultados de acompanhamento mostram benefícios clínicos em subgrupos e destacam necessidade de monitoramento contínuo.",
+    data: "19 de março de 2026",
+    imagem: "/images/alzheimer.png",
+    link: "https://www.nejm.org/",
   },
   {
-    titulo: "noticia_6_titulo",
-    descricao: "noticia_6_desc",
-    data: "6 de junho de 2025"
+    titulo: "Estimulação cognitiva domiciliar melhora adesão",
+    descricao:
+      "Protocolos com tarefas guiadas por aplicativo aumentaram a frequência de treino cognitivo em cuidadores e pacientes.",
+    data: "02 de abril de 2026",
+    imagem: "/images/leve.png",
+    link: "https://jamanetwork.com/journals/jamaneurology",
   },
   {
-    titulo: "noticia_7_titulo",
-    descricao: "noticia_7_desc",
-    data: "1 de junho de 2025"
+    titulo: "Nutrição e microbiota entram no foco da neuroproteção",
+    descricao:
+      "Estudos observacionais apontam associação entre padrões alimentares anti-inflamatórios e melhor desempenho cognitivo.",
+    data: "16 de abril de 2026",
+    imagem: "/images/fisiopatologia.png",
+    link: "https://www.nature.com/subjects/alzheimers-disease",
   },
-  {
-    titulo: "noticia_8_titulo",
-    descricao: "noticia_8_desc",
-    data: "30 de maio de 2025"
-  },
-  {
-    titulo: "noticia_9_titulo",
-    descricao: "noticia_9_desc",
-    data: "27 de maio de 2025"
-  },
-  {
-    titulo: "noticia_10_titulo",
-    descricao: "noticia_10_desc",
-    data: "25 de maio de 2025"
-  },
-  {
-    titulo: "noticia_11_titulo",
-    descricao: "noticia_11_desc",
-    data: "20 de maio de 2025"
-  },
-  {
-    titulo: "noticia_12_titulo",
-    descricao: "noticia_12_desc",
-    data: "18 de maio de 2025"
-  }
 ];
 
 const eventos = [
   {
-    nome: "evento_1_nome",
-    local: "evento_1_local",
-    data: "15 a 18 de julho de 2025"
+    nome: "Alzheimer's Association International Conference®",
+    local: "Toronto, Canadá",
+    data: "12 a 15 de julho de 2026",
+    link: "https://www.alz.org/aaic/",
   },
   {
-    nome: "evento_2_nome",
-    local: "evento_2_local",
-    data: "3 a 6 de agosto de 2025"
+    nome: "EndoDebate Neurodegeneração 2026",
+    local: "Online, Brasil",
+    data: "24 a 25 de julho de 2026",
+    link: "https://www.endodebate.com.br/",
   },
   {
-    nome: "evento_3_nome",
-    local: "evento_3_local",
-    data: "25 a 27 de setembro de 2025"
+    nome: "Dementia World Conference 2026",
+    local: "Dubai, Emirados Árabes Unidos",
+    data: "21 a 23 de agosto de 2026",
+    link: "https://www.dementiaworldconference.com/",
   },
   {
-    nome: "evento_4_nome",
-    local: "evento_4_local",
-    data: "27 Julho a 31 setembro de 2025",
-    link: "https://www.conferenceregistration.org/aaic/"
+    nome: "Ibero-American Forum on Neuroprotection 2026",
+    local: "Dubai, Emirados Árabes Unidos",
+    data: "21 a 23 de agosto de 2026",
+    link: "https://www.dementiaworldconference.com/",
   },
   {
-    nome: "evento_5_nome",
-    local: "evento_5_local",
-    data: "5 a 7 de setembro de 2025",
-    link: "https://www.dementiaworldconference.com/"
+    nome: "Brain Disorders Congress 2026",
+    local: "Londres, Reino Unido",
+    data: "24 a 25 de agosto de 2026",
+    link: "https://braindisorders.neuroconferences.com/",
   },
   {
-    nome: "evento_6_nome",
-    local: "evento_6_local",
-    data: "29 a 31 de julho de 2025",
-    link: "https://www.cepuerj.uerj.br/cursos2.php?tipo=eventos&curso=S01370&ano=2025"
+    nome: "Neuropharma International Meeting 2026",
+    local: "Paris, France",
+    data: "17 a 18 de setembro de 2026",
+    link: "https://neuro.pharmaceuticalconferences.com/",
   },
   {
-    nome: "evento_7_nome",
-    local: "evento_7_local",
-    data: "25 a 27 de setembro de 2025",
-    link: "https://congressogerousp.com.br/"
+    nome: "ECNP Congress 2026",
+    local: "Europa",
+    data: "10 a 13 de outubro de 2026",
+    link: "https://www.ecnp.eu/congress2026/",
   },
   {
-    nome: "evento_8_nome",
-    local: "evento_8_local",
-    data: "29 de setembro de 2025",
-    link: "https://www.endodebate.com.br/produto/endodebate-alzheimer-online-2025/"
+    nome: "Congresso GERO USP 2026",
+    local: "São Paulo, Brasil",
+    data: "15 a 17 de outubro de 2026",
+    link: "https://congressogerousp.com.br/",
   },
   {
-    nome: "evento_9_nome",
-    local: "evento_9_local",
-    data: "11 a 14 de outubro de 2025",
-    link: "https://www.ecnp.eu/congress2025/"
+    nome: "CINETS 2026 — Congresso Internacional de Neurociência Translacional",
+    local: "Brasil",
+    data: "06 a 08 de novembro de 2026",
+    link: "https://doity.com.br/congressocinets",
   },
-  {
-    nome: "evento_10_nome",
-    local: "evento_10_local",
-    data: "25 a 26 de agosto de 2025",
-    link: "https://neuro.pharmaceuticalconferences.com/"
-  },
-  {
-    nome: "evento_11_nome",
-    local: "evento_11_local",
-    data: "06 a 07 de outubro de 2025",
-    link: "https://braindisorders.neuroconferences.com/"
-  },
-  {
-    nome: "evento_12_nome",
-    local: "evento_12_local",
-    data: "06 a 08 de novembro de 2025",
-    link: "https://doity.com.br/congressocinets"
-  }
 ];
 
 export default function NoticiasAvancosAlzheimer() {
-  const { t } = useTranslation();
-
   return (
-    <div className="container py-4">
-      <h2 className="fw-bold mb-4 text-center">📅 {t("noticias_titulo")}</h2>
-      <div className="row g-4 mb-5">
-        {noticias.map((n, i) => (
-          <div className="col-12 col-md-6 col-lg-4" key={i}>
-            <Card className="p-3 shadow-sm h-100">
-              <h5 className="text-primary fw-bold">{t(n.titulo)}</h5>
-              <small className="text-muted">{t(n.data)}</small>
+    <section className="noticias-wrap">
+      <div className="noticias-inner container">
+        <h2 className="noticias-title mb-2">Últimas notícias</h2>
+        <p className="text-muted mb-4 fs-4">
+          Seleção de atualizações recentes com foco em diagnóstico, prevenção, tecnologia e neuroproteção.
+        </p>
 
-              <p className="mt-2 small">{t(n.descricao)}</p>
-            </Card>
-          </div>
-        ))}
-      </div>
+        <div className="row g-4">
+          {ultimasNoticias.map((item) => (
+            <div className="col-12 col-md-6 col-lg-3" key={item.titulo}>
+              <Card className="noticia-card h-100 overflow-hidden">
+                <img src={item.imagem} alt={item.titulo} />
+                <div className="p-3 d-flex flex-column h-100">
+                  <h6 className="noticia-titulo mb-2">{item.titulo}</h6>
+                  <small className="noticia-meta">{item.data}</small>
+                  <p className="mt-2 mb-3 fs-5">{item.descricao}</p>
+                  <a href={item.link} target="_blank" rel="noopener noreferrer" className="btn btn-leia-mais mt-auto align-self-start">
+                    Ler notícia
+                  </a>
+                </div>
+              </Card>
+            </div>
+          ))}
+        </div>
 
-      <h3 className="fw-bold mb-3 text-center">🧠 {t("eventos_titulo")}</h3>
-      <div className="row g-4 mb-4">
-        {eventos.map((e, i) => (
-          <div className="col-12 col-md-6 col-lg-4" key={i}>
-            <Card className="p-3 shadow-sm h-100">
-              <h6 className="text-dark fw-bold">{t(e.nome)}</h6>
-              <p className="mb-1"><strong>{t("local")}:</strong> {t(e.local)}</p>
-              <p className="mb-1"><strong>{t("data")}:</strong> {e.data}</p>
-              {e.link && (
-                <a
-                  href={e.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-outline-primary btn-sm"
-                >
-                  {t("acessar_evento")}
+        <div className="text-center">
+          <a className="mais-noticias" href="https://www.alz.org/news" target="_blank" rel="noopener noreferrer">Mais notícias</a>
+        </div>
+
+        <h3 className="fw-bold mt-5 mb-3 text-center">🧠 Eventos e calendário científico</h3>
+        <div className="row g-4 mb-4">
+          {eventos.map((evento) => (
+            <div className="col-12 col-md-6 col-lg-4" key={evento.nome}>
+              <Card className="p-3 shadow-sm h-100">
+                <h6 className="text-dark fw-bold">{evento.nome}</h6>
+                <p className="mb-1"><strong>Local:</strong> {evento.local}</p>
+                <p className="mb-2"><strong>Data:</strong> {evento.data}</p>
+                <a href={evento.link} target="_blank" rel="noopener noreferrer" className="btn btn-outline-success btn-sm">
+                  Acessar evento
                 </a>
-              )}
-            </Card>
-          </div>
-        ))}
-      </div>
+              </Card>
+            </div>
+          ))}
+        </div>
 
-      <div className="text-center">
-        <iframe
-          src="https://calendar.google.com/calendar/embed?src=pt.brazilian%23holiday%40group.v.calendar.google.com&ctz=America%2FSao_Paulo"
-          style={{ border: 0, width: "100%", height: "500px" }}
-          frameBorder="0"
-          scrolling="no"
-          title="Calendário de Eventos"
-        ></iframe>
+        <div className="text-center mt-2">
+          <iframe
+            src="https://calendar.google.com/calendar/embed?src=pt.brazilian%23holiday%40group.v.calendar.google.com&ctz=America%2FSao_Paulo"
+            style={{ border: 0, width: "100%", height: "500px" }}
+            frameBorder="0"
+            scrolling="no"
+            title="Calendário de Eventos"
+          ></iframe>
+        </div>
+
+        <h3 className="fw-bold mt-5 mb-3 text-center">📰 Mais notícias</h3>
+        <div className="row g-4">
+          {maisNoticias.map((item) => (
+            <div className="col-12 col-md-6 col-lg-3" key={item.titulo}>
+              <Card className="noticia-card h-100 overflow-hidden">
+                <img src={item.imagem} alt={item.titulo} />
+                <div className="p-3 d-flex flex-column h-100">
+                  <h6 className="noticia-titulo mb-2">{item.titulo}</h6>
+                  <small className="noticia-meta">{item.data}</small>
+                  <p className="mt-2 mb-3 fs-5">{item.descricao}</p>
+                  <a href={item.link} target="_blank" rel="noopener noreferrer" className="btn btn-leia-mais mt-auto align-self-start">
+                    Ler notícia
+                  </a>
+                </div>
+              </Card>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
