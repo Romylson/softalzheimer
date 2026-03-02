@@ -1,0 +1,69 @@
+.fisio-section {
+  margin: 2.2rem 0;
+}
+
+.fisio-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+
+.fisio-card {
+  background: #f4fff2;
+  border: 1px solid #cfeccc;
+  border-radius: 12px;
+  padding: 0.8rem;
+  text-align: center;
+}
+
+.fisio-image {
+  width: 100%;
+  max-width: 220px;
+  border-radius: 12px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.fisio-image-small {
+  width: 100%;
+  max-width: 180px;
+  border-radius: 12px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.regioes-afetadas {
+  display: grid;
+  gap: 1rem;
+}
+
+.regiao-item {
+  background: #f6fff4;
+  border: 1px solid #d5edd1;
+  border-radius: 12px;
+  padding: 0.9rem;
+}
+
+.regiao-linha {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+.regiao-linha img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+}
+
+@media (max-width: 900px) {
+  .regiao-linha {
+    grid-template-columns: 1fr;
+  }
+}
