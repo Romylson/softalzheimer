@@ -280,7 +280,7 @@ const plantas = [
     usos: "Saúde metabólica e apoio anti-inflamatório.",
     efeitosColaterais: ["Azia.", "Desconforto gastrointestinal em doses altas."],
     contraindicacoes: ["Cautela em uso de anticoagulantes.", "Doenças biliares sem avaliação médica."],
-    imagem: imgCurcuma,
+    imagem: imgGengibre,
     autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
     coordenadas: [23.6978, 120.9605],
     interacoes: [
