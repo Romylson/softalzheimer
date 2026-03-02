@@ -1,0 +1,68 @@
+.seduc-like-carousel .carousel-slide-wrap {
+  position: relative;
+  width: 100%;
+  min-height: 430px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(120deg, #0a4b99, #1a7bd6);
+}
+
+.seduc-like-carousel .carousel-banner-img {
+  width: 100%;
+  height: 430px;
+  object-fit: cover;
+  filter: saturate(1.05) contrast(1.03);
+}
+
+.seduc-like-carousel .carousel-overlay {
+  position: absolute;
+  left: 4%;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 560px;
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+}
+
+.seduc-like-carousel .carousel-badge {
+  display: inline-block;
+  background: #0e8f2b;
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.seduc-like-carousel .carousel-overlay h3 {
+  font-size: clamp(1.4rem, 2.7vw, 2.5rem);
+  font-weight: 800;
+  margin: 0;
+}
+
+.seduc-like-carousel .carousel-control-prev,
+.seduc-like-carousel .carousel-control-next {
+  width: 58px;
+  opacity: 1;
+}
+
+.seduc-like-carousel .carousel-control-prev-icon,
+.seduc-like-carousel .carousel-control-next-icon {
+  background-color: rgba(2, 38, 74, 0.75);
+  border-radius: 8px;
+  background-size: 50% 50%;
+  width: 56px;
+  height: 86px;
+}
+
+@media (max-width: 900px) {
+  .seduc-like-carousel .carousel-slide-wrap,
+  .seduc-like-carousel .carousel-banner-img {
+    min-height: 260px;
+    height: 260px;
+  }
+
+  .seduc-like-carousel .carousel-overlay {
+    max-width: 88%;
+  }
+}
