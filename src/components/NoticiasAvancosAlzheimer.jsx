@@ -35,21 +35,62 @@ const ultimasNoticias = [
     imagem: "/images/beta-amiloide.png",
     link: "https://www.nature.com/subjects/alzheimers-disease",
   },
+];
+
+const eventos = [
   {
-    titulo: "Neuroinflamação ganha destaque como alvo terapêutico",
-    descricao:
-      "Publicações recentes mostram avanço na compreensão das vias inflamatórias e de potenciais terapias adjuvantes.",
-    data: "05 de março de 2026",
-    imagem: "/images/tau.png",
-    link: "https://pubmed.ncbi.nlm.nih.gov/?term=alzheimer+neuroinflammation+2026",
+    nome: "Alzheimer's Association International Conference®",
+    local: "Toronto, Canadá",
+    data: "12 a 15 de julho de 2026",
+    link: "https://www.alz.org/aaic/",
   },
   {
-    titulo: "Tecnologias digitais ampliam monitoramento remoto",
-    descricao:
-      "Wearables e apps de rotina cognitiva mostram utilidade para detectar mudanças sutis e acompanhar pacientes à distância.",
-    data: "18 de março de 2026",
-    imagem: "/images/grave.png",
-    link: "https://www.who.int/news-room/fact-sheets/detail/dementia",
+    nome: "EndoDebate Neurodegeneração 2026",
+    local: "Online, Brasil",
+    data: "24 a 25 de julho de 2026",
+    link: "https://www.endodebate.com.br/",
+  },
+  {
+    nome: "Dementia World Conference 2026",
+    local: "Dubai, Emirados Árabes Unidos",
+    data: "21 a 23 de agosto de 2026",
+    link: "https://www.dementiaworldconference.com/",
+  },
+  {
+    nome: "Ibero-American Forum on Neuroprotection 2026",
+    local: "Dubai, Emirados Árabes Unidos",
+    data: "21 a 23 de agosto de 2026",
+    link: "https://www.dementiaworldconference.com/",
+  },
+  {
+    nome: "Brain Disorders Congress 2026",
+    local: "Londres, Reino Unido",
+    data: "24 a 25 de agosto de 2026",
+    link: "https://braindisorders.neuroconferences.com/",
+  },
+  {
+    nome: "Neuropharma International Meeting 2026",
+    local: "Paris, France",
+    data: "17 a 18 de setembro de 2026",
+    link: "https://neuro.pharmaceuticalconferences.com/",
+  },
+  {
+    nome: "ECNP Congress 2026",
+    local: "Europa",
+    data: "10 a 13 de outubro de 2026",
+    link: "https://www.ecnp.eu/congress2026/",
+  },
+  {
+    nome: "Congresso GERO USP 2026",
+    local: "São Paulo, Brasil",
+    data: "15 a 17 de outubro de 2026",
+    link: "https://congressogerousp.com.br/",
+  },
+  {
+    nome: "CINETS 2026 — Congresso Internacional de Neurociência Translacional",
+    local: "Brasil",
+    data: "06 a 08 de novembro de 2026",
+    link: "https://doity.com.br/congressocinets",
   },
 ];
 
@@ -57,30 +98,58 @@ export default function NoticiasAvancosAlzheimer() {
   return (
     <section className="noticias-wrap">
       <div className="noticias-inner container">
-      <h2 className="noticias-title mb-2">Últimas notícias</h2>
-      <p className="text-muted mb-4 fs-4">
-        Seleção de atualizações recentes com foco em diagnóstico, prevenção, tecnologia e neuroproteção.
-      </p>
-      <div className="row g-4">
-        {ultimasNoticias.slice(0, 4).map((item) => (
-          <div className="col-12 col-md-6 col-lg-3" key={item.titulo}>
-            <Card className="noticia-card h-100 overflow-hidden">
-              <img src={item.imagem} alt={item.titulo} />
-              <div className="p-3 d-flex flex-column h-100">
-                <h6 className="noticia-titulo mb-2">{item.titulo}</h6>
-                <small className="noticia-meta">{item.data}</small>
-                <p className="mt-2 mb-3 fs-5">{item.descricao}</p>
-                <a href={item.link} target="_blank" rel="noopener noreferrer" className="btn btn-leia-mais mt-auto align-self-start">
-                  Ler notícia
+        <h2 className="noticias-title mb-2">Últimas notícias</h2>
+        <p className="text-muted mb-4 fs-4">
+          Seleção de atualizações recentes com foco em diagnóstico, prevenção, tecnologia e neuroproteção.
+        </p>
+
+        <div className="row g-4">
+          {ultimasNoticias.map((item) => (
+            <div className="col-12 col-md-6 col-lg-3" key={item.titulo}>
+              <Card className="noticia-card h-100 overflow-hidden">
+                <img src={item.imagem} alt={item.titulo} />
+                <div className="p-3 d-flex flex-column h-100">
+                  <h6 className="noticia-titulo mb-2">{item.titulo}</h6>
+                  <small className="noticia-meta">{item.data}</small>
+                  <p className="mt-2 mb-3 fs-5">{item.descricao}</p>
+                  <a href={item.link} target="_blank" rel="noopener noreferrer" className="btn btn-leia-mais mt-auto align-self-start">
+                    Ler notícia
+                  </a>
+                </div>
+              </Card>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center">
+          <a className="mais-noticias" href="https://www.alz.org/news" target="_blank" rel="noopener noreferrer">Mais notícias</a>
+        </div>
+
+        <h3 className="fw-bold mt-5 mb-3 text-center">🧠 Eventos e calendário científico</h3>
+        <div className="row g-4 mb-4">
+          {eventos.map((evento) => (
+            <div className="col-12 col-md-6 col-lg-4" key={evento.nome}>
+              <Card className="p-3 shadow-sm h-100">
+                <h6 className="text-dark fw-bold">{evento.nome}</h6>
+                <p className="mb-1"><strong>Local:</strong> {evento.local}</p>
+                <p className="mb-2"><strong>Data:</strong> {evento.data}</p>
+                <a href={evento.link} target="_blank" rel="noopener noreferrer" className="btn btn-outline-success btn-sm">
+                  Acessar evento
                 </a>
-              </div>
-            </Card>
-          </div>
-        ))}
-      </div>
-      <div className="text-center">
-        <a className="mais-noticias" href="https://www.alz.org/news" target="_blank" rel="noopener noreferrer">Mais notícias</a>
-      </div>
+              </Card>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center mt-2">
+          <iframe
+            src="https://calendar.google.com/calendar/embed?src=pt.brazilian%23holiday%40group.v.calendar.google.com&ctz=America%2FSao_Paulo"
+            style={{ border: 0, width: "100%", height: "500px" }}
+            frameBorder="0"
+            scrolling="no"
+            title="Calendário de Eventos"
+          ></iframe>
+        </div>
       </div>
     </section>
   );

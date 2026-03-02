@@ -6,8 +6,8 @@ const slides = [
   {
     src: "/images/alzheimer.png",
     alt: "Alzheimer",
-    subtitulo: "A primeira edição da",
-    titulo: "Revista PlantaMente",
+    subtitulo: "Conteúdo científico e educativo",
+    titulo: "Atualizações sobre Alzheimer",
     destaque: "Clique aqui",
   },
   {
