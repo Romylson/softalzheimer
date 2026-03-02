@@ -37,6 +37,41 @@ const ultimasNoticias = [
   },
 ];
 
+const maisNoticias = [
+  {
+    titulo: "Prevenção com atividade física ganha novas evidências",
+    descricao:
+      "Meta-análises recentes reforçam que exercícios aeróbicos regulares podem reduzir risco de declínio cognitivo em idosos.",
+    data: "04 de março de 2026",
+    imagem: "/images/plantas.jpg",
+    link: "https://www.who.int/news-room/fact-sheets/detail/dementia",
+  },
+  {
+    titulo: "Avanços em terapias antiamiloide seguem em avaliação",
+    descricao:
+      "Novos resultados de acompanhamento mostram benefícios clínicos em subgrupos e destacam necessidade de monitoramento contínuo.",
+    data: "19 de março de 2026",
+    imagem: "/images/alzheimer.png",
+    link: "https://www.nejm.org/",
+  },
+  {
+    titulo: "Estimulação cognitiva domiciliar melhora adesão",
+    descricao:
+      "Protocolos com tarefas guiadas por aplicativo aumentaram a frequência de treino cognitivo em cuidadores e pacientes.",
+    data: "02 de abril de 2026",
+    imagem: "/images/leve.png",
+    link: "https://jamanetwork.com/journals/jamaneurology",
+  },
+  {
+    titulo: "Nutrição e microbiota entram no foco da neuroproteção",
+    descricao:
+      "Estudos observacionais apontam associação entre padrões alimentares anti-inflamatórios e melhor desempenho cognitivo.",
+    data: "16 de abril de 2026",
+    imagem: "/images/fisiopatologia.png",
+    link: "https://www.nature.com/subjects/alzheimers-disease",
+  },
+];
+
 const eventos = [
   {
     nome: "Alzheimer's Association International Conference®",
@@ -149,6 +184,25 @@ export default function NoticiasAvancosAlzheimer() {
             scrolling="no"
             title="Calendário de Eventos"
           ></iframe>
+        </div>
+
+        <h3 className="fw-bold mt-5 mb-3 text-center">📰 Mais notícias</h3>
+        <div className="row g-4">
+          {maisNoticias.map((item) => (
+            <div className="col-12 col-md-6 col-lg-3" key={item.titulo}>
+              <Card className="noticia-card h-100 overflow-hidden">
+                <img src={item.imagem} alt={item.titulo} />
+                <div className="p-3 d-flex flex-column h-100">
+                  <h6 className="noticia-titulo mb-2">{item.titulo}</h6>
+                  <small className="noticia-meta">{item.data}</small>
+                  <p className="mt-2 mb-3 fs-5">{item.descricao}</p>
+                  <a href={item.link} target="_blank" rel="noopener noreferrer" className="btn btn-leia-mais mt-auto align-self-start">
+                    Ler notícia
+                  </a>
+                </div>
+              </Card>
+            </div>
+          ))}
         </div>
       </div>
     </section>
