@@ -23,14 +23,7 @@ export default function Navbar() {
   }
 
   return (
-    <nav
-      className="navbar navbar-expand-lg px-4 py-2 shadow-sm"
-      style={{
-        minHeight: 60,
-        backgroundColor: "var(--background-color)",
-        color: "var(--text-color)",
-      }}
-    >
+    <nav className="navbar navbar-expand-lg px-4 py-2 shadow-sm site-navbar" style={{ minHeight: 60 }}>
       <div className="container-fluid">
         <div className="d-flex align-items-center ms-auto gap-2 gap-md-3 flex-wrap justify-content-end">
           <Link to="/historico" className="nav-link" style={{ color: "var(--text-color)", whiteSpace: "nowrap" }}>
@@ -46,8 +39,8 @@ export default function Navbar() {
             <input
               type="search"
               className="form-control form-control-sm"
-              placeholder="Buscar no portal"
-              aria-label="Buscar no portal"
+              placeholder="Buscar em Notícias"
+              aria-label="Buscar em Notícias"
               value={busca}
               onChange={(e) => setBusca(e.target.value)}
               style={{ minWidth: 180 }}

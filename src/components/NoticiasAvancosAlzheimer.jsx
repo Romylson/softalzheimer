@@ -15,7 +15,7 @@ const ultimasNoticias = [
     descricao:
       "Revisões recentes destacam o impacto do sono fragmentado na consolidação de memória e em indicadores de risco para demência.",
     data: "24 de janeiro de 2026",
-    imagem: "/images/moderada.png",
+    imagem: "/images/fisiopatologia.png",
     link: "https://www.thelancet.com/journals/laneur/home",
   },
   {
@@ -31,7 +31,7 @@ const ultimasNoticias = [
     descricao:
       "Ferramentas assistivas estão reduzindo tempo de análise e apoiando equipes clínicas na avaliação de padrões de neurodegeneração.",
     data: "21 de fevereiro de 2026",
-    imagem: "/images/fisiopatologia.png",
+    imagem: "/images/beta-amiloide.png",
     link: "https://www.nature.com/subjects/alzheimers-disease",
   },
   {
@@ -47,7 +47,7 @@ const ultimasNoticias = [
     descricao:
       "Wearables e apps de rotina cognitiva mostram utilidade para detectar mudanças sutis e acompanhar pacientes à distância.",
     data: "18 de março de 2026",
-    imagem: "/images/beta-amiloide.png",
+    imagem: "/images/grave.png",
     link: "https://www.who.int/news-room/fact-sheets/detail/dementia",
   },
 ];
