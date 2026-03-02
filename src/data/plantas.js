@@ -16,7 +16,18 @@ import imgEucalipto from "../assets/eucalipto.jpg";
 import imgCamomila from "../assets/camomila.jpg";
 import imgAlecrim from "../assets/alecrim.jpg";
 import imgGengibre from "../assets/gengibre.jpg";
-
+import imgCanela from "../assets/canela.jpg";
+import imgUva from "../assets/uva.jpg";
+import imgManjericao from "../assets/manjericao-sagrado.jpg";
+import imgReishi from "../assets/reishi.jpg";
+import imgUnhadegato from "../assets/unha-de-gato.jpg";
+import imgMaracuja from "../assets/maracuja.jpg";
+import imgChaverde from "../assets/chaverde.jpg";
+import imgAcafrao from "../assets/acafrao.jpg";
+import imgErvacidreira from "../assets/erva-cidreira.jpg"
+import imgErvadesaojoao from "../assets/erva-de-sao-joao.jpg";
+import imgAlcacuz from "../assets/alcacuz.jpg";
+import imgGinseng from "../assets/ginseng-siberiano.jpg" 
 const plantas = [
   {
     id: 1,
@@ -349,7 +360,7 @@ const plantas = [
     usos: "Suporte metabólico e adjuvante anti-inflamatório.",
     efeitosColaterais: ["Irritação gastrointestinal em excesso."],
     contraindicacoes: ["Cautela em doenças hepáticas e uso concentrado sem orientação."],
-    imagem: imgErvaDoce,
+    imagem: imgCanela,
     autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
     coordenadas: [7.8731, 80.7718],
     interacoes: [
@@ -366,7 +377,7 @@ const plantas = [
     usos: "Suporte vascular e proteção contra estresse oxidativo.",
     efeitosColaterais: ["Desconforto gastrointestinal leve."],
     contraindicacoes: ["Cautela com anticoagulantes em uso de extratos concentrados."],
-    imagem: imgPlanta,
+    imagem: imgUva,
     autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
     coordenadas: [41.9028, 12.4964],
     interacoes: [
@@ -385,7 +396,7 @@ const plantas = [
     usos: "Suporte ao estresse, clareza mental e saúde metabólica.",
     efeitosColaterais: ["Desconforto gastrointestinal leve em doses altas."],
     contraindicacoes: ["Gestação sem orientação médica.", "Cautela com antidiabéticos."],
-    imagem: "https://upload.wikimedia.org/wikipedia/commons/4/43/Ocimum_tenuiflorum2.jpg",
+    imagem: imgManjericao,
     autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
     coordenadas: [22.9734, 78.6569],
     interacoes: [
@@ -402,7 +413,7 @@ const plantas = [
     usos: "Suplementação nutricional e suporte antioxidante.",
     efeitosColaterais: ["Desconforto intestinal em uso excessivo."],
     contraindicacoes: ["Gestação sem orientação profissional."],
-    imagem: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Moringa_oleifera_leaves.jpg",
+    imagem: imgMoringa,
     autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
     coordenadas: [9.082, 8.6753],
     interacoes: [
@@ -419,7 +430,7 @@ const plantas = [
     usos: "Suporte imunológico e manejo de fadiga.",
     efeitosColaterais: ["Boca seca, desconforto gástrico em alguns casos."],
     contraindicacoes: ["Cautela com anticoagulantes e imunossupressores."],
-    imagem: "https://upload.wikimedia.org/wikipedia/commons/7/70/Ganoderma_lucidum_02.jpg",
+    imagem: imgReishi,
     autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
     coordenadas: [35.8617, 104.1954],
     interacoes: [
@@ -436,7 +447,7 @@ const plantas = [
     usos: "Suporte inflamatório e imunológico.",
     efeitosColaterais: ["Náuseas e desconforto gastrointestinal em doses elevadas."],
     contraindicacoes: ["Gestação e lactação.", "Doenças autoimunes sem orientação médica."],
-    imagem: "https://upload.wikimedia.org/wikipedia/commons/0/08/Uncaria_tomentosa.jpg",
+    imagem: imgUnhadegato,
     autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
     coordenadas: [-3.4653, -62.2159],
     interacoes: [
@@ -470,7 +481,7 @@ const plantas = [
     usos: "Ansiedade leve e qualidade de sono.",
     efeitosColaterais: ["Sonolência."],
     contraindicacoes: ["Cautela com sedativos e álcool."],
-    imagem: "https://upload.wikimedia.org/wikipedia/commons/2/29/Passiflora_incarnata_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-236.jpg",
+    imagem: imgMaracuja,
     autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
     coordenadas: [-14.235, -51.9253],
     interacoes: [
@@ -488,7 +499,7 @@ const plantas = [
     usos: "Suporte antioxidante e cognitivo.",
     efeitosColaterais: ["Insônia em sensíveis à cafeína."],
     contraindicacoes: ["Cautela em pacientes com ansiedade e sensibilidade à cafeína."],
-    imagem: "https://upload.wikimedia.org/wikipedia/commons/7/71/Camellia_sinensis_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-026.jpg",
+    imagem: imgChaverde,
     autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
     coordenadas: [35.8617, 104.1954],
     interacoes: [
@@ -505,7 +516,7 @@ const plantas = [
     usos: "Suporte de memória e humor.",
     efeitosColaterais: ["Náusea leve em doses elevadas."],
     contraindicacoes: ["Gestação sem orientação médica."],
-    imagem: "https://upload.wikimedia.org/wikipedia/commons/e/e4/Saffron_Crocus_sativus_flowers.jpg",
+    imagem: imgAcafrao,
     autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
     coordenadas: [32.4279, 53.6880],
     interacoes: [
@@ -522,7 +533,7 @@ const plantas = [
     usos: "Qualidade do sono e ansiedade leve.",
     efeitosColaterais: ["Sonolência.", "Hipotensão em suscetíveis."],
     contraindicacoes: ["Uso com sedativos sem orientação profissional."],
-    imagem: "https://upload.wikimedia.org/wikipedia/commons/e/e5/Lippia_alba.jpg",
+    imagem: imgErvaCidreira,
     autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
     coordenadas: [-15.7939, -47.8828],
     interacoes: [
@@ -539,7 +550,7 @@ const plantas = [
     usos: "Humor e bem-estar emocional.",
     efeitosColaterais: ["Fotossensibilidade.", "Desconforto gastrointestinal."],
     contraindicacoes: ["Uso concomitante com diversos fármacos sem avaliação médica."],
-    imagem: "https://upload.wikimedia.org/wikipedia/commons/0/02/Hypericum_perforatum_002.JPG",
+    imagem: imgErvadeSaoJoao,
     autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
     coordenadas: [51.1657, 10.4515],
     interacoes: [
@@ -556,7 +567,7 @@ const plantas = [
     usos: "Suporte anti-inflamatório.",
     efeitosColaterais: ["Retenção hídrica e aumento de pressão em uso prolongado."],
     contraindicacoes: ["Hipertensão não controlada.", "Insuficiência renal."],
-    imagem: "https://upload.wikimedia.org/wikipedia/commons/7/75/Illustration_Glycyrrhiza_glabra0.jpg",
+    imagem: imgAlcacuz,
     autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
     coordenadas: [34.8021, 38.9968],
     interacoes: [
@@ -573,7 +584,7 @@ const plantas = [
     usos: "Fadiga, estresse e desempenho mental.",
     efeitosColaterais: ["Insônia leve e irritabilidade em alguns casos."],
     contraindicacoes: ["Hipertensão sem controle e uso de estimulantes sem orientação."],
-    imagem: "https://upload.wikimedia.org/wikipedia/commons/6/6e/Eleutherococcus_senticosus.jpg",
+    imagem: imgGinseng,
     autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
     coordenadas: [61.5240, 105.3188],
     interacoes: [
