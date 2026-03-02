@@ -1,16 +1,25 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import i18n from "../i18n";
 import LoginModal from "./LoginModal";
 
 export default function Navbar() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const [showLogin, setShowLogin] = useState(false);
   const [user, setUser] = useState(null);
+  const [busca, setBusca] = useState("");
 
   function changeLanguage(lng) {
     i18n.changeLanguage(lng);
+  }
+
+  function handleBuscaSubmit(e) {
+    e.preventDefault();
+    const termo = busca.trim();
+    if (!termo) return;
+    navigate(`/artigos-cientificos?busca=${encodeURIComponent(termo)}`);
   }
 
   return (
@@ -23,9 +32,6 @@ export default function Navbar() {
       }}
     >
       <div className="container-fluid">
-        <Link to="/" className="navbar-brand fw-bold fs-4" style={{ letterSpacing: "0.5px" }}>
-          Plantamente
-        </Link>
         <div className="d-flex align-items-center ms-auto gap-2 gap-md-3 flex-wrap justify-content-end">
           <Link to="/historico" className="nav-link" style={{ color: "var(--text-color)", whiteSpace: "nowrap" }}>
             {t("history")}
@@ -36,6 +42,17 @@ export default function Navbar() {
           <Link to="/teste-cores" className="nav-link" style={{ color: "var(--text-color)", whiteSpace: "nowrap" }}>
             {t("color_test")}
           </Link>
+          <form className="d-flex align-items-center" onSubmit={handleBuscaSubmit}>
+            <input
+              type="search"
+              className="form-control form-control-sm"
+              placeholder="Buscar no portal"
+              aria-label="Buscar no portal"
+              value={busca}
+              onChange={(e) => setBusca(e.target.value)}
+              style={{ minWidth: 180 }}
+            />
+          </form>
           {/* Dropdown de idiomas */}
           <div className="dropdown">
             <button

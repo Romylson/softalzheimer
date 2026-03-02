@@ -141,6 +141,27 @@ const eventos = [
   }
 ];
 
+const ultimasNoticiasImagem = [
+  {
+    titulo: "Avanços em diagnóstico precoce com biomarcadores sanguíneos",
+    descricao: "Pesquisas recentes reforçam o uso combinado de p-tau e NfL para triagem em fase inicial.",
+    data: "2026",
+    imagem: "/images/alzheimer.png",
+  },
+  {
+    titulo: "Sono e risco cognitivo: novos dados observacionais",
+    descricao: "Estudos apontam associação entre pior qualidade do sono e progressão mais rápida do comprometimento cognitivo.",
+    data: "2026",
+    imagem: "/images/moderada.png",
+  },
+  {
+    titulo: "Estratégias multidomínio ganham força na prevenção",
+    descricao: "Intervenções com dieta, atividade física e estímulo cognitivo mostraram resultados mais consistentes em conjunto.",
+    data: "2026",
+    imagem: "/images/leve.png",
+  },
+];
+
 
 export default function NoticiasAvancosAlzheimer() {
   const { t } = useTranslation();
@@ -193,6 +214,28 @@ export default function NoticiasAvancosAlzheimer() {
           title="Calendário de Eventos"
         ></iframe>
       </div>
+
+      <section className="mt-5">
+        <h3 className="fw-bold mb-3 text-center">📰 Últimas notícias com imagem</h3>
+        <div className="row g-4">
+          {ultimasNoticiasImagem.map((item) => (
+            <div className="col-12 col-md-6 col-lg-4" key={item.titulo}>
+              <Card className="shadow-sm h-100 overflow-hidden">
+                <img
+                  src={item.imagem}
+                  alt={item.titulo}
+                  style={{ width: "100%", height: 180, objectFit: "cover" }}
+                />
+                <div className="p-3">
+                  <h6 className="fw-bold mb-2">{item.titulo}</h6>
+                  <small className="text-muted">{item.data}</small>
+                  <p className="mt-2 mb-0 small">{item.descricao}</p>
+                </div>
+              </Card>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
