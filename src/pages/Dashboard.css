@@ -62,9 +62,9 @@ body {
 
 .section-block { margin: 1.5rem 0; }
 .full-bleed-carousel {
-  width: calc(100% + 6rem);
-  margin-left: -3rem;
-  margin-right: -3rem;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
 }
 .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.9rem; }
 .info-card {
