@@ -32,7 +32,7 @@ const ultimasNoticias = [
     descricao:
       "Ferramentas assistivas estão reduzindo tempo de análise e apoiando equipes clínicas na avaliação de padrões de neurodegeneração.",
     data: "21 de fevereiro de 2026",
-    imagem: "/images/Ia.jpg,
+    imagem: "/images/Ia.jpg",
     link: "https://www.nature.com/subjects/alzheimers-disease",
   },
   {
