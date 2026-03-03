@@ -35,9 +35,6 @@ const ultimasNoticias = [
     imagem: "/images/beta-amiloide.png",
     link: "https://www.nature.com/subjects/alzheimers-disease",
   },
-];
-
-const maisNoticias = [
   {
     titulo: "Prevenção com atividade física ganha novas evidências",
     descricao:
@@ -70,7 +67,11 @@ const maisNoticias = [
     imagem: "/images/fisiopatologia.png",
     link: "https://www.nature.com/subjects/alzheimers-disease",
   },
+
 ];
+
+
+  
 
 const eventos = [
   {
@@ -131,35 +132,7 @@ const eventos = [
 
 export default function NoticiasAvancosAlzheimer() {
   return (
-    <section className="noticias-wrap">
-      <div className="noticias-inner container">
-        <h2 className="noticias-title mb-2">Últimas notícias</h2>
-        <p className="text-muted mb-4 fs-4">
-          Seleção de atualizações recentes com foco em diagnóstico, prevenção, tecnologia e neuroproteção.
-        </p>
-
-        <div className="row g-4">
-          {ultimasNoticias.map((item) => (
-            <div className="col-12 col-md-6 col-lg-3" key={item.titulo}>
-              <Card className="noticia-card h-100 overflow-hidden">
-                <img src={item.imagem} alt={item.titulo} />
-                <div className="p-3 d-flex flex-column h-100">
-                  <h6 className="noticia-titulo mb-2">{item.titulo}</h6>
-                  <small className="noticia-meta">{item.data}</small>
-                  <p className="mt-2 mb-3 fs-5">{item.descricao}</p>
-                  <a href={item.link} target="_blank" rel="noopener noreferrer" className="btn btn-leia-mais mt-auto align-self-start">
-                    Ler notícia
-                  </a>
-                </div>
-              </Card>
-            </div>
-          ))}
-        </div>
-
-        <div className="text-center">
-          <a className="mais-noticias" href="https://www.alz.org/news" target="_blank" rel="noopener noreferrer">Mais notícias</a>
-        </div>
-
+   
         <h3 className="fw-bold mt-5 mb-3 text-center">🧠 Eventos e calendário científico</h3>
         <div className="row g-4 mb-4">
           {eventos.map((evento) => (
@@ -186,9 +159,15 @@ export default function NoticiasAvancosAlzheimer() {
           ></iframe>
         </div>
 
-        <h3 className="fw-bold mt-5 mb-3 text-center">📰 Mais notícias</h3>
+         <section className="noticias-wrap">
+      <div className="noticias-inner container">
+        <h2 className="noticias-title mb-2">Últimas notícias</h2>
+        <p className="text-muted mb-4 fs-4">
+          Seleção de atualizações recentes com foco em diagnóstico, prevenção, tecnologia e neuroproteção.
+        </p>
+
         <div className="row g-4">
-          {maisNoticias.map((item) => (
+          {ultimasNoticias.map((item) => (
             <div className="col-12 col-md-6 col-lg-3" key={item.titulo}>
               <Card className="noticia-card h-100 overflow-hidden">
                 <img src={item.imagem} alt={item.titulo} />
@@ -204,6 +183,8 @@ export default function NoticiasAvancosAlzheimer() {
             </div>
           ))}
         </div>
+
+
       </div>
     </section>
   );
