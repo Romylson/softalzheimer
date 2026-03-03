@@ -4,14 +4,14 @@
 @tailwind utilities;
 
 :root {
-  --background-color:#cdf06f;
+  --background-color:#ecee61;
   --text-color: #000;
-  --page-bg: #c0dd57;   
+  --page-bg: #ecee61;   
 }
 
 
 html, body, #root {
-  background-color: var(--page-bg #caee66);
+  background-color: var(--page-bg #ecee61);
 }
 
 body {
@@ -32,15 +32,16 @@ main {
 }
 
 footer {
-  background: var(--page-bg #e4d781);
+  background: var(--page-bg #eed953);
   color: var(--text-color);
 }
 
 .app-header {
-  background: var(--background-color);
-  border-bottom: 2px solid #caee66;
+  background: var(--background-color,#ecee61);
+  border-bottom: 2px solid #e5ee66;
   padding: 0.65rem 1rem;
 }
+
 
 .app-header-inner {
   max-width: 1280px;
