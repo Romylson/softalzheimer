@@ -6,12 +6,12 @@
 :root {
   --background-color:#cdf06f;
   --text-color: #000;
-  --page-bg: #ffffff;   
+  --page-bg: #c0dd57;   
 }
 
 
 html, body, #root {
-  background-color: var(--page-bg);
+  background-color: var(--page-bg #caee66);
 }
 
 body {
