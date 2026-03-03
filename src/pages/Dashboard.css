@@ -5,7 +5,7 @@ body {
 }
 
 .dashboard-layout{
-  display: flex;
+  display: grid;
   grid-template-columns: 260px 1fr;   /* sidebar | conteúdo */
   grid-template-rows: auto auto 1fr;  /* (pode ter topo) | carrossel | conteúdo */
   min-height: 100vh;
