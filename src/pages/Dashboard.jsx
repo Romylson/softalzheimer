@@ -90,6 +90,10 @@ export default function Dashboard() {
           </ul>
         </nav>
       </aside>
+        {/* 👇 carrossel full width abaixo da navbar branca */}
+      <div className="full-bleed-carousel">
+          <ImageCarousel />
+      </div>
 
       <main className="dashboard-main">
         <section className="hero-banner">
@@ -117,9 +121,7 @@ export default function Dashboard() {
         </section>
 
         <BannerDiferenciais />
-        <div className="full-bleed-carousel">
-          <ImageCarousel />
-        </div>
+        
         <IntroBlock />
         <NoticiasAvancosAlzheimer />
         <DiferenciaisInovadores />
