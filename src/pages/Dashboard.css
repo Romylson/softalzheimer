@@ -51,7 +51,7 @@ body {
 .dashboard-main { flex: 1; padding: 1.5rem; }
 
 .hero-banner {
-  background: linear-gradient(120deg, #e9e646, #ebee57);
+  background: linear-gradient(120deg, #eca64a, #f1b84e);
   color: white;
   padding: 1.7rem;
   border-radius: 14px;
