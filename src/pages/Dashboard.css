@@ -19,9 +19,14 @@ body {
   grid-row: 3;
   width: 260px;
   background-color: #0c1710;
+  color: #c3f5c8;
+  padding: 1rem;
+  align-self: flex-start;
   height: 100%;
   position: sticky;
+  overflow-y: auto;
   top: 0;
+  height: 100vh;
 }
 
 
