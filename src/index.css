@@ -4,25 +4,35 @@
 @tailwind utilities;
 
 :root {
-  --background-color: #c6ee7d;
+  --background-color:#c6ee7d;
   --text-color: #000;
+  --page-bg: #ffffff;   
 }
 
 
 html, body, #root {
-  background-color: var(--background-color);
+  background-color: var(--page-bg);
 }
 
 body {
   font-family: sans-serif;
   }
 
-footer,
+/*footer,
 main,
 .bg-secondary,
 .bg-light,
 .bg-white {
   background-color: var(--background-color) !important;
+  color: var(--text-color);
+}*/
+main {
+  background: transparent;
+  color: var(--text-color);
+}
+
+footer {
+  background: var(--page-bg #fff7c2);
   color: var(--text-color);
 }
 
