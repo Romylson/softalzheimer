@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 :root {
-  --background-color:#c6ee7d;
+  --background-color:#cdf06f;
   --text-color: #000;
   --page-bg: #ffffff;   
 }
@@ -32,7 +32,7 @@ main {
 }
 
 footer {
-  background: var(--page-bg #fff7c2);
+  background: var(--page-bg #e4d781);
   color: var(--text-color);
 }
 
