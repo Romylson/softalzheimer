@@ -4,9 +4,9 @@ import imgCurcuma from "../assets/curcuma.jpg";
 import imgSalvia from "../assets/salvia.jpg"
 import imgMelissa from "../assets/melissa.jpg"
 import imgPanax from "../assets/panax.jpg" 
-import ImgAshwagandha from "../assets/ashwagandha.jpg" 
-import ImgRhodiola from "../assets/rhodiola.jpg" 
-import ImgGotu from "../assets/gotu.jpg"
+import imgAshwagandha from "../assets/ashwagandha.jpg" 
+import imgRhodiola from "../assets/rhodiola.jpg" 
+import imgGotu from "../assets/gotu.jpg"
 import imgPlantasMedicinais from "../assets/plantas-medicinais.avif";
 import imgPlanta from "../assets/planta.avif";
 import imgGinseng from "../assets/ginseng.jpg";
@@ -28,6 +28,7 @@ import imgErvaCidreira from "../assets/erva-cidreira.jpg"
 import imgErvadeSaoJoao from "../assets/erva-de-sao-joao.jpg";
 import imgAlcacuz from "../assets/alcacuz.jpg";
 import imgGinsengsiberiano from "../assets/ginseng-siberiano.jpg";
+import imgMoringa from "../assets/moringa.jpg";
 const plantas = [
   {
     id: 1,
@@ -203,7 +204,7 @@ const plantas = [
     contraindicacoes: [
       "Gravidez, Doenças autoimunes sem orientação médica."
     ],
-    imagem: ImgAshwagandha,
+    imagem: imgAshwagandha,
     autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
     coordenadas: [28.6139, 77.2090], // Nova Délhi, Índia
     interacoes: [
@@ -233,7 +234,7 @@ const plantas = [
     contraindicacoes: [
       "Transtorno bipolar, Uso concomitante com antidepressivos sem acompanhamento."
     ],
-    imagem: ImgRhodiola,
+    imagem: imgRhodiola,
     autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
     coordenadas: [60.4720, 8.4689], // Noruega
     interacoes: [
@@ -263,7 +264,7 @@ const plantas = [
     contraindicacoes: [
       "Doença hepática, Gravidez sem acompanhamento médico."
     ],
-    imagem: ImgGotu,
+    imagem: imgGotu,
     autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
     coordenadas: [7.8731, 80.7718], 
     interacoes: [
