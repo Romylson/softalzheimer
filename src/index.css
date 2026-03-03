@@ -32,7 +32,7 @@ main {
 }
 
 footer {
-  background: var(--page-bg #eed953);
+  background: var(--page-bg, #eed953);
   color: var(--text-color);
 }
 
