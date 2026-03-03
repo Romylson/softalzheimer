@@ -38,7 +38,7 @@ footer {
 }
 
 .app-header {
-  background: var(--background-color,#ecee61);
+  background: #ecee61; 
   border-bottom: 2px solid #e5ee66;
   padding: 0.65rem 1rem;
 }
