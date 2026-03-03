@@ -8,7 +8,7 @@ const ultimasNoticias = [
     descricao:
       "Novos estudos reforçam o uso combinado de p-tau e NfL para identificar risco de declínio cognitivo em fases iniciais.",
     data: "10 de janeiro de 2026",
-    imagem: "/images/biomarcadores-noticia.png",
+    imagem: "/images/biomarcadores-noticia.jpg",
     link: "https://alz-journals.onlinelibrary.wiley.com/",
   },
   {
@@ -16,7 +16,7 @@ const ultimasNoticias = [
     descricao:
       "Revisões recentes destacam o impacto do sono fragmentado na consolidação de memória e em indicadores de risco para demência.",
     data: "24 de janeiro de 2026",
-    imagem: "/images/fisiopatologia.png",
+    imagem: "/images/sono.jpg",
     link: "https://www.thelancet.com/journals/laneur/home",
   },
   {
@@ -24,7 +24,7 @@ const ultimasNoticias = [
     descricao:
       "Programas que combinam dieta, atividade física e treino cognitivo apresentaram ganhos superiores aos protocolos isolados.",
     data: "07 de fevereiro de 2026",
-    imagem: "/images/leve.png",
+    imagem: "/images/intervencao.jpg",
     link: "https://www.alzheimersanddementia.com/",
   },
   {
@@ -32,7 +32,7 @@ const ultimasNoticias = [
     descricao:
       "Ferramentas assistivas estão reduzindo tempo de análise e apoiando equipes clínicas na avaliação de padrões de neurodegeneração.",
     data: "21 de fevereiro de 2026",
-    imagem: "/images/beta-amiloide.png",
+    imagem: "/images/Ia.jpg,
     link: "https://www.nature.com/subjects/alzheimers-disease",
   },
   {
@@ -40,7 +40,7 @@ const ultimasNoticias = [
     descricao:
       "Meta-análises recentes reforçam que exercícios aeróbicos regulares podem reduzir risco de declínio cognitivo em idosos.",
     data: "04 de março de 2026",
-    imagem: "/images/plantas.jpg",
+    imagem: "/images/prevencao.jpg",
     link: "https://www.who.int/news-room/fact-sheets/detail/dementia",
   },
   {
@@ -48,7 +48,7 @@ const ultimasNoticias = [
     descricao:
       "Novos resultados de acompanhamento mostram benefícios clínicos em subgrupos e destacam necessidade de monitoramento contínuo.",
     data: "19 de março de 2026",
-    imagem: "/images/alzheimer.png",
+    imagem: "/images/avancos.jpg",
     link: "https://www.nejm.org/",
   },
   {
@@ -56,7 +56,7 @@ const ultimasNoticias = [
     descricao:
       "Protocolos com tarefas guiadas por aplicativo aumentaram a frequência de treino cognitivo em cuidadores e pacientes.",
     data: "02 de abril de 2026",
-    imagem: "/images/leve.png",
+    imagem: "/images/protocolos.jpg",
     link: "https://jamanetwork.com/journals/jamaneurology",
   },
   {
@@ -64,7 +64,7 @@ const ultimasNoticias = [
     descricao:
       "Estudos observacionais apontam associação entre padrões alimentares anti-inflamatórios e melhor desempenho cognitivo.",
     data: "16 de abril de 2026",
-    imagem: "/images/fisiopatologia.png",
+    imagem: "/images/microbiota.jpg",
     link: "https://www.nature.com/subjects/alzheimers-disease",
   },
 ];
