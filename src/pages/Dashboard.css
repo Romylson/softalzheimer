@@ -7,7 +7,7 @@ body {
 .dashboard-layout{
   display: grid;
   grid-template-columns: 260px 1fr;   /* sidebar | conteúdo */
-  grid-template-rows: auto auto 1fr;  /* (pode ter topo) | carrossel | conteúdo */
+  grid-template-rows: auto auto auto;  /* (pode ter topo) | carrossel | conteúdo */
   min-height: 100vh;
   margin: 0;                         /* remove -1rem */
   overflow-x: hidden;
@@ -18,14 +18,15 @@ body {
   grid-column: 1;
   grid-row: 3;
   width: 260px;
-  background-color: #0c1710;
+  background-color:  #76db9f;
   color: #c3f5c8;
   padding: 1rem;
   align-self: flex-start;
   position: relative;
   overflow-y: auto;
-  top: 0;
-  height: 100vh;
+  align-self: stretch;  /* ✅ estica */
+  height: auto;         /* ✅ */
+  min-height: 100%;
 }
 
 
