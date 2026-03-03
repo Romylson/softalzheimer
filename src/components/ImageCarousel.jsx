@@ -10,7 +10,7 @@ const slides = [
     subtitulo: "Conteúdo científico e educativo",
     titulo: "Atualizações sobre Alzheimer",
     destaque: "Clique aqui",
-    link: "https://www.instagram.com/p/DUWQDVHgTKM/",     // ✅ ajuste a rota
+    link: "https://oglobo.globo.com/saude/noticia/2026/02/25/estudo-aponta-que-alzheimer-pode-comecar-com-queda-silenciosa-no-fluxo-sanguineo-cerebral-entenda.ghtml",     // ✅ ajuste a rota
     external: true,
   },
   {
