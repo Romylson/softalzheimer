@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #fdfff9;
+  background: #bff15a;
 }
 
 .dashboard-layout{
@@ -19,7 +19,7 @@ body {
   grid-row: 3;
   width: 260px;
   background-color:  #10582d;
-  color: #daf5c3;
+  color: rgb(191, 233, 95);
   padding: 1rem;
   align-self: flex-start;
   position: relative;
