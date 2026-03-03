@@ -8,7 +8,7 @@ const ultimasNoticias = [
     descricao:
       "Novos estudos reforçam o uso combinado de p-tau e NfL para identificar risco de declínio cognitivo em fases iniciais.",
     data: "10 de janeiro de 2026",
-    imagem: "/images/alzheimer.png",
+    imagem: "/images/biomarcadores-noticia.png",
     link: "https://alz-journals.onlinelibrary.wiley.com/",
   },
   {
@@ -67,11 +67,7 @@ const ultimasNoticias = [
     imagem: "/images/fisiopatologia.png",
     link: "https://www.nature.com/subjects/alzheimers-disease",
   },
-
 ];
-
-
-  
 
 const eventos = [
   {
@@ -132,60 +128,82 @@ const eventos = [
 
 export default function NoticiasAvancosAlzheimer() {
   return (
-   
-        <h3 className="fw-bold mt-5 mb-3 text-center">🧠 Eventos e calendário científico</h3>
-        <div className="row g-4 mb-4">
-          {eventos.map((evento) => (
-            <div className="col-12 col-md-6 col-lg-4" key={evento.nome}>
-              <Card className="p-3 shadow-sm h-100">
-                <h6 className="text-dark fw-bold">{evento.nome}</h6>
-                <p className="mb-1"><strong>Local:</strong> {evento.local}</p>
-                <p className="mb-2"><strong>Data:</strong> {evento.data}</p>
-                <a href={evento.link} target="_blank" rel="noopener noreferrer" className="btn btn-outline-success btn-sm">
-                  Acessar evento
-                </a>
-              </Card>
-            </div>
-          ))}
-        </div>
+    <div className="p-3">
+      {/* EVENTOS */}
+      <h3 className="fw-bold mt-5 mb-3 text-center">🧠 Eventos e calendário científico</h3>
 
-        <div className="text-center mt-2">
-          <iframe
-            src="https://calendar.google.com/calendar/embed?src=pt.brazilian%23holiday%40group.v.calendar.google.com&ctz=America%2FSao_Paulo"
-            style={{ border: 0, width: "100%", height: "500px" }}
-            frameBorder="0"
-            scrolling="no"
-            title="Calendário de Eventos"
-          ></iframe>
-        </div>
-
-         <section className="noticias-wrap">
-      <div className="noticias-inner container">
-        <h2 className="noticias-title mb-2">Últimas notícias</h2>
-        <p className="text-muted mb-4 fs-4">
-          Seleção de atualizações recentes com foco em diagnóstico, prevenção, tecnologia e neuroproteção.
-        </p>
-
-        <div className="row g-4">
-          {ultimasNoticias.map((item) => (
-            <div className="col-12 col-md-6 col-lg-3" key={item.titulo}>
-              <Card className="noticia-card h-100 overflow-hidden">
-                <img src={item.imagem} alt={item.titulo} />
-                <div className="p-3 d-flex flex-column h-100">
-                  <h6 className="noticia-titulo mb-2">{item.titulo}</h6>
-                  <small className="noticia-meta">{item.data}</small>
-                  <p className="mt-2 mb-3 fs-5">{item.descricao}</p>
-                  <a href={item.link} target="_blank" rel="noopener noreferrer" className="btn btn-leia-mais mt-auto align-self-start">
-                    Ler notícia
-                  </a>
-                </div>
-              </Card>
-            </div>
-          ))}
-        </div>
-
-
+      <div className="row g-4 mb-4">
+        {eventos.map((evento) => (
+          <div className="col-12 col-md-6 col-lg-4" key={evento.nome}>
+            <Card className="p-3 shadow-sm h-100">
+              <h6 className="text-dark fw-bold">{evento.nome}</h6>
+              <p className="mb-1">
+                <strong>Local:</strong> {evento.local}
+              </p>
+              <p className="mb-2">
+                <strong>Data:</strong> {evento.data}
+              </p>
+              <a
+                href={evento.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-outline-success btn-sm"
+              >
+                Acessar evento
+              </a>
+            </Card>
+          </div>
+        ))}
       </div>
-    </section>
+
+      <div className="text-center mt-2">
+        <iframe
+          src="https://calendar.google.com/calendar/embed?src=pt.brazilian%23holiday%40group.v.calendar.google.com&ctz=America%2FSao_Paulo"
+          style={{ border: 0, width: "100%", height: "500px" }}
+          frameBorder="0"
+          scrolling="no"
+          title="Calendário de Eventos"
+        />
+      </div>
+
+      {/* NOTÍCIAS */}
+      <section className="noticias-wrap">
+        <div className="noticias-inner container">
+          <h2 className="noticias-title mb-2">Últimas notícias</h2>
+          <p className="text-muted mb-4 fs-4">
+            Seleção de atualizações recentes com foco em diagnóstico, prevenção, tecnologia e neuroproteção.
+          </p>
+
+          <div className="row g-4">
+            {ultimasNoticias.map((item) => (
+              <div className="col-12 col-md-6 col-lg-3" key={item.titulo}>
+                {/* Card inteiro clicável */}
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-decoration-none"
+                  style={{ display: "block" }}
+                >
+                  <Card className="noticia-card h-100 overflow-hidden">
+                    <img src={item.imagem} alt={item.titulo} />
+                    <div className="p-3 d-flex flex-column h-100">
+                      <h6 className="noticia-titulo mb-2">{item.titulo}</h6>
+                      <small className="noticia-meta">{item.data}</small>
+                      <p className="mt-2 mb-3 fs-5">{item.descricao}</p>
+
+                      {/* botão opcional (mas o card já é link) */}
+                      <span className="btn btn-leia-mais mt-auto align-self-start">
+                        Ler notícia
+                      </span>
+                    </div>
+                  </Card>
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }
