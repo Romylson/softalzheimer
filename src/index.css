@@ -13,7 +13,7 @@
 
 
 html, body, #root {
-  background-color: var(--page-bg, #ecee61);
+  background-color: var(--background-color);
 }
 
 body {
