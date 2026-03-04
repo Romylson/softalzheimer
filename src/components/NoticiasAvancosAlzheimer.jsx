@@ -187,17 +187,21 @@ export default function NoticiasAvancosAlzheimer() {
                 >
                   <Card className="noticia-card h-100 overflow-hidden">
                     <img src={item.imagem} alt={item.titulo} />
-                    <div className="p-3 d-flex flex-column h-100">
-                      <h6 className="noticia-titulo mb-2">{item.titulo}</h6>
+                    <div className="noticia-body">
+                      <h6 className="noticia-titulo">{item.titulo}</h6>
                       <small className="noticia-meta">{item.data}</small>
-                      <p className="mt-2 mb-3 fs-5">{item.descricao}</p>
+                      <p className="noticia-desc">{item.descricao}</p>
 
-                      {/* botão opcional (mas o card já é link) */}
-                      <span className="btn btn-leia-mais mt-auto align-self-start">
-                        Ler notícia
-                      </span>
+                      <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-leia-mais"
+                      >
+                        Ler notícia <span aria-hidden>→</span>
+                      </a>
                     </div>
-                  </Card>
+                 </Card>
                 </a>
               </div>
             ))}
