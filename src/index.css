@@ -2,54 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
-/* =========================================================
-   TEMA GLOBAL (cores principais)
-   ========================================================= */
 :root {
-  /* fundo padrão do conteúdo/páginas */
-  --background-color: #f3f5f3;
-
-  /* cor do texto */
+  --background-color:#ecee61;
   --text-color: #000;
-
-  /* header e footer amarelos */
-  --header-bg: #ecee61;
-  --footer-bg: #ecee61;
+  --page-bg: #ecee61;  
+  --header-bg: #ecee61;   
 }
 
-/* =========================================================
-   FUNDO GERAL DA APLICAÇÃO
-   (evita "tela branca" ou "tela amarela" inesperada)
-   ========================================================= */
-html,
-body,
-#root {
-  background-color: var(--background-color);
-  color: var(--text-color);
+
+html, body, #root {
+  background-color: var(--page-bg #ecee61);
 }
 
 body {
-  margin: 0;
   font-family: sans-serif;
-}
+  }
 
-/* =========================================================
-   CONTEÚDO PRINCIPAL
-   (não deixe transparente, senão "some" e aparece branco)
-   ========================================================= */
+/*footer,
+main,
+.bg-secondary,
+.bg-light,
+.bg-white {
+  background-color: var(--background-color) !important;
+  color: var(--text-color);
+}*/
 main {
-  background: var(--background-color);
+  background: transparent;
   color: var(--text-color);
 }
 
-/* =========================================================
-   HEADER / NAVBAR / FOOTER
-   ========================================================= */
+footer {
+  background: var(--page-bg, #eed953);
+  color: var(--text-color);
+}
+
 .app-header {
-  background: var(--header-bg) !important;
+  background: #ecee61; 
   border-bottom: 2px solid #e5ee66;
   padding: 0.65rem 1rem;
 }
+
 
 .app-header-inner {
   max-width: 1280px;
@@ -68,50 +60,23 @@ main {
   white-space: nowrap;
 }
 
-/* Navbar (Bootstrap) */
 .site-navbar {
   background: #fff !important;
-  border-top: 4px solid var(--header-bg);
-  border-bottom: 4px solid var(--header-bg);
+  border-top: 4px solid var(--background-color);
+  border-bottom: 4px solid var(--background-color);
 }
-
-/* Footer amarelo fixo */
-footer {
-  background: var(--footer-bg) !important;
-  color: var(--text-color);
-}
-
-/* =========================================================
-   (OPCIONAL) Se algum Bootstrap/Tailwind insistir em branco,
-   você pode forçar esses blocos a seguirem o fundo global.
-   Deixe comentado e só ative se precisar.
-   ========================================================= */
-/*
-.bg-secondary,
-.bg-light,
-.bg-white {
-  background-color: var(--background-color) !important;
-  color: var(--text-color) !important;
-}
-*/
-
-/* =========================================================
-   CROSSWORD (seu jogo)
-   ========================================================= */
+/* Adicione no seu App.css (ou index.css) */
 .crossword {
   font-family: Arial, sans-serif;
 }
-
 .crossword__grid {
   border: 2px solid #bbb;
   background: #f1eaea;
 }
-
 .crossword__cell--input {
   background: #fff !important;
   border: 1px solid #ddd;
 }
-
 .crossword__cell--highlighted {
   background: #ffe98a !important;
 }
