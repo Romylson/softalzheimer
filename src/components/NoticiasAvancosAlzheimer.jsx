@@ -176,12 +176,10 @@ export default function NoticiasAvancosAlzheimer() {
 
           <div className="row g-4">
             {ultimasNoticias.map((item) => (
-              <div className="col-12 col-md-6 col-lg-3" key={item.titulo}>
-                {/* Card inteiro clicável */}
-                <a
-                  href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
+              <div className="col-12 col-md-6 col-lg-3" key={item.slug}>
+                {/* Card inteiro clicável (rota interna) */}
+                <Link
+                  to={`/noticias/${item.slug}`}
                   className="text-decoration-none"
                   style={{ display: "block" }}
                 >
@@ -192,17 +190,13 @@ export default function NoticiasAvancosAlzheimer() {
                       <small className="noticia-meta">{item.data}</small>
                       <p className="noticia-desc">{item.descricao}</p>
 
-                      <a
-                      href={item.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn-leia-mais"
-                      >
+                      {/* botão interno (SEM <a> dentro de <a>) */}
+                      <span className="btn btn-leia-mais">
                         Ler notícia <span aria-hidden>→</span>
-                      </a>
+                      </span>
                     </div>
-                 </Card>
-                </a>
+                  </Card>
+                </Link>
               </div>
             ))}
           </div>
