@@ -4,10 +4,11 @@
 @tailwind utilities;
 
 :root {
-  --background-color:#ecee61;
+  --background-color: #f3f5f3;
   --text-color: #000;
   --page-bg: #ecee61;  
-  --header-bg: #ecee61;   
+  --header-bg: #ecee61;  
+  --footer-bg: #ecee61;  
 }
 
 
