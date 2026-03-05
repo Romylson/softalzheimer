@@ -10,7 +10,7 @@ const ultimasNoticias = [
       "Novos estudos reforçam o uso combinado de p-tau e NfL para identificar risco de declínio cognitivo em fases iniciais.",
     data: "10 de janeiro de 2026",
     imagem: "/images/biomarcadores-noticia.jpg",
-    link: "/noticias/biomarcadores-sanguineos-triagem-precoce",
+    rota: "/noticias/biomarcadores-sanguineos-triagem-precoce",
 
   },
   {
