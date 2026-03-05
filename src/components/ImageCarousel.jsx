@@ -3,7 +3,7 @@ import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import { Link } from "react-router-dom";
 import "./ImageCarousel.css";
-import { noticiasCarousel } from "../data/noticiasCarousel";
+import { noticiasCarousel } from "../data/noticiasCarousel.js";
 
 const slides = [
   {
