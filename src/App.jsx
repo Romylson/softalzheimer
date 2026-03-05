@@ -38,6 +38,7 @@ import BlogCientificoPage from "./pages/BlogCientificoPage.jsx";
 import DiferenciaisInovadoresPage from "./pages/DiferenciaisInovadoresPage.jsx";
 import NoticiaDetalhe from "./pages/NoticiaDetalhe";
 import NoticiaCarousel from "./pages/NoticiaCarousel";
+import Noticias from "./pages/Noticias";
 
 
 function App() {
@@ -80,6 +81,7 @@ function App() {
           <Route path="/educacional" element={<EducacionalPage />} />
           <Route path="/blog-cientifico" element={<BlogCientificoPage />} />
           <Route path="/diferenciais-inovadores" element={<DiferenciaisInovadoresPage />} />
+          <Route path="/noticias" element={<Noticias />} />
           <Route path="/noticias/:slug" element={<NoticiaDetalhe />} />
           <Route path="/noticias/:slug" element={<NoticiaCarousel />} />
           

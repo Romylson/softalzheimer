@@ -1,78 +1,12 @@
+// src/components/NoticiasAvancosAlzheimer.jsx
 import React from "react";
 import { Link } from "react-router-dom";
 import { Card } from "../components/ui/card";
 import "./NoticiasAvancosAlzheimer.css";
+import { ultimasNoticias } from "../data/noticias";
 
 
 
-/*const ultimasNoticias = [
-  {
-    titulo: "Biomarcadores sanguíneos avançam na triagem precoce",
-    descricao:
-      "Novos estudos reforçam o uso combinado de p-tau e NfL para identificar risco de declínio cognitivo em fases iniciais.",
-    data: "10 de janeiro de 2026",
-    imagem: "/images/biomarcadores-noticia.jpg",
-    link: "/noticias/biomarcadores-sanguineos-triagem-precoce",
-
-  },
-  {
-    titulo: "Sono de má qualidade é associado à pior progressão cognitiva",
-    descricao:
-      "Revisões recentes destacam o impacto do sono fragmentado na consolidação de memória e em indicadores de risco para demência.",
-    data: "24 de janeiro de 2026",
-    imagem: "/images/sono.jpg",
-    link: "/noticias/sono-qualidade-progressao-cognitiva",
-  },
-  {
-    titulo: "Intervenções multidomínio mostram melhores resultados",
-    descricao:
-      "Programas que combinam dieta, atividade física e treino cognitivo apresentaram ganhos superiores aos protocolos isolados.",
-    data: "07 de fevereiro de 2026",
-    imagem: "/images/intervencao.jpg",
-    link: "/noticias/intervencoes-multidominio-melhores-resultados",
-  },
-  {
-    titulo: "IA em neuroimagem reduz tempo de apoio diagnóstico",
-    descricao:
-      "Ferramentas assistivas estão reduzindo tempo de análise e apoiando equipes clínicas na avaliação de padrões de neurodegeneração.",
-    data: "21 de fevereiro de 2026",
-    imagem: "/images/Ia.jpg",
-    link: "/noticias/ia-neuroimagem-reduz-tempo-apoio-diagnostico",
-  },
-  {
-    titulo: "Prevenção com atividade física ganha novas evidências",
-    descricao:
-      "Meta-análises recentes reforçam que exercícios aeróbicos regulares podem reduzir risco de declínio cognitivo em idosos.",
-    data: "04 de março de 2026",
-    imagem: "/images/prevencao.jpg",
-    link: "/noticias/atividade-fisica-prevencao-novas-evidencias",
-  },
-  {
-    titulo: "Avanços em terapias antiamiloide seguem em avaliação",
-    descricao:
-      "Novos resultados de acompanhamento mostram benefícios clínicos em subgrupos e destacam necessidade de monitoramento contínuo.",
-    data: "19 de março de 2026",
-    imagem: "/images/avancos.jpg",
-    link: "/noticias/terapias-antiamiloide-em-avaliacao",
-  },
-  {
-    titulo: "Estimulação cognitiva domiciliar melhora adesão",
-    descricao:
-      "Protocolos com tarefas guiadas por aplicativo aumentaram a frequência de treino cognitivo em cuidadores e pacientes.",
-    data: "02 de abril de 2026",
-    imagem: "/images/protocolos.jpg",
-    link: "/noticias/estimulacao-cognitiva-domiciliar-adesao",
-  },
-  {
-    titulo: "Nutrição e microbiota entram no foco da neuroproteção",
-    descricao:
-      "Estudos observacionais apontam associação entre padrões alimentares anti-inflamatórios e melhor desempenho cognitivo.",
-    data: "16 de abril de 2026",
-    imagem: "/images/microbiota.jpg",
-    link: "/noticias/nutricao-microbiota-neuroprotecao",
-  },
-];
-*/
 const eventos = [
   {
     nome: "Alzheimer's Association International Conference®",
@@ -170,32 +104,41 @@ export default function NoticiasAvancosAlzheimer() {
         />
       </div>
 
-      {/* NOTÍCIAS */}
+       {/* NOTÍCIAS */}
       <section className="noticias-wrap">
-        <div className="noticias-inner container">
-          <h2 className="noticias-title mb-2">Últimas notícias</h2>
+        <div className="noticias-inner">
+          <div className="noticias-head">
+            <h2 className="noticias-title">Últimas notícias</h2>
+            <p className="noticias-subtitle">
+              Seleção de atualizações com foco em diagnóstico, prevenção, tecnologia, nutrição e neuroproteção.
+            </p>
+            <Link to="/noticias" className="noticias-all">
+              Ver todas <span aria-hidden>→</span>
+            </Link>
+          </div>
 
-          <div className="row g-4">
+          <div className="noticias-grid">
             {ultimasNoticias.map((item) => (
-              <div className="col-12 col-md-6 col-lg-3" key={item.slug}>
-                <Link
-                  to={`/noticias/${item.slug}`}
-                  className="text-decoration-none d-block"
-                >
-                  <Card className="noticia-card h-100 overflow-hidden">
-                    <img src={item.imagem} alt={item.titulo} />
-                    <div className="noticia-body">
-                      <h6 className="noticia-titulo">{item.titulo}</h6>
-                      <small className="noticia-meta">{item.data}</small>
-                      <p className="noticia-desc">{item.resumo || item.descricao}</p>
+              <Link key={item.slug} to={`/noticias/${item.slug}`} className="noticia-card-pro">
+                <div className="noticia-img">
+                  <img src={item.imagem} alt={item.titulo} />
+                </div>
 
-                      <span className="btn btn-leia-mais">
-                        Ler notícia <span aria-hidden>→</span>
-                      </span>
-                    </div>
-                  </Card>
-                </Link>
-              </div>
+                <div className="noticia-body-pro">
+                  <div className="noticia-meta-pro">
+                    <span className="badge-pro">{item.categoria}</span>
+                    <span className="date-pro">{item.data}</span>
+                    <span className="read-pro">{item.leituraMin} min</span>
+                  </div>
+
+                  <h3 className="noticia-title-pro">{item.titulo}</h3>
+                  <p className="noticia-desc-pro">{item.resumo}</p>
+
+                  <span className="btn-pro">
+                    Ler notícia <span aria-hidden>→</span>
+                  </span>
+                </div>
+              </Link>
             ))}
           </div>
         </div>

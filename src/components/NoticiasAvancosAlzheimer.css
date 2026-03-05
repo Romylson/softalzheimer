@@ -127,3 +127,143 @@
   .noticia-card img{ height: 170px; }
   .noticia-body{ height: calc(100% - 170px); }
 }
+/* src/components/NoticiasAvancosAlzheimer.css */
+
+.news-block {
+  width: min(1400px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.noticias-wrap {
+  margin-top: 22px;
+  padding: 0;
+}
+
+.noticias-inner {
+  background: rgba(255,255,255,0.65);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 12px 34px rgba(0,0,0,0.08);
+}
+
+.noticias-head {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.noticias-title {
+  font-weight: 1000;
+  margin: 0;
+  font-size: clamp(26px, 2.5vw, 40px);
+  color: #0c1710;
+}
+
+.noticias-subtitle {
+  margin: 0;
+  color: rgba(0,0,0,0.7);
+  font-size: 17px;
+}
+
+.noticias-all {
+  align-self: flex-start;
+  text-decoration: none;
+  font-weight: 1000;
+  color: #0c1710;
+  background: #f3c140;
+  border-radius: 12px;
+  padding: 10px 12px;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.noticias-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+@media (max-width: 1100px) {
+  .noticias-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 620px) {
+  .noticias-grid { grid-template-columns: 1fr; }
+}
+
+.noticia-card-pro {
+  text-decoration: none;
+  color: inherit;
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.noticia-card-pro:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.12);
+}
+
+.noticia-img {
+  height: 190px;
+  background: #eee;
+}
+.noticia-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.noticia-body-pro {
+  padding: 14px 14px 16px;
+}
+
+.noticia-meta-pro {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 13px;
+  color: rgba(0,0,0,0.62);
+  margin-bottom: 10px;
+}
+
+.badge-pro {
+  background: rgba(12, 23, 16, 0.10);
+  color: #0c1710;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: 900;
+}
+
+.noticia-title-pro {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 1000;
+  color: #0c1710;
+  line-height: 1.25;
+}
+
+.noticia-desc-pro {
+  margin: 0 0 14px;
+  color: rgba(0,0,0,0.78);
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.btn-pro {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  font-weight: 1000;
+  color: #0c1710;
+  background: #f3c140;
+  border-radius: 12px;
+  padding: 10px 12px;
+}
