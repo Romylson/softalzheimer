@@ -51,9 +51,3 @@ export const noticiasCarousel = [
     ],
   },
 ];
-export const ultimasNoticias = [...noticiasCarousel]
-  .sort((a, b) => new Date(b.dataISO) - new Date(a.dataISO))
-  .slice(0, 8);
-
-
-}
