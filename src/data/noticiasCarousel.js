@@ -56,3 +56,4 @@ export const noticiasCarousel = [
       "No PlantaMente, cada planta deve trazer mecanismo, modo de uso, contraindicações e interações — com apresentação clara e educativa para o usuário.",
     ],
   },
+];
