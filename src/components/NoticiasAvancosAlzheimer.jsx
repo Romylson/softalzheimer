@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Card } from "../components/ui/card";
 import "./NoticiasAvancosAlzheimer.css";
+import { ultimasNoticias } from "../data/noticias";
 
 const ultimasNoticias = [
   {
@@ -10,7 +11,7 @@ const ultimasNoticias = [
       "Novos estudos reforçam o uso combinado de p-tau e NfL para identificar risco de declínio cognitivo em fases iniciais.",
     data: "10 de janeiro de 2026",
     imagem: "/images/biomarcadores-noticia.jpg",
-    rota: "/noticias/biomarcadores-sanguineos-triagem-precoce",
+    link: "/noticias/biomarcadores-sanguineos-triagem-precoce",
 
   },
   {
