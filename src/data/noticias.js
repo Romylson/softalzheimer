@@ -20,6 +20,7 @@ export const noticias = [
       "Biomarcadores sanguíneos têm evoluído como ferramentas de triagem e estratificação de risco, especialmente quando combinados com avaliação clínica e cognitiva.",
       "Marcadores como p-tau e NfL são frequentemente citados por refletirem processos ligados a tau e dano neuroaxonal, respectivamente. A interpretação deve considerar idade, comorbidades e contexto clínico.",
       "O uso na prática tende a crescer à medida que protocolos e disponibilidade se ampliam, mas ainda exige cautela: não substitui avaliação médica nem exames confirmatórios quando necessários.",
+      
     ],
   },
   {

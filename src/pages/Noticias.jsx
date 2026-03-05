@@ -9,7 +9,7 @@ export default function Noticias() {
     <main className="news-page">
       <div className="news-container">
         <div className="news-header">
-          <h1>Notícias</h1>
+          <h1>Últimas Notícias</h1>
           <p>
             Atualizações do PlantaMente organizadas por temas: diagnóstico, prevenção,
             tecnologia, nutrição e produtos naturais.

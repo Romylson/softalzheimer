@@ -35,9 +35,7 @@ export default function NoticiaDetalhe() {
     <main className="news-page">
       <div className="news-container">
         <div className="news-detail-top">
-          <Link to="/noticias" className="news-back">
-            ← Voltar
-          </Link>
+          
 
           <div className="news-detail-meta">
             <span className="news-badge">{noticia.categoria}</span>
