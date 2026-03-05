@@ -4,7 +4,8 @@ import { Card } from "../components/ui/card";
 import "./NoticiasAvancosAlzheimer.css";
 import { ultimasNoticias } from "../data/noticias";
 
-const ultimasNoticias = [
+
+/*const ultimasNoticias = [
   {
     titulo: "Biomarcadores sanguíneos avançam na triagem precoce",
     descricao:
@@ -20,7 +21,7 @@ const ultimasNoticias = [
       "Revisões recentes destacam o impacto do sono fragmentado na consolidação de memória e em indicadores de risco para demência.",
     data: "24 de janeiro de 2026",
     imagem: "/images/sono.jpg",
-    link: "https://www.thelancet.com/journals/laneur/home",
+    link: "/noticias/sono-qualidade-progressao-cognitiva",
   },
   {
     titulo: "Intervenções multidomínio mostram melhores resultados",
@@ -28,7 +29,7 @@ const ultimasNoticias = [
       "Programas que combinam dieta, atividade física e treino cognitivo apresentaram ganhos superiores aos protocolos isolados.",
     data: "07 de fevereiro de 2026",
     imagem: "/images/intervencao.jpg",
-    link: "https://www.alzheimersanddementia.com/",
+    link: "/noticias/intervencoes-multidominio-melhores-resultados",
   },
   {
     titulo: "IA em neuroimagem reduz tempo de apoio diagnóstico",
@@ -36,7 +37,7 @@ const ultimasNoticias = [
       "Ferramentas assistivas estão reduzindo tempo de análise e apoiando equipes clínicas na avaliação de padrões de neurodegeneração.",
     data: "21 de fevereiro de 2026",
     imagem: "/images/Ia.jpg",
-    link: "https://www.nature.com/subjects/alzheimers-disease",
+    link: "/noticias/ia-neuroimagem-reduz-tempo-apoio-diagnostico",
   },
   {
     titulo: "Prevenção com atividade física ganha novas evidências",
@@ -44,7 +45,7 @@ const ultimasNoticias = [
       "Meta-análises recentes reforçam que exercícios aeróbicos regulares podem reduzir risco de declínio cognitivo em idosos.",
     data: "04 de março de 2026",
     imagem: "/images/prevencao.jpg",
-    link: "https://www.who.int/news-room/fact-sheets/detail/dementia",
+    link: "/noticias/atividade-fisica-prevencao-novas-evidencias",
   },
   {
     titulo: "Avanços em terapias antiamiloide seguem em avaliação",
@@ -52,7 +53,7 @@ const ultimasNoticias = [
       "Novos resultados de acompanhamento mostram benefícios clínicos em subgrupos e destacam necessidade de monitoramento contínuo.",
     data: "19 de março de 2026",
     imagem: "/images/avancos.jpg",
-    link: "https://www.nejm.org/",
+    link: "/noticias/terapias-antiamiloide-em-avaliacao",
   },
   {
     titulo: "Estimulação cognitiva domiciliar melhora adesão",
@@ -60,7 +61,7 @@ const ultimasNoticias = [
       "Protocolos com tarefas guiadas por aplicativo aumentaram a frequência de treino cognitivo em cuidadores e pacientes.",
     data: "02 de abril de 2026",
     imagem: "/images/protocolos.jpg",
-    link: "https://jamanetwork.com/journals/jamaneurology",
+    link: "/noticias/estimulacao-cognitiva-domiciliar-adesao",
   },
   {
     titulo: "Nutrição e microbiota entram no foco da neuroproteção",
@@ -68,10 +69,10 @@ const ultimasNoticias = [
       "Estudos observacionais apontam associação entre padrões alimentares anti-inflamatórios e melhor desempenho cognitivo.",
     data: "16 de abril de 2026",
     imagem: "/images/microbiota.jpg",
-    link: "https://www.nature.com/subjects/alzheimers-disease",
+    link: "/noticias/nutricao-microbiota-neuroprotecao",
   },
 ];
-
+*/
 const eventos = [
   {
     nome: "Alzheimer's Association International Conference®",
@@ -173,27 +174,21 @@ export default function NoticiasAvancosAlzheimer() {
       <section className="noticias-wrap">
         <div className="noticias-inner container">
           <h2 className="noticias-title mb-2">Últimas notícias</h2>
-          <p className="text-muted mb-4 fs-4">
-            Seleção de atualizações recentes com foco em diagnóstico, prevenção, tecnologia e neuroproteção.
-          </p>
 
           <div className="row g-4">
             {ultimasNoticias.map((item) => (
               <div className="col-12 col-md-6 col-lg-3" key={item.slug}>
-                {/* Card inteiro clicável (rota interna) */}
                 <Link
                   to={`/noticias/${item.slug}`}
-                  className="text-decoration-none"
-                  style={{ display: "block" }}
+                  className="text-decoration-none d-block"
                 >
                   <Card className="noticia-card h-100 overflow-hidden">
                     <img src={item.imagem} alt={item.titulo} />
                     <div className="noticia-body">
                       <h6 className="noticia-titulo">{item.titulo}</h6>
                       <small className="noticia-meta">{item.data}</small>
-                      <p className="noticia-desc">{item.descricao}</p>
+                      <p className="noticia-desc">{item.resumo || item.descricao}</p>
 
-                      {/* botão interno (SEM <a> dentro de <a>) */}
                       <span className="btn btn-leia-mais">
                         Ler notícia <span aria-hidden>→</span>
                       </span>
