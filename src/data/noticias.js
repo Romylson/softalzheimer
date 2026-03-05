@@ -1,16 +1,6 @@
 // src/data/noticias.js
 
-function formatarDataBR(iso) {
-  try {
-    return new Date(iso).toLocaleDateString("pt-BR", {
-      day: "2-digit",
-      month: "long",
-      year: "numeric",
-    });
-  } catch {
-    return iso;
-  }
-}
+import { formatarDataBR } from "../utils/date";
 
 export const noticias = [
 
