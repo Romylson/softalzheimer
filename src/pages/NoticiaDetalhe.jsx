@@ -28,10 +28,7 @@ export default function NoticiaDetalhe() {
   return (
     <div className="container py-4">
 
-      <Link to="/" className="btn btn-outline-dark mb-3">
-        ← Voltar para Página Principal
-      </Link>
-
+     
       <h1 className="mb-3">{noticia.titulo}</h1>
 
       <p className="text-muted">
@@ -52,11 +49,50 @@ export default function NoticiaDetalhe() {
         />
       )}
 
-      <div style={{ fontSize: "18px", lineHeight: "1.8" }}>
-        {noticia.conteudo.map((p, i) => (
-          <p key={i}>{p}</p>
-        ))}
-      </div>
+      <div className="noticia-conteudo">
+  {noticia.conteudo.map((bloco, i) => {
+    if (typeof bloco === "string") {
+      return <p key={i}>{bloco}</p>;
+    }
+
+    if (bloco.tipo === "lead") {
+      return (
+        <p key={i} className="noticia-lead">
+          {bloco.texto}
+        </p>
+      );
+    }
+
+    if (bloco.tipo === "h2") {
+      return <h2 key={i}>{bloco.texto}</h2>;
+    }
+
+    if (bloco.tipo === "p") {
+      return <p key={i}>{bloco.texto}</p>;
+    }
+
+    if (bloco.tipo === "callout") {
+      return (
+        <div key={i} className="noticia-callout">
+          <strong>{bloco.titulo}</strong>
+          <p>{bloco.texto}</p>
+        </div>
+      );
+    }
+
+    if (bloco.tipo === "lista") {
+      return (
+        <ul key={i}>
+          {bloco.itens.map((item, idx) => (
+            <li key={idx}>{item}</li>
+          ))}
+        </ul>
+      );
+    }
+
+    return null;
+  })}
+</div>
 
     </div>
   );
