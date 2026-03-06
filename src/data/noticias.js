@@ -254,11 +254,65 @@ export const noticias = [
     leituraMin: 5,
     tags: ["IA", "neuroimagem", "diagnóstico"],
     conteudo: [
-      "Soluções de IA em neuroimagem buscam apoiar detecção de padrões e priorização de casos, reduzindo tempo de análise.",
-      "A aplicação ideal é como suporte à decisão, com validação, auditoria e integração ao contexto clínico.",
-      "Em educação, a IA também pode auxiliar na visualização de conceitos e no acompanhamento de aprendizagem.",
+  {
+    tipo: "lead",
+    texto:
+      "A inteligência artificial vem ganhando espaço como ferramenta de apoio na análise de exames de neuroimagem, especialmente em cenários com alta demanda clínica e necessidade de maior padronização. Em vez de substituir o profissional, a IA tem sido usada para acelerar etapas repetitivas, destacar padrões suspeitos e melhorar a triagem de casos com maior complexidade.",
+  },
+  {
+    tipo: "h2",
+    texto: "Onde a IA mais ajuda na prática",
+  },
+  {
+    tipo: "p",
+    texto:
+      "Em exames estruturais e funcionais, algoritmos conseguem identificar padrões de atrofia, alterações volumétricas e assimetrias que podem passar despercebidas em avaliações muito rápidas ou em serviços com grande volume. Isso não significa que a máquina “fecha diagnóstico”, mas sim que ela funciona como um segundo olhar técnico, com foco em consistência e agilidade.",
+  },
+  {
+    tipo: "lista",
+    itens: [
+      "Priorização de exames mais suspeitos para revisão especializada.",
+      "Padronização de medições e laudos.",
+      "Detecção mais rápida de alterações volumétricas.",
+      "Apoio didático para interpretação em treinamento e ensino.",
     ],
   },
+  {
+    tipo: "h2",
+    texto: "Quais são os benefícios esperados",
+  },
+  {
+    tipo: "p",
+    texto:
+      "Os principais benefícios estão na redução do tempo de análise, no apoio à decisão clínica e na criação de fluxos mais consistentes. Em ambientes universitários e hospitalares, isso pode significar menor variabilidade entre observadores, melhor priorização de casos e mais tempo do especialista para interpretar o contexto clínico, e não apenas medir estruturas.",
+  },
+  {
+    tipo: "h2",
+    texto: "Limitações e riscos que precisam ser considerados",
+  },
+  {
+    tipo: "p",
+    texto:
+      "Apesar do potencial, a IA depende da qualidade dos dados com que foi treinada. Modelos podem performar bem em um contexto e falhar em outro, especialmente quando há diferenças de equipamento, protocolo de imagem ou perfil populacional. Por isso, validação local, supervisão humana e transparência são indispensáveis.",
+  },
+  {
+    tipo: "callout",
+    titulo: "Ponto crítico",
+    texto:
+      "A IA deve ser vista como ferramenta de apoio, e não como substituta da interpretação clínica. O exame só faz sentido quando integrado à história do paciente, aos sintomas, ao exame físico e à avaliação cognitiva.",
+  },
+  {
+    tipo: "h2",
+    texto: "O que isso significa para o futuro",
+  },
+  {
+    tipo: "p",
+    texto:
+      "A tendência é que sistemas assistivos se tornem cada vez mais comuns, tanto para triagem quanto para quantificação automatizada. Em educação e saúde digital, isso também abre espaço para interfaces mais didáticas e para comunicação mais clara entre profissionais, pacientes e cuidadores.",
+  },
+],
+},
+
   {
     slug: "atividade-fisica-novas-evidencias",
     titulo: "Prevenção com atividade física ganha novas evidências",
@@ -271,11 +325,64 @@ export const noticias = [
     leituraMin: 5,
     tags: ["exercício", "risco", "idosos"],
     conteudo: [
-      "Atividade física é uma das medidas mais consistentes associadas à redução de risco e melhor manutenção funcional.",
-      "O ideal é combinar exercício aeróbico com força e equilíbrio, respeitando segurança e limitações individuais.",
-      "A regularidade e o acompanhamento são mais importantes do que intensidade extrema.",
+  {
+    tipo: "lead",
+    texto:
+      "As terapias antiamiloide ocupam hoje um dos espaços mais debatidos na pesquisa e na prática clínica em Alzheimer. O interesse está no potencial de modificar a progressão biológica da doença, mas os resultados ainda exigem interpretação cuidadosa, seleção adequada de pacientes e monitoramento contínuo.",
+  },
+  {
+    tipo: "h2",
+    texto: "O que são terapias antiamiloide",
+  },
+  {
+    tipo: "p",
+    texto:
+      "São abordagens desenhadas para reduzir ou interferir no acúmulo de beta-amiloide, proteína associada à formação de placas e a alterações importantes na fisiopatologia do Alzheimer. A hipótese é que, ao modificar essa etapa do processo, seja possível retardar progressão clínica em grupos específicos.",
+  },
+  {
+    tipo: "h2",
+    texto: "O que os estudos têm mostrado",
+  },
+  {
+    tipo: "p",
+    texto:
+      "Os resultados indicam benefícios modestos, porém relevantes, em determinados subgrupos, principalmente quando há critérios bem definidos de estágio e perfil biológico. Entretanto, isso não significa benefício universal. A interpretação depende do desenho do estudo, dos desfechos utilizados e da relação entre benefício clínico e custo/risco.",
+  },
+  {
+    tipo: "h2",
+    texto: "Por que o monitoramento é indispensável",
+  },
+  {
+    tipo: "p",
+    texto:
+      "Essas terapias podem exigir protocolos de segurança rigorosos, incluindo imagem, seguimento clínico e reavaliação frequente. Sem estrutura adequada para monitoramento, o uso se torna menos seguro e menos informativo.",
+  },
+  {
+    tipo: "lista",
+    itens: [
+      "Avaliação de elegibilidade antes de iniciar tratamento.",
+      "Monitoramento periódico com exames e revisão clínica.",
+      "Análise individual de risco versus benefício.",
+      "Discussão compartilhada com paciente e família.",
     ],
   },
+  {
+    tipo: "callout",
+    titulo: "Cuidado com expectativas irreais",
+    texto:
+      "Terapias antiamiloide não representam uma “cura” e não substituem prevenção, reabilitação, suporte ao cuidador e manejo clínico global. Elas entram como uma peça possível dentro de uma estratégia mais ampla.",
+  },
+  {
+    tipo: "h2",
+    texto: "O que isso muda no futuro do cuidado",
+  },
+  {
+    tipo: "p",
+    texto:
+      "O avanço dessas terapias pressiona o sistema a organizar melhor fluxos de triagem, biomarcadores, imagem e acompanhamento longitudinal. Mais do que um novo tratamento, esse movimento pode transformar a forma como se estrutura a linha de cuidado em demências.",
+  },
+],
+},
   {
     slug: "terapias-antiamiloide-avaliacao",
     titulo: "Avanços em terapias antiamiloide seguem em avaliação",
@@ -288,11 +395,64 @@ export const noticias = [
     leituraMin: 6,
     tags: ["antiamiloide", "monitoramento", "subgrupos"],
     conteudo: [
-      "Terapias direcionadas ao amiloide trazem discussões sobre eficácia clínica, elegibilidade e eventos adversos.",
-      "Protocolos tendem a exigir monitoramento e critérios de seleção bem definidos, além de decisão compartilhada.",
-      "A pesquisa continua evoluindo para ampliar segurança, identificar respondedores e refinar desfechos clínicos.",
+  {
+    tipo: "lead",
+    texto:
+      "As terapias antiamiloide ocupam hoje um dos espaços mais debatidos na pesquisa e na prática clínica em Alzheimer. O interesse está no potencial de modificar a progressão biológica da doença, mas os resultados ainda exigem interpretação cuidadosa, seleção adequada de pacientes e monitoramento contínuo.",
+  },
+  {
+    tipo: "h2",
+    texto: "O que são terapias antiamiloide",
+  },
+  {
+    tipo: "p",
+    texto:
+      "São abordagens desenhadas para reduzir ou interferir no acúmulo de beta-amiloide, proteína associada à formação de placas e a alterações importantes na fisiopatologia do Alzheimer. A hipótese é que, ao modificar essa etapa do processo, seja possível retardar progressão clínica em grupos específicos.",
+  },
+  {
+    tipo: "h2",
+    texto: "O que os estudos têm mostrado",
+  },
+  {
+    tipo: "p",
+    texto:
+      "Os resultados indicam benefícios modestos, porém relevantes, em determinados subgrupos, principalmente quando há critérios bem definidos de estágio e perfil biológico. Entretanto, isso não significa benefício universal. A interpretação depende do desenho do estudo, dos desfechos utilizados e da relação entre benefício clínico e custo/risco.",
+  },
+  {
+    tipo: "h2",
+    texto: "Por que o monitoramento é indispensável",
+  },
+  {
+    tipo: "p",
+    texto:
+      "Essas terapias podem exigir protocolos de segurança rigorosos, incluindo imagem, seguimento clínico e reavaliação frequente. Sem estrutura adequada para monitoramento, o uso se torna menos seguro e menos informativo.",
+  },
+  {
+    tipo: "lista",
+    itens: [
+      "Avaliação de elegibilidade antes de iniciar tratamento.",
+      "Monitoramento periódico com exames e revisão clínica.",
+      "Análise individual de risco versus benefício.",
+      "Discussão compartilhada com paciente e família.",
     ],
   },
+  {
+    tipo: "callout",
+    titulo: "Cuidado com expectativas irreais",
+    texto:
+      "Terapias antiamiloide não representam uma “cura” e não substituem prevenção, reabilitação, suporte ao cuidador e manejo clínico global. Elas entram como uma peça possível dentro de uma estratégia mais ampla.",
+  },
+  {
+    tipo: "h2",
+    texto: "O que isso muda no futuro do cuidado",
+  },
+  {
+    tipo: "p",
+    texto:
+      "O avanço dessas terapias pressiona o sistema a organizar melhor fluxos de triagem, biomarcadores, imagem e acompanhamento longitudinal. Mais do que um novo tratamento, esse movimento pode transformar a forma como se estrutura a linha de cuidado em demências.",
+  },
+],
+},
   {
     slug: "estimulacao-cognitiva-domiciliar-adesao",
     titulo: "Estimulação cognitiva domiciliar melhora adesão",
@@ -305,11 +465,65 @@ export const noticias = [
     leituraMin: 5,
     tags: ["aplicativos", "cognição", "adesão"],
     conteudo: [
-      "Protocolos domiciliares facilitam acesso e continuidade do treino cognitivo, principalmente com suporte de cuidadores.",
-      "O desenho das tarefas deve respeitar carga cognitiva, progressão e feedback claro para motivação.",
-      "A integração com educação do cuidador melhora resultados e reduz frustração do usuário.",
+  {
+    tipo: "lead",
+    texto:
+      "Protocolos de estimulação cognitiva realizados em casa vêm ganhando destaque por facilitarem acesso, frequência e continuidade. Quando bem estruturados, esses programas podem aumentar adesão e transformar o treino cognitivo em uma prática mais realista para pacientes e cuidadores.",
+  },
+  {
+    tipo: "h2",
+    texto: "Por que o treino domiciliar funciona melhor para muitas pessoas",
+  },
+  {
+    tipo: "p",
+    texto:
+      "A rotina domiciliar reduz barreiras logísticas, como deslocamento, custo e rigidez de horários. Além disso, permite que a estimulação seja distribuída ao longo da semana, em sessões mais curtas e toleráveis, o que costuma melhorar participação e sensação de progresso.",
+  },
+  {
+    tipo: "h2",
+    texto: "Características de um bom protocolo domiciliar",
+  },
+  {
+    tipo: "lista",
+    itens: [
+      "Sessões curtas e frequentes, em vez de treinos longos e cansativos.",
+      "Objetivos claros e progressão gradual.",
+      "Tarefas ajustadas ao nível cognitivo da pessoa.",
+      "Feedback simples e reforço positivo.",
+      "Participação do cuidador quando necessário.",
     ],
   },
+  {
+    tipo: "p",
+    texto:
+      "Ferramentas digitais podem ajudar bastante quando oferecem orientação clara, registro de desempenho e sensação de continuidade. Porém, a tecnologia só funciona bem quando o conteúdo é adequado e o uso é confortável para quem está treinando.",
+  },
+  {
+    tipo: "h2",
+    texto: "O papel do cuidador",
+  },
+  {
+    tipo: "p",
+    texto:
+      "Em muitos casos, o cuidador é a peça que transforma uma estratégia “boa no papel” em uma rotina real. Ele ajuda a organizar horários, acompanhar engajamento, adaptar dificuldade e reduzir frustração. Por isso, protocolos realmente eficazes precisam ser pensados também para o cuidador.",
+  },
+  {
+    tipo: "callout",
+    titulo: "Princípio importante",
+    texto:
+      "Treino cognitivo não deve ser percebido como teste ou cobrança. Ele precisa ser apresentado como estímulo, cuidado e oportunidade de manutenção funcional.",
+  },
+  {
+    tipo: "h2",
+    texto: "Como o PlantaMente pode explorar isso",
+  },
+  {
+    tipo: "p",
+    texto:
+      "No PlantaMente, essa notícia se conecta naturalmente aos módulos educativos, jogos, materiais interativos e propostas de treino cognitivo com linguagem menos infantil e mais alinhada ao público-alvo. O objetivo é estimular sem infantilizar, orientar sem sobrecarregar e manter foco em autonomia e qualidade de vida.",
+  },
+],
+},
   {
     slug: "nutricao-e-microbiota-neuroprotecao",
     titulo: "Nutrição e microbiota entram no foco da neuroproteção",
@@ -322,12 +536,64 @@ export const noticias = [
     leituraMin: 6,
     tags: ["microbiota", "dieta", "inflamação"],
     conteudo: [
-      "O eixo intestino-cérebro vem sendo explorado em diferentes condições neurológicas, incluindo declínio cognitivo.",
-      "Dietas com perfil anti-inflamatório e boa qualidade nutricional podem contribuir para saúde cardiometabólica e cerebral.",
-      "Apesar do interesse, é importante evitar conclusões exageradas: muitos achados ainda são correlacionais.",
+  {
+    tipo: "lead",
+    texto:
+      "A relação entre alimentação, microbiota intestinal e cérebro ganhou espaço na pesquisa em neuroproteção. Embora muitos achados ainda sejam observacionais, o eixo intestino–cérebro tem sido cada vez mais citado como elemento importante na regulação inflamatória, metabólica e comportamental.",
+  },
+  {
+    tipo: "h2",
+    texto: "O que é o eixo intestino–cérebro",
+  },
+  {
+    tipo: "p",
+    texto:
+      "O intestino não é apenas um órgão digestivo. Ele interage com sistema imune, metabolismo, hormônios e neurotransmissores, influenciando o funcionamento cerebral. Alterações no equilíbrio da microbiota podem impactar processos inflamatórios e metabólicos que, indiretamente, se relacionam com cognição e saúde cerebral.",
+  },
+  {
+    tipo: "h2",
+    texto: "Por que a alimentação importa",
+  },
+  {
+    tipo: "p",
+    texto:
+      "Padrões alimentares ricos em fibras, vegetais, frutas, leguminosas, azeite, peixes e alimentos pouco processados tendem a favorecer melhor perfil metabólico e inflamatório. Já dietas com excesso de ultraprocessados, açúcar e baixa densidade nutricional se associam a maior risco cardiometabólico — um fator central em saúde cerebral.",
+  },
+  {
+    tipo: "lista",
+    itens: [
+      "Mais fibras e vegetais favorecem diversidade alimentar e saúde intestinal.",
+      "Menos ultraprocessados ajuda a reduzir inflamação sistêmica.",
+      "Controle glicêmico e cardiometabólico melhora ambiente biológico cerebral.",
+      "Alimentação equilibrada também impacta sono, energia e humor.",
     ],
   },
-];
+  {
+    tipo: "h2",
+    texto: "O que a ciência já permite afirmar",
+  },
+  {
+    tipo: "p",
+    texto:
+      "A maior parte das evidências ainda aponta associação, não causalidade direta. Isso significa que dieta saudável e melhor microbiota coexistem com desfechos mais favoráveis, mas ainda há muitas variáveis envolvidas. Mesmo assim, a direção prática já é clara: padrões alimentares de melhor qualidade trazem benefícios amplos e têm boa relação risco-benefício.",
+  },
+  {
+    tipo: "callout",
+    titulo: "Evite exageros",
+    texto:
+      "Nem todo discurso sobre microbiota tem base sólida. O mais prudente é focar em padrão alimentar global, e não em promessas isoladas ou modismos nutricionais.",
+  },
+  {
+    tipo: "h2",
+    texto: "Aplicação no contexto do PlantaMente",
+  },
+  {
+    tipo: "p",
+    texto:
+      "No PlantaMente, essa notícia se conecta com Qualidade de Vida e Prevenção, mas também com os módulos de evidência e educação. O ponto não é vender uma “dieta milagrosa”, e sim traduzir nutrição em estratégias viáveis, seguras e coerentes com o cuidado cerebral de longo prazo.",
+  }, 
+ }, 
+ ];
 
 export const ultimasNoticias = [...noticias]
   .sort((a, b) => new Date(b.dataISO) - new Date(a.dataISO))

@@ -2,6 +2,7 @@ import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { noticias } from "../data/noticias";
 import { noticiasCarousel } from "../data/noticiasCarousel";
+import "./NoticiaDetalhe.css";
 
 export default function NoticiaDetalhe() {
 
