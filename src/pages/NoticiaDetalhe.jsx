@@ -1,89 +1,63 @@
-// src/pages/NoticiaDetalhe.jsx
 import React from "react";
-import { Link, useParams } from "react-router-dom";
-import { getNoticiaBySlug, noticias } from "../data/noticias";
-import "./NoticiasPages.css";
+import { useParams, Link } from "react-router-dom";
+import { noticias } from "../data/noticias";
+import { noticiasCarousel } from "../data/noticiasCarousel";
 
 export default function NoticiaDetalhe() {
+
   const { slug } = useParams();
-  const noticia = getNoticiaBySlug(slug);
+
+  // junta TODAS as notícias
+  const todasNoticias = [
+    ...noticias,
+    ...noticiasCarousel
+  ];
+
+  const noticia = todasNoticias.find(n => n.slug === slug);
 
   if (!noticia) {
     return (
-      <main className="news-page">
-        <div className="news-container">
-          <div className="news-notfound">
-            <h1>Notícia não encontrada</h1>
-            <p>
-              O link pode estar incorreto ou a notícia foi removida. Volte para a lista.
-            </p>
-            <Link to="/noticias" className="news-back">
-              ← Ver todas as notícias
-            </Link>
-          </div>
-        </div>
-      </main>
+      <div className="container py-5">
+        <h2>Notícia não encontrada</h2>
+        <p>O link pode estar incorreto ou a notícia foi removida.</p>
+        <Link to="/" className="btn btn-dark">Voltar</Link>
+      </div>
     );
   }
 
-  // sugestões (mesma categoria, exclui a atual)
-  const relacionadas = noticias
-    .filter((n) => n.slug !== noticia.slug && n.categoria === noticia.categoria)
-    .slice(0, 3);
-
   return (
-    <main className="news-page">
-      <div className="news-container">
-        <div className="news-detail-top">
-          
+    <div className="container py-4">
 
-          <div className="news-detail-meta">
-            <span className="news-badge">{noticia.categoria}</span>
-            <span className="news-date">{noticia.data}</span>
-            <span className="news-read">{noticia.leituraMin} min</span>
-          </div>
+      <Link to="/" className="btn btn-outline-dark mb-3">
+        ← Voltar para Página Principal
+      </Link>
 
-          <h1 className="news-detail-title">{noticia.titulo}</h1>
-          <p className="news-detail-resume">{noticia.resumo}</p>
-        </div>
+      <h1 className="mb-3">{noticia.titulo}</h1>
 
-        <div className="news-detail-hero">
-          <img src={noticia.imagem} alt={noticia.titulo} />
-        </div>
+      <p className="text-muted">
+        {noticia.data} • {noticia.leituraMin} min
+      </p>
 
-        <article className="news-detail-content">
-          {noticia.conteudo.map((p, idx) => (
-            <p key={idx}>{p}</p>
-          ))}
-        </article>
+      {noticia.imagem && (
+        <img
+          src={noticia.imagem}
+          alt={noticia.titulo}
+          style={{
+            width: "100%",
+            maxHeight: "420px",
+            objectFit: "cover",
+            borderRadius: "12px",
+            marginBottom: "20px"
+          }}
+        />
+      )}
 
-        {relacionadas.length > 0 && (
-          <section className="news-related">
-            <h2>Relacionadas</h2>
-            <div className="news-grid">
-              {relacionadas.map((n) => (
-                <Link key={n.slug} to={`/noticias/${n.slug}`} className="news-card">
-                  <div className="news-thumb">
-                    <img src={n.imagem} alt={n.titulo} />
-                  </div>
-                  <div className="news-body">
-                    <div className="news-meta">
-                      <span className="news-badge">{n.categoria}</span>
-                      <span className="news-date">{n.data}</span>
-                      <span className="news-read">{n.leituraMin} min</span>
-                    </div>
-                    <h3 className="news-title">{n.titulo}</h3>
-                    <p className="news-resume">{n.resumo}</p>
-                    <span className="news-cta">
-                      Ler <span aria-hidden>→</span>
-                    </span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
+      <div style={{ fontSize: "18px", lineHeight: "1.8" }}>
+        {noticia.conteudo.map((p, i) => (
+          <p key={i}>{p}</p>
+        ))}
       </div>
-    </main>
+
+    </div>
   );
 }
