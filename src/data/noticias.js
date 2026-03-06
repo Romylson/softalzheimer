@@ -591,9 +591,9 @@ export const noticias = [
     tipo: "p",
     texto:
       "No PlantaMente, essa notícia se conecta com Qualidade de Vida e Prevenção, mas também com os módulos de evidência e educação. O ponto não é vender uma “dieta milagrosa”, e sim traduzir nutrição em estratégias viáveis, seguras e coerentes com o cuidado cerebral de longo prazo.",
-  }, 
- }, 
- ];
+ ],
+}
+];
 
 export const ultimasNoticias = [...noticias]
   .sort((a, b) => new Date(b.dataISO) - new Date(a.dataISO))
