@@ -121,6 +121,13 @@ export default function BlogCientificoPage() {
         <div className="blog-post-grid">
           {postsModelo.map((post) => (
             <article key={post.titulo} className="blog-post-card">
+              <div className="blog-card-img-wrap">
+                <img
+                  src={post.imagem}
+                  alt={post.titulo}
+                  className="blog-card-img"
+                />
+              </div>
               <h4>{post.titulo}</h4>
               <p><strong>1. Contextualização:</strong> {post.contextualizacao}</p>
               <p><strong>2. Evidência científica:</strong> {post.evidencia}</p>
