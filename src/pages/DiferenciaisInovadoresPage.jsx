@@ -1,5 +1,6 @@
 import React from "react";
 import "./SectionPages.css";
+import plantas from "../data/plantas";
 
 const plantasDestaque = [
   {
