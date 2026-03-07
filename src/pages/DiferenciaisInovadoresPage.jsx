@@ -4,6 +4,7 @@ import "./SectionPages.css";
 const plantasDestaque = [
   {
     nome: "Rosmarinus officinalis (Alecrim)",
+    imagem: "/images/alecrim.jpg",
     historia:
       "Uso tradicional mediterrâneo em culinária e práticas de cuidado; ganhou atenção em estudos de neuroproteção.",
     mecanismo:
@@ -15,6 +16,7 @@ const plantasDestaque = [
   },
   {
     nome: "Curcuma longa (Cúrcuma)",
+    imagem: "/images/curcuma.jpg",
     historia:
       "Amplamente utilizada na medicina tradicional asiática e em alimentação funcional.",
     mecanismo:
@@ -26,6 +28,7 @@ const plantasDestaque = [
   },
   {
     nome: "Ginkgo biloba",
+    imagem: "/images/ginkgo.jpg",
     historia:
       "Emprego tradicional e farmacêutico consolidado em diferentes países para circulação e cognição.",
     mecanismo:
@@ -37,6 +40,7 @@ const plantasDestaque = [
   },
   {
     nome: "Bacopa monnieri",
+    imagem: "/images/bacopa.jpg",
     historia:
       "Planta da tradição ayurvédica, historicamente ligada a memória e aprendizado.",
     mecanismo:
@@ -120,18 +124,33 @@ export default function DiferenciaisInovadoresPage() {
       <h1>Diferenciais Inovadores</h1>
       <p className="section-lead">Módulos práticos para conectar ciência, educação e colaboração acadêmica no PlantaMente.</p>
 
-      <section className="section-card">
-        <h3>Planta da Semana</h3>
-        <p className="simulador-lead">Curadoria rotativa com mais opções de plantas e ficha técnica resumida.</p>
-        <div className="planta-semana-grid">
-          {plantasDestaque.map((planta) => (
-            <article key={planta.nome} className="planta-semana-card">
-              <h4>{planta.nome}</h4>
-              <p><strong>História:</strong> {planta.historia}</p>
-              <p><strong>Mecanismo molecular:</strong> {planta.mecanismo}</p>
-              <p><strong>Potencial terapêutico:</strong> {planta.potencial}</p>
-              <p><strong>Grau de evidência:</strong> {planta.evidencia}</p>
-              <p><strong>Segurança:</strong> {planta.seguranca}</p>
+      <section className="bloco-diferencial">
+        <h2>Planta da Semana</h2>
+        <p className="bloco-subtitulo">
+          Curadoria rotativa com mais opções de plantas e ficha técnica resumida.
+        </p>
+
+        <div className="grid-plantas-semana">
+          {plantasSemana.map((planta) => (
+            <article className="card-planta-semana" key={planta.nome}>
+              <div className="planta-imagem-wrap">
+                <img
+                  src={planta.imagem}
+                  alt={planta.nome}
+                  className="planta-imagem"
+                />
+              </div>
+
+              <div className="planta-conteudo">
+                <h3>{planta.nome}</h3>
+
+                <p><strong>História:</strong> {planta.historia}</p>
+                <p><strong>Mecanismo molecular:</strong> {planta.mecanismo}</p>
+                <p><strong>Potencial terapêutico:</strong> {planta.potencial}</p>
+                <p><strong>Grau de evidência:</strong> {planta.evidencia}</p>
+                <p><strong>Alvo:</strong> {planta.alvo}</p>
+                <p><strong>Impacto:</strong> {planta.impacto}</p>
+              </div>
             </article>
           ))}
         </div>

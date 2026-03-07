@@ -493,17 +493,46 @@
 
 .pesquisadores-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 0.8rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  align-items: stretch;
 }
 
 .pesquisadores-card {
-  border: 1px solid #d9e5da;
-  border-radius: 10px;
-  background: #fcfffc;
-  padding: 0.85rem;
+  background: #f7f7f2;
+  border: 1px solid #cfd8cc;
+  border-radius: 14px;
+  padding: 18px 16px;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
 }
 
+.pesquisadores-card h3 {
+  font-size: 1rem;
+  line-height: 1.35;
+  margin-bottom: 12px;
+  color: #21452c;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.pesquisadores-card p,
+.pesquisadores-card li {
+  line-height: 1.6;
+}
+
+@media (max-width: 1200px) {
+  .pesquisadores-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .pesquisadores-grid {
+    grid-template-columns: 1fr;
+  }
+}
 .pesquisadores-card h4 {
   margin: 0 0 0.35rem;
   color: #2f5738;
@@ -532,5 +561,62 @@
 @media (max-width: 640px) {
   .simulador-trilho {
     display: none;
+  }
+}
+.grid-plantas-semana {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.card-planta-semana {
+  background: #f7f7f2;
+  border: 1px solid #cfd8cc;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.planta-imagem-wrap {
+  width: 100%;
+  height: 190px;
+  overflow: hidden;
+  background: #e9ece7;
+}
+
+.planta-imagem {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.planta-conteudo {
+  padding: 14px 14px 16px;
+}
+
+.planta-conteudo h3 {
+  font-size: 1.05rem;
+  line-height: 1.3;
+  margin-bottom: 12px;
+  color: #21452c;
+}
+
+.planta-conteudo p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+@media (max-width: 1200px) {
+  .grid-plantas-semana {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .grid-plantas-semana {
+    grid-template-columns: 1fr;
   }
 }
