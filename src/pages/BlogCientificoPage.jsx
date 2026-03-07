@@ -1,6 +1,10 @@
 import React from "react";
 import monoterpenosArtigos from "../data/monoterpenosArtigos";
 import "./SectionPages.css";
+import imgMonoterpenos from "../assets/monoterpenos.jpg";
+import imgNrf2 from "../assets/nrf2.jpg";
+import imgModelosAnimais from "../assets/modelos-animais.jpg";
+import imgPlantasMemoria from "../assets/plantas-memoria.jpg";
 
 const publicacaoQuinzenal2026 = [
   { periodo: "1ª quinzena / Janeiro 2026", tema: "Monoterpenos e modulação da acetilcolinesterase" },
@@ -12,6 +16,7 @@ const publicacaoQuinzenal2026 = [
 const postsModelo = [
   {
     titulo: "Monoterpenos e modulação da acetilcolinesterase",
+    imagem: imgMonoterpenos,
     contextualizacao:
       "A redução da sinalização colinérgica está entre as alterações mais estudadas na doença de Alzheimer. Compostos monoterpênicos têm sido investigados como moduladores da AChE e de vias associadas ao estresse oxidativo.",
     evidencia:
@@ -24,6 +29,7 @@ const postsModelo = [
   },
   {
     titulo: "O papel do Nrf2 na neuroproteção",
+    imagem: imgNrf2,
     contextualizacao:
       "Nrf2 regula genes antioxidantes e citoprotetores. A ativação dessa via tem sido proposta como estratégia para conter dano oxidativo e inflamação no envelhecimento cerebral.",
     evidencia:
@@ -40,6 +46,7 @@ const postsModelo = [
   },
   {
     titulo: "Limitações dos modelos animais de Alzheimer",
+    imagem: imgModelosAnimais,
     contextualizacao:
       "Modelos animais são essenciais na fase pré-clínica, mas nem sempre reproduzem toda a complexidade clínica, temporal e genética da doença humana.",
     evidencia:
@@ -56,6 +63,7 @@ const postsModelo = [
   },
   {
     titulo: "O que a ciência realmente sabe sobre plantas e memória?",
+    imagem: imgPlantasMemoria,
     contextualizacao:
       "Plantas medicinais são muito buscadas na prática popular. A análise científica exige separar plausibilidade biológica, evidência pré-clínica e dados clínicos.",
     evidencia:
