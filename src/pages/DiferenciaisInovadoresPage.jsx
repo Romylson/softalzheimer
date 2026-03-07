@@ -131,7 +131,7 @@ export default function DiferenciaisInovadoresPage() {
         </p>
 
         <div className="grid-plantas-semana">
-          {plantasSemana.map((planta) => (
+          {plantasDestaque.map((planta) => (
             <article className="card-planta-semana" key={planta.nome}>
               <div className="planta-imagem-wrap">
                 <img
