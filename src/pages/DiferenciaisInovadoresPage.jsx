@@ -1,6 +1,6 @@
 import React from "react";
 import "./SectionPages.css";
-import plantas from "../data/plantas";
+
 
 const plantasDestaque = [
   {
@@ -149,8 +149,6 @@ export default function DiferenciaisInovadoresPage() {
                 <p><strong>Mecanismo molecular:</strong> {planta.mecanismo}</p>
                 <p><strong>Potencial terapêutico:</strong> {planta.potencial}</p>
                 <p><strong>Grau de evidência:</strong> {planta.evidencia}</p>
-                <p><strong>Alvo:</strong> {planta.alvo}</p>
-                <p><strong>Impacto:</strong> {planta.impacto}</p>
               </div>
             </article>
           ))}
@@ -167,8 +165,7 @@ export default function DiferenciaisInovadoresPage() {
               <span className="simulador-icone" aria-hidden="true">{item.icone}</span>
               <h4>{item.etapa}</h4>
               <p>{item.detalhe}</p>
-              <p className="simulador-meta"><strong>Alvo:</strong> {item.alvo}</p>
-              <p className="simulador-meta"><strong>Impacto:</strong> {item.impacto}</p>
+              
             </article>
           ))}
         </div>
