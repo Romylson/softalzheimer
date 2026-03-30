@@ -1,142 +1,174 @@
-import React, { useState, useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import "./SectionPages.css";
 
-const dadosMonoterpenos = [
+// ===== DADOS EXPANDIDOS =====
+const estudos = [
   {
-    nome: "Linalol",
-    tipo: "Pré-clínico",
-    dose: "Variável",
-    efeito: "Ansiolítico e neuroprotetor",
-    mecanismo: "Modulação GABA e redução do estresse oxidativo",
-    link: "https://pubmed.ncbi.nlm.nih.gov/30000000/",
+    planta: "Curcuma longa",
+    modelo: "Clínico",
+    dose: "500–1000 mg/dia",
+    resultado: "Redução inflamatória",
+    mecanismo: "NF-κB / Nrf2",
+    link: "https://pubmed.ncbi.nlm.nih.gov/",
   },
   {
-    nome: "Limoneno",
-    tipo: "Pré-clínico",
-    dose: "Variável",
-    efeito: "Anti-inflamatório",
-    mecanismo: "Inibição de NF-κB",
-    link: "https://pubmed.ncbi.nlm.nih.gov/31000000/",
+    planta: "Rosmarinus officinalis",
+    modelo: "In vivo",
+    dose: "100 mg/kg",
+    resultado: "Melhora de memória",
+    mecanismo: "AChE / MAPK",
+    link: "https://pubmed.ncbi.nlm.nih.gov/",
   },
   {
-    nome: "Alfa-pineno",
-    tipo: "Experimental",
-    dose: "Variável",
-    efeito: "Melhora cognitiva",
-    mecanismo: "Inibição da AChE",
-    link: "https://pubmed.ncbi.nlm.nih.gov/32000000/",
+    planta: "Ginkgo biloba",
+    modelo: "Clínico",
+    dose: "120–240 mg/dia",
+    resultado: "Apoio cognitivo",
+    mecanismo: "Microcirculação",
+    link: "https://pubmed.ncbi.nlm.nih.gov/",
   },
   {
-    nome: "1,8-cineol",
-    tipo: "Clínico",
-    dose: "Padronizada",
-    efeito: "Anti-inflamatório cerebral",
-    mecanismo: "Modulação colinérgica",
-    link: "https://pubmed.ncbi.nlm.nih.gov/33000000/",
+    planta: "Centella asiatica",
+    modelo: "In vivo",
+    dose: "200 mg/kg",
+    resultado: "Neuroplasticidade",
+    mecanismo: "Neurogênese",
+    link: "https://pubmed.ncbi.nlm.nih.gov/",
   },
-  {
-    nome: "Geraniol",
-    tipo: "Pré-clínico",
-    dose: "Variável",
-    efeito: "Antioxidante",
-    mecanismo: "Redução de ROS e inflamação",
-    link: "https://pubmed.ncbi.nlm.nih.gov/34000000/",
-  },
-  {
-    nome: "Citral",
-    tipo: "Experimental",
-    dose: "Variável",
-    efeito: "Neuroprotetor",
-    mecanismo: "Modulação de citocinas inflamatórias",
-    link: "https://pubmed.ncbi.nlm.nih.gov/35000000/",
-  },
-  {
-    nome: "Mentol",
-    tipo: "Pré-clínico",
-    dose: "Variável",
-    efeito: "Modulação sensorial",
-    mecanismo: "Ativação de canais TRPM8",
-    link: "https://pubmed.ncbi.nlm.nih.gov/36000000/",
-  },
-  {
-    nome: "Terpineol",
-    tipo: "Experimental",
-    dose: "Variável",
-    efeito: "Sedativo leve",
-    mecanismo: "Modulação GABAérgica",
-    link: "https://pubmed.ncbi.nlm.nih.gov/37000000/",
-  },
+];
+
+const compostos = [
+  { nome: "Curcumina", origem: "Curcuma longa", mecanismo: "NF-κB, Nrf2", classe: "Polifenol" },
+  { nome: "Resveratrol", origem: "Vitis vinifera", mecanismo: "SIRT1", classe: "Polifenol" },
+  { nome: "EGCG", origem: "Camellia sinensis", mecanismo: "Antioxidante", classe: "Flavonoide" },
+  { nome: "Linalol", origem: "Lavandula", mecanismo: "Ansiolítico", classe: "Monoterpeno" },
+  { nome: "α-Pineno", origem: "Pinus", mecanismo: "AChE", classe: "Monoterpeno" },
+  { nome: "Limoneno", origem: "Citrus", mecanismo: "Anti-inflamatório", classe: "Monoterpeno" },
+  { nome: "Bacopasídeos", origem: "Bacopa monnieri", mecanismo: "Plasticidade", classe: "Saponina" },
 ];
 
 export default function SecaoCientificaPage() {
   const [busca, setBusca] = useState("");
+  const [filtroClasse, setFiltroClasse] = useState("Todos");
 
   const dadosFiltrados = useMemo(() => {
-    return dadosMonoterpenos.filter((item) =>
-      item.nome.toLowerCase().includes(busca.toLowerCase())
-    );
-  }, [busca]);
+    return compostos.filter((item) => {
+      const matchBusca =
+        item.nome.toLowerCase().includes(busca.toLowerCase()) ||
+        item.origem.toLowerCase().includes(busca.toLowerCase());
+
+      const matchClasse = filtroClasse === "Todos" || item.classe === filtroClasse;
+
+      return matchBusca && matchClasse;
+    });
+  }, [busca, filtroClasse]);
+
+  const contagemClasses = useMemo(() => {
+    const contagem = {};
+    compostos.forEach((c) => {
+      contagem[c.classe] = (contagem[c.classe] || 0) + 1;
+    });
+    return contagem;
+  }, []);
 
   return (
     <main className="section-page">
       <h1>Seção Científica (Base para Pesquisa)</h1>
-      <p className="section-lead">
-        Compostos monoterpênicos com potencial neuroprotetor e seus mecanismos de ação.
-      </p>
 
-      {/* 🔍 BUSCA */}
-      <div style={{ marginBottom: "1rem" }}>
+      {/* ===== FILTROS ===== */}
+      <section className="section-card">
+        <h3>Busca e Filtros</h3>
         <input
           type="text"
-          placeholder="Buscar composto..."
+          placeholder="Buscar composto ou planta..."
           value={busca}
           onChange={(e) => setBusca(e.target.value)}
-          style={{
-            width: "100%",
-            padding: "0.6rem",
-            borderRadius: "8px",
-            border: "1px solid #cfe3d5",
-          }}
         />
-      </div>
 
+        <select onChange={(e) => setFiltroClasse(e.target.value)}>
+          <option>Todos</option>
+          <option>Monoterpeno</option>
+          <option>Polifenol</option>
+          <option>Flavonoide</option>
+          <option>Saponina</option>
+        </select>
+      </section>
+
+      {/* ===== GRÁFICO SIMPLES ===== */}
       <section className="section-card">
-        <div className="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Composto</th>
-                <th>Tipo de estudo</th>
-                <th>Dose</th>
-                <th>Efeito</th>
-                <th>Como age</th>
-                <th>Artigo</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              {dadosFiltrados.map((item) => (
-                <tr key={item.nome}>
-                  <td>{item.nome}</td>
-                  <td>{item.tipo}</td>
-                  <td>{item.dose}</td>
-                  <td>{item.efeito}</td>
-                  <td>{item.mecanismo}</td>
-                  <td>
-                    <a
-                      href={item.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ color: "#2d6f43", fontWeight: "600" }}
-                    >
-                      Ver estudo
-                    </a>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <h3>Distribuição de Compostos</h3>
+        <div>
+          {Object.entries(contagemClasses).map(([classe, valor]) => (
+            <div key={classe} style={{ marginBottom: "8px" }}>
+              <strong>{classe}</strong>
+              <div
+                style={{
+                  height: "10px",
+                  width: `${valor * 40}px`,
+                  background: "black",
+                }}
+              />
+            </div>
+          ))}
         </div>
+      </section>
+
+      {/* ===== TABELA DE ESTUDOS ===== */}
+      <section className="section-card">
+        <h3>Banco de Estudos</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Planta</th>
+              <th>Modelo</th>
+              <th>Dose</th>
+              <th>Resultado</th>
+              <th>Mecanismo</th>
+              <th>Artigo</th>
+            </tr>
+          </thead>
+          <tbody>
+            {estudos.map((e, i) => (
+              <tr key={i}>
+                <td>{e.planta}</td>
+                <td>{e.modelo}</td>
+                <td>{e.dose}</td>
+                <td>{e.resultado}</td>
+                <td>{e.mecanismo}</td>
+                <td>
+                  <a href={e.link} target="_blank" rel="noreferrer">
+                    Ver estudo
+                  </a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
+
+      {/* ===== TABELA DE COMPOSTOS ===== */}
+      <section className="section-card">
+        <h3>Compostos Naturais</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Composto</th>
+              <th>Origem</th>
+              <th>Mecanismo</th>
+              <th>Classe</th>
+            </tr>
+          </thead>
+          <tbody>
+            {dadosFiltrados.map((c, i) => (
+              <tr key={i}>
+                <td>{c.nome}</td>
+                <td>{c.origem}</td>
+                <td>{c.mecanismo}</td>
+                <td>{c.classe}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </section>
     </main>
   );
