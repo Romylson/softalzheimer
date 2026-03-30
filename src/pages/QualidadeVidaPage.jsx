@@ -1,11 +1,16 @@
 import React, { useMemo, useState } from "react";
 import "./SectionPages.css";
+import imgExercicio from "../assets/exercicio-bdnf.jpg";
+import imgDieta from "../assets/dieta-mediterranea.jpg";
+import imgSono from "../assets/sono-memoria.jpg";
+import imgNatureza from "../assets/natureza-neuroplasticidade.jpg";
 
 const topicos = [
   {
     id: "exercicio",
     titulo: "Exercício físico e BDNF",
     icone: "🏃",
+    imagem: imgExercicio,
     base: [
       "Exercício aeróbico regular está associado a maior expressão de BDNF, fator-chave para plasticidade sináptica.",
       "Treino combinado (aeróbico + força) pode contribuir para atenção, memória e função executiva em idosos.",
@@ -21,6 +26,7 @@ const topicos = [
     id: "dieta",
     titulo: "Dieta neuroprotetora (Mediterrânea, MIND)",
     icone: "🥗",
+    imagem: imgDieta,
     base: [
       "Padrões alimentares do tipo Mediterrânea/MIND associam-se a melhor desempenho cognitivo e menor declínio longitudinal.",
       "Ênfase em vegetais, leguminosas, azeite, peixes e alimentos ricos em polifenóis ajuda no equilíbrio oxidativo e inflamatório.",
@@ -36,6 +42,7 @@ const topicos = [
     id: "sono",
     titulo: "Sono e consolidação de memória",
     icone: "😴",
+    imagem: imgSono,
     base: [
       "Sono insuficiente ou fragmentado prejudica consolidação mnésica e desempenho executivo.",
       "Qualidade do sono está ligada à depuração metabólica cerebral e ao equilíbrio neuroimune.",
@@ -51,6 +58,7 @@ const topicos = [
     id: "natureza",
     titulo: "Contato com a natureza e neuroplasticidade",
     icone: "🌿",
+    imagem: imgNatureza,
     base: [
       "Exposição a ambientes verdes associa-se a menor estresse percebido e melhor atenção sustentada.",
       "Atividades ao ar livre podem modular humor, sono e engajamento físico, com efeitos indiretos pró-cérebro.",
