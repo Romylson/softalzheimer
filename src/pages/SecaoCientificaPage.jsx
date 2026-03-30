@@ -1,83 +1,135 @@
 import React, { useMemo, useState } from "react";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
 import "./SectionPages.css";
 
-// ===== DADOS EXPANDIDOS =====
-const estudos = [
-  {
-    planta: "Curcuma longa",
-    modelo: "Clínico",
-    dose: "500–1000 mg/dia",
-    resultado: "Redução inflamatória",
-    mecanismo: "NF-κB / Nrf2",
-    link: "https://pubmed.ncbi.nlm.nih.gov/",
-  },
-  {
-    planta: "Rosmarinus officinalis",
-    modelo: "In vivo",
-    dose: "100 mg/kg",
-    resultado: "Melhora de memória",
-    mecanismo: "AChE / MAPK",
-    link: "https://pubmed.ncbi.nlm.nih.gov/",
-  },
-  {
-    planta: "Ginkgo biloba",
-    modelo: "Clínico",
-    dose: "120–240 mg/dia",
-    resultado: "Apoio cognitivo",
-    mecanismo: "Microcirculação",
-    link: "https://pubmed.ncbi.nlm.nih.gov/",
-  },
-  {
-    planta: "Centella asiatica",
-    modelo: "In vivo",
-    dose: "200 mg/kg",
-    resultado: "Neuroplasticidade",
-    mecanismo: "Neurogênese",
-    link: "https://pubmed.ncbi.nlm.nih.gov/",
-  },
-];
-
+// ================== COMPOSTOS EXPANDIDOS ==================
 const compostos = [
-  { nome: "Curcumina", origem: "Curcuma longa", mecanismo: "NF-κB, Nrf2", classe: "Polifenol" },
-  { nome: "Resveratrol", origem: "Vitis vinifera", mecanismo: "SIRT1", classe: "Polifenol" },
-  { nome: "EGCG", origem: "Camellia sinensis", mecanismo: "Antioxidante", classe: "Flavonoide" },
-  { nome: "Linalol", origem: "Lavandula", mecanismo: "Ansiolítico", classe: "Monoterpeno" },
-  { nome: "α-Pineno", origem: "Pinus", mecanismo: "AChE", classe: "Monoterpeno" },
-  { nome: "Limoneno", origem: "Citrus", mecanismo: "Anti-inflamatório", classe: "Monoterpeno" },
-  { nome: "Bacopasídeos", origem: "Bacopa monnieri", mecanismo: "Plasticidade", classe: "Saponina" },
+  // MONOTERPENOS
+  {
+    nome: "Linalol",
+    origem: "Lavandula",
+    mecanismo: "Modulação GABA / efeito ansiolítico",
+    classe: "Monoterpeno",
+    link: "https://pubmed.ncbi.nlm.nih.gov/?term=linalool+brain",
+  },
+  {
+    nome: "α-Pineno",
+    origem: "Pinus",
+    mecanismo: "Inibição da acetilcolinesterase (AChE)",
+    classe: "Monoterpeno",
+    link: "https://pubmed.ncbi.nlm.nih.gov/?term=alpha+pinene+acetylcholinesterase",
+  },
+  {
+    nome: "Limoneno",
+    origem: "Citrus",
+    mecanismo: "Ação anti-inflamatória e antioxidante",
+    classe: "Monoterpeno",
+    link: "https://pubmed.ncbi.nlm.nih.gov/?term=limonene+neuroprotection",
+  },
+  {
+    nome: "Geraniol",
+    origem: "Rosa / óleos essenciais",
+    mecanismo: "Redução de estresse oxidativo",
+    classe: "Monoterpeno",
+    link: "https://pubmed.ncbi.nlm.nih.gov/?term=geraniol+brain",
+  },
+  {
+    nome: "Mentol",
+    origem: "Mentha",
+    mecanismo: "Modulação de canais TRPM8",
+    classe: "Monoterpeno",
+    link: "https://pubmed.ncbi.nlm.nih.gov/?term=menthol+neuro",
+  },
+
+  // POLIFENÓIS
+  {
+    nome: "Curcumina",
+    origem: "Curcuma longa",
+    mecanismo: "Ativação Nrf2 / inibição NF-κB",
+    classe: "Polifenol",
+    link: "https://pubmed.ncbi.nlm.nih.gov/?term=curcumin+alzheimer",
+  },
+  {
+    nome: "Resveratrol",
+    origem: "Vitis vinifera",
+    mecanismo: "Ativação SIRT1 / anti-inflamatório",
+    classe: "Polifenol",
+    link: "https://pubmed.ncbi.nlm.nih.gov/?term=resveratrol+brain",
+  },
+
+  // FLAVONOIDES
+  {
+    nome: "EGCG",
+    origem: "Chá verde",
+    mecanismo: "Antioxidante potente / modulação Nrf2",
+    classe: "Flavonoide",
+    link: "https://pubmed.ncbi.nlm.nih.gov/?term=egcg+brain",
+  },
+  {
+    nome: "Quercetina",
+    origem: "Frutas",
+    mecanismo: "Anti-inflamatório / proteção neuronal",
+    classe: "Flavonoide",
+    link: "https://pubmed.ncbi.nlm.nih.gov/?term=quercetin+brain",
+  },
+
+  // SAPONINAS
+  {
+    nome: "Bacopasídeos",
+    origem: "Bacopa monnieri",
+    mecanismo: "Aumento da plasticidade sináptica",
+    classe: "Saponina",
+    link: "https://pubmed.ncbi.nlm.nih.gov/?term=bacopa+memory",
+  },
 ];
 
+// ================== COMPONENTE ==================
 export default function SecaoCientificaPage() {
   const [busca, setBusca] = useState("");
   const [filtroClasse, setFiltroClasse] = useState("Todos");
 
-  const dadosFiltrados = useMemo(() => {
-    return compostos.filter((item) => {
+  // FILTRO
+  const filtrados = useMemo(() => {
+    return compostos.filter((c) => {
       const matchBusca =
-        item.nome.toLowerCase().includes(busca.toLowerCase()) ||
-        item.origem.toLowerCase().includes(busca.toLowerCase());
+        c.nome.toLowerCase().includes(busca.toLowerCase()) ||
+        c.origem.toLowerCase().includes(busca.toLowerCase());
 
-      const matchClasse = filtroClasse === "Todos" || item.classe === filtroClasse;
+      const matchClasse =
+        filtroClasse === "Todos" || c.classe === filtroClasse;
 
       return matchBusca && matchClasse;
     });
   }, [busca, filtroClasse]);
 
-  const contagemClasses = useMemo(() => {
+  // DADOS GRÁFICO
+  const dadosGrafico = useMemo(() => {
     const contagem = {};
     compostos.forEach((c) => {
       contagem[c.classe] = (contagem[c.classe] || 0) + 1;
     });
-    return contagem;
+
+    return Object.keys(contagem).map((key) => ({
+      classe: key,
+      quantidade: contagem[key],
+    }));
   }, []);
 
   return (
     <main className="section-page">
-      <h1>Seção Científica (Base para Pesquisa)</h1>
+      <h1>Dashboard Científico – Compostos Naturais</h1>
 
-      {/* ===== FILTROS ===== */}
+      {/* ================= FILTROS ================= */}
       <section className="section-card">
-        <h3>Busca e Filtros</h3>
+        <h3>Busca Inteligente</h3>
+
         <input
           type="text"
           placeholder="Buscar composto ou planta..."
@@ -94,77 +146,47 @@ export default function SecaoCientificaPage() {
         </select>
       </section>
 
-      {/* ===== GRÁFICO SIMPLES ===== */}
+      {/* ================= GRÁFICO REAL ================= */}
       <section className="section-card">
         <h3>Distribuição de Compostos</h3>
-        <div>
-          {Object.entries(contagemClasses).map(([classe, valor]) => (
-            <div key={classe} style={{ marginBottom: "8px" }}>
-              <strong>{classe}</strong>
-              <div
-                style={{
-                  height: "10px",
-                  width: `${valor * 40}px`,
-                  background: "black",
-                }}
-              />
-            </div>
-          ))}
-        </div>
+
+        <ResponsiveContainer width="100%" height={300}>
+          <BarChart data={dadosGrafico}>
+            <XAxis dataKey="classe" />
+            <YAxis />
+            <Tooltip />
+            <Bar dataKey="quantidade" />
+          </BarChart>
+        </ResponsiveContainer>
       </section>
 
-      {/* ===== TABELA DE ESTUDOS ===== */}
+      {/* ================= TABELA ================= */}
       <section className="section-card">
-        <h3>Banco de Estudos</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Planta</th>
-              <th>Modelo</th>
-              <th>Dose</th>
-              <th>Resultado</th>
-              <th>Mecanismo</th>
-              <th>Artigo</th>
-            </tr>
-          </thead>
-          <tbody>
-            {estudos.map((e, i) => (
-              <tr key={i}>
-                <td>{e.planta}</td>
-                <td>{e.modelo}</td>
-                <td>{e.dose}</td>
-                <td>{e.resultado}</td>
-                <td>{e.mecanismo}</td>
-                <td>
-                  <a href={e.link} target="_blank" rel="noreferrer">
-                    Ver estudo
-                  </a>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </section>
+        <h3>Compostos Naturais e Como Agem</h3>
 
-      {/* ===== TABELA DE COMPOSTOS ===== */}
-      <section className="section-card">
-        <h3>Compostos Naturais</h3>
         <table>
           <thead>
             <tr>
               <th>Composto</th>
               <th>Origem</th>
-              <th>Mecanismo</th>
+              <th>Como age</th>
               <th>Classe</th>
+              <th>Artigo</th>
             </tr>
           </thead>
+
           <tbody>
-            {dadosFiltrados.map((c, i) => (
+            {filtrados.map((c, i) => (
               <tr key={i}>
                 <td>{c.nome}</td>
                 <td>{c.origem}</td>
                 <td>{c.mecanismo}</td>
                 <td>{c.classe}</td>
+                <td>
+                  <a href={c.link} target="_blank" rel="noreferrer">
+                    🔗 Ver estudo
+                  </a>
+                </td>
               </tr>
             ))}
           </tbody>
