@@ -147,6 +147,14 @@ export default function QualidadeVidaPage() {
               <span className="qualidade-icone" aria-hidden="true">{tema.icone}</span>
               <span className="qualidade-titulo">{tema.titulo}</span>
             </h3>
+            {/* 👇 IMAGEM AQUI */}
+            <div className="qualidade-img-wrap">
+              <img
+                src={tema.imagem}
+                alt={tema.titulo}
+                className="qualidade-img"
+              />
+            </div>
 
             <h4>Base científica</h4>
             <ul>
