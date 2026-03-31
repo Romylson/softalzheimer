@@ -180,43 +180,149 @@ export default function QualidadeVidaPage() {
         ))}
       </section>
 
-      <section className="section-card" style={{ marginTop: "1rem" }}>
-        <h3>Autoavaliação Interativa: Questionário de Hábitos Neuroprotetores</h3>
-        <p className="section-lead">Pontue cada pergunta de acordo com sua frequência atual.</p>
+      const perguntas = [
+  { cat: "sono", texto: "Você dorme entre 7–9h com qualidade?" },
+  { cat: "sono", texto: "Mantém rotina regular de sono?" },
 
-        <div className="questionario-grid">
-          {perguntas.map((pergunta, idx) => (
-            <article key={pergunta.texto} className="questionario-item">
-              <p>{idx + 1}. {pergunta.texto}</p>
-              <div className="questionario-opcoes">
-                {opcoes.map((opcao) => (
-                  <label key={opcao.label}>
-                    <input
-                      type="radio"
-                      name={`pergunta-${idx}`}
-                      checked={Number(respostas[idx]) === opcao.valor}
-                      onChange={() => setRespostas((prev) => ({ ...prev, [idx]: opcao.valor }))}
-                    />
-                    {opcao.label}
-                  </label>
-                ))}
-              </div>
-            </article>
-          ))}
-        </div>
+  { cat: "alimentacao", texto: "Consome vegetais e frutas diariamente?" },
+  { cat: "alimentacao", texto: "Evita ultraprocessados?" },
 
-        <div className="resultado-box">
-          <p><strong>Pontuação total:</strong> {total}/24</p>
-          <p><strong>Perfil:</strong> {perfil}</p>
-          <p>{recomendacaoPerfil}</p>
-          <div className="pills qualidade-pills">
-            <span>Sono: {porCategoria.sono}/6</span>
-            <span>Alimentação: {porCategoria.alimentacao}/6</span>
-            <span>Atividade física: {porCategoria.atividade}/6</span>
-            <span>Estímulo cognitivo: {porCategoria.cognitivo}/6</span>
+  { cat: "atividade", texto: "Faz ≥150 min/semana de exercício?" },
+  { cat: "atividade", texto: "Inclui treino de força?" },
+
+  { cat: "cognitivo", texto: "Estimula o cérebro (leitura/jogos)?" },
+  { cat: "cognitivo", texto: "Mantém interação social?" },
+];
+
+const opcoes = [
+  { label: "Nunca", valor: 0 },
+  { label: "Às vezes", valor: 1 },
+  { label: "Frequentemente", valor: 2 },
+  { label: "Quase sempre", valor: 3 },
+];
+
+export default function AutoavaliacaoNeuro() {
+  const [respostas, setRespostas] = useState(
+    Object.fromEntries(perguntas.map((_, i) => [i, 1]))
+  );
+
+  const resultado = useMemo(() => {
+    const categorias = {
+      sono: 0,
+      alimentacao: 0,
+      atividade: 0,
+      cognitivo: 0,
+    };
+
+    perguntas.forEach((p, i) => {
+      categorias[p.cat] += Number(respostas[i]);
+    });
+
+    const total = Object.values(categorias).reduce((a, b) => a + b, 0);
+
+    let nivel = "";
+    let cor = "";
+
+    if (total >= 18) {
+      nivel = "Excelente";
+      cor = "#16a34a";
+    } else if (total >= 12) {
+      nivel = "Bom";
+      cor = "#22c55e";
+    } else if (total >= 8) {
+      nivel = "Moderado";
+      cor = "#f59e0b";
+    } else {
+      nivel = "Alto Risco";
+      cor = "#dc2626";
+    }
+
+    return { total, categorias, nivel, cor };
+  }, [respostas]);
+
+  const progresso = (resultado.total / 24) * 100;
+
+  const feedbackCategoria = (valor) => {
+    if (valor >= 5) return "Ótimo";
+    if (valor >= 3) return "Regular";
+    return "Precisa melhorar";
+  };
+
+  return (
+    <section className="section-card">
+      <h3>Autoavaliação Neuroprotetora</h3>
+      <p>Responda e veja seu score cognitivo:</p>
+
+      <div className="questionario-grid">
+        {perguntas.map((p, i) => (
+          <div key={i} className="questionario-item">
+            <p>{i + 1}. {p.texto}</p>
+            <div>
+              {opcoes.map((op) => (
+                <label key={op.label}>
+                  <input
+                    type="radio"
+                    name={`q-${i}`}
+                    checked={respostas[i] === op.valor}
+                    onChange={() =>
+                      setRespostas((prev) => ({
+                        ...prev,
+                        [i]: op.valor,
+                      }))
+                    }
+                  />
+                  {op.label}
+                </label>
+              ))}
+            </div>
           </div>
+        ))}
+      </div>
+
+      {/* RESULTADO */}
+      <div className="resultado-box" style={{ marginTop: "20px" }}>
+        <h4>Resultado</h4>
+
+        <p><strong>Score:</strong> {resultado.total}/24</p>
+        <p>
+          <strong>Nível:</strong>{" "}
+          <span style={{ color: resultado.cor }}>
+            {resultado.nivel}
+          </span>
+        </p>
+
+        {/* BARRA */}
+        <div style={{
+          height: "12px",
+          background: "#ddd",
+          borderRadius: "10px",
+          overflow: "hidden",
+          margin: "10px 0"
+        }}>
+          <div style={{
+            width: `${progresso}%`,
+            height: "100%",
+            background: resultado.cor,
+            transition: "0.4s"
+          }} />
         </div>
-      </section>
-    </main>
+
+        {/* CATEGORIAS */}
+        <div className="pills">
+          <span>Sono: {resultado.categorias.sono}/6 ({feedbackCategoria(resultado.categorias.sono)})</span>
+          <span>Alimentação: {resultado.categorias.alimentacao}/6 ({feedbackCategoria(resultado.categorias.alimentacao)})</span>
+          <span>Atividade: {resultado.categorias.atividade}/6 ({feedbackCategoria(resultado.categorias.atividade)})</span>
+          <span>Cognitivo: {resultado.categorias.cognitivo}/6 ({feedbackCategoria(resultado.categorias.cognitivo)})</span>
+        </div>
+
+        {/* RECOMENDAÇÃO */}
+        <div style={{ marginTop: "10px" }}>
+          {resultado.nivel === "Excelente" && "Manutenção ideal! Continue assim."}
+          {resultado.nivel === "Bom" && "Você está bem, mas pode otimizar alguns hábitos."}
+          {resultado.nivel === "Moderado" && "Atenção: ajuste 1–2 hábitos prioritários."}
+          {resultado.nivel === "Alto Risco" && "Intervenção urgente recomendada em estilo de vida."}
+        </div>
+      </div>
+    </section>
   );
 }
