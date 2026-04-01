@@ -15,65 +15,109 @@ const topicos = [
     icone: "🏃",
     imagem: imgExercicio,
     base: [
-      "Exercício aeróbico regular aumenta BDNF.",
-      "Melhora memória e função executiva.",
+      "A prática regular de exercício físico, especialmente aeróbico, está associada ao aumento do BDNF (Brain-Derived Neurotrophic Factor), proteína essencial para neuroplasticidade.",
+      "O BDNF promove sobrevivência neuronal, formação de novas sinapses e melhora da memória e aprendizagem.",
+      "Estudos demonstram que exercícios combinados (aeróbico + resistência) melhoram função executiva, atenção e velocidade de processamento.",
+      "Além disso, o exercício reduz inflamação sistêmica e melhora a perfusão cerebral."
     ],
     dicas: [
-      "150 min/semana",
-      "2 dias de força",
-      "Comece com 10–15 min",
+      "Realize pelo menos 150 minutos/semana de atividade aeróbica moderada.",
+      "Inclua musculação ou exercícios de resistência 2–3 vezes por semana.",
+      "Adicione treinos de equilíbrio e coordenação (especialmente em idosos).",
+      "Comece com sessões curtas (10–15 min) e aumente progressivamente.",
+      "Prefira atividades prazerosas para maior adesão a longo prazo."
     ],
-    infografico: ["BDNF ↑", "Inflamação ↓", "Cognição ↑"],
+    infografico: [
+      "BDNF ↑",
+      "Neuroplasticidade ↑",
+      "Inflamação ↓",
+      "Memória ↑",
+      "Risco de declínio cognitivo ↓"
+    ],
   },
+
   {
     id: "dieta",
-    titulo: "Dieta neuroprotetora",
+    titulo: "Dieta neuroprotetora (Mediterrânea e MIND)",
     icone: "🥗",
     imagem: imgDieta,
     base: [
-      "Dieta Mediterrânea melhora cognição.",
-      "Polifenóis reduzem estresse oxidativo.",
+      "A dieta Mediterrânea e o padrão MIND estão associados à redução do risco de Alzheimer e declínio cognitivo.",
+      "Esses padrões são ricos em antioxidantes, ácidos graxos monoinsaturados e compostos anti-inflamatórios.",
+      "Polifenóis presentes em frutas, vegetais e azeite auxiliam na proteção contra estresse oxidativo.",
+      "O consumo de peixes fornece ômega-3, importante para integridade das membranas neuronais.",
+      "A saúde vascular cerebral é diretamente influenciada pela alimentação."
     ],
     dicas: [
-      "Vegetais diariamente",
-      "Use azeite",
-      "Peixe 2–3x semana",
+      "Consuma vegetais e folhas diariamente (base da alimentação).",
+      "Utilize azeite de oliva como principal fonte de gordura.",
+      "Inclua peixes (ricos em ômega-3) pelo menos 2x por semana.",
+      "Reduza alimentos ultraprocessados, açúcar e gorduras trans.",
+      "Inclua oleaginosas, frutas vermelhas e leguminosas regularmente."
     ],
-    infografico: ["Polifenóis ↑", "Inflamação ↓"],
+    infografico: [
+      "Antioxidantes ↑",
+      "Estresse oxidativo ↓",
+      "Inflamação ↓",
+      "Saúde vascular ↑",
+      "Proteção neuronal ↑"
+    ],
   },
+
   {
     id: "sono",
-    titulo: "Sono e memória",
+    titulo: "Sono e consolidação da memória",
     icone: "😴",
     imagem: imgSono,
     base: [
-      "Sono consolida memória.",
-      "Remove toxinas cerebrais.",
+      "O sono é fundamental para a consolidação da memória e reorganização sináptica.",
+      "Durante o sono profundo ocorre ativação do sistema glinfático, responsável pela remoção de metabólitos neurotóxicos.",
+      "A privação de sono está associada a prejuízos cognitivos, déficit de atenção e aumento do risco de doenças neurodegenerativas.",
+      "Alterações no ciclo circadiano impactam diretamente humor, desempenho cognitivo e saúde cerebral."
     ],
     dicas: [
-      "7–9h/noite",
-      "Evite telas",
-      "Ambiente escuro",
+      "Durma entre 7–9 horas por noite com regularidade.",
+      "Mantenha horários consistentes para dormir e acordar.",
+      "Evite telas, cafeína e estímulos intensos antes de dormir.",
+      "Crie ambiente escuro, silencioso e confortável.",
+      "Exponha-se à luz natural pela manhã para regular o ciclo circadiano."
     ],
-    infografico: ["Memória ↑", "Fadiga ↓"],
+    infografico: [
+      "Memória consolidada ↑",
+      "Toxinas cerebrais ↓",
+      "Atenção ↑",
+      "Humor equilibrado ↑",
+      "Desempenho cognitivo ↑"
+    ],
   },
+
   {
     id: "natureza",
-    titulo: "Natureza e cérebro",
+    titulo: "Contato com a natureza e saúde cerebral",
     icone: "🌿",
     imagem: imgNatureza,
     base: [
-      "Reduz estresse",
-      "Melhora atenção",
+      "A exposição a ambientes naturais está associada à redução do estresse e melhora da função cognitiva.",
+      "Estudos indicam que ambientes verdes aumentam atenção sustentada e reduzem fadiga mental.",
+      "O contato com a natureza modula níveis de cortisol e melhora o bem-estar psicológico.",
+      "Atividades ao ar livre também incentivam movimento físico e interação social."
     ],
     dicas: [
-      "Caminhe ao ar livre",
-      "Pegue sol",
+      "Realize caminhadas em áreas verdes regularmente.",
+      "Busque exposição à luz solar natural diariamente.",
+      "Faça pausas ao ar livre durante trabalho ou estudo.",
+      "Combine respiração consciente com contato com a natureza.",
+      "Integre atividades físicas ao ambiente externo sempre que possível."
     ],
-    infografico: ["Cortisol ↓", "Bem-estar ↑"],
+    infografico: [
+      "Cortisol ↓",
+      "Estresse ↓",
+      "Atenção ↑",
+      "Bem-estar ↑",
+      "Neuroplasticidade ↑"
+    ],
   },
 ];
-
 /* =========================
    PERGUNTAS
 ========================= */
