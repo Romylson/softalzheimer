@@ -34,8 +34,8 @@
 
 /* ================= IMAGENS ================= */
 .qualidade-img-wrap {
-  width: 90%;
-  height: 150px;
+  width: 100%;
+  height: 160px;
   overflow: hidden;
   border-radius: 10px;
   margin: 10px 0;
@@ -44,10 +44,15 @@
 }
 
 .qualidade-img {
-  width: 90%;
-  height: 90%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.qualidade-card:last-child .qualidade-img {
+  object-fit: contain;
+  background: #eef3ed;
 }
 
 /* ================= LISTAS ================= */
