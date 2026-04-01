@@ -673,3 +673,8 @@
   gap: 0.9rem;
   align-items: stretch; /* evita quebra estranha */
 }
+
+.qualidade-img {
+  object-fit: contain;
+  background: #000;
+}
