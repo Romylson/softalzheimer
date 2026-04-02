@@ -39,6 +39,8 @@ import DiferenciaisInovadoresPage from "./pages/DiferenciaisInovadoresPage.jsx";
 import NoticiaDetalhe from "./pages/NoticiaDetalhe";
 import NoticiaCarousel from "./pages/NoticiaCarousel";
 import Noticias from "./pages/Noticias";
+import DetectiveCognitivo from "./pages/DetectiveCognitivo";
+import SequenciaDoenca from "./pages/SequenciaDoenca";
 
 
 function App() {
@@ -66,6 +68,8 @@ function App() {
           <Route path="/jogos/caca-palavras" element={<CacaPalavras />} />
           <Route path="/jogos/xadrez" element={<Xadrez />} />
           <Route path="/jogos/quebra-cabeca" element={<QuebraCabeca />} />
+          <Route path="/jogos/detective-cognitivo" element={<DetectiveCognitivo />} />
+          <Route path="/jogos/sequencia-doenca" element={<SequenciaDoenca />} />
           <Route path="/historico" element={<Historico />} />
           <Route path="/apresentacao" element={<Apresentacao />} />
           <Route path="/" element={<Dashboard />} />
