@@ -1,7 +1,7 @@
 .section-page {
-  max-width: 1100px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 1rem 2rem;
 }
 
 .section-page h1 {
@@ -16,8 +16,8 @@
 /* GRID PRINCIPAL */
 .section-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 0.9rem;
+  grid-template-columns: repeat(4, 1fr); /* força 4 colunas iguais */
+  gap: 1.2rem;
   align-items: stretch;
 }
 
