@@ -5,7 +5,13 @@ import imgLecanemabe from "../assets/leqembi.jpg";
 import imgRivastigmina from "../assets/exelon.jpg"
 import imgGalantamina from "../assets/reminyl.jpg"
 import imgTacrina from "../assets/tacrina.png"
-// ...adicione mais se quiser
+import imgDonanemabe from "../assets/kisunla.jpg";
+import imgBrexpiprazol from "../assets/rexulti.jpg";
+import imgCitalopram from "../assets/cipramil.jpg";
+import imgSertralina from "../assets/zoloft.jpg";
+import imgTrazodona from "../assets/donaren.jpg";
+import imgQuetiapina from "../assets/seroquel.jpg";
+
 
 export const farmacos = [
 {
@@ -58,7 +64,70 @@ export const farmacos = [
     autorImagem: "As imagens de fármacos são de uso ilustrativo, pertencentes às respectivas indústrias farmacêuticas. Utilizadas apenas para fins educacionais no contexto do projeto Plantamente.",
     alvo: "Colinesterase",
     descricao: "Foi o primeiro inibidor da colinesterase usado para Alzheimer, com limitações devido à hepatotoxicidade."
-  }
+  },
+
+  {
+  nome: "Donanemabe (Kisunla)",
+  categoria: "Anticorpo Monoclonal",
+  principioAtivo: "Donanemabe",
+  imagem: imgDonanemabe,
+  autorImagem: "As imagens de fármacos são de uso ilustrativo, pertencentes às respectivas indústrias farmacêuticas. Utilizadas apenas para fins educacionais no contexto do projeto Plantamente.",
+  alvo: "Proteína beta-amiloide",
+  descricao: "Anticorpo monoclonal indicado para Alzheimer inicial, atuando na remoção de placas beta-amiloides e podendo modificar a progressão da doença." 
+  },
+
+  {
+  nome: "Brexpiprazol (Rexulti)",
+  categoria: "Antipsicótico Atípico",
+  principioAtivo: "Brexpiprazol",
+  imagem: imgBrexpiprazol,
+  autorImagem: "As imagens de fármacos são de uso ilustrativo, pertencentes às respectivas indústrias farmacêuticas. Utilizadas apenas para fins educacionais no contexto do projeto Plantamente.",
+  alvo: "Receptores dopamina e serotonina",
+  descricao: "Indicado para tratamento da agitação associada à Doença de Alzheimer, modulando neurotransmissores envolvidos no comportamento."
+  },
+
+  {
+  nome: "Citalopram (Cipramil)",
+  categoria: "Antidepressivo (ISRS)",
+  principioAtivo: "Citalopram",
+  imagem: imgCitalopram,
+  autorImagem: "As imagens de fármacos são de uso ilustrativo, pertencentes às respectivas indústrias farmacêuticas. Utilizadas apenas para fins educacionais no contexto do projeto Plantamente.",
+  alvo: "Serotonina",
+  descricao: "Utilizado no controle de sintomas depressivos e agitação em pacientes com Alzheimer, aumentando os níveis de serotonina no cérebro."
+ },
+
+ {
+  nome: "Sertralina (Zoloft)",
+  categoria: "Antidepressivo (ISRS)",
+  principioAtivo: "Sertralina",
+  imagem: imgSertralina,
+  autorImagem: "As imagens de fármacos são de uso ilustrativo, pertencentes às respectivas indústrias farmacêuticas. Utilizadas apenas para fins educacionais no contexto do projeto Plantamente.",
+  alvo: "Serotonina",
+  descricao: "Indicada para tratamento de depressão e ansiedade em pacientes com Alzheimer, contribuindo para melhora do humor e qualidade de vida."
+ },
+
+ {
+  nome: "Trazodona (Donaren)",
+  categoria: "Antidepressivo",
+  principioAtivo: "Trazodona",
+  imagem: imgTrazodona,
+  autorImagem: "As imagens de fármacos são de uso ilustrativo, pertencentes às respectivas indústrias farmacêuticas. Utilizadas apenas para fins educacionais no contexto do projeto Plantamente.",
+  alvo: "Serotonina",
+  descricao: "Utilizada para distúrbios do sono e agitação em pacientes com Alzheimer, com efeito sedativo e modulador serotoninérgico."
+ },
+
+ {
+  nome: "Quetiapina (Seroquel)",
+  categoria: "Antipsicótico Atípico",
+  principioAtivo: "Quetiapina",
+  imagem: imgQuetiapina,
+  autorImagem: "As imagens de fármacos são de uso ilustrativo, pertencentes às respectivas indústrias farmacêuticas. Utilizadas apenas para fins educacionais no contexto do projeto Plantamente.",
+  alvo: "Dopamina e serotonina",
+  descricao: "Indicada para sintomas comportamentais graves, como agressividade e psicose em pacientes com Alzheimer."
+ } 
+
+ 
+  
   ]
   export const ALVOS = {
   Colinesterase: {
