@@ -8,7 +8,7 @@
 }
 
 .seduc-like-carousel .carousel-banner-img {
-  width: 90%;
+  width: 100%;
   height: 300px;
   object-fit: cover;
   filter: saturate(1.06) contrast(1.04);
