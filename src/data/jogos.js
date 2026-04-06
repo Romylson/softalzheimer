@@ -8,6 +8,9 @@ import xadrezImg from "../assets/xadrez.jpg";
 import quebraImg from "../assets/quebra-cabeca.jpg";
 import classificacaoImg from "../assets/classificacao.jpg";
 import caminhoNeuronalImg from "../assets/caminhoneuronal.jpg";
+import detetiveCognitivoImg from "../assets/detetivecognitivo.jpg";
+import sequenciaDoencaImg from "../assets/sequenciadoenca.jpg";
+
 
 export const jogos = [
   {
@@ -100,4 +103,23 @@ export const jogos = [
     rota: "/jogos/caminhoneuronal",
     botao: "btn-warning",
   },
+  {
+    nome: "Detetive Cognitivo",
+    descricao: "Treine suas habilidades como detetive.",
+    imagem: detetiveCognitivoImg,
+    autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
+    autorJogo: "Romylson Pereira Souza",
+    rota: "/jogos/detective-cognitivo",
+    botao: "btn-warning",
+  },
+  {
+    nome: "Sequência Doença",
+    descricao: "Verifica a sequência de doença.",
+    imagem: sequenciaDoencaImg,
+    autorImagem: "Fotos de domínio público (Wikimedia Commons, Unsplash, Pixabay)",
+    autorJogo: "Romylson Pereira Souza",
+    rota: "/jogos/sequencia-doenca",
+    botao: "btn-warning",
+  },
+  
 ];
