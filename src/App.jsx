@@ -52,7 +52,7 @@ function App() {
           <Outlet />
     <Router>
       <Navbar />
-      <div className="p-2 p-md-4">
+      <div className="p-4">
         <BackHomeButton />
         <Routes>
           <Route path="/fisiopatologia" element={<Fisiopatologia />} />
