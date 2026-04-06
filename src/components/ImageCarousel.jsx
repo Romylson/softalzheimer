@@ -5,7 +5,7 @@ import "./ImageCarousel.css";
 
 const slides = [
   {
-    src: "/images/alzheimer2.jpg",
+    src: "/images/alzheimer3.jpg",
     alt: "Alzheimer",
     subtitulo: "Conteúdo científico e educativo",
     titulo: "Atualizações sobre Alzheimer",
@@ -13,7 +13,7 @@ const slides = [
     slug: "atualizacoes-sobre-alzheimer",
   },
   {
-    src: "/images/fisiopatologia2.jpg",
+    src: "/images/fisiopatologia3.jpg",
     alt: "Fisiopatologia",
     subtitulo: "Conheça a",
     titulo: "Fisiopatologia do Alzheimer",
@@ -21,7 +21,7 @@ const slides = [
     slug: "fisiopatologia-do-alzheimer",
   },
   {
-    src: "/images/plantasalzheimer.jpg",
+    src: "/images/plantasmedicinais.jpg",
     alt: "Plantas medicinais",
     subtitulo: "Acesse nossas",
     titulo: "Plantas em evidência",
