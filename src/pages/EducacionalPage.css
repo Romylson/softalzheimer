@@ -1,0 +1,115 @@
+/* ================= BASE ================= */
+.educacional-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* ================= GRID PADRÃO ================= */
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+/* ================= CARD ================= */
+.resource-card {
+  background: #ffffff;
+  border: 1px solid #d9e5da;
+  border-radius: 12px;
+  padding: 0.9rem;
+  transition: 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.resource-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+/* ================= IMAGEM (CORREÇÃO PRINCIPAL) ================= */
+.resource-preview {
+  width: 100%;
+  height: 160px;
+  object-fit: contain; /* 🔥 mostra imagem completa */
+  background: #f4f6f5;
+  border-radius: 8px;
+  margin-bottom: 0.6rem;
+}
+
+/* ================= LINKS ================= */
+.resource-card a {
+  margin-top: auto;
+  color: #0b5ed7;
+  font-weight: 600;
+}
+
+/* ================= FLUXOGRAMA ================= */
+.flow-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.flow-card {
+  background: #f8fbf9;
+  border: 1px solid #cfe5d3;
+  border-radius: 10px;
+  padding: 0.8rem;
+}
+
+.flow-card ol {
+  padding-left: 1rem;
+}
+
+/* ================= TIMELINE ================= */
+.timeline-model-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.timeline-model-card {
+  background: #f4fbf5;
+  border: 1px solid #cde4d2;
+  border-radius: 10px;
+  padding: 0.8rem;
+  position: relative;
+}
+
+.timeline-model-step {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  background: #198754;
+  color: #fff;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+/* ================= QUIZ ================= */
+.quiz-level-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.quiz-level-card {
+  background: #fff;
+  border: 1px solid #d9e5da;
+  border-radius: 10px;
+  padding: 0.8rem;
+}
+
+/* ================= RESPONSIVO ================= */
+@media (max-width: 640px) {
+  .resource-preview {
+    height: 140px;
+  }
+}

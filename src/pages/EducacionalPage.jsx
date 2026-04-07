@@ -1,5 +1,5 @@
 import React from "react";
-import "./SectionPages.css";
+import "./EducacionalPage.css";
 
 const mapasMentais = [
   {
