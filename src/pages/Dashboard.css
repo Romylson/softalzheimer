@@ -18,7 +18,7 @@ body {
   grid-column: 1;
   grid-row: 3;
   width: 260px;
-  background-color:  #2a962e;
+  background-color:  #074915;
   color: rgb(14, 90, 20);
   padding: 1rem;
   align-self: flex-start;
@@ -39,7 +39,7 @@ body {
 .sidebar-title { text-align: center; margin: 0 0 1rem; }
 .dashboard-sidebar ul { list-style: none; margin: 0; padding: 0; }
 .dashboard-sidebar a {
-  color: #8ee39a;
+  color: #f5fcf6;
   text-decoration: none;
   display: block;
   padding: 0.55rem 0.4rem;
