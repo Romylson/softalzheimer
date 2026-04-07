@@ -123,6 +123,12 @@
   margin-top: 2px;
 }
 
+.filtro-acao-btn {
+  background-color: #2e7d32; /* verde principal */
+  color: #fff;
+  
+}
+
 @media (max-width: 1200px) {
   .plantas-page-container h1 { font-size: 40px; }
   .plantas-page-container > p { font-size: 17px; }
