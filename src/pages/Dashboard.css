@@ -35,7 +35,10 @@ body {
   display: block;
   margin: 0 auto 0.75rem;
 }
-
+.sidebar-title {
+  color: #ecf1ec; /* verde elegante */
+  }
+  
 .sidebar-title { text-align: center; margin: 0 0 1rem; }
 .dashboard-sidebar ul { list-style: none; margin: 0; padding: 0; }
 .dashboard-sidebar a {
@@ -46,7 +49,7 @@ body {
   border-radius: 6px;
 }
 .dashboard-sidebar a:hover,
-.dashboard-sidebar a.active { color: #fff; background: rgba(248, 231, 231, 0.904); }
+.dashboard-sidebar a.active { color: #fff; background: rgba(243, 238, 238, 0.09); }
 
 .dashboard-main { flex: 1; padding: 1.5rem; }
 
