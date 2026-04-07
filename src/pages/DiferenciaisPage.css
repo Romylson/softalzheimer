@@ -1,0 +1,124 @@
+/* ================= BASE ================= */
+.diferenciais-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* ================= BLOCO PLANTAS ================= */
+.grid-plantas-semana {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.card-planta-semana {
+  background: #fff;
+  border: 1px solid #d9e5da;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: 0.2s;
+}
+
+.card-planta-semana:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+/* 🔥 IMAGEM CORRIGIDA */
+.planta-imagem-wrap {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  background: #f4f6f5;
+}
+
+.planta-imagem {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* mantém proporção */
+}
+
+.planta-conteudo {
+  padding: 0.8rem;
+}
+
+/* ================= SIMULADOR ================= */
+.simulador-animado {
+  position: relative;
+  padding: 1rem 0;
+}
+
+.simulador-trilho {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #d9e5da;
+  z-index: 0;
+}
+
+.simulador-etapa {
+  position: relative;
+  background: #fff;
+  border: 1px solid #d9e5da;
+  border-radius: 10px;
+  padding: 0.7rem;
+  width: 220px;
+  display: inline-block;
+  margin-right: 1rem;
+  z-index: 1;
+}
+
+.simulador-icone {
+  font-size: 1.5rem;
+}
+
+/* ================= PESQUISADORES ================= */
+.pesquisadores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.pesquisadores-card {
+  background: #fff;
+  border: 1px solid #d9e5da;
+  border-radius: 10px;
+  padding: 0.8rem;
+}
+
+.pesquisa-pratica {
+  font-size: 0.9rem;
+  color: #2e3d2f;
+}
+
+/* ================= EXPANSÃO ================= */
+.expansao-lista {
+  padding-left: 1rem;
+}
+
+/* ================= INDICADORES ================= */
+/* 🔥 substitui o section-grid global */
+.diferenciais-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.diferenciais-metrics .section-card {
+  padding: 0.8rem;
+}
+
+/* ================= RESPONSIVO ================= */
+@media (max-width: 640px) {
+  .planta-imagem-wrap {
+    height: 150px;
+  }
+
+  .simulador-etapa {
+    width: 100%;
+    margin-bottom: 0.8rem;
+  }
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import "./SectionPages.css";
+import "./DiferenciaisPage.css";
 
 
 const plantasDestaque = [
