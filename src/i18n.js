@@ -42,7 +42,7 @@ const resources = {
       Dezembro de 2025
 
       Equipe PlantaMente`
-      }
+      },
       about_content: "O PlantaMente é uma plataforma colaborativa criada para reunir conteúdos educativos sobre a Doença de Alzheimer. Aqui você encontra materiais científicos, visualizações interativas e jogos que ajudam a compreender a fisiopatologia, os tratamentos disponíveis e formas de prevenção.\n\nNossa equipe multidisciplinar mantém o site atualizado com pesquisas recentes, guias práticos e recursos acessíveis tanto para profissionais da saúde quanto para familiares e cuidadores. O objetivo é facilitar o acesso à informação de qualidade e incentivar o aprendizado contínuo.",
 
       // Dashboard principal
