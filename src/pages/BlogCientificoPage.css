@@ -1,0 +1,94 @@
+/* ================= PAGE BASE ================= */
+.blog-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* ================= GRID POSTS ================= */
+.blog-post-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.2rem;
+}
+
+/* ================= CARD ================= */
+.blog-post-card {
+  background: #ffffff;
+  border: 1px solid #d9e5da;
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  transition: 0.2s;
+}
+
+.blog-post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+/* ================= IMAGEM (CORREÇÃO PRINCIPAL) ================= */
+.blog-card-img-wrap {
+  width: 100%;
+  height: 180px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 0.8rem;
+  background: #f2f5f3;
+}
+
+.blog-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 🔥 mantém proporção sem deformar */
+}
+
+/* ================= TEXTO ================= */
+.blog-post-card h4 {
+  margin-bottom: 0.5rem;
+}
+
+.blog-post-card p {
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+}
+
+/* ================= REFERÊNCIAS ================= */
+.blog-post-card ul {
+  padding-left: 1rem;
+}
+
+.blog-post-card li {
+  font-size: 0.85rem;
+}
+
+/* ================= GRID CALENDÁRIO ================= */
+.blog-schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.8rem;
+}
+
+.blog-schedule-card {
+  background: #f4fbf5;
+  border: 1px solid #cde4d2;
+  border-radius: 10px;
+  padding: 0.8rem;
+}
+
+.blog-periodo {
+  font-size: 0.85rem;
+  color: #4a6b52;
+}
+
+/* ================= RESPONSIVO ================= */
+@media (max-width: 640px) {
+  .blog-card-img-wrap {
+    height: 150px;
+  }
+
+  .blog-post-card {
+    padding: 0.8rem;
+  }
+}

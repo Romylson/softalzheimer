@@ -1,6 +1,6 @@
 import React from "react";
 import monoterpenosArtigos from "../data/monoterpenosArtigos";
-import "./SectionPages.css";
+import "./BlogCientificoPage.css";
 import imgMonoterpenos from "../assets/monoterpenos.jpg";
 import imgNrf2 from "../assets/nrf2.jpg";
 import imgModelosAnimais from "../assets/modelos-animais.jpg";
