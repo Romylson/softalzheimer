@@ -23,7 +23,26 @@ const resources = {
       choose_color: "Escolha uma cor para testar o layout",
       history: "Histórico do Site",
       about_site: "Apresentação do Site",
-      history_content: "O projeto teve início em 2024, quando um grupo de estudantes e pesquisadores se uniu com o propósito de divulgar conhecimento confiável sobre o Alzheimer. A primeira versão era simples, mas já oferecia artigos revisados e um pequeno acervo de atividades educativas.\n\nCom o tempo, novas funcionalidades foram incorporadas, como o cérebro 3D interativo, o catálogo de plantas medicinais e a seção de notícias. Hoje, o PlantaMente continua crescendo com a contribuição da comunidade e o compromisso de levar informação clara e atualizada a todos.",
+      history_content: {
+      title: "Histórico",
+
+        text: `O site https://plantament.org/ foi criado em 2025 e trata-se de uma plataforma científica desenvolvida por um aluno de doutorado do Programa de Pós-Graduação em Farmacologia da Universidade Federal do Piauí (UFPI). A iniciativa representa uma proposta inovadora, alinhada às demandas contemporâneas de difusão do conhecimento, especialmente no contexto da Doença de Alzheimer — uma enfermidade neurodegenerativa progressiva caracterizada por comprometimento cognitivo, perda de memória e alterações comportamentais.
+
+      Historicamente, o avanço das tecnologias digitais tem transformado profundamente a forma como o conhecimento científico é produzido, compartilhado e acessado. Nesse cenário, plataformas digitais voltadas à saúde assumem papel estratégico ao democratizar informações baseadas em evidências, aproximando a comunidade científica da sociedade.
+
+      A proposta de um ambiente virtual dedicado ao tratamento do Alzheimer, com enfoque em plantas medicinais, terapias complementares e jogos interativos, insere-se diretamente nesse movimento de inovação científica e tecnológica. Do ponto de vista científico, observa-se um crescente interesse na investigação de terapias complementares, especialmente a fitoterapia, como abordagem adjuvante no tratamento da Doença de Alzheimer. Assim, um site que reúna essas evidências de forma organizada e acessível torna-se uma ferramenta relevante para pesquisadores, profissionais de saúde e cuidadores.
+
+      Outro aspecto inovador da plataforma é a incorporação de jogos interativos como estratégia de estimulação cognitiva. Estudos recentes demonstram que tecnologias digitais, como jogos e ambientes virtuais, podem contribuir significativamente para a reabilitação cognitiva e manutenção das funções executivas em idosos, promovendo maior engajamento e adesão ao tratamento. Essas abordagens têm apresentado efeitos positivos tanto a curto quanto a longo prazo, especialmente na melhoria da atenção e da memória.
+
+      A relevância do site também se destaca no âmbito acadêmico e institucional. Ao ser desenvolvido no contexto de um Programa de Pós-Graduação, fortalece a integração entre ensino, pesquisa e extensão, promovendo a transferência do conhecimento científico para a sociedade. Além disso, contribui para a visibilidade da UFPI como um polo de produção científica na área de Ciências da Vida, incentivando práticas interdisciplinares que envolvem farmacologia, biotecnologia, tecnologia da informação e saúde coletiva.
+
+      Por fim, essa iniciativa cumpre um papel social fundamental ao combater a desinformação e ampliar o acesso a conteúdos científicos confiáveis sobre o Alzheimer, uma doença de grande impacto na saúde pública. Ao integrar conhecimentos sobre plantas medicinais, terapias complementares e ferramentas digitais interativas, o site se configura como um ambiente científico inovador, educativo e inclusivo, capaz de contribuir tanto para o avanço da pesquisa quanto para a melhoria da qualidade de vida de pacientes e seus cuidadores.
+
+      Teresina – PI, Brasil
+      Dezembro de 2025
+
+      Equipe PlantaMente`
+      }
       about_content: "O PlantaMente é uma plataforma colaborativa criada para reunir conteúdos educativos sobre a Doença de Alzheimer. Aqui você encontra materiais científicos, visualizações interativas e jogos que ajudam a compreender a fisiopatologia, os tratamentos disponíveis e formas de prevenção.\n\nNossa equipe multidisciplinar mantém o site atualizado com pesquisas recentes, guias práticos e recursos acessíveis tanto para profissionais da saúde quanto para familiares e cuidadores. O objetivo é facilitar o acesso à informação de qualidade e incentivar o aprendizado contínuo.",
 
       // Dashboard principal
