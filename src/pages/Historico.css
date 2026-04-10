@@ -1,65 +1,81 @@
 .historico-texto {
-  max-width: 850px;
+  max-width: 900px;
   margin: 0 auto;
-  font-size: 1.05rem;
-  line-height: 1.9;
-  color: #2b2b2b;
+  font-size: 1.08rem;
+  line-height: 2;
+  color: #2a2a2a;
+  font-family: "Georgia", "Times New Roman", serif;
 }
 
-/* PARÁGRAFOS - estilo artigo */
+/* PARÁGRAFOS */
 .historico-texto p {
-  margin-bottom: 1.6rem;
+  margin-bottom: 1.8rem;
   text-align: justify;
   text-justify: inter-word;
   hyphens: auto;
-
-  /* aparência limpa */
-  background: transparent;
-  padding: 0;
-  border: none;
-
-  /* leve separação visual */
   position: relative;
 }
 
-/* primeira letra estilo revista */
+/* PRIMEIRA LETRA ESTILO REVISTA */
 .historico-texto p:first-child::first-letter {
-  font-size: 2.8rem;
+  font-size: 3.2rem;
   font-weight: bold;
   float: left;
   line-height: 1;
-  margin-right: 8px;
+  margin-right: 10px;
   color: #1b5e20;
 }
 
-/* espaçamento entre blocos */
-.historico-texto p + p {
-  margin-top: 0.8rem;
+/* LINHA LATERAL SUTIL (efeito editorial) */
+.historico-texto p {
+  padding-left: 18px;
 }
 
-/* linha sutil entre seções */
+.historico-texto p::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 4px;
+  height: 70%;
+  background: linear-gradient(to bottom, #4caf50, transparent);
+  border-radius: 10px;
+  opacity: 0.4;
+}
+
+/* EFEITO DE LEITURA SUAVE */
+.historico-texto p:hover {
+  transform: translateX(4px);
+  transition: 0.3s ease;
+}
+
+/* SEPARADOR FINO ENTRE PARÁGRAFOS */
 .historico-texto p:not(:last-child)::after {
   content: "";
   display: block;
-  width: 40px;
-  height: 2px;
-  background: #e0e0e0;
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(to right, #ccc, transparent);
   margin-top: 1rem;
 }
 
-/* assinatura */
+/* ASSINATURA */
 .historico-texto p:last-child {
-  margin-top: 2.5rem;
+  margin-top: 3rem;
   text-align: right;
   font-style: italic;
   color: #555;
+  padding-left: 0;
 }
 
-/* leitura confortável */
+.historico-texto p:last-child::before {
+  display: none;
+}
+
+/* LEVE SOMBRA DE LEITURA (profundidade) */
 .historico-texto {
-  letter-spacing: 0.3px;
+  text-shadow: 0 0 1px rgba(0,0,0,0.03);
 }
-
 /* IMAGEM */
 .historico-img-wrap {
   width: 100%;
@@ -72,9 +88,10 @@
   width: 100%;
   height: auto;
   max-height: 500px;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 12px;
   display: block;
+  margin: 0 auto;
 }
 /* GRID DE IMAGENS */
 .historico-grid {
