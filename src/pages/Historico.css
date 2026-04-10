@@ -32,12 +32,13 @@
 }
 
 .historico-img {
-  width: 140%;
-  height: 500px;
+  width: 100%;
+  height: auto;
+  max-height: 500px;
   object-fit: cover;
   border-radius: 12px;
+  display: block;
 }
-
 /* GRID DE IMAGENS */
 .historico-grid {
   display: grid;
