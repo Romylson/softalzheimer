@@ -33,11 +33,12 @@
 
 .historico-img {
   width: 100%;
-  height: auto;
   max-height: 500px;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   border-radius: 12px;
   display: block;
+  margin: 0 auto;
 }
 /* GRID DE IMAGENS */
 .historico-grid {
