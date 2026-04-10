@@ -1,56 +1,115 @@
 .historico-page {
-  max-width: 1100px;
+  max-width: 950px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 1.2rem;
+  font-family: "Segoe UI", sans-serif;
+  color: #2c2c2c;
 }
 
-/* Título */
+/* TÍTULO */
 .historico-page h1 {
-  margin-bottom: 1rem;
   font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #1b5e20;
+  font-weight: 700;
+  position: relative;
 }
 
-/* TEXTO JUSTIFICADO 🔥 */
+/* linha decorativa */
+.historico-page h1::after {
+  content: "";
+  width: 80px;
+  height: 4px;
+  background: #4caf50;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 10px;
+}
+
+/* IMAGEM PRINCIPAL */
+.historico-img-wrap {
+  margin-bottom: 2rem;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* IMAGENS */
+.historico-img {
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.historico-img:hover {
+  transform: scale(1.03);
+}
+
+/* TEXTO */
 .historico-texto {
-  text-align: justify;
-  line-height: 1.7;
-  font-size: 1.05rem;
-  color: #2e3d2f;
+  font-size: 1rem;
+  line-height: 1.9;
 }
 
 /* PARÁGRAFOS */
 .historico-texto p {
-  margin-bottom: 1rem;
+  margin-bottom: 1.4rem;
+  text-align: justify;
+  color: #333;
 }
 
-/* IMAGEM */
-.historico-img-wrap {
-  width: 100%;
-  margin: 1.5rem 0;
-  border-radius: 12px;
-  overflow: hidden;
+/* PRIMEIRO PARÁGRAFO DESTACADO */
+.historico-texto p:first-of-type {
+  font-size: 1.08rem;
+  font-weight: 500;
+  background: #f1f8f4;
+  padding: 1rem;
+  border-left: 4px solid #4caf50;
+  border-radius: 8px;
 }
 
-.historico-img {
-  width: 100%;
-  max-height: 500px;
-  height: auto;
-  object-fit: contain;
-  border-radius: 12px;
-  display: block;
-  margin: 0 auto;
+/* EFEITO LEITURA (tipo artigo) */
+.historico-texto p:hover {
+  background: #fafafa;
+  padding: 0.6rem;
+  border-radius: 6px;
+  transition: 0.2s;
 }
+
+/* ASSINATURA */
+.historico-texto p:last-child {
+  margin-top: 2rem;
+  font-style: italic;
+  text-align: right;
+  color: #555;
+}
+
 /* GRID DE IMAGENS */
 .historico-grid {
+  margin-top: 2rem;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
 }
 
-/* RESPONSIVO */
+.historico-grid img {
+  border-radius: 12px;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.historico-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* MOBILE */
 @media (max-width: 768px) {
-  .historico-page {
-    padding: 1rem;
+  .historico-page h1 {
+    font-size: 1.6rem;
   }
 
   .historico-grid {
@@ -58,10 +117,6 @@
   }
 
   .historico-img {
-    height: 220px;
-  }
-
-  .historico-texto {
-    font-size: 0.95rem;
+    max-height: 250px;
   }
 }
