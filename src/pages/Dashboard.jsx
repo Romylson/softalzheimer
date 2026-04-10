@@ -12,43 +12,43 @@ const secoesHome = [
     titulo: "Alzheimer em Dados",
     descricao: "Entenda definição, prevalência, mecanismos e progressão da doença.",
     rota: "/alzheimer-dados",
-    emoji: "🧠",
+    img: "/icons/brain.png",
   },
   {
     titulo: "Plantas em Evidência",
     descricao: "Acesse plantas com mecanismos de ação e nível de evidência.",
     rota: "/plantas",
-    emoji: "🌿",
+    img: "/icons/plant.png",
   },
   {
     titulo: "Seção Científica",
     descricao: "Biblioteca organizada e banco de estudos pesquisável.",
     rota: "/secao-cientifica",
-    emoji: "🔬",
+    img: "/icons/science.png",
   },
   {
     titulo: "Qualidade de Vida e Prevenção",
     descricao: "Leve ciência para a prática com recomendações e autoavaliação.",
     rota: "/qualidade-de-vida",
-    emoji: "💚",
+    img: "/icons/health.png",
   },
   {
     titulo: "Seção Educacional",
     descricao: "Materiais didáticos, mapas mentais, PDFs e quizzes por nível.",
     rota: "/educacional",
-    emoji: "🎓",
+    img: "/icons/education.png",
   },
   {
     titulo: "Blog Científico",
     descricao: "Publicações quinzenais com evidência, aplicabilidade e limitações.",
     rota: "/blog-cientifico",
-    emoji: "📝",
+    img: "/icons/blog.png",
   },
   {
     titulo: "Diferenciais Inovadores",
     descricao: "Planta da semana, simulador de mecanismos e área para pesquisadores.",
     rota: "/diferenciais-inovadores",
-    emoji: "🚀",
+    img: "/icons/innovation.png",
   },
 ];
 
@@ -111,7 +111,9 @@ export default function Dashboard() {
           <div className="cards-grid">
             {secoesHome.map((secao) => (
               <article key={secao.rota} className="info-card interactive">
-                <div className="emoji">{secao.emoji}</div>
+                <div className="card-icon-img">
+                  <img src={secao.img} alt={secao.titulo} />
+                </div>
                 <h3>{secao.titulo}</h3>
                 <p>{secao.descricao}</p>
                 <Link className="inline-link" to={secao.rota}>Abrir página</Link>
