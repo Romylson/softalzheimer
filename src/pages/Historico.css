@@ -1,89 +1,47 @@
-.historico-page {
-  max-width: 950px;
-  margin: 0 auto;
-  padding: 2rem 1.2rem;
-  font-family: "Segoe UI", sans-serif;
+.historico-texto {
+  font-size: 1.02rem;
+  line-height: 1.9;
   color: #2c2c2c;
 }
 
-/* TÍTULO */
-.historico-page h1 {
-  font-size: 2.2rem;
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #1b5e20;
-  font-weight: 700;
-  position: relative;
-}
-
-/* linha decorativa */
-.historico-page h1::after {
-  content: "";
-  width: 80px;
-  height: 4px;
-  background: #4caf50;
-  display: block;
-  margin: 10px auto 0;
-  border-radius: 10px;
-}
-
-/* IMAGEM PRINCIPAL */
-.historico-img-wrap {
-  margin-bottom: 2rem;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-}
-
-/* IMAGENS */
-.historico-img {
-  width: 100%;
-  height: auto;
-  max-height: 420px;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.historico-img:hover {
-  transform: scale(1.03);
-}
-
-/* TEXTO */
-.historico-texto {
-  font-size: 1rem;
-  line-height: 1.9;
-}
-
-/* PARÁGRAFOS */
+/* TODOS os parágrafos com estilo elegante */
 .historico-texto p {
-  margin-bottom: 1.4rem;
+  margin-bottom: 1.5rem;
   text-align: justify;
-  color: #333;
-}
-
-/* PRIMEIRO PARÁGRAFO DESTACADO */
-.historico-texto p:first-of-type {
-  font-size: 1.08rem;
-  font-weight: 500;
-  background: #f1f8f4;
-  padding: 1rem;
-  border-left: 4px solid #4caf50;
+  padding: 0.8rem 1rem;
   border-radius: 8px;
+  background: #ffffff;
+  transition: all 0.25s ease;
 }
 
-/* EFEITO LEITURA (tipo artigo) */
+/* efeito leitura (hover suave) */
 .historico-texto p:hover {
-  background: #fafafa;
-  padding: 0.6rem;
-  border-radius: 6px;
-  transition: 0.2s;
+  background: #f7fbf8;
+  transform: translateX(3px);
 }
 
-/* ASSINATURA */
+/* linha lateral sutil (estilo científico) */
+.historico-texto p {
+  border-left: 3px solid transparent;
+}
+
+.historico-texto p:hover {
+  border-left: 3px solid #4caf50;
+}
+
+/* separação visual entre blocos */
+.historico-texto p + p {
+  margin-top: 0.5rem;
+}
+
+/* assinatura */
 .historico-texto p:last-child {
   margin-top: 2rem;
   font-style: italic;
   text-align: right;
+  background: transparent;
+  border-left: none;
+  padding: 0;
   color: #555;
 }
 
@@ -95,6 +53,15 @@
   gap: 15px;
 }
 
+.historico-img {
+  width: 100%;
+  max-height: 500px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+}
 .historico-grid img {
   border-radius: 12px;
   height: 200px;
