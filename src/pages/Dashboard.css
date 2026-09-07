@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #ea82f3;
+  background: #f4aefa;
 }
 
 .dashboard-layout{
@@ -18,8 +18,8 @@ body {
   grid-column: 1;
   grid-row: 3;
   width: 260px;
-  background-color:  #074915;
-  color: rgb(14, 90, 20);
+  background-color: #490746;
+  color: rgb(63, 9, 63);
   padding: 1rem;
   align-self: flex-start;
   position: relative;
@@ -54,7 +54,7 @@ body {
 .dashboard-main { flex: 1; padding: 1.5rem; }
 
 .hero-banner {
-  background: linear-gradient(120deg, #074915, #064714);
+  background: linear-gradient(120deg, #490746, #490746);
   color: white;
   padding: 1.7rem;
   border-radius: 14px;
